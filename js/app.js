@@ -393,14 +393,16 @@ class KrakowStreetsApp {
       if (patron.image) {
         patronImg.src = patron.image;
         patronImg.alt = patron.name;
+        patronImg.onerror = () => { patronImg.classList.add('hidden'); };
         patronImg.classList.remove('hidden');
       } else {
         patronImg.classList.add('hidden');
       }
 
       const wikiBtn = document.getElementById('drawer-patron-wiki');
-      if (patron.wikipedia_url) {
-        wikiBtn.href = patron.wikipedia_url;
+      const wikiUrl = patron.wiki_url || patron.wikipedia_url;
+      if (wikiUrl) {
+        wikiBtn.href = wikiUrl;
         wikiBtn.classList.remove('hidden');
       } else {
         wikiBtn.classList.add('hidden');
