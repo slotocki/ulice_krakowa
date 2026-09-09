@@ -1,0 +1,23 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.class
+*.env
+.venv/
+env/
+
+# System / OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Temp / Cache data
+data/temp_*.json
+data/test_*.geojson
+*.log

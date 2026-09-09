@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ulice Krakowa – Mapa, Etymologia i Uchwały RMK</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- MapLibre GL JS (Wektorowy WebGL, open-source, ultra-szybki) -->
+  <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+
+  <!-- Niezależne style aplikacji -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="relative h-screen w-screen overflow-hidden bg-slate-900 text-slate-800 antialiased select-none">
+
+  <!-- Kontener mapy MapLibre WebGL -->
+  <div id="map"></div>
+
+  <!-- Pływający górny pasek nawigacji i wyszukiwarka -->
+  <header class="absolute top-4 left-4 right-4 md:left-6 md:right-auto z-20 flex flex-col gap-2 max-w-xl w-full pointer-events-none">
+    
+    <!-- Pasek wyszukiwania w stylu Apple Spotlight / Glassmorphism -->
+    <div class="glass-panel rounded-2xl shadow-xl pointer-events-auto transition-all duration-200">
+      <div class="flex items-center px-4 py-3 gap-3">
+        <!-- Ikona lupy -->
+        <svg class="w-5 h-5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+
+        <!-- Input wyszukiwania -->
+        <input 
+          id="search-input" 
+          type="text" 
+          placeholder="Wpisz nazwę ulicy w Krakowie (np. Floriańska, Słowackiego, Szewska)..." 
+          data-i18n-placeholder="search_placeholder"
+          autocomplete="off"
+          spellcheck="false"
+          class="w-full bg-transparent text-slate-800 placeholder-slate-400 font-medium text-sm md:text-base outline-none focus:ring-0"
+        >
+
+        <!-- Przycisk wyczyszczenia -->
+        <button id="clear-search-btn" class="hidden text-slate-400 hover:text-slate-600 p-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+
+        <!-- Odznaka z liczbą ulic -->
+        <span id="streets-count-badge" class="hidden sm:inline-block text-[11px] font-semibold bg-slate-100 text-slate-600 px-2 py-1 rounded-lg flex-shrink-0 border border-slate-200">
+          Ładowanie...
+        </span>
+      </div>
+
+      <!-- Dropdown z wynikami wyszukiwania -->
+      <div id="search-results" class="hidden max-h-80 overflow-y-auto border-t border-slate-100 divide-y divide-slate-100">
+        <!-- Generowane dynamicznie przez search.js -->
+      </div>
+    </div>
+
+    <!-- Szybkie chipy z popularnymi ulicami -->
+    <div class="flex items-center gap-1.5 overflow-x-auto py-1 px-1 pointer-events-auto no-scrollbar">
+      <span data-i18n="discover" class="text-[11px] font-bold text-slate-600 drop-shadow-sm bg-white/70 px-2 py-0.5 rounded-md backdrop-blur-sm">Odkryj:</span>
+      <button onclick="window.krakowApp?.fitKrakowBounds()" class="text-xs bg-red-50 hover:bg-red-100 text-red-700 font-bold px-2.5 py-1 rounded-lg shadow-sm border border-red-200 backdrop-blur-md transition-all whitespace-nowrap flex items-center gap-1 cursor-pointer">
+        <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
+        <span data-i18n="city_border">Granice Krakowa</span>
+      </button>
+      <button onclick="window.krakowApp?.selectStreetById('florianska')" data-i18n="chip_florianska" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-sm border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
+        🏰 ul. Floriańska
+      </button>
+      <button onclick="window.krakowApp?.selectStreetById('szewska')" data-i18n="chip_szewska" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-sm border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
+        👞 ul. Szewska
+      </button>
+      <button onclick="window.krakowApp?.selectStreetById('kwiatowa')" data-i18n="chip_kwiatowa" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-sm border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
+        🌸 ul. Kwiatowa
+      </button>
+      <button onclick="window.krakowApp?.selectStreetById('szymborskiej')" data-i18n="chip_szymborskiej" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-sm border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
+        📜 Park Szymborskiej
+      </button>
+      <button onclick="window.krakowApp?.selectStreetById('lema')" data-i18n="chip_lema" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-sm border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
+        🚀 ul. Lema
+      </button>
+      <button onclick="window.krakowApp?.selectStreetById('slowackiego')" data-i18n="chip_slowackiego" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-sm border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
+        🎭 al. Słowackiego
+      </button>
+      <button onclick="window.krakowApp?.selectStreetById('dietla')" data-i18n="chip_dietla" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-sm border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
+        🌿 ul. Dietla
+      </button>
+    </div>
+  </header>
+
+  <!-- Prawy górny pasek: Przełącznik języków + Granice Krakowa + Styl mapy -->
+  <div class="absolute top-4 right-4 z-20 hidden md:flex items-center gap-2">
+    <!-- Przełącznik języka (PL / EN / DE) -->
+    <div class="glass-panel p-1 rounded-xl shadow-lg flex items-center gap-1 border border-slate-200">
+      <button onclick="window.krakowI18n?.setLanguage('pl')" data-lang="pl" class="lang-btn px-2.5 py-1 text-xs font-bold rounded-lg transition-all bg-white text-blue-700 shadow-sm">
+        🇵🇱 PL
+      </button>
+      <button onclick="window.krakowI18n?.setLanguage('en')" data-lang="en" class="lang-btn px-2.5 py-1 text-xs font-medium rounded-lg transition-all text-slate-600 hover:text-slate-900">
+        🇬🇧 EN
+      </button>
+      <button onclick="window.krakowI18n?.setLanguage('de')" data-lang="de" class="lang-btn px-2.5 py-1 text-xs font-medium rounded-lg transition-all text-slate-600 hover:text-slate-900">
+        🇩🇪 DE
+      </button>
+    </div>
+
+    <!-- Panel Granic Krakowa -->
+    <div class="glass-panel px-3 py-1.5 rounded-xl shadow-lg flex items-center gap-2 border border-slate-200 bg-white/95">
+      <button id="toggle-border-btn" title="Włącz / wyłącz widok granic Krakowa" class="flex items-center gap-1.5 text-xs font-bold text-red-600 hover:text-red-700 transition-all cursor-pointer">
+        <span id="border-indicator-dot" class="w-2.5 h-2.5 rounded-full bg-red-600 shadow-sm animate-pulse"></span>
+        <span data-i18n="city_border">Granice Krakowa</span>
+      </button>
+      <span class="text-slate-300">|</span>
+      <button id="fit-bounds-btn" title="Dopasuj widok kamery do pełnych granic Krakowa" class="text-slate-600 hover:text-blue-600 transition-colors cursor-pointer text-xs flex items-center gap-1 font-medium">
+        <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+        </svg>
+        <span data-i18n="fit_krakow">Całe miasto</span>
+      </button>
+    </div>
+
+    <!-- Styl mapy -->
+    <div class="glass-panel px-3 py-2 rounded-xl shadow-lg flex items-center gap-2 border border-slate-200">
+      <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+      </svg>
+      <label for="map-style-select" data-i18n="map_style" class="text-xs font-semibold text-slate-600">Styl mapy:</label>
+      <select id="map-style-select" class="bg-transparent text-xs font-bold text-slate-800 focus:outline-none cursor-pointer">
+        <option value="positron">Minimalny Jasny (Positron)</option>
+        <option value="dark">Ciemny / Neon (Dark Matter)</option>
+        <option value="voyager">Klasyczny Kolorowy (Voyager)</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Boczny panel szczegółów ulicy (Drawer / Sheet) -->
+  <aside id="street-drawer" class="absolute bottom-0 md:bottom-auto md:top-4 md:right-4 z-30 w-full md:w-[420px] max-h-[75vh] md:max-h-[calc(100vh-2rem)] glass-panel md:rounded-2xl rounded-t-2xl shadow-2xl flex flex-col transition-drawer overflow-hidden translate-y-full md:translate-x-full md:translate-y-0">
+    
+    <!-- Belka nagłówkowa panelu -->
+    <div class="flex items-center justify-between px-5 py-4 border-b border-slate-200/80 bg-white/40">
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-blue-600 animate-ping"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-blue-600 -ml-4"></span>
+        <span data-i18n="drawer_title" class="text-xs font-bold uppercase tracking-wider text-slate-500">Szczegóły Ulicy</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <!-- Mobilny przełącznik języka -->
+        <div class="flex md:hidden items-center bg-slate-200/70 p-0.5 rounded-lg text-[10px]">
+          <button onclick="window.krakowI18n?.setLanguage('pl')" data-lang="pl" class="lang-btn px-1.5 py-0.5 rounded font-bold">PL</button>
+          <button onclick="window.krakowI18n?.setLanguage('en')" data-lang="en" class="lang-btn px-1.5 py-0.5 rounded">EN</button>
+          <button onclick="window.krakowI18n?.setLanguage('de')" data-lang="de" class="lang-btn px-1.5 py-0.5 rounded">DE</button>
+        </div>
+        <button id="close-drawer-btn" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Stan początkowy (pusty) -->
+    <div id="drawer-empty-state" class="p-8 text-center flex flex-col items-center justify-center h-64">
+      <div class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+        </svg>
+      </div>
+      <p data-i18n="empty_title" class="font-bold text-slate-800 text-sm">Wybierz ulicę</p>
+      <p data-i18n="empty_desc" class="text-xs text-slate-500 mt-1 max-w-xs">Wpisz nazwę w wyszukiwarce lub kliknij jedną z zaznaczonych linii na mapie.</p>
+    </div>
+
+    <!-- Treść po wybraniu ulicy -->
+    <div id="drawer-content" class="hidden p-6 overflow-y-auto space-y-5">
+      
+      <!-- Nagłówek ulicy i lokalizacja -->
+      <div class="border-b border-slate-100 pb-4">
+        <div class="flex items-center justify-between gap-2 mb-2">
+          <div class="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
+            <svg class="w-3.5 h-3.5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span id="drawer-district">Stare Miasto</span>
+          </div>
+          <span id="drawer-category" class="text-[11px] font-medium text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">
+            Kategoria
+          </span>
+        </div>
+        
+        <h2 id="drawer-name" class="text-2xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          ulica Floriańska
+        </h2>
+
+        <!-- Dosłowne znaczenie dla obcokrajowców (np. Shoemakers' Street / Schustergasse) -->
+        <div id="drawer-meaning-box" class="hidden mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-50 border border-indigo-100 text-indigo-900 text-xs font-medium">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-500" data-i18n="literal_meaning_label">Dosłowne znaczenie:</span>
+          <span id="drawer-meaning-text" class="font-bold text-indigo-700"></span>
+        </div>
+
+        <div class="flex items-center gap-3 text-xs text-slate-500 mt-2.5 pt-2 border-t border-slate-100">
+          <div class="flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span id="drawer-year" class="font-medium text-slate-700">1257 r.</span>
+          </div>
+          <span class="text-slate-300">•</span>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+            </svg>
+            <span id="drawer-length" class="text-slate-600">335 m</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Karta Patrona Ulicy (jeśli istnieje) -->
+      <div id="drawer-patron-card" class="hidden p-4 rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-sm transition-all">
+        <div class="text-[10px] font-bold uppercase tracking-wider text-blue-800 mb-3 flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+          </svg>
+          <span data-i18n="patron_title">Patron ulicy</span>
+        </div>
+        <div class="flex items-start gap-3.5">
+          <img id="drawer-patron-img" class="w-16 h-20 rounded-xl object-cover shadow-md border-2 border-white flex-shrink-0 bg-slate-200" src="" alt="Patron" referrerpolicy="no-referrer">
+          <div class="flex-1 min-w-0">
+            <h4 id="drawer-patron-name" class="text-sm font-bold text-slate-900 leading-tight">Imię patrona</h4>
+            <p id="drawer-patron-role" class="text-xs text-slate-600 mt-1 leading-relaxed"></p>
+            <a id="drawer-patron-wiki" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 hover:text-blue-800 mt-2.5 transition-colors">
+              <span data-i18n="wiki_bio_link">Zobacz biogram w Wikipedii</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Etymologia i historia nazwy -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2 flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+          <span data-i18n="etymology_title">Pochodzenie nazwy i etymologia</span>
+        </h3>
+        <p id="drawer-etymology" class="text-sm text-slate-700 leading-relaxed bg-white/70 p-4 rounded-xl border border-slate-200/80 shadow-sm">
+          Opis etymologii...
+        </p>
+      </div>
+
+      <!-- Karta Uchwały RMK / Podstawy prawnej -->
+      <div id="drawer-resolution-box">
+        <!-- Renderowane przez app.js -->
+      </div>
+    </div>
+  </aside>
+
+  <!-- Stopka ze źródłami danych -->
+  <footer class="absolute bottom-2 left-4 z-10 hidden sm:flex items-center gap-2 text-[11px] text-slate-500 bg-white/80 backdrop-blur-md px-3 py-1 rounded-lg border border-slate-200 shadow-sm pointer-events-auto">
+    <span data-i18n="footer_sources">Źródła danych:</span>
+    <span class="font-semibold text-slate-700">BIP Kraków</span>
+    <span>•</span>
+    <span class="font-semibold text-slate-700">TERYT (GUS)</span>
+    <span>•</span>
+    <span class="font-semibold text-slate-700">OpenStreetMap / CARTO</span>
+    <span>•</span>
+    <span class="font-semibold text-slate-700">RCIN PAN (prof. E. Supranowicz)</span>
+  </footer>
+
+  <!-- Skrypty aplikacji -->
+  <script src="js/i18n.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

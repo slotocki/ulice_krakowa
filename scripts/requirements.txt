@@ -1,0 +1,4 @@
+# Wymagania dla skryptów data-engineering (BIP Kraków & OSM)
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+tqdm>=4.66.0
