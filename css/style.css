@@ -7,15 +7,70 @@
   --accent-glow: rgba(37, 99, 235, 0.45);
 }
 
+html {
+  background: #ffffff;
+}
+
 body {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   margin: 0;
   padding: 0;
   overflow: hidden;
   height: 100vh;
+  height: 100dvh;
   width: 100vw;
   background-color: #f8fafc;
   -webkit-font-smoothing: antialiased;
+}
+
+.app-topbar {
+  background-color: #ffffff;
+  padding-top: env(safe-area-inset-top, 0px);
+  height: calc(4rem + env(safe-area-inset-top, 0px));
+}
+
+.flag-icon {
+  display: inline-block;
+  width: 1.4rem;
+  height: 0.95rem;
+  flex: 0 0 auto;
+  border-radius: 0;
+  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.5);
+  background-size: 100% 100%;
+}
+
+.flag-pl {
+  background: linear-gradient(to bottom, #ffffff 0 50%, #dc143c 50% 100%);
+}
+
+.flag-de {
+  background: linear-gradient(to bottom, #151515 0 33.333%, #dd0000 33.333% 66.666%, #ffce00 66.666% 100%);
+}
+
+.flag-gb {
+  background:
+    linear-gradient(33deg, transparent 47%, #c8102e 47% 53%, transparent 53%),
+    linear-gradient(-33deg, transparent 47%, #c8102e 47% 53%, transparent 53%),
+    linear-gradient(33deg, transparent 42%, #ffffff 42% 58%, transparent 58%),
+    linear-gradient(-33deg, transparent 42%, #ffffff 42% 58%, transparent 58%),
+    linear-gradient(90deg, transparent 45%, #c8102e 45% 55%, transparent 55%),
+    linear-gradient(transparent 43%, #c8102e 43% 57%, transparent 57%),
+    linear-gradient(90deg, transparent 38%, #ffffff 38% 62%, transparent 62%),
+    linear-gradient(transparent 33%, #ffffff 33% 67%, transparent 67%),
+    #012169;
+}
+
+@media (max-width: 639px) {
+  .app-topbar img {
+    max-width: 38vw;
+  }
+
+  .language-picker-menu {
+    position: fixed;
+    top: calc(4rem + env(safe-area-inset-top, 0px));
+    right: 0.5rem;
+  }
+
 }
 
 #map {
@@ -76,8 +131,15 @@ body {
 
 /* MapLibre Controls repositioning and styling */
 .maplibregl-ctrl-top-right {
-  top: 88px !important;
-  right: 20px !important;
+  top: 16px !important;
+  right: 16px !important;
+}
+
+@media (max-width: 639px) {
+  .maplibregl-ctrl-top-right {
+    top: 52px !important;
+    right: 8px !important;
+  }
 }
 
 .maplibregl-ctrl-group {
@@ -98,4 +160,52 @@ body {
 }
 .search-item:hover, .search-item.selected {
   background-color: #f1f5f9;
+}
+
+/* Stylizacja dla Cyfrowego Czytnika Źródeł Archiwalnych */
+@keyframes highlight-glow {
+  0% {
+    background-color: rgba(251, 191, 36, 0.35);
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.4);
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+.reader-entry-card {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reader-entry-card:hover {
+  transform: translateY(-1px);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (max-width: 1279px) {
+  #map-layer-controls {
+    position: fixed;
+    bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 25;
+    white-space: nowrap;
+    max-width: calc(100vw - 1rem);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 3px 16px #0f172a26;
+  }
+  #map-layer-controls button { min-height: 44px; }
+  #territory-expansion-panel {
+    bottom: calc(6rem + env(safe-area-inset-bottom, 0px));
+    max-height: calc(100% - 7rem);
+    overflow-y: auto;
+  }
 }

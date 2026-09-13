@@ -1,4 +1,4 @@
-﻿# Python
+# Python
 __pycache__/
 *.py[cod]
 *.class
@@ -20,4 +20,27 @@ desktop.ini
 # Temp / Cache data
 data/temp_*.json
 data/test_*.geojson
+data/supranowicz_rcin.zip
+*.bak
+*.bak.*
+data/*.bak
+data/*.bak.*
+
+# Developer scratchpad and local scripts
+scratch/
+scratch_*.*
+missing_streets.txt
+temp_names.txt
 *.log
+tools/
+
+# Pipeline evaluation & audit dumps (not needed on web)
+data/sources/agent_evaluation_manifest.json
+data/sources/publications_index.json
+data/audit_*.json
+data/fetched_*.json
+data/verified_*.json
+data/flagged_*.json
+data/distinct_flagged_*.json
+data/unresolved_*.json
+

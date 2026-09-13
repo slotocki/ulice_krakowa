@@ -1,0 +1,1379 @@
+{
+  "metadata": {
+    "title": "Katalog Uzupełniający Obiektów Miejskich m. Krakowa (Mosty, Osiedla, Bulwary, Parki)",
+    "description": "Zbiór 154 kluczowych obiektów toponimicznych dopełniających bazę 2763 ulic do pełnego rejestru miejskiego (wyzwanie 2961 obiektów Kamila Bąbla)",
+    "version": "1.0.0",
+    "generated_date": "2026-09-13",
+    "counts": {
+      "bridges_footbridges": 25,
+      "housing_estates": 77,
+      "boulevards_parks_greenery": 52,
+      "total_landmarks": 154
+    }
+  },
+  "bridges_footbridges": [
+    {
+      "id": "most_debnicki",
+      "name": "Most Dębnicki",
+      "type": "most_drogowy",
+      "barrier": "Wisła",
+      "district": "I Stare Miasto / VII Zwierzyniec / VIII Dębniki",
+      "year_built": 1951,
+      "earlier_versions": "1888 r. (most kolejowy)",
+      "patron": "Dębniki",
+      "engineering_features": "Najniżej zawieszony most drogowy w Krakowie, newralgiczny punkt podczas powodzi."
+    },
+    {
+      "id": "most_grunwaldzki",
+      "name": "Most Grunwaldzki",
+      "type": "most_drogowy_tramwajowy",
+      "barrier": "Wisła",
+      "district": "I Stare Miasto / VIII Dębniki",
+      "year_built": 1972,
+      "earlier_versions": "Brak",
+      "patron": "Bitwa pod Grunwaldem (1410 r.)",
+      "engineering_features": "Żelbetowa konstrukcja sprężona łącząca ul. Dietla i Monte Cassino."
+    },
+    {
+      "id": "most_pilsudskiego",
+      "name": "Most Józefa Piłsudskiego",
+      "type": "most_drogowy_tramwajowy",
+      "barrier": "Wisła",
+      "district": "I Kazimierz / XIII Podgórze",
+      "year_built": 1933,
+      "earlier_versions": "Odbudowany po 1945 r.",
+      "patron": "Marszałek Józef Piłsudski",
+      "engineering_features": "Najstarszy zachowany most drogowy na Wiśle w Krakowie, nitowana stalowa konstrukcja kratownicowa."
+    },
+    {
+      "id": "most_powstancow_slaskich",
+      "name": "Most Powstańców Śląskich",
+      "type": "most_drogowy_tramwajowy",
+      "barrier": "Wisła",
+      "district": "I Kazimierz / XIII Podgórze",
+      "year_built": 1971,
+      "earlier_versions": "Dawny Most Podgórski (Krakus) z 1850 r.",
+      "patron": "Powstania Śląskie (1919-1921)",
+      "engineering_features": "Stalowy most skrzynkowy łączący ul. Starowiślną z Podgórzem."
+    },
+    {
+      "id": "most_kotlarski",
+      "name": "Most Kotlarski",
+      "type": "most_drogowy_tramwajowy",
+      "barrier": "Wisła",
+      "district": "II Grzegórzki / XIII Zabłocie",
+      "year_built": 2001,
+      "earlier_versions": "Brak",
+      "patron": "Cech Kotlarzy (ul. Kotlarska)",
+      "engineering_features": "Stalowy most łukowy o rozpiętości 166 m bez podpór w nurcie rzeki."
+    },
+    {
+      "id": "kladka_ojca_bernatka",
+      "name": "Kładka Ojca Bernatka",
+      "type": "kladka_pieszo_rowerowa",
+      "barrier": "Wisła",
+      "district": "I Kazimierz / XIII Podgórze",
+      "year_built": 2010,
+      "earlier_versions": "Filary mostu z 1850 r.",
+      "patron": "O. Laetus Bernatek (bonifrater)",
+      "engineering_features": "Łuk stalowy o rozpiętości 145 m z dwoma pomostami, rzeźby Jerzego Kędziory, kłódki zakochanych."
+    },
+    {
+      "id": "most_zwierzyniecki",
+      "name": "Most Zwierzyniecki",
+      "type": "most_drogowy",
+      "barrier": "Wisła",
+      "district": "VII Zwierzyniec / VIII Dębniki",
+      "year_built": 2001,
+      "earlier_versions": "Dawny prom Salwator-Przegorzały",
+      "patron": "Dzielnica Zwierzyniec",
+      "engineering_features": "Most łukowy ze stalowym przęsłem 158 m w ciągu Trasy Zwierzynieckiej."
+    },
+    {
+      "id": "most_wandy",
+      "name": "Most Wandy",
+      "type": "most_drogowy",
+      "barrier": "Wisła",
+      "district": "XVIII Nowa Huta / XIII Podgórze",
+      "year_built": 2002,
+      "earlier_versions": "Dawny prom rzeczny",
+      "patron": "Księżniczka Wanda (Kopiec Wandy)",
+      "engineering_features": "Stalowy most blachownicowy o długości 352 m łączący Mogiłę i Przewóz."
+    },
+    {
+      "id": "most_nowohucki",
+      "name": "Most Nowohucki",
+      "type": "most_drogowy",
+      "barrier": "Wisła",
+      "district": "XIV Czyżyny / XVIII Nowa Huta / XIII Podgórze",
+      "year_built": 1951,
+      "earlier_versions": "Brak",
+      "patron": "Nowa Huta",
+      "engineering_features": "Stalowy most kratownicowy w ciągu ul. Nowohuckiej o długości 284 m."
+    },
+    {
+      "id": "most_kardynala_macharskiego",
+      "name": "Most kardynała Franciszka Macharskiego",
+      "type": "most_autostradowy_ekspresowy",
+      "barrier": "Wisła",
+      "district": "XVIII Nowa Huta / XIII Podgórze",
+      "year_built": 2017,
+      "earlier_versions": "Brak",
+      "patron": "Kardynał Franciszek Macharski",
+      "engineering_features": "Najdłuższy most w Krakowie (706 m), podwieszany wantowy w ciągu drogi ekspresowej S7."
+    },
+    {
+      "id": "most_srednicowy_kolejowy",
+      "name": "Most Kolejowy Średnicowy na Wiśle",
+      "type": "most_kolejowy_pieszo_rowerowy",
+      "barrier": "Wisła",
+      "district": "II Grzegórzki / XIII Zabłocie",
+      "year_built": 2023,
+      "earlier_versions": "Most kolejowy z 1863/1948 r.",
+      "patron": "Magistrala Kolejowa E30",
+      "engineering_features": "Zespół 3 mostów łukowych z 4 torami i podwieszonym traktem pieszo-rowerowym z widokiem na Wawel."
+    },
+    {
+      "id": "most_kolejowy_dabie",
+      "name": "Most Kolejowy Dąbie",
+      "type": "most_kolejowy",
+      "barrier": "Wisła",
+      "district": "II Grzegórzki / XIII Podgórze",
+      "year_built": 1952,
+      "earlier_versions": "Brak",
+      "patron": "Dąbie",
+      "engineering_features": "Czteroprzęsłowa konstrukcja kratownicowa małej obwodnicy kolejowej."
+    },
+    {
+      "id": "most_retmanski",
+      "name": "Most Retmański",
+      "type": "most_drogowy",
+      "barrier": "Rzeka Wilga",
+      "district": "VIII Ludwinów / XIII Podgórze",
+      "year_built": 1938,
+      "earlier_versions": "Kładki flisackie",
+      "patron": "Retman (starszy flisak)",
+      "engineering_features": "Zabytkowy żelbetowy most belkowy u ujścia Wilgi do Wisły."
+    },
+    {
+      "id": "most_sw_kingi",
+      "name": "Most św. Kingi",
+      "type": "most_drogowy",
+      "barrier": "Rzeka Wilga",
+      "district": "VIII Dębniki",
+      "year_built": 2002,
+      "earlier_versions": "Przebudowa",
+      "patron": "Święta Kinga",
+      "engineering_features": "Wielopasmowy most żelbetowy w ciągu ul. Konopnickiej (II obwodnica)."
+    },
+    {
+      "id": "most_ludwinowski",
+      "name": "Most Ludwinowski",
+      "type": "most_drogowy_pieszy",
+      "barrier": "Rzeka Wilga",
+      "district": "VIII Dębniki / XIII Podgórze",
+      "year_built": 1968,
+      "earlier_versions": "Most drewniany",
+      "patron": "Ludwinów",
+      "engineering_features": "Most w ciągu ul. Krasickiego i Rydlówki."
+    },
+    {
+      "id": "most_niepodleglosci",
+      "name": "Most Niepodległości",
+      "type": "most_drogowy_tramwajowy",
+      "barrier": "Rzeka Prądnik",
+      "district": "IV Prądnik Biały / III Prądnik Czerwony",
+      "year_built": 2023,
+      "earlier_versions": "Brak",
+      "patron": "Niepodległość Polski",
+      "engineering_features": "Most żelbetowy nowej linii tramwajowej Krowodrza Górka - Górka Narodowa."
+    },
+    {
+      "id": "estakada_obroncow_lwowa",
+      "name": "Estakada Obrońców Lwowa",
+      "type": "estakada_drogowa",
+      "barrier": "Stacja kolejowa Kraków Płaszów",
+      "district": "XIII Podgórze",
+      "year_built": 2001,
+      "earlier_versions": "Brak",
+      "patron": "Obrońcy Lwowa (1918-1919)",
+      "engineering_features": "Estakada drogowa o długości 820 m nad torami stacji Kraków Płaszów."
+    },
+    {
+      "id": "estakada_kaczmarskiego",
+      "name": "Estakada im. Jacka Kaczmarskiego",
+      "type": "estakada_drogowa",
+      "barrier": "Węzeł Nowohucka / Klimeckiego",
+      "district": "XIII Podgórze",
+      "year_built": 2011,
+      "earlier_versions": "Brak",
+      "patron": "Jacek Kaczmarski (1957-2004)",
+      "engineering_features": "Estakada żelbetowa sprężona o długości 420 m nad rondem Dywizjonu 308."
+    },
+    {
+      "id": "estakada_rozwadowskiego",
+      "name": "Estakada gen. Tadeusza Rozwadowskiego",
+      "type": "estakada_drogowa",
+      "barrier": "Węzeł al. 29 Listopada / Lublańska / Opolska",
+      "district": "III Prądnik Czerwony / IV Prądnik Biały",
+      "year_built": 2001,
+      "earlier_versions": "Brak",
+      "patron": "Gen. Tadeusz Rozwadowski",
+      "engineering_features": "Estakada III obwodnicy o długości 540 m nad wylotem na Warszawę."
+    },
+    {
+      "id": "estakada_lipska_wielicka",
+      "name": "Estakada tramwajowo-piesza Lipska-Wielicka",
+      "type": "estakada_tramwajowo_pieszo_rowerowa",
+      "barrier": "Stacja Kraków Płaszów",
+      "district": "XIII Podgórze",
+      "year_built": 2015,
+      "earlier_versions": "Brak",
+      "patron": "Krakowski Szybki Tramwaj",
+      "engineering_features": "Wantowy wiadukt tramwajowo-pieszo-rowerowy o długości 650 m z zejściem na perony PKP."
+    },
+    {
+      "id": "kladka_ludwinow_kazimierz",
+      "name": "Kładka Kazimierz–Ludwinów",
+      "type": "kladka_pieszo_rowerowa",
+      "barrier": "Wisła",
+      "district": "I Kazimierz / VIII Ludwinów",
+      "year_built": 2025,
+      "earlier_versions": "Inwestycja w realizacji (2024-2026)",
+      "patron": "Kazimierz i Ludwinów",
+      "engineering_features": "Sinusoidalna kładka w kształcie wstęgi z punktem widokowym. Projekt Lewicki Łatak."
+    },
+    {
+      "id": "kladka_kamieniolom_zakrzowek",
+      "name": "Kładki pływające Parku Zakrzówek",
+      "type": "kladka_piesza_rekreacyjna",
+      "barrier": "Zbiornik Zakrzówek",
+      "district": "VIII Dębniki",
+      "year_built": 2023,
+      "earlier_versions": "Kamieniołom zalany w latach 90.",
+      "patron": "Park Zakrzówek",
+      "engineering_features": "Podwieszane i pływające pomosty drewniane utrzymujące 5 basenów ekologicznych."
+    },
+    {
+      "id": "wiadukt_29_listopada",
+      "name": "Wiadukt kolejowy 29 Listopada",
+      "type": "wiadukt_kolejowy",
+      "barrier": "Aleja 29 Listopada",
+      "district": "I Stare Miasto / III Prądnik Czerwony",
+      "year_built": 2020,
+      "earlier_versions": "Austriacki wiadukt z 1899 r.",
+      "patron": "Aleja 29 Listopada",
+      "engineering_features": "Poszerzony wiadukt kolejowy nad arterią wylotową z Krakowa."
+    },
+    {
+      "id": "most_dabski",
+      "name": "Most Dąbski",
+      "type": "most_drogowy",
+      "barrier": "Rzeka Białucha (Prądnik)",
+      "district": "II Grzegórzki (Dąbie)",
+      "year_built": 1965,
+      "earlier_versions": "Most drewniany",
+      "patron": "Dąbie",
+      "engineering_features": "Żelbetowy most belkowy u ujścia Białuchy do Wisły."
+    },
+    {
+      "id": "most_tadeusza_mazowieckiego",
+      "name": "Most Tadeusza Mazowieckiego",
+      "type": "most_drogowy",
+      "barrier": "Rzeka Prądnik / Trasa Wolbromska",
+      "district": "IV Prądnik Biały",
+      "year_built": 2023,
+      "earlier_versions": "Brak",
+      "patron": "Tadeusz Mazowiecki (1927-2013)",
+      "engineering_features": "Most drogowy Trasy Wolbromskiej (al. Sosabowskiego) na północy Krakowa."
+    }
+  ],
+  "housing_estates": [
+    {
+      "id": "os_wandy",
+      "name": "Osiedle Wandy",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "A-1 Północ",
+      "decade": "1940/50",
+      "description": "Kolebka Nowej Huty – 23 czerwca 1949 r. postawiono tu fundamenty pierwszego bloku mieszkalnego (blok 14)."
+    },
+    {
+      "id": "os_willowe",
+      "name": "Osiedle Willowe",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "A-1 Południe",
+      "decade": "1940/50",
+      "description": "Jedno z najstarszych osiedli, niska kameralna zabudowa w duchu koncepcji miasta-ogrodu."
+    },
+    {
+      "id": "os_na_skarpie",
+      "name": "Osiedle Na Skarpie",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "A-Zachód",
+      "decade": "1950",
+      "description": "Położone na krawędzi pradoliny Wisły w Mogile. Mieści Szpital im. Żeromskiego i Park Żeromskiego."
+    },
+    {
+      "id": "os_mlodosci",
+      "name": "Osiedle Młodości",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "A-Wschód",
+      "decade": "1950",
+      "description": "Kameralne osiedle o zwartej, symetrycznej zabudowie wczesnosocrealistycznej."
+    },
+    {
+      "id": "os_ogrodowe",
+      "name": "Osiedle Ogrodowe",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "B-Południe",
+      "decade": "1950",
+      "description": "Zaprojektowane w duchu idei miasta-ogrodu z rozległym wewnętrznym parkiem osiedlowym."
+    },
+    {
+      "id": "os_stalowe",
+      "name": "Osiedle Stalowe",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "B-Północ",
+      "decade": "1950",
+      "description": "Klasyczny monumentalny socrealizm z potężnymi portalami bramnymi i gzymsami."
+    },
+    {
+      "id": "os_szkolne",
+      "name": "Osiedle Szkolne",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "B-Wschód",
+      "decade": "1950",
+      "description": "Oś edukacyjna dawnej Nowej Huty ze skupiskiem szkół zawodowych, techników i Zalewem Nowohuckim."
+    },
+    {
+      "id": "os_hutnicze",
+      "name": "Osiedle Hutnicze",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "B-Zachód",
+      "decade": "1950",
+      "description": "Dedykowane pierwszym kadrom inżynierskim Huty im. Lenina z reprezentacyjnymi elewacjami."
+    },
+    {
+      "id": "os_teatralne",
+      "name": "Osiedle Teatralne",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "C-1",
+      "decade": "1950",
+      "description": "Kulturalne serce Nowej Huty z Teatrem Ludowym (1955 r.) i dawnym kinem Świt."
+    },
+    {
+      "id": "os_gorali",
+      "name": "Osiedle Górali",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "C-2",
+      "decade": "1950",
+      "description": "Ośrodek z Teatrem Łaźnia Nowa (d. Dom Kultury Budowlanych) i Muzeum Czynu Zbrojnego."
+    },
+    {
+      "id": "os_urocze",
+      "name": "Osiedle Urocze",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "C-33",
+      "decade": "1950",
+      "description": "Socrealistyczny kwartał z parkową zielenią i rzeźbą Pelikany na dziedzińcu."
+    },
+    {
+      "id": "os_zielone",
+      "name": "Osiedle Zielone",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "C-3",
+      "decade": "1950",
+      "description": "Kwartał z bogatym starodrzewem i ogrodzonymi ogródkami przydomowymi."
+    },
+    {
+      "id": "os_zgody",
+      "name": "Osiedle Zgody",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "D-Południe (d. Pstrowskiego)",
+      "decade": "1950",
+      "description": "Zabudowa przy Parku Ratuszowym z Muzeum Nowej Huty (d. kino Światowid) i blokiem Francuz."
+    },
+    {
+      "id": "os_sloneczne",
+      "name": "Osiedle Słoneczne",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "D-Północ",
+      "decade": "1950",
+      "description": "Sąsiaduje z Aleją Róż i Parkiem Ratuszowym, charakterystyczne podcienia sklepowe."
+    },
+    {
+      "id": "os_szklane_domy",
+      "name": "Osiedle Szklane Domy",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "D-Centrum",
+      "decade": "1950/60",
+      "description": "Nawiązanie do Przedwiośnia Żeromskiego, mieści kultowy modernistyczny Blok Szwedzki z 1959 r."
+    },
+    {
+      "id": "os_kolorowe",
+      "name": "Osiedle Kolorowe",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "C-Południe",
+      "decade": "1950/60",
+      "description": "Przejście do modernizmu, mieści Park Wiśniowy Sad z plenerową galerią rzeźb."
+    },
+    {
+      "id": "os_handlowe",
+      "name": "Osiedle Handlowe",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "D-1",
+      "decade": "1950/60",
+      "description": "Główny kwartał handlowo-usługowy przy al. Andersa."
+    },
+    {
+      "id": "os_spoldzielcze",
+      "name": "Osiedle Spółdzielcze",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "C-Zachód",
+      "decade": "1950/60",
+      "description": "Zbudowane dla spółdzielczości pracy z dużą ilością zieleni parkowej."
+    },
+    {
+      "id": "os_centrum_a",
+      "name": "Osiedle Centrum A",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "Sektor A",
+      "decade": "1950",
+      "description": "Północno-wschodnia pierzeja Placu Centralnego z monumentalnymi kolumnadami i attykami."
+    },
+    {
+      "id": "os_centrum_b",
+      "name": "Osiedle Centrum B",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "Sektor B",
+      "decade": "1950",
+      "description": "Północno-zachodnia pierzeja Placu Centralnego, ikona architektury socrealizmu w Polsce."
+    },
+    {
+      "id": "os_centrum_c",
+      "name": "Osiedle Centrum C",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "Sektor C",
+      "decade": "1950",
+      "description": "Południowo-zachodni narożnik Placu Centralnego otwierający się na Łąki Nowohuckie."
+    },
+    {
+      "id": "os_centrum_d",
+      "name": "Osiedle Centrum D",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "Sektor D",
+      "decade": "1950/70",
+      "description": "Południowo-wschodni narożnik Placu Centralnego z wieżowcem Światowid."
+    },
+    {
+      "id": "os_2_pulku_lotniczego",
+      "name": "Osiedle 2 Pułku Lotniczego",
+      "district": "XIV Czyżyny",
+      "historic_code": "Czyżyny Zachód",
+      "decade": "1970/80",
+      "description": "Wzniesione na dawnym pasie startowym historycznego lotniska wojskowego Kraków-Rakowice-Czyżyny."
+    },
+    {
+      "id": "os_dywizjonu_303",
+      "name": "Osiedle Dywizjonu 303",
+      "district": "XIV Czyżyny",
+      "historic_code": "Czyżyny Północ",
+      "decade": "1970/80",
+      "description": "Uhonorowanie Dywizjonu 303, modernistyczne punktowce z widokiem na Park Lotników."
+    },
+    {
+      "id": "os_akademickie",
+      "name": "Osiedle Akademickie",
+      "district": "XIV Czyżyny",
+      "historic_code": "Miasteczko PK",
+      "decade": "1970",
+      "description": "Miasteczko domów studenckich Politechniki Krakowskiej w Czyżynach."
+    },
+    {
+      "id": "os_kosciuszkowskie",
+      "name": "Osiedle Kościuszkowskie",
+      "district": "XVI Bieńczyce",
+      "historic_code": "Bieńczyce B-1",
+      "decade": "1960/70",
+      "description": "Pasmowe osiedle wielkopłytowe projektu Małgorzaty i Jana Budziłów z centralnym deptakiem."
+    },
+    {
+      "id": "os_albertynskie",
+      "name": "Osiedle Albertyńskie",
+      "district": "XVI Bieńczyce",
+      "historic_code": "Bieńczyce B-2 (d. XX-lecia PRL)",
+      "decade": "1960/70",
+      "description": "Patronem jest św. Brat Albert Chmielowski. Bliskość Plant Bieńczyckich."
+    },
+    {
+      "id": "os_jagiellonskie",
+      "name": "Osiedle Jagiellońskie",
+      "district": "XVI Bieńczyce",
+      "historic_code": "Bieńczyce A",
+      "decade": "1960",
+      "description": "Jedno z pierwszych osiedli Bieńczyc, upamiętniające dynastię Jagiellonów."
+    },
+    {
+      "id": "os_kazimierzowskie",
+      "name": "Osiedle Kazimierzowskie",
+      "district": "XVI Bieńczyce",
+      "historic_code": "Bieńczyce C",
+      "decade": "1960/70",
+      "description": "Nazwane na cześć króla Kazimierza Wielkiego, charakterystyczne falowce mieszkalne."
+    },
+    {
+      "id": "os_kalinowe",
+      "name": "Osiedle Kalinowe",
+      "district": "XVI Bieńczyce",
+      "historic_code": "Bieńczyce D",
+      "decade": "1960/70",
+      "description": "Modernistyczna wielka płyta wkomponowana w zieleń dawnych sadów wiejskich."
+    },
+    {
+      "id": "os_niepodleglosci",
+      "name": "Osiedle Niepodległości",
+      "district": "XVI Bieńczyce",
+      "historic_code": "Bieńczyce E",
+      "decade": "1970",
+      "description": "Zabudowa wielorodzinna upamiętniająca niepodległość Polski."
+    },
+    {
+      "id": "os_przy_arce",
+      "name": "Osiedle Przy Arce",
+      "district": "XVI Bieńczyce",
+      "historic_code": "Bieńczyce F (d. Dąbrowszczaków)",
+      "decade": "1970",
+      "description": "Rozwinięte wokół kościoła Arka Pana – symbolu walki robotników o wolność religijną."
+    },
+    {
+      "id": "os_strusia",
+      "name": "Osiedle Strusia",
+      "district": "XVI Bieńczyce",
+      "historic_code": "Bieńczyce G",
+      "decade": "1960/70",
+      "description": "Patronem jest dr Józef Struś, XVI-wieczny lekarz i badacz pulsu ludzkiego."
+    },
+    {
+      "id": "os_wysokie",
+      "name": "Osiedle Wysokie",
+      "district": "XVI Bieńczyce",
+      "historic_code": "Bieńczyce H",
+      "decade": "1960/70",
+      "description": "Nazwa od wzniesionego położenia oraz dominanty 11-piętrowych wieżowców."
+    },
+    {
+      "id": "os_zlotej_jesieni",
+      "name": "Osiedle Złotej Jesieni",
+      "district": "XVI Bieńczyce",
+      "historic_code": "Bieńczyce I",
+      "decade": "1970",
+      "description": "Sąsiaduje ze Szpitalem Specjalistycznym im. L. Rydygiera."
+    },
+    {
+      "id": "os_bohaterow_wrzesnia",
+      "name": "Osiedle Bohaterów Września",
+      "district": "XV Mistrzejowice",
+      "historic_code": "Mistrzejowice Północ",
+      "decade": "1970/80",
+      "description": "Upamiętnia żołnierzy Wojska Polskiego z września 1939 r., pętla tramwajowa i planty."
+    },
+    {
+      "id": "os_kombatantow",
+      "name": "Osiedle Kombatantów",
+      "district": "XV Mistrzejowice",
+      "historic_code": "Mistrzejowice A",
+      "decade": "1970",
+      "description": "Modernistyczne osiedle wzniesione w sąsiedztwie Parku Tysiąclecia."
+    },
+    {
+      "id": "os_oswiecenia",
+      "name": "Osiedle Oświecenia",
+      "district": "XV Mistrzejowice",
+      "historic_code": "Mistrzejowice B",
+      "decade": "1970/80",
+      "description": "Wzniesione na wzgórzu z szeroką panoramą na Kraków i pasmo Beskidów."
+    },
+    {
+      "id": "os_piastow",
+      "name": "Osiedle Piastów",
+      "district": "XV Mistrzejowice",
+      "historic_code": "Mistrzejowice C",
+      "decade": "1970/80",
+      "description": "Północno-wschodnia brama Mistrzejowic dedykowana dynastii Piastów."
+    },
+    {
+      "id": "os_srebrnych_orlow",
+      "name": "Osiedle Srebrnych Orłów",
+      "district": "XV Mistrzejowice",
+      "historic_code": "Mistrzejowice D",
+      "decade": "1970/80",
+      "description": "Zabudowa z lat 70. i 80. w rejonie ul. Wiślickiej i Mikołajczyka."
+    },
+    {
+      "id": "os_tysiaclecia",
+      "name": "Osiedle Tysiąclecia",
+      "district": "XV Mistrzejowice",
+      "historic_code": "Mistrzejowice E",
+      "decade": "1960/70",
+      "description": "Wzniesione na pamiątkę Tysiąclecia Państwa Polskiego (1966 r.), graniczy z Parkiem Tysiąclecia."
+    },
+    {
+      "id": "os_zlotego_wieku",
+      "name": "Osiedle Złotego Wieku",
+      "district": "XV Mistrzejowice",
+      "historic_code": "Mistrzejowice F",
+      "decade": "1960/70",
+      "description": "Upamiętnia Złoty Wiek kultury polskiej, mieści kościół św. Maksymiliana Kolbego."
+    },
+    {
+      "id": "os_na_stoku",
+      "name": "Osiedle Na Stoku",
+      "district": "XVII Wzgórza Krzesławickie",
+      "historic_code": "Wzgórza Zachód",
+      "decade": "1970",
+      "description": "Kaskadowy układ urbanistyczny na wzgórzu obok zabytkowego Fortu 49 Krzesławice."
+    },
+    {
+      "id": "os_na_wzgorzach",
+      "name": "Osiedle Na Wzgórzach",
+      "district": "XVII Wzgórza Krzesławickie",
+      "historic_code": "Wzgórza Wschód",
+      "decade": "1960/70",
+      "description": "Najwyżej położone osiedle Nowej Huty z pętlą tramwajową i panoramą doliny Dłubni."
+    },
+    {
+      "id": "os_krzeslawice",
+      "name": "Osiedle Krzesławice",
+      "district": "XVII Wzgórza Krzesławickie",
+      "historic_code": "Wieś Krzesławice",
+      "decade": "Tradycyjna",
+      "description": "Zabytkowa wieś z Dworkiem Jana Matejki i drewnianym kościołem św. Jana Chrzciciela z 1633 r."
+    },
+    {
+      "id": "os_wadow",
+      "name": "Osiedle Wadów",
+      "district": "XVII Wzgórza Krzesławickie",
+      "historic_code": "Wadów",
+      "decade": "Tradycyjna",
+      "description": "Podmiejska jednostka osiedlowa z zabytkowym parkiem i pałacem Badenich."
+    },
+    {
+      "id": "os_luczanowice",
+      "name": "Osiedle Łuczanowice",
+      "district": "XVII Wzgórza Krzesławickie",
+      "historic_code": "Łuczanowice",
+      "decade": "Tradycyjna",
+      "description": "Osiedle z cmentarzem ewangelickim Żeleńskich oraz dworem szlacheckim."
+    },
+    {
+      "id": "os_koscielniki",
+      "name": "Osiedle Kościelniki",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "Kościelniki",
+      "decade": "Tradycyjna",
+      "description": "Dawna wieś z kompleksem pałacowo-parkowym Wodzickich."
+    },
+    {
+      "id": "os_ruszcza",
+      "name": "Osiedle Ruszcza",
+      "district": "XVIII Nowa Huta",
+      "historic_code": "Ruszcza",
+      "decade": "Tradycyjna",
+      "description": "Historyczne osiedle z gotyckim kościołem św. Grzegorza z 1420 r."
+    },
+    {
+      "id": "os_pradnik_czerwony",
+      "name": "Osiedle Prądnik Czerwony",
+      "district": "III Prądnik Czerwony",
+      "historic_code": "Prądnik Północ",
+      "decade": "1970/80",
+      "description": "Jedno z największych krakowskich pasmowych osiedli z wielkiej płyty w dolinie Sudołu Dominikańskiego."
+    },
+    {
+      "id": "os_ugorek",
+      "name": "Osiedle Ugorek",
+      "district": "III Prądnik Czerwony",
+      "historic_code": "Ugorek",
+      "decade": "1960",
+      "description": "Kameralne osiedle modernistyczne z lat 60. o niskiej i średniej zabudowie z gęstą zielenią."
+    },
+    {
+      "id": "os_wieczysta",
+      "name": "Osiedle Wieczysta",
+      "district": "III Prądnik Czerwony",
+      "historic_code": "Wieczysta",
+      "decade": "1950/60",
+      "description": "Zabudowa wielorodzinna pomiędzy ul. Mogilską a Meissnera."
+    },
+    {
+      "id": "os_olsza_2",
+      "name": "Osiedle Olsza II",
+      "district": "III Prądnik Czerwony",
+      "historic_code": "Olsza",
+      "decade": "1960/70",
+      "description": "Modernistyczne bloki w dolinie rzeki Prądnik przy ul. Pilotów."
+    },
+    {
+      "id": "os_oficerskie",
+      "name": "Osiedle Oficerskie",
+      "district": "II Grzegórzki",
+      "historic_code": "Kolonia Oficerska",
+      "decade": "1920/30",
+      "description": "Zabytkowy zespół willowo-szeregowy z okresu międzywojennego dla oficerów Wojska Polskiego."
+    },
+    {
+      "id": "os_krowodrza_gorka",
+      "name": "Osiedle Krowodrza Górka",
+      "district": "IV Prądnik Biały",
+      "historic_code": "d. XXX-lecia PRL",
+      "decade": "1970",
+      "description": "Kluczowy węzeł komunikacyjny północnego Krakowa z pętlą tramwajową i Parkiem Krowoderskim."
+    },
+    {
+      "id": "os_azory",
+      "name": "Osiedle Azory",
+      "district": "IV Prądnik Biały",
+      "historic_code": "Azory",
+      "decade": "1960/70",
+      "description": "Rozległe osiedle mieszkaniowe o unikalnej nazwie toponimicznej nawiązującej do odległych wysp."
+    },
+    {
+      "id": "os_witkowice_nowe",
+      "name": "Osiedle Witkowice Nowe",
+      "district": "IV Prądnik Biały",
+      "historic_code": "Witkowice",
+      "decade": "1980/90",
+      "description": "Zabudowa kameralna w sąsiedztwie Parku Leśnego Witkowice."
+    },
+    {
+      "id": "os_gotyk",
+      "name": "Osiedle Gotyk",
+      "district": "IV Prądnik Biały",
+      "historic_code": "Górka Narodowa Wschód",
+      "decade": "2000+",
+      "description": "Współczesne osiedle na Górce Narodowej z nazwami ulic nawiązującymi do architektury gotyku."
+    },
+    {
+      "id": "os_zabiniec",
+      "name": "Osiedle Żabiniec",
+      "district": "IV Prądnik Biały",
+      "historic_code": "Żabiniec",
+      "decade": "1990/2000",
+      "description": "Pionierskie osiedle okresu transformacji ustrojowej na północ od Dworca Towarowego."
+    },
+    {
+      "id": "os_widok",
+      "name": "Osiedle Widok (Zarzecze)",
+      "district": "VI Bronowice",
+      "historic_code": "Widok",
+      "decade": "1970",
+      "description": "Zaprojektowane przez arch. K. Bieńka tarasowo-pasmowe osiedle wkomponowane w ciąg Młynówki Królewskiej."
+    },
+    {
+      "id": "os_bronowice_nowe",
+      "name": "Osiedle Bronowice Nowe",
+      "district": "VI Bronowice",
+      "historic_code": "Bronowice Nowe",
+      "decade": "1970/80",
+      "description": "Wielkopłytowe osiedle przy pętli tramwajowej w sąsiedztwie młodopolskich Bronowic."
+    },
+    {
+      "id": "os_cichy_kacik",
+      "name": "Osiedle Cichy Kącik",
+      "district": "V Krowodrza",
+      "historic_code": "Cichy Kącik",
+      "decade": "1930",
+      "description": "Luksusowa modernistyczna kolonia willowo-mieszkaniowa z lat 30. przy Błoniach Krakowskich."
+    },
+    {
+      "id": "os_podwawelskie",
+      "name": "Osiedle Podwawelskie",
+      "district": "VIII Dębniki",
+      "historic_code": "Dębniki Południe",
+      "decade": "1970",
+      "description": "Położone naprzeciwko Wawelu z unikalnym widokiem na Zamek Królewski i Skałkę."
+    },
+    {
+      "id": "os_ruczaj_zaborze",
+      "name": "Osiedle Ruczaj-Zaborze",
+      "district": "VIII Dębniki",
+      "historic_code": "Ruczaj",
+      "decade": "1980/90",
+      "description": "Początek dynamicznego rozwoju południowo-zachodniego Krakowa."
+    },
+    {
+      "id": "os_europejskie",
+      "name": "Osiedle Europejskie",
+      "district": "VIII Dębniki (Ruczaj)",
+      "historic_code": "Ruczaj Nowy",
+      "decade": "2000+",
+      "description": "Jeden z pierwszych w Polsce kwartałowych kompleksów deweloperskich z nazwami stolic europejskich."
+    },
+    {
+      "id": "os_kliny_zacisze",
+      "name": "Osiedle Kliny Zacisze",
+      "district": "X Swoszowice",
+      "historic_code": "Kliny",
+      "decade": "1990/2000",
+      "description": "Niska zabudowa w otoczeniu Lasu Borkowskiego i Parku Maćka i Doroty."
+    },
+    {
+      "id": "os_cegielniana",
+      "name": "Osiedle Cegielniana",
+      "district": "IX Łagiewniki-Borek Fałęcki",
+      "historic_code": "Łagiewniki Zachód",
+      "decade": "1970/80",
+      "description": "Wzniesione na terenach dawnej cegielni w Łagiewnikach w dolinie rzeki Wilgi."
+    },
+    {
+      "id": "os_zaulek_jugowicki",
+      "name": "Osiedle Zaułek Jugowicki",
+      "district": "X Swoszowice",
+      "historic_code": "Jugowice",
+      "decade": "2000+",
+      "description": "Kameralne osiedle na południu miasta w pobliżu Góry Borkowskiej."
+    },
+    {
+      "id": "os_kurdwanow_nowy",
+      "name": "Osiedle Kurdwanów Nowy",
+      "district": "XI Podgórze Duchackie",
+      "historic_code": "Kurdwanów",
+      "decade": "1980",
+      "description": "Wielkie południowe osiedle mieszkaniowe z Parkiem Kurdwanów i trasą Szybkiego Tramwaju."
+    },
+    {
+      "id": "os_piaski_nowe",
+      "name": "Osiedle Piaski Nowe",
+      "district": "XI Podgórze Duchackie",
+      "historic_code": "Piaski",
+      "decade": "1970/80",
+      "description": "Osiedle na wzgórzu z blokami o łamanych bryłach nad potokiem Drwina Długa."
+    },
+    {
+      "id": "os_wola_duchacka_wschod",
+      "name": "Osiedle Wola Duchacka Wschód",
+      "district": "XI Podgórze Duchackie",
+      "historic_code": "Wola Duchacka",
+      "decade": "1970/80",
+      "description": "Bloki wielkopłytowe w sąsiedztwie zabytkowego parku Bemów."
+    },
+    {
+      "id": "os_wola_duchacka_zachod",
+      "name": "Osiedle Wola Duchacka Zachód",
+      "district": "XI Podgórze Duchackie",
+      "historic_code": "Wola Duchacka",
+      "decade": "1980",
+      "description": "Zabudowa wielorodzinna wzdłuż ul. Beskidzkiej i Kordiana."
+    },
+    {
+      "id": "os_na_kozlowce",
+      "name": "Osiedle Na Kozłówce",
+      "district": "XII Bieżanów-Prokocim",
+      "historic_code": "Kozłówka",
+      "decade": "1960/70",
+      "description": "Kameralne modernistyczne osiedle z 4-piętrowymi blokami w gęstym drzewostanie."
+    },
+    {
+      "id": "os_prokocim_nowy",
+      "name": "Osiedle Prokocim Nowy",
+      "district": "XII Bieżanów-Prokocim",
+      "historic_code": "Prokocim",
+      "decade": "1970/80",
+      "description": "Wielki zespół mieszkaniowy w sąsiedztwie Parku Jerzmanowskich i Szpitala Uniwersyteckiego."
+    },
+    {
+      "id": "os_nowy_biezanow",
+      "name": "Osiedle Nowy Bieżanów",
+      "district": "XII Bieżanów-Prokocim",
+      "historic_code": "Bieżanów Północ",
+      "decade": "1970/80",
+      "description": "Wielkie osiedle południowo-wschodniego Krakowa z pętlą tramwajową i Parkiem Aleksandry."
+    },
+    {
+      "id": "os_zlocien",
+      "name": "Osiedle Złocień",
+      "district": "XII Bieżanów-Prokocim",
+      "historic_code": "Złocień",
+      "decade": "2000+",
+      "description": "Dynamicznie rosnące osiedle XXI wieku z przystankiem Szybkiej Kolei Aglomeracyjnej (SKA)."
+    },
+    {
+      "id": "os_plaszow",
+      "name": "Osiedle Płaszów",
+      "district": "XIII Podgórze",
+      "historic_code": "Płaszów",
+      "decade": "1980/2000",
+      "description": "Położone w zakolu Wisły w sąsiedztwie Zalewu Bagry."
+    }
+  ],
+  "boulevards_parks_greenery": [
+    {
+      "id": "bulwar_czerwienski",
+      "name": "Bulwar Czerwieński",
+      "type": "bulwar_wislany",
+      "district": "I Stare Miasto",
+      "year_established": 1905,
+      "patron": "Grody Czerwieńskie",
+      "description": "Reprezentacyjny bulwar pod Wawelem z Pomnikiem Dżoka, Smoka Wawelskiego i Aleją Gwiazd."
+    },
+    {
+      "id": "bulwar_poleski",
+      "name": "Bulwar Poleski",
+      "type": "bulwar_wislany",
+      "district": "VIII Dębniki",
+      "year_established": 1905,
+      "patron": "Polesie",
+      "description": "Prawobrzeżny bulwar naprzeciw Wawelu i Skałki z Muzeum Manggha."
+    },
+    {
+      "id": "bulwar_rodla",
+      "name": "Bulwar Rodła",
+      "type": "bulwar_wislany",
+      "district": "VII Zwierzyniec",
+      "year_established": 1905,
+      "patron": "Znak Rodła",
+      "description": "Bulwar od ujścia Rudawy do Wisły na Salwatorze z przystanią Lajkonika i widokiem na Norbertanki."
+    },
+    {
+      "id": "bulwar_inflancki",
+      "name": "Bulwar Inflancki",
+      "type": "bulwar_wislany",
+      "district": "I Kazimierz",
+      "year_established": 1905,
+      "patron": "Inflanty",
+      "description": "Bulwar wzdłuż Kazimierza pod Kościołem na Skałce, łączy Most Grunwaldzki z Kładką Bernatka."
+    },
+    {
+      "id": "bulwar_kurlandzki",
+      "name": "Bulwar Kurlandzki",
+      "type": "bulwar_wislany",
+      "district": "I Kazimierz / II Grzegórzki",
+      "year_established": 1905,
+      "patron": "Kurlandia",
+      "description": "Lewobrzeżny bulwar od ul. Gazowej do Mostu Kotlarskiego z klubami wioślarskimi."
+    },
+    {
+      "id": "bulwar_podolski",
+      "name": "Bulwar Podolski",
+      "type": "bulwar_wislany",
+      "district": "XIII Podgórze",
+      "year_established": 1905,
+      "patron": "Podole",
+      "description": "Prawobrzeżny bulwar w Podgórzu, przy którym wznosi się gmach Cricoteki Tadeusza Kantora."
+    },
+    {
+      "id": "bulwar_wolynski",
+      "name": "Bulwar Wołyński",
+      "type": "bulwar_wislany",
+      "district": "VIII Ludwinów",
+      "year_established": 1905,
+      "patron": "Wołyń",
+      "description": "Pomiędzy ujściem Wilgi a Mostem Grunwaldzkim, dawny Hotel Forum i balon widokowy."
+    },
+    {
+      "id": "bulwar_lotnikow_wislanych",
+      "name": "Bulwar Lotników Wiślanych",
+      "type": "bulwar_wislany",
+      "district": "II Grzegórzki (Dąbie)",
+      "year_established": 1991,
+      "patron": "Lotnicy alianccy i polscy",
+      "description": "Ciąg pieszo-rowerowy od Mostu Kotlarskiego ku stopniowi wodnemu Dąbie."
+    },
+    {
+      "id": "bulwar_szymborskiej",
+      "name": "Bulwar Wisławy Szymborskiej",
+      "type": "bulwar_wislany",
+      "district": "VIII Dębniki",
+      "year_established": 2013,
+      "patron": "Wisława Szymborska (1923-2012)",
+      "description": "Prawobrzeżny odcinek bulwarów wiślanych w Dębnikach dedykowany noblistce."
+    },
+    {
+      "id": "bulwar_dabie",
+      "name": "Bulwar Dąbie",
+      "type": "bulwar_wislany",
+      "district": "II Grzegórzki",
+      "year_established": 1961,
+      "patron": "Dąbie",
+      "description": "Bulwar nadrzeczny przy Stopniu Wodnym Dąbie."
+    },
+    {
+      "id": "planty_krakowskie",
+      "name": "Planty Krakowskie",
+      "type": "planty",
+      "district": "I Stare Miasto",
+      "year_established": 1820,
+      "patron": "Florian Straszewski (twórca)",
+      "description": "Unikatowy park o pow. 21 ha opasujący całe Stare Miasto w miejscu rozebranych murów miejskich i fosy."
+    },
+    {
+      "id": "planty_nowackiego",
+      "name": "Planty Floriana Nowackiego",
+      "type": "planty",
+      "district": "XIII Podgórze",
+      "year_established": 1868,
+      "patron": "Florian Nowacki (burmistrz Podgórza)",
+      "description": "Najstarszy park Podgórza, w widłach rzeki Wilgi i Wisły z obeliskiem pamięci powstania 1846 r."
+    },
+    {
+      "id": "planty_bienczyckie",
+      "name": "Planty Bieńczyckie",
+      "type": "planty",
+      "district": "XVI Bieńczyce",
+      "year_established": 1970,
+      "patron": "Bieńczyce",
+      "description": "Zielony pas parkowy łączący modernistyczne osiedla Bieńczyc i Nowej Huty."
+    },
+    {
+      "id": "planty_mistrzejowickie",
+      "name": "Planty Mistrzejowickie",
+      "type": "planty",
+      "district": "XV Mistrzejowice",
+      "year_established": 1980,
+      "patron": "Mistrzejowice",
+      "description": "Park linearny wzdłuż ciągów pieszych i wzgórz widokowych północy."
+    },
+    {
+      "id": "park_jordana",
+      "name": "Park Henryka Jordana",
+      "type": "park_miejski",
+      "district": "V Krowodrza",
+      "year_established": 1889,
+      "patron": "Dr Henryk Jordan (1842-1907)",
+      "description": "Pierwszy w Europie publiczny park gier i zabaw dla młodzieży z galerią popiersi słynnych Polaków."
+    },
+    {
+      "id": "park_krakowski",
+      "name": "Park Krakowski im. Marka Grechuty",
+      "type": "park_miejski",
+      "district": "V Krowodrza",
+      "year_established": 1885,
+      "patron": "Marek Grechuta (1945-2006)",
+      "description": "Zabytkowy park w stylu wiedeńskim przy al. Mickiewicza z dużym stawem i galerią rzeźb z lat 70."
+    },
+    {
+      "id": "park_bednarskiego",
+      "name": "Park im. Wojciecha Bednarskiego",
+      "type": "park_miejski",
+      "district": "XIII Podgórze",
+      "year_established": 1896,
+      "patron": "Wojciech Bednarski (1841-1914)",
+      "description": "Unikatowy park krajobrazowy na dnie dawnego kamieniołomu wapienia w Krzemionkach Podgórskich."
+    },
+    {
+      "id": "park_lotnikow_polskich",
+      "name": "Park Lotników Polskich",
+      "type": "park_miejski",
+      "district": "XIV Czyżyny",
+      "year_established": 1966,
+      "patron": "Polscy Lotnicy",
+      "description": "Jeden z największych parków Krakowa (60 ha), z Ogrodem Doświadczeń im. Lema i stawem."
+    },
+    {
+      "id": "park_krowoderski",
+      "name": "Park Krowoderski",
+      "type": "park_miejski",
+      "district": "IV Prądnik Biały",
+      "year_established": 1980,
+      "patron": "Krowodrza",
+      "description": "Park rekreacyjny na Krowodrzy Górce z dawnym szańcem Twierdzy Kraków i górką saneczkową."
+    },
+    {
+      "id": "park_kosciuszki",
+      "name": "Park im. Tadeusza Kościuszki",
+      "type": "park_miejski",
+      "district": "IV Prądnik Biały",
+      "year_established": 1780,
+      "patron": "Tadeusz Kościuszko",
+      "description": "Zabytkowy park podworski nad Białuchą otaczający renesansowy Dworek Białoprądnicki."
+    },
+    {
+      "id": "park_decjusza",
+      "name": "Park Decjusza",
+      "type": "park_miejski",
+      "district": "VII Zwierzyniec (Wola Justowska)",
+      "year_established": 1535,
+      "patron": "Justus Ludwik Decjusz (1485-1545)",
+      "description": "Jeden z najstarszych parków Krakowa, otaczający renesansową Willę Decjusza, rzeźby B. Chromego."
+    },
+    {
+      "id": "park_jerzmanowskich",
+      "name": "Park im. Anny i Erazma Jerzmanowskich",
+      "type": "park_miejski",
+      "district": "XII Bieżanów-Prokocim",
+      "year_established": 1820,
+      "patron": "Erazm Jerzmanowski (polski Nobel) i żona Anna",
+      "description": "Zabytkowy park w Prokocimiu z pałacem, stawami i fontanną prof. Wiktora Zina z Rynku Głównego."
+    },
+    {
+      "id": "park_strzelecki",
+      "name": "Park Strzelecki",
+      "type": "park_miejski",
+      "district": "II Grzegórzki",
+      "year_established": 1797,
+      "patron": "Bractwo Kurkowe",
+      "description": "Zabytkowy ogród Bractwa Kurkowego przy ul. Lubicz z neogotyckim pałacykiem Celestat."
+    },
+    {
+      "id": "park_ratuszowy",
+      "name": "Park Ratuszowy",
+      "type": "park_miejski",
+      "district": "XVIII Nowa Huta",
+      "year_established": 1956,
+      "patron": "Niezrealizowany Ratusz Nowohucki",
+      "description": "Park przy al. Róż z kultową rzeźbą plenerową Ryba."
+    },
+    {
+      "id": "park_szwedzki",
+      "name": "Park Szwedzki",
+      "type": "park_miejski",
+      "district": "XVIII Nowa Huta",
+      "year_established": 1960,
+      "patron": "Blok Szwedzki",
+      "description": "Park łączący os. Szklane Domy z os. Słonecznym z rzeźbą Dojrzewanie Wincentego Kućmy."
+    },
+    {
+      "id": "park_wisniowy_sad",
+      "name": "Park Wiśniowy Sad",
+      "type": "park_miejski",
+      "district": "XVIII Nowa Huta",
+      "year_established": 1965,
+      "patron": "Sady wsi Mogiła",
+      "description": "Park na os. Kolorowym z plenerową galerią rzeźb z lat 60. i 70."
+    },
+    {
+      "id": "park_zeromskiego",
+      "name": "Park Stefana Żeromskiego",
+      "type": "park_miejski",
+      "district": "XVIII Nowa Huta",
+      "year_established": 1952,
+      "patron": "Stefan Żeromski (1864-1925)",
+      "description": "Park na os. Na Skarpie przylegający do szpitala miejskiego i skarpy wiślanej."
+    },
+    {
+      "id": "park_zalew_nowohucki",
+      "name": "Park Zalew Nowohucki",
+      "type": "park_miejski_wodny",
+      "district": "XVIII Nowa Huta",
+      "year_established": 1957,
+      "patron": "Rzeka Dłubnia",
+      "description": "Akwen rekreacyjny ze sztuczną Małpią Wyspą, tężnią solankową, plażą i alejami spacerowymi."
+    },
+    {
+      "id": "park_bagry_wielkie",
+      "name": "Park Miejski Bagry Wielkie",
+      "type": "park_miejski_wodny",
+      "district": "XIII Podgórze (Płaszów)",
+      "year_established": 2018,
+      "patron": "Zalew Bagry",
+      "description": "Główne kąpielisko miejskie z plażami, klubami żeglarskimi i tężnią na Płaszowie."
+    },
+    {
+      "id": "park_zakrzowek",
+      "name": "Park Zakrzówek",
+      "type": "park_miejski_wodny",
+      "district": "VIII Dębniki",
+      "year_established": 2023,
+      "patron": "Kamieniołom Zakrzówek",
+      "description": "Turkusowy akwen po kamieniołomie wapienia z 5 pływającymi basenami i trasami biegowymi."
+    },
+    {
+      "id": "skalki_twardowskiego",
+      "name": "Uroczysko Skałki Twardowskiego",
+      "type": "uroczysko_park_lesny",
+      "district": "VIII Dębniki",
+      "year_established": 1970,
+      "patron": "Mistrz Twardowski",
+      "description": "Wzgórze jurajskie z ostańcami wapiennymi, Jaskinią Twardowskiego i ścianami wspinaczkowymi."
+    },
+    {
+      "id": "park_debnicki",
+      "name": "Park Dębnicki",
+      "type": "park_miejski",
+      "district": "VIII Dębniki",
+      "year_established": 2002,
+      "patron": "Dębniki",
+      "description": "Park przy ul. Praskiej otaczający neorenesansowy Pałac Lasockich."
+    },
+    {
+      "id": "park_kurdwanow",
+      "name": "Park Kurdwanów",
+      "type": "park_miejski",
+      "district": "XI Podgórze Duchackie",
+      "year_established": 2000,
+      "patron": "Kurdwanów",
+      "description": "Centrum rekreacyjne południa miasta z amfiteatrem i kortami."
+    },
+    {
+      "id": "park_stacja_wisla",
+      "name": "Park Stacja Wisła",
+      "type": "park_miejski",
+      "district": "XIII Podgórze (Zabłocie)",
+      "year_established": 2018,
+      "patron": "Dawna stacja kolejowa Zabłocie",
+      "description": "Klimatyczny park kieszonkowo-industrialny nad Wisłą z pawilonem edukacyjnym."
+    },
+    {
+      "id": "park_kleparski",
+      "name": "Park Kleparski",
+      "type": "park_miejski",
+      "district": "I Stare Miasto / V Krowodrza",
+      "year_established": 1900,
+      "patron": "Fort Kleparz",
+      "description": "Zabytkowy park otaczający bastionowy Fort Kleparz z 1860 r."
+    },
+    {
+      "id": "park_zaczarowana_dorozka",
+      "name": "Park Zaczarowana Dorożka",
+      "type": "park_miejski",
+      "district": "III Prądnik Czerwony",
+      "year_established": 2010,
+      "patron": "Wiersz K.I. Gałczyńskiego",
+      "description": "Park nad potokiem Sudół ze stawem i instalacjami nawiązującymi do dorożkarza Jana Kaczary."
+    },
+    {
+      "id": "park_aleksandry",
+      "name": "Park Aleksandry",
+      "type": "park_miejski",
+      "district": "XII Bieżanów-Prokocim",
+      "year_established": 2014,
+      "patron": "Ulica Aleksandry",
+      "description": "Park w dolinie potoku Serafa z urokliwymi meandrami i mostkami."
+    },
+    {
+      "id": "park_macka_i_doroty",
+      "name": "Park Maćka i Doroty",
+      "type": "park_miejski",
+      "district": "X Swoszowice (Kliny)",
+      "year_established": 2000,
+      "patron": "Legenda krakowska",
+      "description": "Park osiedlowy na Klinach z boiskiem i rozległą łąką rekreacyjną."
+    },
+    {
+      "id": "park_lesny_witkowice",
+      "name": "Park Leśny Witkowice",
+      "type": "park_lesny",
+      "district": "IV Prądnik Biały",
+      "year_established": 1960,
+      "patron": "Witkowice",
+      "description": "Kompleks leśny w dolinie potoku Bibiczanka i Prądnik z fortem Witkowice."
+    },
+    {
+      "id": "park_woznicow",
+      "name": "Park Woźniców",
+      "type": "park_miejski",
+      "district": "XIV Czyżyny",
+      "year_established": 2022,
+      "patron": "Woźnice krakowscy",
+      "description": "Nowo utworzony park linearny pomiędzy al. Pokoju a ul. Jana Pawła II."
+    },
+    {
+      "id": "park_reduta",
+      "name": "Park Reduta",
+      "type": "park_miejski",
+      "district": "III Prądnik Czerwony",
+      "year_established": 2019,
+      "patron": "Szaniec Reduta",
+      "description": "Nagradzany park partycypacyjny o pow. 8 ha z pawilonem i wielopoziomowym placem zabaw."
+    },
+    {
+      "id": "park_szymborskiej_karmelicka",
+      "name": "Park Wisławy Szymborskiej (Karmelicka)",
+      "type": "park_miejski_kieszonkowy",
+      "district": "I Stare Miasto",
+      "year_established": 2023,
+      "patron": "Wisława Szymborska (1923-2012)",
+      "description": "Park w sercu miasta przy ul. Karmelickiej otwarty w 100-lecie urodzin poetki z wierszami wyrytymi na murach."
+    },
+    {
+      "id": "park_dabie",
+      "name": "Park Dąbie",
+      "type": "park_miejski",
+      "district": "II Grzegórzki",
+      "year_established": 1970,
+      "patron": "Dąbie",
+      "description": "Park wzdłuż Wisły w rejonie ul. Dąbskiej i Ofiar Dąbia."
+    },
+    {
+      "id": "park_linearny_grzegorzki",
+      "name": "Park Kolejowy Grzegórzki",
+      "type": "park_miejski_linearny",
+      "district": "II Grzegórzki",
+      "year_established": 2024,
+      "patron": "Estakada linii średnicowej",
+      "description": "Park miejski pod nowymi estakadami kolejowymi między ul. Kopernika a Grzegórzecką."
+    },
+    {
+      "id": "blonia_krakowskie",
+      "name": "Błonia Krakowskie",
+      "type": "laka_miejska",
+      "district": "V Krowodrza / VII Zwierzyniec",
+      "year_established": 1366,
+      "patron": "Królowa Jadwiga",
+      "description": "Jedna z największych w Europie łąk w centrum miasta (48 ha, obwód 3,6 km), wpisana do rejestru zabytków."
+    },
+    {
+      "id": "ogrod_botaniczny_uj",
+      "name": "Ogród Botaniczny Uniwersytetu Jagiellońskiego",
+      "type": "ogrod_botaniczny",
+      "district": "II Grzegórzki",
+      "year_established": 1783,
+      "patron": "Uniwersytet Jagielloński / Hugo Kołłątaj",
+      "description": "Najstarszy ogród botaniczny w Polsce (10 ha) z zabytkowymi szklarniami i 5000 gatunków roślin."
+    },
+    {
+      "id": "ogrod_doswiadczen_lema",
+      "name": "Ogród Doświadczeń im. Stanisława Lema",
+      "type": "ogrod_edukacyjny",
+      "district": "XIV Czyżyny",
+      "year_established": 2007,
+      "patron": "Stanisław Lem (1921-2006)",
+      "description": "Plenerowy park edukacyjny z ponad 100 urządzeniami demonstrującymi prawa fizyki."
+    },
+    {
+      "id": "ogrod_zoologiczny_krakow",
+      "name": "Krakowski Ogród Zoologiczny",
+      "type": "ogrod_zoologiczny",
+      "district": "VII Zwierzyniec (Las Wolski)",
+      "year_established": 1929,
+      "patron": "Prezydent RP Ignacy Mościcki",
+      "description": "Ogród zoologiczny w sercu Lasu Wolskiego z ponad 1400 zwierząt 270 gatunków."
+    },
+    {
+      "id": "las_wolski",
+      "name": "Las Wolski",
+      "type": "las_komunalny",
+      "district": "VII Zwierzyniec",
+      "year_established": 1917,
+      "patron": "Kasa Oszczędności Miasta Krakowa",
+      "description": "Największy zwarty las Krakowa (419 ha) z Kopcem Piłsudskiego, Klasztorem Kamedułów i 8 szlakami."
+    },
+    {
+      "id": "las_borkowski",
+      "name": "Las Borkowski",
+      "type": "las_komunalny",
+      "district": "IX Łagiewniki-Borek Fałęcki / X Swoszowice",
+      "year_established": 1900,
+      "patron": "Borek Fałęcki",
+      "description": "Kompleks leśny o powierzchni 75 ha ocalony i wykupiony przez Miasto Kraków."
+    },
+    {
+      "id": "skwer_praw_kobiet",
+      "name": "Skwer Praw Kobiet",
+      "type": "skwer",
+      "district": "I Stare Miasto",
+      "year_established": 2021,
+      "patron": "Prawa wyborcze Polek (1918 r.)",
+      "description": "Skwer u zbiegu ulic Retoryka, Piłsudskiego i Podwale."
+    },
+    {
+      "id": "skwer_konika_zwierzynieckiego",
+      "name": "Skwer Konika Zwierzynieckiego",
+      "type": "skwer",
+      "district": "VII Zwierzyniec",
+      "year_established": 2014,
+      "patron": "Tradycja Lajkonika (UNESCO)",
+      "description": "Skwer przy Moście Dębnickim, miejsce corocznego harcu Lajkonika."
+    }
+  ]
+}

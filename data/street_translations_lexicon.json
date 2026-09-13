@@ -1,0 +1,3870 @@
+{
+  "błonia": [
+    "Kraków Commons / Great Meadow",
+    "Krakauer Błonia-Wiesen"
+  ],
+  "błonie": [
+    "Meadow / Commons",
+    "Wiesenweg"
+  ],
+  "błotna": [
+    "Muddy Street",
+    "Schlammstraße"
+  ],
+  "bagrowa": [
+    "Bagry Lagoon / Dredger Street",
+    "Baggersee-Straße"
+  ],
+  "bodzowska": [
+    "Bodzów Road",
+    "Bodzówer Straße"
+  ],
+  "bogucianka": [
+    "Bogucianka Stream Street",
+    "Bogucianka-Straße"
+  ],
+  "borkowskie błonia": [
+    "Borek Commons Street",
+    "Borkower-Wiesen-Straße"
+  ],
+  "borowinowa": [
+    "Peat Mud Bath / Peloid Street",
+    "Moorbadstraße"
+  ],
+  "borkowska": [
+    "Borek Fałęcki Road",
+    "Borkower Straße"
+  ],
+  "barycka": [
+    "Barycz Road",
+    "Baryczer Straße"
+  ],
+  "batowicka": [
+    "Batowice Road",
+    "Batowicer Straße"
+  ],
+  "bielańska": [
+    "Bielany Road",
+    "Bielany-Straße"
+  ],
+  "bieńczycka": [
+    "Bieńczyce Road",
+    "Bieńczycer Straße"
+  ],
+  "bieżanowska": [
+    "Bieżanów Road",
+    "Bieżanower Straße"
+  ],
+  "balicka": [
+    "Balice Road",
+    "Balicer Straße"
+  ],
+  "barska": [
+    "Bar Confederation Street",
+    "Barer Straße"
+  ],
+  "betlejemska": [
+    "Bethlehem Street",
+    "Bethlehemstraße"
+  ],
+  "biskupińska": [
+    "Biskupin Road",
+    "Biskupiner Straße"
+  ],
+  "biskupia": [
+    "Bishops' Street",
+    "Bischofsgasse"
+  ],
+  "bliska": [
+    "Nearby Street",
+    "Nahe Straße"
+  ],
+  "boczna": [
+    "Side Street",
+    "Seitengasse"
+  ],
+  "bocznica": [
+    "Railway Siding Street",
+    "Gleisanschluss-Straße"
+  ],
+  "bonarka": [
+    "Bonarka District Street",
+    "Bonarka-Straße"
+  ],
+  "bonerowska": [
+    "Boner Patrician Family Street",
+    "Boner-Straße"
+  ],
+  "bosacka": [
+    "Discalced Carmelite Friars' Street",
+    "Unbeschuhte-Karmeliter-Gasse"
+  ],
+  "botaniczna": [
+    "Botanical Gardens Street",
+    "Botanische Straße"
+  ],
+  "bożego ciała": [
+    "Corpus Christi Street",
+    "Fronleichnamsgasse"
+  ],
+  "bożego miłosierdzia": [
+    "Divine Mercy Street",
+    "Göttliche-Barmherzigkeit-Straße"
+  ],
+  "braci polskich": [
+    "Polish Brethren / Arian Street",
+    "Polnische-Brüder-Straße"
+  ],
+  "branicka": [
+    "Branice Road",
+    "Branicer Straße"
+  ],
+  "braterska": [
+    "Fraternal / Brotherhood Street",
+    "Brüderliche Straße"
+  ],
+  "braterstwa broni": [
+    "Brotherhood in Arms Street",
+    "Waffenbrüderschaft-Straße"
+  ],
+  "bratysławska": [
+    "Bratislava Road",
+    "Pressburger Straße"
+  ],
+  "bronowicka": [
+    "Bronowice Road",
+    "Bronowicer Straße"
+  ],
+  "browarniana": [
+    "Brewery Street",
+    "Brauereistraße"
+  ],
+  "bruzdowa": [
+    "Furrow Street",
+    "Furchenstraße"
+  ],
+  "bruśnicka": [
+    "Bruśnik Road",
+    "Bruśniker Straße"
+  ],
+  "brzask": [
+    "Dawn / Daybreak Street",
+    "Morgendämmerung-Straße"
+  ],
+  "brzegowa": [
+    "Riverside / Shoreline Street",
+    "Uferstraße"
+  ],
+  "brzeska": [
+    "Brzesko Road",
+    "Brzesko-Straße"
+  ],
+  "budziszyńska": [
+    "Bautzen Road",
+    "Bautzener Straße"
+  ],
+  "bugaj": [
+    "Bugaj Riverbend Street",
+    "Bugaj-Straße"
+  ],
+  "bularnia": [
+    "River Sandbank / Groynes Street",
+    "Buhnenstraße"
+  ],
+  "bulwarowa": [
+    "Boulevard Street",
+    "Boulevardstraße"
+  ],
+  "burgundzka": [
+    "Burgundy Street",
+    "Burgunderstraße"
+  ],
+  "bystra": [
+    "Swift / Rapid Stream Street",
+    "Schnelle Straße"
+  ],
+  "bydgoska": [
+    "Bydgoszcz Road",
+    "Bromberger Straße"
+  ],
+  "bytomska": [
+    "Bytom Road",
+    "Beuthener Straße"
+  ],
+  "będzińska": [
+    "Będzin Road",
+    "Bendlauer Straße"
+  ],
+  "bór": [
+    "Pine Forest Street",
+    "Nadelwaldstraße"
+  ],
+  "cechowa": [
+    "Craft Guilds Street",
+    "Zunftstraße"
+  ],
+  "cedyńska": [
+    "Cedynia Road",
+    "Zehdener Straße"
+  ],
+  "celna": [
+    "Customs Office Street",
+    "Zollstraße"
+  ],
+  "centralna": [
+    "Central Street",
+    "Zentralstraße"
+  ],
+  "chałupki": [
+    "Cottages / Chałupki Hamlet Street",
+    "Hüttengasse"
+  ],
+  "chlebiczna": [
+    "Daily Bread Street",
+    "Brotstraße"
+  ],
+  "chmieleniec": [
+    "Hop Garden Street",
+    "Hopfengarten-Straße"
+  ],
+  "chochołowska": [
+    "Chochołów Road",
+    "Chochołów-Straße"
+  ],
+  "chocimska": [
+    "Khotyn Road (Battle of Khotyn)",
+    "Chotyn-Straße"
+  ],
+  "chojnicka": [
+    "Chojnice Road",
+    "Konitzer Straße"
+  ],
+  "chęcińska": [
+    "Chęciny Castle Road",
+    "Chęciny-Straße"
+  ],
+  "chłopska": [
+    "Peasants' / Farmers' Street",
+    "Bauernstraße"
+  ],
+  "ciechocińska": [
+    "Ciechocinek Spa Road",
+    "Ciechocinek-Straße"
+  ],
+  "ciemna": [
+    "Dark Lane",
+    "Dunkle Gasse"
+  ],
+  "cmentarna": [
+    "Cemetery Street",
+    "Friedhofstraße"
+  ],
+  "cygańska": [
+    "Gypsy / Romani Lane",
+    "Zigeunergasse"
+  ],
+  "czarnochowicka": [
+    "Czarnochowice Road",
+    "Czarnochowice-Straße"
+  ],
+  "czarnogórska": [
+    "Montenegro Street",
+    "Montenegrinische Straße"
+  ],
+  "czarnolaska": [
+    "Czarnolas Poet's Road",
+    "Czarnolas-Straße"
+  ],
+  "czarodziejska": [
+    "Magical / Enchanted Street",
+    "Zauberstraße"
+  ],
+  "czechosłowacka": [
+    "Czechoslovak Street",
+    "Tschechoslowakische Straße"
+  ],
+  "czeczeńska": [
+    "Chechen Street",
+    "Tschetschenische Straße"
+  ],
+  "czerska": [
+    "Czersk Road",
+    "Czersk-Straße"
+  ],
+  "czorsztyńska": [
+    "Czorsztyn Castle Road",
+    "Czorsztyn-Straße"
+  ],
+  "czyżyńska": [
+    "Czyżyny Road",
+    "Czyżyny-Straße"
+  ],
+  "dolina": [
+    "Valley Street",
+    "Talstraße"
+  ],
+  "dolinna": [
+    "Valley Street",
+    "Talstraße"
+  ],
+  "dolnomłyńska": [
+    "Lower Mill Street",
+    "Untermühlstraße"
+  ],
+  "dominikańska": [
+    "Dominican Friars' Street",
+    "Dominikanergasse"
+  ],
+  "dojazdowa": [
+    "Access / Approach Road",
+    "Zufahrtsstraße"
+  ],
+  "domowa": [
+    "Home / Domestic Street",
+    "Heimstraße"
+  ],
+  "dożynkowa": [
+    "Harvest Festival Street",
+    "Erntedankstraße"
+  ],
+  "droga rokadowa": [
+    "Fortress Ring Road",
+    "Festungsringstraße"
+  ],
+  "drożdżowa": [
+    "Yeast Factory Street",
+    "Hefestraße"
+  ],
+  "działkowa": [
+    "Allotment Gardens Street",
+    "Kleingartenstraße"
+  ],
+  "dąbska": [
+    "Dąbie Road",
+    "Dąbie-Straße"
+  ],
+  "dębnicka": [
+    "Dębniki Road",
+    "Dębniki-Straße"
+  ],
+  "dąbrowa": [
+    "Oak Woods Street",
+    "Eichenwaldstraße"
+  ],
+  "dworska": [
+    "Manor Estate Street",
+    "Gutshofstraße"
+  ],
+  "drukarska": [
+    "Printers' Street",
+    "Buchdruckerstraße"
+  ],
+  "druskiennicka": [
+    "Druskininkai Road",
+    "Druskieniki-Straße"
+  ],
+  "duchacka": [
+    "Wola Duchacka Road",
+    "Duchacka-Straße"
+  ],
+  "dziekanowicka": [
+    "Dziekanowice Road",
+    "Dziekanowice-Straße"
+  ],
+  "falowa": [
+    "Wave Street",
+    "Wellenstraße"
+  ],
+  "fatimska": [
+    "Our Lady of Fátima Street",
+    "Fátima-Straße"
+  ],
+  "fałęcka": [
+    "Borek Fałęcki Road",
+    "Fałęcka-Straße"
+  ],
+  "filarecka": [
+    "Philarets' Association Street",
+    "Philaretenstraße"
+  ],
+  "filtrowa": [
+    "Water Filters Street",
+    "Filterwerkstraße"
+  ],
+  "flisacka": [
+    "Timber Rafters' Street",
+    "Flößergasse"
+  ],
+  "franciszkańska": [
+    "Franciscan Friars' Street",
+    "Franziskanergasse"
+  ],
+  "galicyjska": [
+    "Galicia Street",
+    "Galizische Straße"
+  ],
+  "gazowa": [
+    "Gasworks Street",
+    "Gaswerkstraße"
+  ],
+  "gdańska": [
+    "Gdańsk Road",
+    "Danziger Straße"
+  ],
+  "gdowska": [
+    "Gdów Road",
+    "Gdówer Straße"
+  ],
+  "geodetów": [
+    "Land Surveyors' Street",
+    "Geometerstraße"
+  ],
+  "gipsowa": [
+    "Gypsum Street",
+    "Gipsstraße"
+  ],
+  "gliwicka": [
+    "Gliwice Road",
+    "Gleiwitzer Straße"
+  ],
+  "głogowska": [
+    "Głogów Road",
+    "Glogauer Straße"
+  ],
+  "główna": [
+    "Main Street",
+    "Hauptstraße"
+  ],
+  "głębinowa": [
+    "Abyssal / Deep Waters Street",
+    "Tiefenstraße"
+  ],
+  "gnieźnieńska": [
+    "Gniezno Road",
+    "Gnesener Straße"
+  ],
+  "golkowicka": [
+    "Golkowice Road",
+    "Golkowice-Straße"
+  ],
+  "gorlicka": [
+    "Gorlice Road",
+    "Gorlice-Straße"
+  ],
+  "gorzowska": [
+    "Gorzów Road",
+    "Landsberger Straße"
+  ],
+  "gospodarska": [
+    "Homestead Farm Street",
+    "Wirtschaftsstraße"
+  ],
+  "gradowa": [
+    "Hailstorm Street",
+    "Hagelstraße"
+  ],
+  "graniczna": [
+    "Boundary / Border Street",
+    "Grenzstraße"
+  ],
+  "grochowska": [
+    "Grochów Road",
+    "Grochower Straße"
+  ],
+  "grodzieńska": [
+    "Grodno Road",
+    "Grodnoer Straße"
+  ],
+  "gronowa": [
+    "Grape Cluster Street",
+    "Traubenstraße"
+  ],
+  "groszkowa": [
+    "Sweet Pea Flower Street",
+    "Wickenstraße"
+  ],
+  "grunwaldzka": [
+    "Battle of Grunwald Road",
+    "Tannenbergstraße"
+  ],
+  "grzegórzecka": [
+    "Grzegórzki Road",
+    "Grzegórzki-Straße"
+  ],
+  "grębałowska": [
+    "Grębałów Road",
+    "Grębałów-Straße"
+  ],
+  "gumniska": [
+    "Threshing Floor Street",
+    "Tennenweg"
+  ],
+  "górka narodowa": [
+    "Górka Narodowa District Road",
+    "Górka-Narodowa-Straße"
+  ],
+  "górna": [
+    "Upper Street",
+    "Obere Straße"
+  ],
+  "górników": [
+    "Coal & Salt Miners' Street",
+    "Bergmannstraße"
+  ],
+  "górzysta": [
+    "Mountainous Street",
+    "Gebirgsstraße"
+  ],
+  "halki": [
+    "Halka (Opera) Street",
+    "Halka-Straße"
+  ],
+  "herbowa": [
+    "Heraldic / Coat of Arms Street",
+    "Wappenstraße"
+  ],
+  "hetmańska": [
+    "Hetman Street",
+    "Hetmanstraße"
+  ],
+  "hufcowa": [
+    "Scout Troop Street",
+    "Pfadfinderzugstraße"
+  ],
+  "hutnicza": [
+    "Foundry / Metallurgical Workers Street",
+    "Hüttenstraße"
+  ],
+  "iłowa": [
+    "Clay / Loam Pit Street",
+    "Lehmstraße"
+  ],
+  "imielna": [
+    "Mistletoe / Imielna Street",
+    "Mistelstraße"
+  ],
+  "instalatorów": [
+    "Installers' / Plumbers' Street",
+    "Installateurstraße"
+  ],
+  "jachtowa": [
+    "Yachting Street",
+    "Yachtstraße"
+  ],
+  "jagodowa": [
+    "Blueberry Street",
+    "Heidelbeerstraße"
+  ],
+  "janowicka": [
+    "Janowice Road",
+    "Janowice-Straße"
+  ],
+  "jantarowa": [
+    "Baltic Amber Street",
+    "Bernsteinstraße"
+  ],
+  "jaremy": [
+    "Jarema Street",
+    "Jarema-Straße"
+  ],
+  "jarzynowa": [
+    "Vegetable Garden Street",
+    "Gemüsestraße"
+  ],
+  "jasełkowa": [
+    "Nativity Play Street",
+    "Krippenspielstraße"
+  ],
+  "jasielska": [
+    "Jasło Road",
+    "Jasło-Straße"
+  ],
+  "jaskrowa": [
+    "Buttercup Flower Street",
+    "Hahnenfußstraße"
+  ],
+  "jazowa": [
+    "River Weir Street",
+    "Wehrstraße"
+  ],
+  "jałowcowa": [
+    "Juniper Street",
+    "Wacholderstraße"
+  ],
+  "jedności": [
+    "Unity Street",
+    "Einheitsstraße"
+  ],
+  "jeleniogórska": [
+    "Jelenia Góra Road",
+    "Hirschberger Straße"
+  ],
+  "jemiołowa": [
+    "Mistletoe Herb Street",
+    "Mistelstraße"
+  ],
+  "jezierzanek": [
+    "Lake Maidens / Nymphs Street",
+    "Seenymphenstraße"
+  ],
+  "jeziorna": [
+    "Lakeside Street",
+    "Seestraße"
+  ],
+  "jonatana": [
+    "Jonathan Street",
+    "Jonathanstraße"
+  ],
+  "jubileuszowa": [
+    "Jubilee Celebration Street",
+    "Jubiläumsstraße"
+  ],
+  "jurajska": [
+    "Jura Upland Road",
+    "Jura-Straße"
+  ],
+  "juranda ze spychowa": [
+    "Jurand of Spychów Street",
+    "Jurand-von-Spychów-Straße"
+  ],
+  "jutrzenki": [
+    "Morning Star / Aurora Street",
+    "Morgensternstraße"
+  ],
+  "kaczeńcowa": [
+    "Marsh Marigold Flower Street",
+    "Sumpfdotterblumenstraße"
+  ],
+  "kajakowa": [
+    "Canoeing / Kayak Street",
+    "Kajakstraße"
+  ],
+  "kalinowa": [
+    "Viburnum / Snowball Tree Street",
+    "Schneeballstraße"
+  ],
+  "kaliska": [
+    "Kalisz Road",
+    "Kalisch-Straße"
+  ],
+  "kalwaryjska": [
+    "Kalwaria Zebrzydowska Road",
+    "Kalwaria-Straße"
+  ],
+  "kamienna": [
+    "Stone Street",
+    "Steinstraße"
+  ],
+  "kamionka": [
+    "Stony Brook Street",
+    "Steinbachstraße"
+  ],
+  "kampinoska": [
+    "Kampinos Forest Road",
+    "Kampinos-Straße"
+  ],
+  "kanarkowa": [
+    "Canary Songbird Street",
+    "Kanarienvogelstraße"
+  ],
+  "kąpielowa": [
+    "Baths / Swimming Street",
+    "Badestraße"
+  ],
+  "kapelanka": [
+    "Kapelanka Road",
+    "Kapelanka-Straße"
+  ],
+  "kapliczna": [
+    "Chapel Street",
+    "Kapellenstraße"
+  ],
+  "karpacka": [
+    "Carpathian Mountains Road",
+    "Karpatenstraße"
+  ],
+  "karowa": [
+    "Horse Cart / Dray Street",
+    "Karrenstraße"
+  ],
+  "karmelicka": [
+    "Carmelite Monastery Road",
+    "Karmelitergasse"
+  ],
+  "kartuska": [
+    "Carthusian Friars' Street",
+    "Kartäuserstraße"
+  ],
+  "kasztelańska": [
+    "Castellan Street",
+    "Kastellanstraße"
+  ],
+  "katowicka": [
+    "Katowice Road",
+    "Kattowitzer Straße"
+  ],
+  "kawowa": [
+    "Coffee Street",
+    "Kaffeestraße"
+  ],
+  "kazimierska": [
+    "Kazimierz District Road",
+    "Kasimir-Straße"
+  ],
+  "kielecka": [
+    "Kielce Road",
+    "Kielcer Straße"
+  ],
+  "kirasjerów": [
+    "Cuirassiers' Street",
+    "Kürassierstraße"
+  ],
+  "klasztorna": [
+    "Monastery Street",
+    "Klosterstraße"
+  ],
+  "klasyków": [
+    "Classics' Street",
+    "Klassikerstraße"
+  ],
+  "kminkowa": [
+    "Caraway Street",
+    "Kümmelstraße"
+  ],
+  "kobierzyńska": [
+    "Kobierzyn Road",
+    "Kobierzyner Straße"
+  ],
+  "kolejowa": [
+    "Railway Street",
+    "Eisenbahnstraße"
+  ],
+  "kokosowa": [
+    "Coconut Street",
+    "Kokosstraße"
+  ],
+  "kolorowa": [
+    "Colorful Street",
+    "Bunte Straße"
+  ],
+  "kołowa": [
+    "Circular / Wheel Street",
+    "Kreisstraße"
+  ],
+  "komandosów": [
+    "Commandos' Street",
+    "Kommando-Straße"
+  ],
+  "konfederacka": [
+    "Bar Confederation Street",
+    "Konföderationsstraße"
+  ],
+  "konińska": [
+    "Konin Road",
+    "Koniner Straße"
+  ],
+  "konopna": [
+    "Hemp Street",
+    "Hanfstraße"
+  ],
+  "kopalina": [
+    "Mineral Ore Street",
+    "Erzstraße"
+  ],
+  "kopiec": [
+    "Mound Street",
+    "Hügelstraße"
+  ],
+  "koralowa": [
+    "Coral Street",
+    "Korallenstraße"
+  ],
+  "kordiana": [
+    "Kordian (Slowacki Drama) Street",
+    "Kordian-Straße"
+  ],
+  "koronkarzy": [
+    "Lacemakers' Street",
+    "Spitzenmacherstraße"
+  ],
+  "korybuta": [
+    "Korybut Prince Street",
+    "Korybut-Straße"
+  ],
+  "kosmiczna": [
+    "Cosmic Space Street",
+    "Kosmische Straße"
+  ],
+  "kosynierów": [
+    "Scythemen Insurgents Street",
+    "Sensenmänner-Straße"
+  ],
+  "koszalińska": [
+    "Koszalin Road",
+    "Kösliner Straße"
+  ],
+  "koszykarska": [
+    "Wicker Basketmakers' Street",
+    "Korbmachergasse"
+  ],
+  "kościelna": [
+    "Parish Church Street",
+    "Kirchgasse"
+  ],
+  "kościelnicka": [
+    "Kościelniki Road",
+    "Kościelniki-Straße"
+  ],
+  "kościuszkowców": [
+    "Kościuszko Insurgents Street",
+    "Kościuszko-Aufständische-Straße"
+  ],
+  "kotlarska": [
+    "Coppersmiths' Guild Street",
+    "Kesselschmiedstraße"
+  ],
+  "kozacka": [
+    "Cossack Street",
+    "Kosakenstraße"
+  ],
+  "kozie Role": [
+    "Goat Field Plots Street",
+    "Ziegenacker-Straße"
+  ],
+  "krajobrazowa": [
+    "Landscape / Scenic Street",
+    "Landschaftsstraße"
+  ],
+  "krakowska": [
+    "Kazimierz / Kraków Gate Street",
+    "Krakauer Straße"
+  ],
+  "kramarska": [
+    "Market Stalls Street",
+    "Krämergasse"
+  ],
+  "krasowa": [
+    "Karst Landscape Street",
+    "Karststraße"
+  ],
+  "kredowa": [
+    "Chalk Street",
+    "Kreidestraße"
+  ],
+  "kresowa": [
+    "Eastern Borderlands (Kresy) Street",
+    "Kresy-Grenzland-Straße"
+  ],
+  "krośnieńska": [
+    "Krosno Road",
+    "Krosnoer Straße"
+  ],
+  "królewska": [
+    "Royal Boulevard Avenue",
+    "Königsallee"
+  ],
+  "krowoderska": [
+    "Krowodrza Pasture Road",
+    "Krowodrza-Straße"
+  ],
+  "krótka": [
+    "Short Lane",
+    "Kurze Gasse"
+  ],
+  "krucza": [
+    "Raven Street",
+    "Rabengasse"
+  ],
+  "kruszwicka": [
+    "Kruszwica Road",
+    "Kruschwitz-Straße"
+  ],
+  "kruszcowa": [
+    "Mineral Ore Street",
+    "Erzstraße"
+  ],
+  "kryształowa": [
+    "Rock Crystal Street",
+    "Kristallstraße"
+  ],
+  "krzemionkowa": [
+    "Silica Rocks / Krzemionki Hills Street",
+    "Kieselerde-Straße"
+  ],
+  "krzeszowicka": [
+    "Krzeszowice Road",
+    "Krzeszowicer Straße"
+  ],
+  "krzywa": [
+    "Crooked / Curved Lane",
+    "Krumme Gasse"
+  ],
+  "krzyżowa": [
+    "Cross Street",
+    "Kreuzstraße"
+  ],
+  "krzyżówka": [
+    "Crossroads Lane",
+    "Kreuzungsweg"
+  ],
+  "księżycowa": [
+    "Moonlight Street",
+    "Mondstraße"
+  ],
+  "kujawska": [
+    "Kuyavia Region Road",
+    "Kujawische Straße"
+  ],
+  "kulczyckiego": [
+    "Kulczycki Hero of Vienna Street",
+    "Kulczycki-Straße"
+  ],
+  "kurhan": [
+    "Barrow / Burial Mound Street",
+    "Grabhügelstraße"
+  ],
+  "kurpiowska": [
+    "Kurpie Forest Road",
+    "Kurpie-Straße"
+  ],
+  "kuźnicka": [
+    "Smithy / Forge Street",
+    "Schmiedewerkstraße"
+  ],
+  "kwatery": [
+    "Quarters / Billet Street",
+    "Quartierstraße"
+  ],
+  "kłuszyńska": [
+    "Battle of Kłuszyn Street",
+    "Kłuszyn-Schlacht-Straße"
+  ],
+  "kłosowa": [
+    "Ear of Wheat Street",
+    "Ährenstraße"
+  ],
+  "legionów": [
+    "Polish Legions Street",
+    "Legionenstraße"
+  ],
+  "legnicka": [
+    "Legnica Road",
+    "Liegnitzer Straße"
+  ],
+  "leśna": [
+    "Forest Road",
+    "Waldstraße"
+  ],
+  "leszczynowa": [
+    "Hazel Tree Street",
+    "Haselnussstraße"
+  ],
+  "letnia": [
+    "Summer Season Street",
+    "Sommerstraße"
+  ],
+  "limanowska": [
+    "Limanowa Road",
+    "Limanowa-Straße"
+  ],
+  "lipcowa": [
+    "July Street",
+    "Julistraße"
+  ],
+  "lipowa": [
+    "Linden / Lime Tree Street",
+    "Lindenstraße"
+  ],
+  "lisia": [
+    "Red Fox Animal Street",
+    "Fuchsgasse"
+  ],
+  "listopadowa": [
+    "November Street",
+    "Novemberstraße"
+  ],
+  "litewska": [
+    "Lithuanian Street",
+    "Litauische Straße"
+  ],
+  "lodowa": [
+    "Ice Street",
+    "Eisstraße"
+  ],
+  "lokomotywowa": [
+    "Locomotive Street",
+    "Lokomotivstraße"
+  ],
+  "londyńska": [
+    "London Street",
+    "Londoner Straße"
+  ],
+  "lotnicza": [
+    "Aviation / Airmen Street",
+    "Luftfahrtstraße"
+  ],
+  "lubelska": [
+    "Lublin Road",
+    "Lubliner Straße"
+  ],
+  "lubicz": [
+    "Lubicz Thoroughfare",
+    "Lubicz-Straße"
+  ],
+  "lubocka": [
+    "Lubocza Road",
+    "Lubocza-Straße"
+  ],
+  "ludwinowska": [
+    "Ludwinów Road",
+    "Ludwinów-Straße"
+  ],
+  "lutowa": [
+    "February Month Street",
+    "Februarstraße"
+  ],
+  "lwowska": [
+    "Lwów (Lviv) Road",
+    "Lemberger Straße"
+  ],
+  "madera": [
+    "Madeira Island Street",
+    "Madeira-Straße"
+  ],
+  "magazynowa": [
+    "Warehouse Street",
+    "Lagerhausstraße"
+  ],
+  "magnolii": [
+    "Magnolia Tree Blossom Street",
+    "Magnolienstraße"
+  ],
+  "majowa": [
+    "May Month / Springtime Street",
+    "Maistraße"
+  ],
+  "malborska": [
+    "Malbork Castle Road",
+    "Marienburger Straße"
+  ],
+  "malinowa": [
+    "Raspberry Fruit Street",
+    "Himbeerstraße"
+  ],
+  "małopolska": [
+    "Lesser Poland Road",
+    "Kleinpolen-Straße"
+  ],
+  "mały płaszów": [
+    "Little Płaszów Street",
+    "Klein-Płaszów-Straße"
+  ],
+  "mały rynek": [
+    "Little Market Square",
+    "Kleiner Ring"
+  ],
+  "marmurowa": [
+    "Marble Street",
+    "Marmorstraße"
+  ],
+  "marynarska": [
+    "Naval / Seamen's Street",
+    "Marinesoldatenstraße"
+  ],
+  "masarska": [
+    "Meat Processing Butchers Street",
+    "Fleischerstraße"
+  ],
+  "masztowa": [
+    "Flagpole / Ship Mast Street",
+    "Maststraße"
+  ],
+  "mazowiecka": [
+    "Mazovia Region Road",
+    "Masowische Straße"
+  ],
+  "mazurska": [
+    "Masuria Lakes Road",
+    "Masurenstraße"
+  ],
+  "medyczna": [
+    "Medical Street",
+    "Medizinische Straße"
+  ],
+  "metalowców": [
+    "Metalworkers' Street",
+    "Metallarbeiterstraße"
+  ],
+  "miechowska": [
+    "Miechów Road",
+    "Miechower Straße"
+  ],
+  "miedziana": [
+    "Copper Metalwork Street",
+    "Kupfergasse"
+  ],
+  "mięsna": [
+    "Meat Market Street",
+    "Fleischmarktstraße"
+  ],
+  "miętowa": [
+    "Peppermint Herb Street",
+    "Minzstraße"
+  ],
+  "migdałowa": [
+    "Almond Tree Street",
+    "Mandelstraße"
+  ],
+  "mikołajska": [
+    "St. Nicholas Gate Street",
+    "Nikolaigasse"
+  ],
+  "milowa": [
+    "Milestone Street",
+    "Meilenstraße"
+  ],
+  "miła": [
+    "Pleasant / Friendly Street",
+    "Liebliche Straße"
+  ],
+  "miodowa": [
+    "Honey Market Street",
+    "Honiggasse"
+  ],
+  "mistrzejowicka": [
+    "Mistrzejowice Road",
+    "Mistrzejowice-Straße"
+  ],
+  "młynarska": [
+    "Grain Millers' Guild Street",
+    "Müllerstraße"
+  ],
+  "młyńska": [
+    "Watermill Channel Street",
+    "Mühlstraße"
+  ],
+  "młynówka": [
+    "Millrace Channel Street",
+    "Mühlgrabenstraße"
+  ],
+  "moczary": [
+    "Marshes Street",
+    "Sumpfstraße"
+  ],
+  "modrzewiowa": [
+    "Larch Tree Conifer Street",
+    "Lärchenstraße"
+  ],
+  "mogilska": [
+    "Mogiła Abbey Road",
+    "Mogiła-Straße"
+  ],
+  "mogiłki": [
+    "Ancient Mounds Lane",
+    "Hügelgrabweg"
+  ],
+  "moniuszki": [
+    "Moniuszko Music Street",
+    "Moniuszko-Straße"
+  ],
+  "monterska": [
+    "Fitters' / Assemblers' Street",
+    "Monteurstraße"
+  ],
+  "morelowa": [
+    "Apricot Street",
+    "Aprikosenstraße"
+  ],
+  "morska": [
+    "Sea / Maritime Street",
+    "Meeresstraße"
+  ],
+  "morwowa": [
+    "Mulberry Silkworm Tree Street",
+    "Maulbeerbaumstraße"
+  ],
+  "mostowa": [
+    "Bridge Connection Street",
+    "Brückengasse"
+  ],
+  "motyli": [
+    "Butterflies' Nature Street",
+    "Schmetterlingsstraße"
+  ],
+  "mroźna": [
+    "Frosty Winter Weather Street",
+    "Froststraße"
+  ],
+  "mularska": [
+    "Masons' Street",
+    "Maurergasse"
+  ],
+  "murarska": [
+    "Bricklayers' & Masons' Guild Street",
+    "Maurerstraße"
+  ],
+  "muzealna": [
+    "Museum Street",
+    "Museumsstraße"
+  ],
+  "muzyczna": [
+    "Music Concert Street",
+    "Musikstraße"
+  ],
+  "mydlnicka": [
+    "Mydlniki Road",
+    "Mydlniki-Straße"
+  ],
+  "myśliwska": [
+    "Hunters' Street",
+    "Jägerstraße"
+  ],
+  "myślenicka": [
+    "Myślenice Road",
+    "Myślenicer Straße"
+  ],
+  "na barciach": [
+    "At the Wild Beehives Lane",
+    "Bei-den-Bienenbäumen-Gasse"
+  ],
+  "na borach": [
+    "In the Pine Woods Lane",
+    "In-den-Kiefernwäldern-Gasse"
+  ],
+  "na budzyniu": [
+    "At Budzyń Lane",
+    "Auf-dem-Budzyń-Weg"
+  ],
+  "na błoniach": [
+    "At the Commons / Meadow Lane",
+    "Auf-den-Wiesen-Weg"
+  ],
+  "na błonie": [
+    "At the Commons Lane",
+    "Auf-den-Wiesen-Weg"
+  ],
+  "na chałupkach": [
+    "At the Cottages Lane",
+    "Bei-den-Hütten-Gasse"
+  ],
+  "na dołach": [
+    "In the Hollows / Pits Lane",
+    "In-den-Gruben-Gasse"
+  ],
+  "na grabinach": [
+    "In the Hornbeam Woods Lane",
+    "Im-Hainbuchenwald-Gasse"
+  ],
+  "na grządkach": [
+    "In the Garden Beds Lane",
+    "In-den-Gartenbeeten-Gasse"
+  ],
+  "na gródku": [
+    "At the Stronghold / Hillfort Lane",
+    "Am-Burgberg-Weg"
+  ],
+  "na górkach": [
+    "On the Little Hills Lane",
+    "Auf-den-Hügeln-Weg"
+  ],
+  "na kowkówce": [
+    "At Kowkówka Lane",
+    "Kowkówka-Gasse"
+  ],
+  "na laski": [
+    "Towards Laski Forest Lane",
+    "Nach-Laski-Weg"
+  ],
+  "na miedzy": [
+    "Along the Field Boundary Lane",
+    "Am-Feldrain-Weg"
+  ],
+  "na piaskach": [
+    "On the Sands Lane",
+    "Auf-dem-Sand-Weg"
+  ],
+  "na polach": [
+    "In the Fields Lane",
+    "Auf-den-Feldern-Weg"
+  ],
+  "na polance": [
+    "At the Forest Glade Lane",
+    "Auf-der-Lichtung-Weg"
+  ],
+  "na porębie": [
+    "At the Forest Clearing Lane",
+    "Auf-der-Waldlichtung-Weg"
+  ],
+  "na przyzbie": [
+    "At the Cottage Bench Lane",
+    "An-der-Hausbank-Gasse"
+  ],
+  "na ruinach": [
+    "At the Ruins Lane",
+    "Bei-den-Ruinen-Weg"
+  ],
+  "na skałkach": [
+    "On the Rocks Lane",
+    "Auf-den-Felsen-Weg"
+  ],
+  "na szaniec": [
+    "To the Ramparts Lane",
+    "Zur-Schanze-Weg"
+  ],
+  "na stoku": [
+    "On the Hillside Slope Estate",
+    "Am-Hang-Siedlung"
+  ],
+  "na stoisku": [
+    "At the Stalls Lane",
+    "Am-Marktstand-Weg"
+  ],
+  "na wirach": [
+    "At the River Eddies Lane",
+    "An-den-Strudeln-Weg"
+  ],
+  "na wrzosach": [
+    "In the Heather Moor Lane",
+    "In-der-Heide-Weg"
+  ],
+  "na wyciągu": [
+    "At the Ski Lift Lane",
+    "Am-Skilift-Weg"
+  ],
+  "na wzgórzach": [
+    "On the Hills Estate",
+    "Auf-den-Hügeln-Siedlung"
+  ],
+  "na zakolu": [
+    "At the River Bend Lane",
+    "An-der-Flussschleife-Weg"
+  ],
+  "na załęczu": [
+    "At Załęcze River Meadow Lane",
+    "In-Załęcze-Weg"
+  ],
+  "na zjeździe": [
+    "At the Highway Slip Road",
+    "An-der-Abfahrt-Straße"
+  ],
+  "nabielaka": [
+    "Nabielak Insurgent Street",
+    "Nabielak-Straße"
+  ],
+  "nad brzegiem": [
+    "By the Riverbank Lane",
+    "Am-Ufer-Weg"
+  ],
+  "nad dłubnią": [
+    "By the Dłubnia River Lane",
+    "An-der-Dłubnia-Weg"
+  ],
+  "nad potokiem": [
+    "By the Brook / Stream Lane",
+    "Am-Bach-Weg"
+  ],
+  "nad rzeką": [
+    "By the River Lane",
+    "Am-Fluss-Weg"
+  ],
+  "nad serafą": [
+    "By the Serafa Stream Lane",
+    "An-der-Serafa-Weg"
+  ],
+  "nad stawem": [
+    "By the Pond Lane",
+    "Am-Teich-Weg"
+  ],
+  "nad sudolcem": [
+    "By the Sudoł Stream Lane",
+    "Am-Sudoł-Bach-Weg"
+  ],
+  "nad wilgą": [
+    "By the Wilga River Lane",
+    "An-der-Wilga-Weg"
+  ],
+  "nad wisłą": [
+    "By the Vistula River Lane",
+    "An-der-Weichsel-Weg"
+  ],
+  "nadbrzezie": [
+    "Waterfront / Riverbank Street",
+    "Uferpromenade"
+  ],
+  "nadwiślańska": [
+    "Vistula River Promenade Street",
+    "Weichseluferstraße"
+  ],
+  "nadziei": [
+    "Hope & Optimism Street",
+    "Hoffnungsstraße"
+  ],
+  "nagietkowa": [
+    "Marigold Herb Flower Street",
+    "Ringelblumenstraße"
+  ],
+  "naftowa": [
+    "Petroleum Industry Street",
+    "Erdölstraße"
+  ],
+  "namiotowa": [
+    "Tent / Camp Street",
+    "Zeltstraße"
+  ],
+  "narciarska": [
+    "Skiers' Street",
+    "Skifahrerstraße"
+  ],
+  "narcyzowa": [
+    "Narcissus Daffodil Street",
+    "Narzissenstraße"
+  ],
+  "nasturcjowa": [
+    "Nasturtium Flower Street",
+    "Kapuzinerkressenstraße"
+  ],
+  "nauczycielska": [
+    "Teachers' Street",
+    "Lehrerstraße"
+  ],
+  "nawigacyjna": [
+    "Navigation Street",
+    "Navigationsstraße"
+  ],
+  "niebiańska": [
+    "Heavenly Blue Sky Street",
+    "Himmelsstraße"
+  ],
+  "niebieska": [
+    "Sky Blue Color Street",
+    "Blaue Straße"
+  ],
+  "niedźwiedzia": [
+    "Brown Bear Animal Street",
+    "Bärenstraße"
+  ],
+  "niedźwiedziny": [
+    "Bear Den Lane",
+    "Bärenhöhlenweg"
+  ],
+  "niepodległości": [
+    "National Independence Avenue",
+    "Unabhängigkeitsallee"
+  ],
+  "niepołomicka": [
+    "Niepołomice Royal Forest Road",
+    "Niepołomice-Straße"
+  ],
+  "niezapominajek": [
+    "Forget-Me-Not Flowers Street",
+    "Vergissmeinnichtstraße"
+  ],
+  "niska": [
+    "Low Street",
+    "Niedrige Straße"
+  ],
+  "nowa": [
+    "New Street",
+    "Neue Straße"
+  ],
+  "nowa huta": [
+    "Nowa Huta District",
+    "Nowa-Huta-Stadtteil"
+  ],
+  "nowohucka": [
+    "Nowa Huta Highway",
+    "Nowa-Huta-Boulevard"
+  ],
+  "nowosądecka": [
+    "Nowy Sącz Road",
+    "Neu-Sandezer Straße"
+  ],
+  "nowotarska": [
+    "Nowy Targ Road",
+    "Neumarkter Straße"
+  ],
+  "nowy rynek": [
+    "New Market Square",
+    "Neuer Markt"
+  ],
+  "nowy świat": [
+    "New World Street",
+    "Neuweltstraße"
+  ],
+  "nyska": [
+    "Nysa Road",
+    "Neißer Straße"
+  ],
+  "obozowa": [
+    "Military Encampment Street",
+    "Militärlagerstraße"
+  ],
+  "obrońców helu": [
+    "Defenders of Hel Street",
+    "Verteidiger-von-Hel-Straße"
+  ],
+  "obrońców modlina": [
+    "Defenders of Modlin Fortress Street",
+    "Verteidiger-von-Modlin-Straße"
+  ],
+  "obrońców poczty gdańskiej": [
+    "Defenders of Danzig Post Street",
+    "Verteidiger-der-Danziger-Post-Straße"
+  ],
+  "obrońców tobruku": [
+    "Defenders of Tobruk Street",
+    "Verteidiger-von-Tobruk-Straße"
+  ],
+  "obrońców warszawy": [
+    "Defenders of Warsaw Street",
+    "Verteidiger-von-Warschau-Straße"
+  ],
+  "obrońców westerplatte": [
+    "Defenders of Westerplatte Street",
+    "Verteidiger-von-Westerplatte-Straße"
+  ],
+  "obrotowa": [
+    "Rotary / Turntable Street",
+    "Drehscheibenstraße"
+  ],
+  "obszarowa": [
+    "Area / Territorial Street",
+    "Gebietsstraße"
+  ],
+  "ochota": [
+    "Ochota / Desire Street",
+    "Ochota-Straße"
+  ],
+  "odlewników": [
+    "Foundrymen / Casters' Street",
+    "Gießerstraße"
+  ],
+  "odległa": [
+    "Distant / Remote Street",
+    "Entlegene Straße"
+  ],
+  "odrzu": [
+    "Oder River Street",
+    "Oderstraße"
+  ],
+  "ogrodowa": [
+    "Garden Street",
+    "Gartenstraße"
+  ],
+  "ogrodników": [
+    "Market Gardeners' Street",
+    "Gärtnerstraße"
+  ],
+  "ojcowska": [
+    "Ojców Castle & National Park Road",
+    "Ojców-Nationalpark-Straße"
+  ],
+  "okocimska": [
+    "Okocim Brewery Road",
+    "Okocim-Straße"
+  ],
+  "okopowa": [
+    "Trench / Rampart Moat Street",
+    "Schanzengrabenstraße"
+  ],
+  "okrężna": [
+    "Circular Ring Road",
+    "Kreisringstraße"
+  ],
+  "olchowa": [
+    "Black Alder Tree Street",
+    "Schwarzerlenstraße"
+  ],
+  "oliwkowa": [
+    "Olive Tree Branch Street",
+    "Olivenbaumstraße"
+  ],
+  "olkuska": [
+    "Olkusz Silver Mines Road",
+    "Olkuscher Straße"
+  ],
+  "olszańska": [
+    "Olsza Road",
+    "Olsza-Straße"
+  ],
+  "olszanicka": [
+    "Olszanica Road",
+    "Olszanica-Straße"
+  ],
+  "olszyny": [
+    "Alder Woods Street",
+    "Erlenhainstraße"
+  ],
+  "ołowiowa": [
+    "Lead Ore Metal Street",
+    "Bleistraße"
+  ],
+  "opadowa": [
+    "Rainfall / Precipitation Street",
+    "Niederschlagstraße"
+  ],
+  "opolska": [
+    "Opole Road",
+    "Oppelner Straße"
+  ],
+  "orla": [
+    "Golden Eagle Bird Street",
+    "Adlergasse"
+  ],
+  "orląt": [
+    "Eaglets of Lwów Street",
+    "Lemberger-Adlerjungen-Straße"
+  ],
+  "orzechowa": [
+    "Walnut Tree Grove Street",
+    "Walnussstraße"
+  ],
+  "osadowa": [
+    "Settlement / Deposit Street",
+    "Siedlungsstraße"
+  ],
+  "osikowa": [
+    "Aspen Poplar Tree Street",
+    "Espenstraße"
+  ],
+  "ostrawska": [
+    "Ostrava Road",
+    "Ostrauer Straße"
+  ],
+  "ostrowskiego": [
+    "Ostrów Island Road",
+    "Ostrów-Straße"
+  ],
+  "oświęcimska": [
+    "Oświęcim Road",
+    "Auschwitzer Straße"
+  ],
+  "owocowa": [
+    "Fruit Orchards Street",
+    "Obstgartenstraße"
+  ],
+  "owsiana": [
+    "Oat Cereal Grain Street",
+    "Haferfeldstraße"
+  ],
+  "pagórkowa": [
+    "Rolling Hills Street",
+    "Hügelstraße"
+  ],
+  "palacowa": [
+    "Palace Street",
+    "Palaststraße"
+  ],
+  "pałacowa": [
+    "Palace & Residence Street",
+    "Palaststraße"
+  ],
+  "palmowa": [
+    "Palm Tree Street",
+    "Palmenstraße"
+  ],
+  "panieńska": [
+    "Maidens' Court Street",
+    "Jungfraugasse"
+  ],
+  "papieża jana pawła ii": [
+    "Pope John Paul II Avenue",
+    "Papst-Johannes-Paul-II.-Allee"
+  ],
+  "paprociowa": [
+    "Forest Ferns Street",
+    "Farnkrautstraße"
+  ],
+  "parkowa": [
+    "City Park Promenade Street",
+    "Parkstraße"
+  ],
+  "pasterzy": [
+    "Shepherds' Street",
+    "Hirtenstraße"
+  ],
+  "pasterska": [
+    "Pastoral Shepherds' Lane",
+    "Hirtenweg"
+  ],
+  "pawia": [
+    "Peacock Feather Street",
+    "Pfauengasse"
+  ],
+  "pelikana": [
+    "Pelican Bird Street",
+    "Pelikanstraße"
+  ],
+  "perłowa": [
+    "Sea Pearl Gem Street",
+    "Perlenstraße"
+  ],
+  "piaskowa": [
+    "Sandy Ground Street",
+    "Sandgasse"
+  ],
+  "piastowska": [
+    "Piast Royal Dynasty Avenue",
+    "Piasten-Allee"
+  ],
+  "piekarska": [
+    "Bakers' Guild Street",
+    "Bäckergasse"
+  ],
+  "pieczarkowa": [
+    "Button Mushroom Field Street",
+    "Champignonstraße"
+  ],
+  "pienińska": [
+    "Pieniny Gorge Road",
+    "Pieninen-Straße"
+  ],
+  "pierwsza": [
+    "First Street",
+    "Erste Straße"
+  ],
+  "pijarska": [
+    "Piarist Educational Order Street",
+    "Piaristengasse"
+  ],
+  "pilota": [
+    "Aviation Pilot Street",
+    "Flugkapitänstraße"
+  ],
+  "pińczowska": [
+    "Pińczów Road",
+    "Pińczów-Straße"
+  ],
+  "piotrkowska": [
+    "Piotrków Trybunalski Road",
+    "Petrikauer Straße"
+  ],
+  "pisarzy": [
+    "Writers' & Authors' Street",
+    "Schriftstellerstraße"
+  ],
+  "piwna": [
+    "Brewery & Beer Alehouse Street",
+    "Bierbrauergasse"
+  ],
+  "piwoniowa": [
+    "Peony Garden Flower Street",
+    "Pfingstrosenstraße"
+  ],
+  "planty": [
+    "Planty Old Town Green Belt Park",
+    "Planty-Ringpark"
+  ],
+  "plażowa": [
+    "Sandy Beach Street",
+    "Strandstraße"
+  ],
+  "plebańska": [
+    "Parish Priest's Street",
+    "Pfarrgasse"
+  ],
+  "pleszowska": [
+    "Pleszów Road",
+    "Pleszów-Straße"
+  ],
+  "płaska": [
+    "Flat / Plain Level Street",
+    "Flache Straße"
+  ],
+  "płomienna": [
+    "Blazing Fire Street",
+    "Flammenstraße"
+  ],
+  "płotkowa": [
+    "Roach Fish Street",
+    "Plötzenstraße"
+  ],
+  "płucka": [
+    "Plock Road",
+    "Plotzker Straße"
+  ],
+  "pocztowa": [
+    "Post Office Street",
+    "Poststraße"
+  ],
+  "pod fortem": [
+    "Under the Fort Street",
+    "Unter-dem-Fort-Straße"
+  ],
+  "pod gajem": [
+    "Below the Grove Lane",
+    "Unter-dem-Hain-Weg"
+  ],
+  "pod kopcem": [
+    "Under the Mound Avenue",
+    "Am-Hügelfuß-Allee"
+  ],
+  "pod sikornikiem": [
+    "Under Sikornik Hill Road",
+    "Unter-dem-Sikornik-Straße"
+  ],
+  "pod srebrną górą": [
+    "Under Silver Mountain Road",
+    "Unter-dem-Silberberg-Straße"
+  ],
+  "pod strzechą": [
+    "Under the Thatched Roof Lane",
+    "Unterm-Strohdach-Weg"
+  ],
+  "pod wałem": [
+    "Under the Rampart Lane",
+    "Am-Wallfuß-Weg"
+  ],
+  "pod zamkiem": [
+    "Under the Castle Lane",
+    "Am-Schlossgrund-Weg"
+  ],
+  "podgórki": [
+    "Foothills Lane",
+    "Vorgebirgsweg"
+  ],
+  "podgórska": [
+    "Podgórze Riverside Boulevard",
+    "Podgórze-Uferstraße"
+  ],
+  "podhalańska": [
+    "Podhale Highlands Road",
+    "Podhale-Straße"
+  ],
+  "podkamycze": [
+    "Under the Pebble Rocks Lane",
+    "Unter-den-Kieseln-Weg"
+  ],
+  "podlaska": [
+    "Podlasie Region Road",
+    "Podlachische Straße"
+  ],
+  "podleśna": [
+    "Under the Forest Street",
+    "Waldrandstraße"
+  ],
+  "podmiście": [
+    "Under the Town Lane",
+    "Unterstadtgasse"
+  ],
+  "podskale": [
+    "Under the Cliff Lane",
+    "Unter-den-Klippen-Weg"
+  ],
+  "podwale": [
+    "Old Town Moat Street",
+    "Stadtgrabenstraße"
+  ],
+  "podwawelska": [
+    "Under Wawel Hill Estate",
+    "Wawelfuß-Siedlung"
+  ],
+  "podzamcze": [
+    "Below the Wawel Castle Street",
+    "Am Schlossgrund"
+  ],
+  "pogodna": [
+    "Fair Weather / Sunny Street",
+    "Heitere Straße"
+  ],
+  "pokoju": [
+    "Peace & Harmony Avenue",
+    "Friedensallee"
+  ],
+  "polana": [
+    "Forest Glade Street",
+    "Waldlichtungsstraße"
+  ],
+  "polanowa": [
+    "Forest Clearing Meadow Street",
+    "Lichtungsstraße"
+  ],
+  "polarna": [
+    "Polar / Arctic Street",
+    "Polarstraße"
+  ],
+  "poleska": [
+    "Polesia Region Road",
+    "Polesien-Straße"
+  ],
+  "polna": [
+    "Country Field Road",
+    "Feldstraße"
+  ],
+  "południowa": [
+    "Southern Compass Street",
+    "Südliche Straße"
+  ],
+  "pomarańczowa": [
+    "Orange Citrus Fruit Street",
+    "Orangenstraße"
+  ],
+  "pomorska": [
+    "Baltic Pomerania Coast Road",
+    "Pommersche Straße"
+  ],
+  "popielata": [
+    "Ash Grey Street",
+    "Aschgraue Straße"
+  ],
+  "poprzeczna": [
+    "Transverse Cross Lane",
+    "Querstraße"
+  ],
+  "poranna": [
+    "Morning Dawn Sunlight Street",
+    "Morgenrotstraße"
+  ],
+  "poręba": [
+    "Forest Clearing Street",
+    "Waldschlagstraße"
+  ],
+  "portowa": [
+    "Harbor / Port Street",
+    "Hafenstraße"
+  ],
+  "porzeczkowa": [
+    "Redcurrant Berry Street",
+    "Johannisbeerstraße"
+  ],
+  "poselska": [
+    "Envoys' & Ambassadors' Street",
+    "Gesandtengasse"
+  ],
+  "potokowa": [
+    "Mountain Brook Stream Street",
+    "Gebirgsbachstraße"
+  ],
+  "powiewna": [
+    "Breezy Street",
+    "Brise-Straße"
+  ],
+  "powstańców": [
+    "Insurgents & Freedom Fighters Avenue",
+    "Aufständischenallee"
+  ],
+  "poziomkowa": [
+    "Wild Woodland Strawberry Street",
+    "Walderdbeerstraße"
+  ],
+  "poznańska": [
+    "Poznań Road",
+    "Posener Straße"
+  ],
+  "północna": [
+    "Northern Cardinal Direction Street",
+    "Nördliche Straße"
+  ],
+  "półwsie": [
+    "Półwsie Suburban Village Street",
+    "Półwsie-Straße"
+  ],
+  "praska": [
+    "Prague Royal Capital Street",
+    "Prager Straße"
+  ],
+  "prądnik": [
+    "Prądnik River Road",
+    "Prądnik-Straße"
+  ],
+  "prądnicka": [
+    "Prądnik Road",
+    "Prądnik-Straße"
+  ],
+  "promienna": [
+    "Radiant Beams of Light Street",
+    "Strahlenstraße"
+  ],
+  "prosta": [
+    "Straight Geometric Street",
+    "Gerade Straße"
+  ],
+  "proszowicka": [
+    "Proszowice Road",
+    "Proszowicer Straße"
+  ],
+  "przebiśniegów": [
+    "Snowdrop Flowers of Spring Street",
+    "Schneeglöckchenstraße"
+  ],
+  "przełęcz": [
+    "Mountain Pass Lane",
+    "Gebirgspassweg"
+  ],
+  "przemysłowa": [
+    "Industrial Manufacturing Street",
+    "Industriestraße"
+  ],
+  "przeskok": [
+    "Short Connecting Hop Lane",
+    "Kurzer-Durchgang-Gasse"
+  ],
+  "przesmyk": [
+    "Narrow Passage Alley",
+    "Engpassgasse"
+  ],
+  "przewóz": [
+    "Vistula River Ferry Crossing Street",
+    "Fährenüberfahrt-Straße"
+  ],
+  "przy kuźni": [
+    "By the Forge Lane",
+    "An-der-Schmiede-Weg"
+  ],
+  "przy moście": [
+    "By the Bridge Lane",
+    "An-der-Brücke-Weg"
+  ],
+  "przy rondzie": [
+    "By the Roundabout Lane",
+    "Am-Kreisverkehr-Weg"
+  ],
+  "przyjaźni": [
+    "International Friendship Avenue",
+    "Freundschaftsallee"
+  ],
+  "przystaniowa": [
+    "Harbor Marina Dock Street",
+    "Anlegestellenstraße"
+  ],
+  "pszenna": [
+    "Golden Wheat Cereal Street",
+    "Weizenfeldstraße"
+  ],
+  "ptasia": [
+    "Singing Birds Sanctuary Street",
+    "Vogelgesangstraße"
+  ],
+  "puchowa": [
+    "Down / Fluff Street",
+    "Daunenstraße"
+  ],
+  "pustelnik": [
+    "Hermit Street",
+    "Einsiedlerstraße"
+  ],
+  "puszkarska": [
+    "Renaissance Gunsmiths' Guild Street",
+    "Büchsenmacherstraße"
+  ],
+  "pychowicka": [
+    "Pychowice Road",
+    "Pychowice-Straße"
+  ],
+  "rabarbarowa": [
+    "Rhubarb Vegetable Garden Street",
+    "Rhabarberstraße"
+  ],
+  "raciborska": [
+    "Racibórz Road",
+    "Ratiborer Straße"
+  ],
+  "racławicka": [
+    "Racławice Battle Road",
+    "Racławice-Straße"
+  ],
+  "radiowa": [
+    "Radio Broadcasting Station Street",
+    "Rundfunkstraße"
+  ],
+  "radomska": [
+    "Radom Polish City Road",
+    "Radomer Straße"
+  ],
+  "radosna": [
+    "Joyful / Cheerful Street",
+    "Freudige Straße"
+  ],
+  "radzikowskiego": [
+    "Radzikowski Road",
+    "Radzikowski-Straße"
+  ],
+  "rajowa": [
+    "Paradise Garden Street",
+    "Paradiesgartenstraße"
+  ],
+  "rakowicka": [
+    "Rakowice Cemetery Avenue",
+    "Rakowitzer Straße"
+  ],
+  "rdzawa": [
+    "Rust Iron Mineral Street",
+    "Rostfarbene Straße"
+  ],
+  "reformacka": [
+    "Reformed Franciscan Friars' Street",
+    "Reformiertengasse"
+  ],
+  "rejtana": [
+    "Tadeusz Rejtan Patriot Street",
+    "Rejtan-Straße"
+  ],
+  "rezedowa": [
+    "Reseda Fragrant Flower Street",
+    "Resedastraße"
+  ],
+  "robotnicza": [
+    "Industrial Workers' Street",
+    "Arbeiterstraße"
+  ],
+  "rokitniańska": [
+    "Rokitna Cavalry Charge Street",
+    "Rokitna-Straße"
+  ],
+  "rolna": [
+    "Farming Agricultural Field Street",
+    "Ackerbauernstraße"
+  ],
+  "rolnicza": [
+    "Farmers' Traditional Guild Street",
+    "Landwirtschaftsstraße"
+  ],
+  "rondo mogilskie": [
+    "Mogiła Roundabout",
+    "Mogiła-Kreisverkehr"
+  ],
+  "rondo grzegórzeckie": [
+    "Grzegórzki Roundabout",
+    "Grzegórzki-Kreisverkehr"
+  ],
+  "rondo czyżyńskie": [
+    "Czyżyny Roundabout",
+    "Czyżyny-Kreisverkehr"
+  ],
+  "rondo matecznego": [
+    "Antoni Mateczny Spa Roundabout",
+    "Mateczny-Kreisverkehr"
+  ],
+  "rondo ofiar katynia": [
+    "Victims of Katyń Roundabout",
+    "Katyń-Opfer-Kreisverkehr"
+  ],
+  "rondo piastowskie": [
+    "Piast Dynasty Roundabout",
+    "Piasten-Kreisverkehr"
+  ],
+  "rondo unii europejskiej": [
+    "European Union Roundabout",
+    "EU-Kreisverkehr"
+  ],
+  "rozmarynowa": [
+    "Rosemary Fragrant Herb Street",
+    "Rosmarinstraße"
+  ],
+  "różana": [
+    "Garden of Roses Street",
+    "Rosenblütenstraße"
+  ],
+  "różana aleja": [
+    "Rose Avenue",
+    "Rosenallee"
+  ],
+  "równa": [
+    "Level / Flat Horizon Street",
+    "Flache Straße"
+  ],
+  "rubinowa": [
+    "Ruby Crimson Gemstone Street",
+    "Rubin Edelstein-Straße"
+  ],
+  "ruczaj": [
+    "Ruczaj Spring Brook District Street",
+    "Ruczaj-Bach-Straße"
+  ],
+  "rumiankowa": [
+    "Chamomile Healing Herb Street",
+    "Kamillenblütenstraße"
+  ],
+  "rycerska": [
+    "Medieval Knights of the Realm Street",
+    "Rittergasse"
+  ],
+  "rynek dębnicki": [
+    "Dębniki Market Square",
+    "Dębniki-Markt"
+  ],
+  "rynek kleparski": [
+    "Kleparz Market Square",
+    "Kleparz-Markt"
+  ],
+  "rynek podgórski": [
+    "Podgórze Town Market Square",
+    "Podgórze-Marktplatz"
+  ],
+  "rynek główny": [
+    "Main Market Square",
+    "Hauptmarkt"
+  ],
+  "rysiowa": [
+    "European Lynx Wildcat Street",
+    "Luchs-Wildkatzen-Straße"
+  ],
+  "rzeczna": [
+    "Vistula River Bank Street",
+    "Flussuferstraße"
+  ],
+  "rzemieślnicza": [
+    "Artisans & Guild Workshops Street",
+    "Handwerkerstraße"
+  ],
+  "rzepakowa": [
+    "Rapeseed Yellow Blossom Street",
+    "Rapsblütenstraße"
+  ],
+  "rzepichy": [
+    "Queen Rzepicha Ancient Piast Street",
+    "Königin-Rzepicha-Straße"
+  ],
+  "rzeszowska": [
+    "Rzeszów Road",
+    "Rzeszower Straße"
+  ],
+  "rzeźnicza": [
+    "Guild of Meat Butchers Street",
+    "Fleischhauerstraße"
+  ],
+  "sadownicza": [
+    "Orchard Fruit Cultivators Street",
+    "Obstbaumzüchterstraße"
+  ],
+  "sadowa": [
+    "Fruit Orchards & Greenery Street",
+    "Obstgartenstraße"
+  ],
+  "salwatorska": [
+    "Salwator District Street",
+    "Salwator-Straße"
+  ],
+  "sandomierska": [
+    "Sandomierz Royal Crown City Road",
+    "Sandomirer Straße"
+  ],
+  "saperska": [
+    "Combat Engineers Sappers Street",
+    "Pioniersoldatenstraße"
+  ],
+  "sarnia": [
+    "Roe Deer Woodland Animal Street",
+    "Rehkitzstraße"
+  ],
+  "sasankowa": [
+    "Spring Pasque Flower Street",
+    "Küchenschellenstraße"
+  ],
+  "schroniskowa": [
+    "Mountain Shelter Street",
+    "Berghüttenstraße"
+  ],
+  "seledynowa": [
+    "Celadon Pale Green Color Street",
+    "Hellgrüne Straße"
+  ],
+  "semaforowa": [
+    "Railway Semaphore Signal Street",
+    "Eisenbahnsignalstraße"
+  ],
+  "serafy": [
+    "Serafa Brook Street",
+    "Serafa-Bach-Straße"
+  ],
+  "serowarska": [
+    "Artisan Cheesemakers Guild Street",
+    "Käseherstellergasse"
+  ],
+  "siarczana": [
+    "Sulphur Mineral Spring Street",
+    "Schwefelquellenstraße"
+  ],
+  "sidzińska": [
+    "Sidzina Road",
+    "Sidzina-Straße"
+  ],
+  "siedlecka": [
+    "Siedlce Road",
+    "Siedlcer Straße"
+  ],
+  "sienna": [
+    "Medieval Hay Market Street",
+    "Heugasse"
+  ],
+  "siewna": [
+    "Spring Sowing of Grain Street",
+    "Saatfeldstraße"
+  ],
+  "sikorczana": [
+    "Blue Tit & Great Tit Bird Street",
+    "Blaumeisenstraße"
+  ],
+  "skalna": [
+    "Limestone Rock Cliff Street",
+    "Felsenklippenstraße"
+  ],
+  "skalnik": [
+    "Rock Climber / Alpine Plant Street",
+    "Felsenblumenstraße"
+  ],
+  "skarbińskiego": [
+    "Skarbiński Rector Street",
+    "Skarbiński-Straße"
+  ],
+  "skawińska": [
+    "Skawina Road",
+    "Skawina-Straße"
+  ],
+  "składowa": [
+    "Merchants Warehouse Depot Street",
+    "Lagerhausgasse"
+  ],
+  "skotnicka": [
+    "Skotniki Cattle Pasture Road",
+    "Skotniki-Straße"
+  ],
+  "słoneczna": [
+    "Sunny Bright Daylight Street",
+    "Sonnenschein-Straße"
+  ],
+  "słonecznikowa": [
+    "Tall Sunflower Crop Street",
+    "Sonnenblumenstraße"
+  ],
+  "słowacka": [
+    "Slovakia Street",
+    "Slowakische Straße"
+  ],
+  "słowicza": [
+    "Nightingale Melodic Bird Street",
+    "Nachtigallengasse"
+  ],
+  "słomiana": [
+    "Thatched Straw Roof Street",
+    "Strohdachstraße"
+  ],
+  "słomnicka": [
+    "Słomniki Road",
+    "Słomniki-Straße"
+  ],
+  "słupska": [
+    "Słupsk Road",
+    "Stolper Straße"
+  ],
+  "smocza": [
+    "Legendary Wawel Dragon Street",
+    "Wawel-Drachengasse"
+  ],
+  "snopowa": [
+    "Sheaf of Golden Grain Street",
+    "Getreidegarbenstraße"
+  ],
+  "snycerska": [
+    "Woodcarvers Fine Guild Street",
+    "Bildschnitzergasse"
+  ],
+  "sobiesława": [
+    "Sobiesław Ancient Slavic Name Street",
+    "Sobiesław-Straße"
+  ],
+  "sobolewska": [
+    "Sobol Family Estate Road",
+    "Sobol-Straße"
+  ],
+  "sokoła": [
+    "Falcon Bird of Prey Street",
+    "Falkengasse"
+  ],
+  "solna": [
+    "Wieliczka Salt Traders Street",
+    "Salzhandelsgasse"
+  ],
+  "solskiego": [
+    "Solski Actor Street",
+    "Solski-Straße"
+  ],
+  "sopocka": [
+    "Sopot Seaside Road",
+    "Zoppoter Straße"
+  ],
+  "sosnowa": [
+    "Scots Pine Conifer Tree Street",
+    "Waldkiefernstraße"
+  ],
+  "sosnowiecka": [
+    "Sosnowiec Road",
+    "Sosnowitzer Straße"
+  ],
+  "sowia": [
+    "Night Owl Wisdom Bird Street",
+    "Eulengasse"
+  ],
+  "spadzista": [
+    "Steep Incline Hillside Street",
+    "Steilhanggasse"
+  ],
+  "spiska": [
+    "Spiš Region Road",
+    "Zips-Straße"
+  ],
+  "spokojna": [
+    "Tranquil Peaceful Street",
+    "Ruhige Gasse"
+  ],
+  "spółdzielcza": [
+    "Cooperative Enterprise Street",
+    "Genossenschaftsstraße"
+  ],
+  "spółdzielców": [
+    "Members of Cooperatives Street",
+    "Genossenschaftlerstraße"
+  ],
+  "srebrna": [
+    "Fine Silver Metalwork Street",
+    "Silbergasse"
+  ],
+  "stadionowa": [
+    "Sports Stadium Arena Street",
+    "Stadionstraße"
+  ],
+  "stalowa": [
+    "High Strength Steel Works Street",
+    "Stahlwerkstraße"
+  ],
+  "starowiślna": [
+    "Old Vistula River Promenade Street",
+    "Alte-Weichsel-Straße"
+  ],
+  "stara": [
+    "Historic Old Street",
+    "Alte Gasse"
+  ],
+  "stawowa": [
+    "Carp Pond & Waterwheel Street",
+    "Mühlenteichstraße"
+  ],
+  "stelmachów": [
+    "Wheelwrights & Cartwrights Guild Street",
+    "Stellmachergasse"
+  ],
+  "sternicza": [
+    "Vistula Riverboat Steersman Street",
+    "Steuermannsgasse"
+  ],
+  "stokrotek": [
+    "White Daisy Meadow Flowers Street",
+    "Gänseblümchenstraße"
+  ],
+  "stolarska": [
+    "Cabinetmakers & Carpenters Street",
+    "Tischlergasse"
+  ],
+  "storczykowa": [
+    "Wild Orchid Blossom Street",
+    "Orchideenwiesenstraße"
+  ],
+  "stradomska": [
+    "Stradom Royal Access Thoroughfare",
+    "Stradom-Königsweg"
+  ],
+  "stroma": [
+    "Steep Escarpment Street",
+    "Steile Gasse"
+  ],
+  "strumykowa": [
+    "Clear Water Streamlet Street",
+    "Waldbächleinstraße"
+  ],
+  "strzelecka": [
+    "Marksmen Brotherhood of the Rooster Street",
+    "Schützenbrüdergasse"
+  ],
+  "studencka": [
+    "Jagiellonian University Students Street",
+    "Studentengasse"
+  ],
+  "sukiennice": [
+    "Medieval Cloth Hall Market",
+    "Tuchhallen-Markt"
+  ],
+  "sukiennicza": [
+    "Textile & Wool Drapers Street",
+    "Tuchmacherstraße"
+  ],
+  "suwalska": [
+    "Suwałki Road",
+    "Suwałki-Straße"
+  ],
+  "swoszowicka": [
+    "Swoszowice Spa Road",
+    "Swoszowice-Straße"
+  ],
+  "sybiraków": [
+    "Siberian Exiles Street",
+    "Sibirien-Verbannten-Straße"
+  ],
+  "synagogi": [
+    "Synagogue Street",
+    "Synagogenstraße"
+  ],
+  "szaniec": [
+    "Artillery Fortification Rampart Street",
+    "Schanzenwallstraße"
+  ],
+  "szara": [
+    "Quiet Grey Stone Street",
+    "Grausteinstraße"
+  ],
+  "szczecińska": [
+    "Szczecin Road",
+    "Stettiner Straße"
+  ],
+  "szczepańska": [
+    "St. Stephen Collegiate Church Street",
+    "Stephansgasse"
+  ],
+  "szewska": [
+    "Medieval Cobblers & Shoemakers Street",
+    "Schustergasse"
+  ],
+  "szkocka": [
+    "Scottish Immigrants' Street",
+    "Schottische Straße"
+  ],
+  "szkolna": [
+    "Parish Grammar School Street",
+    "Schulgasse"
+  ],
+  "szlifierska": [
+    "Diamond & Glass Polishers Street",
+    "Glasschleiferstraße"
+  ],
+  "szpitalna": [
+    "Holy Ghost Infirmary Hospital Street",
+    "Spitalgasse"
+  ],
+  "sztygarów": [
+    "Mine Overman & Inspectors Street",
+    "Bergwerksinspektorstraße"
+  ],
+  "szybowa": [
+    "Mine Headframe & Shaft Street",
+    "Förderschachtstraße"
+  ],
+  "szybowcowa": [
+    "Sailplane Glider Aviation Street",
+    "Segelflugzeugstraße"
+  ],
+  "śląska": [
+    "Silesia Region Road",
+    "Schlesische Straße"
+  ],
+  "śledziowa": [
+    "Salted Herring Market Street",
+    "Heringshändlergasse"
+  ],
+  "ślepa": [
+    "Blind Alley Cul-de-Sac Lane",
+    "Sackgasse"
+  ],
+  "śliwkowa": [
+    "Purple Plum Tree Orchard Street",
+    "Pflaumenbaumstraße"
+  ],
+  "ślusarska": [
+    "Locksmiths & Metal Artisans Street",
+    "Schlossergasse"
+  ],
+  "śnieżna": [
+    "Pure White Snow Street",
+    "Schneeweiße Straße"
+  ],
+  "środkowa": [
+    "Central Town Axis Street",
+    "Mittelachse-Straße"
+  ],
+  "św. anny": [
+    "St. Anne's University Collegiate Street",
+    "St.-Anna-Gasse"
+  ],
+  "św. ducha": [
+    "Holy Spirit Hospital Square",
+    "Heiliggeistplatz"
+  ],
+  "św. filipa": [
+    "St. Philip's Street",
+    "St.-Philipp-Gasse"
+  ],
+  "św. jana": [
+    "St. John's Church Street",
+    "St.-Johannes-Gasse"
+  ],
+  "św. katarzyny": [
+    "St. Catherine's Monastery Street",
+    "St.-Katharina-Gasse"
+  ],
+  "św. krzyża": [
+    "Holy Cross Church Street",
+    "Heiligkreuzgasse"
+  ],
+  "św. marka": [
+    "St. Mark's Church Street",
+    "St.-Markus-Gasse"
+  ],
+  "św. sebastiana": [
+    "St. Sebastian's Street",
+    "St.-Sebastian-Gasse"
+  ],
+  "św. stanisława": [
+    "St. Stanislaus Bishop & Martyr Street",
+    "St.-Stanislaus-Gasse"
+  ],
+  "św. teresy": [
+    "St. Teresa's Convent Street",
+    "St.-Theresia-Gasse"
+  ],
+  "św. tomasza": [
+    "St. Thomas's Street",
+    "St.-Thomas-Gasse"
+  ],
+  "św. wawrzyńca": [
+    "St. Lawrence's Street",
+    "St.-Laurentius-Gasse"
+  ],
+  "świerkowa": [
+    "Norway Spruce Evergreen Street",
+    "Fichtenwaldstraße"
+  ],
+  "świętokrzyska": [
+    "Holy Cross Mountains Road",
+    "Heiligkreuzstraße"
+  ],
+  "tarnowska": [
+    "Tarnów Road",
+    "Tarnower Straße"
+  ],
+  "targowa": [
+    "Weekly Produce Market Street",
+    "Wochenmarktstraße"
+  ],
+  "tatrzańska": [
+    "Tatra Mountains Road",
+    "Tatra-Straße"
+  ],
+  "teatralna": [
+    "Słowacki Municipal Theatre Street",
+    "Theaterstraße"
+  ],
+  "tęczowa": [
+    "Seven-Color Rainbow Street",
+    "Regenbogenstraße"
+  ],
+  "tkacka": [
+    "Wool & Linen Weavers Guild Street",
+    "Webergasse"
+  ],
+  "tokarska": [
+    "Wood & Brass Turners Guild Street",
+    "Drechslergasse"
+  ],
+  "topiel": [
+    "River Abyss / Deep Pool Street",
+    "Strudelgasse"
+  ],
+  "topolowa": [
+    "Tall Black Poplar Trees Street",
+    "Pappelalleestraße"
+  ],
+  "torowa": [
+    "Railway Switch Track Street",
+    "Schienengleisstraße"
+  ],
+  "toruńska": [
+    "Toruń Road",
+    "Thorner Straße"
+  ],
+  "towarowa": [
+    "Freight Cargo Goods Terminal Street",
+    "Güterbahnhofstraße"
+  ],
+  "trawiasta": [
+    "Green Grass Pasture Street",
+    "Graswiesenstraße"
+  ],
+  "truskawkowa": [
+    "Sweet Garden Strawberry Street",
+    "Erdbeerfeldstraße"
+  ],
+  "trzebińska": [
+    "Trzebinia Road",
+    "Trzebinia-Straße"
+  ],
+  "tuchowska": [
+    "Tuchów Road",
+    "Tuchów-Straße"
+  ],
+  "tulipanowa": [
+    "Dutch Tulip Blossom Street",
+    "Tulpenblütenstraße"
+  ],
+  "turyńska": [
+    "Turin Street",
+    "Turiner Straße"
+  ],
+  "turystyczna": [
+    "Mountain Hiking Tourists Street",
+    "Wandertouristenstraße"
+  ],
+  "tymiankowa": [
+    "Thyme Culinary Herb Street",
+    "Thymiankrautstraße"
+  ],
+  "tyniecka": [
+    "Tyniec Benedictine Abbey Road",
+    "Tyniec-Straße"
+  ],
+  "ułańska": [
+    "Polish Cavalry Uhlans Street",
+    "Ulanenreiterstraße"
+  ],
+  "ujastek": [
+    "Ujastek Industrial Avenue",
+    "Ujastek-Allee"
+  ],
+  "uniwersytecka": [
+    "Jagiellonian University Street",
+    "Universitätsgasse"
+  ],
+  "urocza": [
+    "Charming Picturesque Alley",
+    "Liebliche Gasse"
+  ],
+  "urzędnicza": [
+    "Civil Servants Quarter Street",
+    "Beamtenviertelstraße"
+  ],
+  "ustronie": [
+    "Quiet Secluded Haven Street",
+    "Stille-Zuflucht-Straße"
+  ],
+  "wadowicka": [
+    "Wadowice Road",
+    "Wadowicer Straße"
+  ],
+  "wagnera": [
+    "Wagner Street",
+    "Wagner-Straße"
+  ],
+  "wałowa": [
+    "City Defence Wall Ramparts Street",
+    "Festungswallstraße"
+  ],
+  "wapienna": [
+    "Limestone Kiln & Quarry Street",
+    "Kalksteinbruchstraße"
+  ],
+  "warszawska": [
+    "Warsaw Highway",
+    "Warschauer Straße"
+  ],
+  "warszawianka": [
+    "Warszawianka Anthem Street",
+    "Warszawianka-Straße"
+  ],
+  "warsztatowa": [
+    "Artisan Workshops Street",
+    "Handwerkswerkstattstraße"
+  ],
+  "wawelska": [
+    "Wawel Royal Hill Avenue",
+    "Wawel-Burgallee"
+  ],
+  "wąska": [
+    "Medieval Narrow Alleyway",
+    "Enge Gasse"
+  ],
+  "wąwozowa": [
+    "Deep Loess Ravine Street",
+    "Löss-Schluchtstraße"
+  ],
+  "wczasowa": [
+    "Holiday Vacation Retreat Street",
+    "Urlaubsortstraße"
+  ],
+  "wenecka": [
+    "Venetian Street",
+    "Venedig-Straße"
+  ],
+  "wesoła": [
+    "Merry & Cheerful Suburb Street",
+    "Fröhliche Vorstadtstraße"
+  ],
+  "węgierska": [
+    "Hungarian Trade Road",
+    "Ungarische Straße"
+  ],
+  "wiaduktowa": [
+    "Viaduct Street",
+    "Viaduktstraße"
+  ],
+  "wiatraczna": [
+    "Grain Windmill Hill Street",
+    "Windmühlenhügelstraße"
+  ],
+  "widok": [
+    "Scenic Panorama Belvedere Street",
+    "Panoramablick-Straße"
+  ],
+  "wiedeńska": [
+    "Vienna Road",
+    "Wiener Straße"
+  ],
+  "wielicka": [
+    "Wieliczka Salt Mine Road",
+    "Wieliczka-Straße"
+  ],
+  "wielkopolska": [
+    "Greater Poland Road",
+    "Großpolen-Straße"
+  ],
+  "wielmoża": [
+    "Magnate / Nobleman Street",
+    "Edelmannstraße"
+  ],
+  "wieniawskiego": [
+    "Wieniawski Virtuoso Street",
+    "Wieniawski-Straße"
+  ],
+  "wierzbowa": [
+    "Weeping Willow Riverside Street",
+    "Trauerweidenstraße"
+  ],
+  "wiewiórcza": [
+    "Red Squirrel Tree Park Street",
+    "Eichhörnchenweg"
+  ],
+  "wiejska": [
+    "Country Village Farmstead Street",
+    "Dörfliche Straße"
+  ],
+  "wileńska": [
+    "Vilnius Road",
+    "Wilnaer Straße"
+  ],
+  "wilcza": [
+    "Wild Timber Wolf Street",
+    "Wolfsgasse"
+  ],
+  "wilga": [
+    "Golden Oriole / Wilga River Street",
+    "Wilga-Straße"
+  ],
+  "winiarska": [
+    "Royal Winegrowers & Cellars Street",
+    "Weinbergbauerngasse"
+  ],
+  "winna": [
+    "Vineyard Slopes Street",
+    "Weingartenstraße"
+  ],
+  "wiosenna": [
+    "Fresh Spring Season Street",
+    "Frühlingstage-Straße"
+  ],
+  "wiślna": [
+    "Vistula River Gateway Street",
+    "Weichselpfortengasse"
+  ],
+  "wiśniowa": [
+    "Sweet Cherry Orchard Street",
+    "Kirschgartenstraße"
+  ],
+  "włocławska": [
+    "Włocławek Road",
+    "Leslauer Straße"
+  ],
+  "włókniarzy": [
+    "Textile Mills Workers Street",
+    "Textilweberstraße"
+  ],
+  "wodna": [
+    "Water Springs & Fountains Street",
+    "Wasserquellengasse"
+  ],
+  "wojewódzka": [
+    "Voivodeship / Provincial Street",
+    "Woiwodschaftsstraße"
+  ],
+  "wola justowska": [
+    "Wola Justowska Estate Road",
+    "Wola-Justowska-Straße"
+  ],
+  "wolska": [
+    "Wola Duchacka Road",
+    "Wola-Straße"
+  ],
+  "wolności": [
+    "Freedom & Human Liberty Square",
+    "Freiheitsplatz"
+  ],
+  "woźniców": [
+    "Horse Coachmen & Teamsters Street",
+    "Kutschergasse"
+  ],
+  "wrocławska": [
+    "Wrocław Road",
+    "Breslauer Straße"
+  ],
+  "wronia": [
+    "Black Crow Bird Street",
+    "Krähenvogelstraße"
+  ],
+  "wrześniowa": [
+    "September Harvest Month Street",
+    "Septembertage-Straße"
+  ],
+  "wrzosowa": [
+    "Purple Heather Moorland Street",
+    "Heidekrautstraße"
+  ],
+  "wspólna": [
+    "Shared Community Commons Street",
+    "Gemeinschaftsstraße"
+  ],
+  "wybickiego": [
+    "Józef Wybicki Anthem Author Street",
+    "Wybicki-Straße"
+  ],
+  "wybrzeże": [
+    "Vistula Embankment Boulevard",
+    "Weichsel-Kaispromenade"
+  ],
+  "wydmowa": [
+    "Inland River Sand Dunes Street",
+    "Binnendünenstraße"
+  ],
+  "wypoczynkowa": [
+    "Weekend Recreation & Rest Street",
+    "Erholungsgebietstraße"
+  ],
+  "wysoka": [
+    "High Elevation Panoramic Street",
+    "Hohe Höhenstraße"
+  ],
+  "wzgórze": [
+    "Scenic Hilltop Mount Street",
+    "Hügelkammstraße"
+  ],
+  "za fortem": [
+    "Behind the Fort Lane",
+    "Hinter-dem-Fort-Weg"
+  ],
+  "za górą": [
+    "Beyond the Mountain Lane",
+    "Hinter-dem-Berg-Weg"
+  ],
+  "za młynem": [
+    "Behind the Mill Lane",
+    "Hinter-der-Mühle-Weg"
+  ],
+  "za torem": [
+    "Beyond the Railway Track Lane",
+    "Hinter-dem-Gleis-Weg"
+  ],
+  "za wodą": [
+    "Beyond the Water Lane",
+    "Hinter-dem-Wasser-Weg"
+  ],
+  "zabierzowska": [
+    "Zabierzów Road",
+    "Zabierzower Straße"
+  ],
+  "zabłocie": [
+    "Zabłocie Beyond the Mire Industrial Quarter",
+    "Zabłocie-Industrieviertel"
+  ],
+  "zacisze": [
+    "Tranquil & Peaceful Haven Street",
+    "Ruhige-Oase-Gasse"
+  ],
+  "zagaje": [
+    "Grove / Thicket Street",
+    "Gehölzstraße"
+  ],
+  "zagonowa": [
+    "Traditional Strip Field Ridge Street",
+    "Ackerbeete-Straße"
+  ],
+  "zakole": [
+    "Scenic Vistula River Meander Street",
+    "Flussschleifen-Blick-Straße"
+  ],
+  "zakopiańska": [
+    "Zakopane Tatra Highway",
+    "Zakopane-Straße"
+  ],
+  "zakręt": [
+    "Winding Road Curve Lane",
+    "Kurvenweg"
+  ],
+  "zakrzowiecka": [
+    "Zakrzówek Limestone Gorge Road",
+    "Zakrzówek-Kalkfelsstraße"
+  ],
+  "zalesie": [
+    "Beyond the Deep Woods Estate",
+    "Hinterwalder-Siedlung"
+  ],
+  "zalewowa": [
+    "Reservoir Floodgate Promenade",
+    "Stauseedamm-Straße"
+  ],
+  "zamenhofa": [
+    "Zamenhof Esperanto Street",
+    "Zamenhof-Straße"
+  ],
+  "zamkowa": [
+    "Royal Castle Rampart Street",
+    "Schlossbergstraße"
+  ],
+  "zamojska": [
+    "Zamość Renaissance Road",
+    "Zamość-Straße"
+  ],
+  "zaplecze": [
+    "Service Quarter Rearway Lane",
+    "Hinterhofstraße"
+  ],
+  "zarzecze": [
+    "Beyond the Rudawa River Street",
+    "Über-dem-Fluss-Straße"
+  ],
+  "zaułek": [
+    "Historic Medieval Blind Alley",
+    "Mittelalterliches Gässchen"
+  ],
+  "zawila": [
+    "Twisting Winding Narrow Street",
+    "Gewundene Gasse"
+  ],
+  "zawilec": [
+    "Wood Anemone Spring Flower Street",
+    "Buschwindröschenstraße"
+  ],
+  "zawodzie": [
+    "Historic Mill Waters Millrace Street",
+    "Am-Mühlengraben-Straße"
+  ],
+  "zbigniewa": [
+    "Zbigniew Historic Slavic Name Street",
+    "Zbigniew-Straße"
+  ],
+  "zbożowa": [
+    "Grain & Cereals Silos Street",
+    "Getreidespeicherstraße"
+  ],
+  "zdrojowa": [
+    "Healing Mineral Springs Spa Street",
+    "Heilbrunnen-Kurgasse"
+  ],
+  "zdunów": [
+    "Tiled Stove Builders Guild Street",
+    "Kachelofenbauer-Gasse"
+  ],
+  "zegarowa": [
+    "Astronomical Clockmakers Street",
+    "Uhrmachergasse"
+  ],
+  "zielna": [
+    "Feast of Herbal Greenery Street",
+    "Kräutersegenstraße"
+  ],
+  "zielona": [
+    "Green Shaded Trees Promenade Street",
+    "Grüne Alleenstraße"
+  ],
+  "zielone wzgórze": [
+    "Emerald Green Hilltop Street",
+    "Grüner-Hügel-Straße"
+  ],
+  "zielonogórska": [
+    "Zielona Góra Road",
+    "Grünberger Straße"
+  ],
+  "zimowa": [
+    "Winter Season Snowfall Street",
+    "Wintertage-Straße"
+  ],
+  "złota": [
+    "Pure Gold Merchants Street",
+    "Goldene Schmuckgasse"
+  ],
+  "złotników": [
+    "Goldsmiths & Jewelers Guild Street",
+    "Goldschmiedgasse"
+  ],
+  "zwierzyniecka": [
+    "Zwierzyniec Norbertine Monastery Boulevard",
+    "Zwierzyniec-Klosterstraße"
+  ],
+  "zwycięstwa": [
+    "Victory in Arms & Freedom Street",
+    "Siegesstraße"
+  ],
+  "źródlana": [
+    "Pure Mountain Springhead Street",
+    "Quellwasserstraße"
+  ],
+  "żabia": [
+    "Green Water Frog Pond Lane",
+    "Froschteichgasse"
+  ],
+  "żaglowa": [
+    "Yachting Sail Canvas Street",
+    "Segeltuchstraße"
+  ],
+  "żelazna": [
+    "Iron Foundry & Metal Rails Street",
+    "Eisenwarengasse"
+  ],
+  "żeglarska": [
+    "Vistula River Sailors & Skippers Street",
+    "Flussschifferstraße"
+  ],
+  "żniwna": [
+    "Golden Summer Crop Harvest Street",
+    "Erntezeitstraße"
+  ],
+  "żołnierska": [
+    "Soldiers Garrison Military Street",
+    "Soldatengarnisonstraße"
+  ],
+  "żonkilowa": [
+    "Golden Jonquil Daffodil Street",
+    "Jonquillenblütenstraße"
+  ],
+  "żubrowa": [
+    "European Primeval Bison Woods Street",
+    "Wisenturwald-Straße"
+  ],
+  "żurawia": [
+    "Grey Crowned Crane Bird Street",
+    "Kranichvogelstraße"
+  ],
+  "żwirowa": [
+    "Clean River Gravel & Sand Street",
+    "Kiesgrubenstraße"
+  ],
+  "żytnia": [
+    "Rye Bread Grain Field Street",
+    "Roggenkornstraße"
+  ],
+  "żywiecka": [
+    "Żywiec Beskid Road",
+    "Saybuscher Straße"
+  ],
+  "abrahama": [
+    "Abraham Street",
+    "Abrahamstraße"
+  ],
+  "kasy oszczędności miasta krakowa": [
+    "City of Kraków Savings Bank Avenue",
+    "Krakauer-Sparkasse-Allee"
+  ],
+  "róż": [
+    "Roses Avenue",
+    "Rosenallee"
+  ],
+  "panieńskich skał": [
+    "Maiden Rocks Avenue",
+    "Jungfrauenfelsen-Allee"
+  ],
+  "do kopca": [
+    "Mound Path",
+    "Hügelweg"
+  ],
+  "pustelnika": [
+    "Hermit Avenue",
+    "Einsiedlerallee"
+  ],
+  "wędrowników": [
+    "Wanderers' Avenue",
+    "Wandererallee"
+  ],
+  "zasłużonych": [
+    "Meritorious Citizens Avenue",
+    "Verdienstvollenallee"
+  ],
+  "alejka ochrony przyrody": [
+    "Nature Conservation Alley",
+    "Naturschutzgasse"
+  ],
+  "armii „kraków”": [
+    "Kraków Army Avenue",
+    "Krakau-Armee-Allee"
+  ],
+  "autostrada ms agh": [
+    "AGH Student Campus Highway",
+    "AGH-Campus-Autobahn"
+  ],
+  "babinicza": [
+    "Andrzej Babinicz (Trilogy Hero) Street",
+    "Babinicz-Straße"
+  ],
+  "balanówka": [
+    "Balanówka Lane",
+    "Balanówka-Gasse"
+  ],
+  "bardosa": [
+    "Jan Bardos Street",
+    "Bardos-Straße"
+  ],
+  "bartnicza": [
+    "Wild Beekeeping Street",
+    "Zeidlergasse"
+  ],
+  "bartników": [
+    "Wild Beekeepers' Street",
+    "Zeidlerstraße"
+  ],
+  "berka joselewicza": [
+    "Berek Joselewicz Colonel Street",
+    "Berek-Joselewicz-Straße"
+  ],
+  "białych brzóz": [
+    "White Birches Street",
+    "Weiße-Birken-Straße"
+  ],
+  "billewiczów": [
+    "Billewicz Family (Trilogy) Street",
+    "Billewicz-Familie-Straße"
+  ],
+  "bodziszkowa": [
+    "Geranium / Cranesbill Street",
+    "Storchschnabelstraße"
+  ],
+  "boguszówka": [
+    "Boguszówka Lane",
+    "Boguszówka-Gasse"
+  ],
+  "bojanówka": [
+    "Bojanówka Lane",
+    "Bojanówka-Gasse"
+  ],
+  "bosaków": [
+    "Barefoot Carmelite Friars' Street",
+    "Barfüßergasse"
+  ],
+  "bożywoja": [
+    "Bożywoj (Ancient Slavic Name) Street",
+    "Bożywoj-Straße"
+  ],
+  "braci jamków": [
+    "Jamek Brothers Street",
+    "Gebrüder-Jamek-Straße"
+  ],
+  "braci kiemliczów": [
+    "Kiemlicz Brothers Street",
+    "Kiemlicz-Brüder-Straße"
+  ],
+  "braci schindlerów": [
+    "Schindler Brothers Street",
+    "Schindler-Brüder-Straße"
+  ],
+  "brogi": [
+    "Hayricks / Haystack Street",
+    "Heuschoberstraße"
+  ],
+  "budrysów": [
+    "Budrys Brothers (Mickiewicz Ballad) Street",
+    "Budrys-Brüder-Straße"
+  ],
+  "butrymów": [
+    "Butrym Gentry Family Street",
+    "Butrym-Familie-Straße"
+  ],
+  "centkiewiczów": [
+    "Centkiewicz Arctic Explorers Street",
+    "Centkiewicz-Polarentdecker-Straße"
+  ],
+  "christo botewa": [
+    "Hristo Botev Bulgarian Poet Street",
+    "Hristo-Botev-Straße"
+  ],
+  "chłodna": [
+    "Cool Breeze Street",
+    "Kühle Straße"
+  ],
+  "ciasna": [
+    "Narrow / Tight Lane",
+    "Enge Gasse"
+  ],
+  "cichociemnych ak": [
+    "Cichociemni Elite Paratroopers Street",
+    "Cichociemni-Fallschirmjäger-Straße"
+  ],
+  "cichy kącik": [
+    "Quiet Corner / Nook Tram Terminal",
+    "Stille-Ecke-Straße"
+  ],
+  "ciekowiec": [
+    "Watercourse / Streamlet Lane",
+    "Wasserlaufweg"
+  ],
+  "cienista": [
+    "Shady Street",
+    "Schattige Straße"
+  ],
+  "ciepła": [
+    "Warm Street",
+    "Warme Straße"
+  ],
+  "ciepłownicza": [
+    "Heating Plant Street",
+    "Fernwärmestraße"
+  ],
+  "combrowa": [
+    "Babski Comber Carnival Street",
+    "Weiberkarnevalstraße"
+  ],
+  "cuplowa": [
+    "River Confluence / Spit Street",
+    "Mündungsspitze-Straße"
+  ],
+  "cystersów": [
+    "Cistercian Monks Street",
+    "Zisterzienserstraße"
+  ],
+  "czajek": [
+    "Lapwings' Street",
+    "Kiebitzstraße"
+  ],
+  "czajna": [
+    "Tea Shop / Samovar Street",
+    "Teestubenstraße"
+  ],
+  "czapskich": [
+    "Czapski Palace & Museum Street",
+    "Czapski-Museum-Straße"
+  ],
+  "czeladnicza": [
+    "Journeymen's Guild Street",
+    "Gesellengasse"
+  ],
+  "czeremchowa": [
+    "Bird Cherry Tree Street",
+    "Traubenkirschenstraße"
+  ],
+  "czerwone maki": [
+    "Red Poppies of Monte Cassino Street",
+    "Rote-Mohnblumen-Straße"
+  ],
+  "czerwonego kapturka": [
+    "Little Red Riding Hood Street",
+    "Rotkäppchenstraße"
+  ],
+  "czerwonego prądnika": [
+    "Prądnik Czerwony Road",
+    "Rot-Prądnik-Straße"
+  ],
+  "czołgistów": [
+    "Tank Crewmen's Street",
+    "Panzersoldatenstraße"
+  ],
+  "czwartaków": [
+    "4th Infantry Regiment (Czwartacy) Street",
+    "Czwartacy-Infanterie-Straße"
+  ],
+  "czyżyk": [
+    "Siskin Bird Street",
+    "Zeisigstraße"
+  ],
+  "daliowa": [
+    "Dahlia Flower Street",
+    "Dahlienstraße"
+  ],
+  "deszczowa": [
+    "Rainy Weather Street",
+    "Regenstraße"
+  ],
+  "dokerów": [
+    "Dockworkers' Street",
+    "Hafenarbeiterstraße"
+  ],
+  "dolna": [
+    "Lower Street",
+    "Untere Straße"
+  ],
+  "dolina słońca": [
+    "Sun Valley Street",
+    "Sonnentalstraße"
+  ],
+  "dolina będkowska": [
+    "Będkowska Valley Road",
+    "Będkowska-Tal-Straße"
+  ],
+  "dolina prądnika": [
+    "Prądnik Valley Road",
+    "Prądnik-Tal-Straße"
+  ],
+  "drwali": [
+    "Lumberjacks' Street",
+    "Holzfällerstraße"
+  ],
+  "dworcowa": [
+    "Railway Station Street",
+    "Bahnhofstraße"
+  ],
+  "dywizjonu 303": [
+    "303 Polish Fighter Squadron Avenue",
+    "Staffel-303-Allee"
+  ],
+  "dywizjonu 308": [
+    "308 Polish Fighter Squadron Street",
+    "Staffel-308-Straße"
+  ],
+  "dziewiarzy": [
+    "Knitters' / Hosiery Makers' Street",
+    "Strickerstraße"
+  ],
+  "dźwigowa": [
+    "Crane / Hoist Street",
+    "Kranstraße"
+  ],
+  "dębowa aleja": [
+    "Oak Avenue",
+    "Eichenallee"
+  ],
+  "dębowa": [
+    "Oak Tree Street",
+    "Eichenstraße"
+  ],
+  "edisをつ": [
+    "Edison Street",
+    "Edison-Straße"
+  ],
+  "famulskiego": [
+    "Famulski Street",
+    "Famulski-Straße"
+  ],
+  "farbiarska": [
+    "Dyers' Guild Street",
+    "Färbergasse"
+  ],
+  "fiołkowa": [
+    "Violet Flower Street",
+    "Veilchenstraße"
+  ],
+  "folwarczna": [
+    "Manorial Farm Estate Street",
+    "Vorwerkstraße"
+  ],
+  "forteczna": [
+    "Fortress Kraków Artillery Road",
+    "Festungsstraße"
+  ],
+  "gajowa": [
+    "Grove / Woodland Street",
+    "Hainstraße"
+  ],
+  "galaktyczna": [
+    "Galactic Street",
+    "Galaktische Straße"
+  ],
+  "garbarska": [
+    "Tanners' Street",
+    "Gerbergasse"
+  ],
+  "garncarska": [
+    "Potters' Guild Street",
+    "Töpfergasse"
+  ],
+  "gilowa": [
+    "Bullfinch Bird Street",
+    "Gimpelstraße"
+  ],
+  "glogera": [
+    "Zygmunt Gloger Ethnographer Street",
+    "Gloger-Straße"
+  ],
+  "gołębia": [
+    "Pigeon / Dove Street",
+    "Taubengasse"
+  ],
+  "goryczkowa": [
+    "Gentian Flower Street",
+    "Enzianstraße"
+  ],
+  "gościnna": [
+    "Hospitable / Welcoming Street",
+    "Gastfreundliche Straße"
+  ],
+  "goździkowa": [
+    "Carnation Flower Street",
+    "Nelkenstraße"
+  ],
+  "grabowa": [
+    "Hornbeam Tree Street",
+    "Hainbuchenstraße"
+  ],
+  "granitowa": [
+    "Granite Stone Street",
+    "Granitstraße"
+  ],
+  "grochowa": [
+    "Pea Field Street",
+    "Erbsenstraße"
+  ],
+  "grodzka": [
+    "Royal Castle / Citadel Thoroughfare",
+    "Burgstraße"
+  ],
+  "gromadzka": [
+    "Village Community / Commune Street",
+    "Gemeindestraße"
+  ],
+  "gronostajowa": [
+    "Stoat / Ermine Street",
+    "Hermelinstraße"
+  ],
+  "gruszowa": [
+    "Pear Tree Street",
+    "Birnenstraße"
+  ],
+  "grzybowa": [
+    "Mushroom Woods Street",
+    "Pilzstraße"
+  ],
+  "gwiaździsta": [
+    "Starry Sky Street",
+    "Sternenstraße"
+  ],
+  "harcerska": [
+    "Scouts' (ZHP) Street",
+    "Pfadfinderstraße"
+  ],
+  "harnasiów": [
+    "Highland Brigands (Harnasie) Street",
+    "Harnasie-Freischärler-Straße"
+  ],
+  "hebanowa": [
+    "Ebony Wood Street",
+    "Ebenholzstraße"
+  ],
+  "hiacyntowa": [
+    "Hyacinth Flower Street",
+    "Hyazinthenstraße"
+  ],
+  "honorowa": [
+    "Honorary / Honorable Street",
+    "Ehrenstraße"
+  ],
+  "huculska": [
+    "Hutsul Carpathian Region Street",
+    "Huzulen-Straße"
+  ],
+  "irysowa": [
+    "Iris Flower Street",
+    "Schwertlilienstraße"
+  ],
+  "iskierka": [
+    "Spark / Little Spark Lane",
+    "Fünkchen-Weg"
+  ],
+  "jabłoniowa": [
+    "Apple Orchard Street",
+    "Apfelbaumstraße"
+  ],
+  "jankowskiego": [
+    "Jankowski Street",
+    "Jankowski-Straße"
+  ],
+  "jarzębinowa": [
+    "Rowan / Mountain Ash Street",
+    "Vogelbeerstraße"
+  ],
+  "jaskółcza": [
+    "Swallow Bird Street",
+    "Schwalbenstraße"
+  ],
+  "jasna": [
+    "Bright / Sunlit Street",
+    "Helle Gasse"
+  ],
+  "jaśminowa": [
+    "Jasmine Blossom Street",
+    "Jasminstraße"
+  ],
+  "jaworowa": [
+    "Sycamore Maple Tree Street",
+    "Bergahornstraße"
+  ],
+  "jedlicza": [
+    "Fir Cone / Needles Street",
+    "Tannennadelstraße"
+  ],
+  "jelenia": [
+    "Stag / Deer Street",
+    "Hirschstraße"
+  ],
+  "jesienna": [
+    "Autumn Season Street",
+    "Herbststraße"
+  ],
+  "jesionowa": [
+    "Ash Tree Street",
+    "Eschenstraße"
+  ],
+  "jeżowa": [
+    "Hedgehog Animal Street",
+    "Igelstraße"
+  ],
+  "jodłowa": [
+    "Silver Fir Tree Street",
+    "Tannenstraße"
+  ],
+  "kaktusowa": [
+    "Cactus Plant Street",
+    "Kaktusstraße"
+  ],
+  "kameliowa": [
+    "Camellia Blossom Street",
+    "Kamelienstraße"
+  ],
+  "kanonicza": [
+    "Cathedral Canons' Renaissance Street",
+    "Kanonikergasse"
+  ],
+  "karpiowa": [
+    "Carp Fish Street",
+    "Karpfenstraße"
+  ],
+  "kasztanowa": [
+    "Horse Chestnut Tree Street",
+    "Kastanienstraße"
+  ],
+  "kawcza": [
+    "Jackdaw Bird Street",
+    "Dohlengasse"
+  ],
+  "kolejarzy": [
+    "Railwaymen's Street",
+    "Eisenbahnerstraße"
+  ],
+  "kominiarska": [
+    "Chimney Sweeps' Guild Street",
+    "Schornsteinfegergasse"
+  ],
+  "koniczynowa": [
+    "Clover Flower Street",
+    "Kleestraße"
+  ],
+  "konwaliowa": [
+    "Lily of the Valley Street",
+    "Maiglöckchenstraße"
+  ],
+  "kopalniana": [
+    "Salt & Coal Mine Street",
+    "Grubenstraße"
+  ],
+  "koprowa": [
+    "Dill / Fennel Garden Street",
+    "Dillstraße"
+  ],
+  "koronkarska": [
+    "Lace Makers' Street",
+    "Spitzenmacherstraße"
+  ],
+  "kostrzewskiego": [
+    "Kostrzewski Street",
+    "Kostrzewski-Straße"
+  ],
+  "kowalska": [
+    "Blacksmiths' Forge Street",
+    "Schmiedgasse"
+  ],
+  "krańcowa": [
+    "City Boundary / Edge Street",
+    "Grenzrandstraße"
+  ],
+  "krawiecka": [
+    "Tailors' Guild Street",
+    "Schneidergasse"
+  ],
+  "krokusowa": [
+    "Crocus Flower Street",
+    "Krokusstraße"
+  ],
+  "kurkowa": [
+    "Rooster / Cockchafer Guild Lane",
+    "Hahnenkammsgasse"
+  ],
+  "kwarcowa": [
+    "Quartz Mineral Street",
+    "Quarzstraße"
+  ],
+  "kwiatowa": [
+    "Flower Street",
+    "Blumenstraße"
+  ],
+  "kwietna": [
+    "Flowery Meadow Street",
+    "Blütenstraße"
+  ],
+  "laskowa": [
+    "Hazel Grove Street",
+    "Haselhainstraße"
+  ],
+  "laurowa": [
+    "Laurel Bay Leaf Street",
+    "Lorbeerstraße"
+  ],
+  "lawendowa": [
+    "Lavender Blossom Street",
+    "Lavendelstraße"
+  ],
+  "lazurowa": [
+    "Azure Blue Sky Street",
+    "Azurblaue Straße"
+  ],
+  "lechicka": [
+    "Lechitic / Ancient Slavic Tribes Street",
+    "Lechiten-Straße"
+  ],
+  "lewkowa": [
+    "Lewko Court Banker Street",
+    "Lewko-Gasse"
+  ],
+  "liliowa": [
+    "White Lily Street",
+    "Lilienstraße"
+  ],
+  "liściasta": [
+    "Broadleaf Foliage Street",
+    "Laubwaldstraße"
+  ],
+  "lucerny": [
+    "Alfalfa / Lucerne Fodder Street",
+    "Luzernestraße"
+  ],
+  "ludowa": [
+    "Folk / People's Culture Street",
+    "Volkskulturstraße"
+  ],
+  "maciejkowa": [
+    "Night-Scented Stock Flower Street",
+    "Levkojenstraße"
+  ],
+  "makowa": [
+    "Red Poppy Field Street",
+    "Mohnblumenstraße"
+  ],
+  "malachitowa": [
+    "Malachite Mineral Street",
+    "Malachitstraße"
+  ],
+  "malarska": [
+    "Painters' Guild Street",
+    "Malerstraße"
+  ],
+  "malwowa": [
+    "Hollyhock Mallow Flower Street",
+    "Stockrosenstraße"
+  ],
+  "marcowa": [
+    "March Month Street",
+    "Märzstraße"
+  ],
+  "marglowa": [
+    "Marlstone Geologic Street",
+    "Mergelstraße"
+  ],
+  "maślana": [
+    "Butter Market Street",
+    "Buttermarktstraße"
+  ],
+  "maślaków": [
+    "Slippery Jack Bolete Mushrooms Street",
+    "Butterpilzstraße"
+  ],
+  "mączna": [
+    "Flour Millers Street",
+    "Mehlstraße"
+  ],
+  "mirtowa": [
+    "Myrtle Blossom Street",
+    "Myrtenstraße"
+  ],
+  "mokra": [
+    "Wet / Spring Water Street",
+    "Nasse Gasse"
+  ],
+  "nadbrzeżna": [
+    "Riverfront Waterfront Street",
+    "Uferstraße"
+  ],
+  "nastrojowa": [
+    "Atmospheric / Mood Street",
+    "Stimmungsvolle Straße"
+  ],
+  "nefrytowa": [
+    "Nephrite Jade Gem Street",
+    "Nephritstraße"
+  ],
+  "obwodowa": [
+    "Bypass Ring Road",
+    "Umgehungsstraße"
+  ],
+  "ogórkowa": [
+    "Cucumber Field Street",
+    "Gurkenstraße"
+  ],
+  "olszowa": [
+    "Alder Grove Street",
+    "Erlenhainstraße"
+  ],
+  "opalowa": [
+    "Precious Opal Gem Street",
+    "Opalstein-Straße"
+  ],
+  "osiedlowa": [
+    "Residential Estate Street",
+    "Siedlungsstraße"
+  ],
+  "parowozowa": [
+    "Steam Locomotive Railway Street",
+    "Dampflokomotivstraße"
+  ],
+  "pastelowa": [
+    "Pastel Color Shades Street",
+    "Pastellfarbenstraße"
+  ],
+  "pobocze": [
+    "Roadside Shoulder Lane",
+    "Bankettweg"
+  ],
+  "podbiałowa": [
+    "Coltsfoot Herb Flower Street",
+    "Huflattichstraße"
+  ],
+  "podmiejska": [
+    "Suburban Green Street",
+    "Vorstadtstraße"
+  ],
+  "porfirowa": [
+    "Porphyry Volcanic Rock Street",
+    "Porphyrstein-Straße"
+  ],
+  "powiew": [
+    "Gentle Summer Breeze Street",
+    "Sommerbrisenstraße"
+  ],
+  "powojowa": [
+    "Morning Glory Flower Street",
+    "Ackerwindenstraße"
+  ],
+  "rakowa": [
+    "Freshwater River Crayfish Street",
+    "Flusskrebsgasse"
+  ],
+  "rybna": [
+    "Fresh Fish Market Street",
+    "Fischmarktstraße"
+  ]
+}

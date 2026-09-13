@@ -1,0 +1,75 @@
+/* ==========================================================================
+   CRACOSCOPE – CYFROWE ARCHIWUM 1912 (NOWOCZESNY DESIGN SYSTEM)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f8fafc;
+  color: #1e293b;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.archive-topbar {
+  background-color: #ffffff;
+  padding-top: env(safe-area-inset-top, 0px);
+  height: calc(4rem + env(safe-area-inset-top, 0px));
+}
+
+@media (max-width: 639px) {
+  .archive-topbar img {
+    max-width: 38vw;
+  }
+}
+
+/* Wyróżnienie wiersza przy głębokim linkowaniu z mapy */
+@keyframes modern-highlight {
+  0% {
+    background-color: #dbeafe !important;
+    box-shadow: inset 4px 0 0 #2563eb;
+  }
+  60% {
+    background-color: #eff6ff !important;
+    box-shadow: inset 4px 0 0 #3b82f6;
+  }
+  100% {
+    background-color: #ffffff;
+    box-shadow: inset 4px 0 0 transparent;
+  }
+}
+
+.row-highlight {
+  animation: modern-highlight 3.5s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+/* Ukrywanie scrollbarów w listach horyzontalnych */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Subtelny scrollbar systemowy */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.7);
+}

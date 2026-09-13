@@ -3109,10 +3109,11 @@
     "nominative": "Florian Straszewski"
   },
   {
-    "category": "historical_craft",
+    "category": "person",
     "raw_name": "Floriańska",
     "clean_name": "Floriańska",
-    "nominative": "Floriańska"
+    "nominative": "Floriańska",
+    "role": "święty i męczennik chrześcijański"
   },
   {
     "category": "historical_craft",
@@ -3502,7 +3503,7 @@
     "category": "person",
     "raw_name": "Generała Stanisława Sosabowskiego",
     "clean_name": "Generała Stanisława Sosabowskiego",
-    "nominative": "Generał Stanisława Sosabowski"
+    "nominative": "Generał Stanisław Sosabowski"
   },
   {
     "category": "person",
@@ -3949,16 +3950,16 @@
     "nominative": "Harcerzy Krakowskich"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Harcmistrza Stanisława Millana",
     "clean_name": "Harcmistrza Stanisława Millana",
-    "nominative": "Harcmistrza Stanisława Millana"
+    "nominative": "Harcmistrza Stanisława Millan"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Harcmistrza Stanisława Orszy-Broniewskiego",
     "clean_name": "Harcmistrza Stanisława Orszy-Broniewskiego",
-    "nominative": "Harcmistrza Stanisława Orszy-Broniewskiego"
+    "nominative": "Harcmistrza Stanisława Orszy-Broniewski"
   },
   {
     "category": "toponymic_general",
@@ -4150,7 +4151,7 @@
     "category": "person",
     "raw_name": "Hetmana Stanisława Żółkiewskiego",
     "clean_name": "Hetmana Stanisława Żółkiewskiego",
-    "nominative": "Hetman Stanisława Żółkiewski"
+    "nominative": "Hetman Stanisław Żółkiewski"
   },
   {
     "category": "directional_regional",
@@ -4477,7 +4478,7 @@
     "nominative": "Jagodowa"
   },
   {
-    "category": "person",
+    "category": "toponymic_general",
     "raw_name": "Jakuba",
     "clean_name": "Jakuba",
     "nominative": "Jakub"
@@ -6944,7 +6945,7 @@
     "category": "person",
     "raw_name": "Księdza Stanisława Truszkowskiego",
     "clean_name": "Księdza Stanisława Truszkowskiego",
-    "nominative": "Ksiądz Stanisława Truszkowski"
+    "nominative": "Ksiądz Stanisław Truszkowski"
   },
   {
     "category": "person",
@@ -10320,7 +10321,7 @@
     "nominative": "Łagiewnicki"
   },
   {
-    "category": "person",
+    "category": "toponymic_general",
     "raw_name": "Plac Świętego Ducha",
     "clean_name": "Świętego Ducha",
     "nominative": "Święty Ducha"
@@ -10956,7 +10957,7 @@
     "category": "person",
     "raw_name": "Profesora Stanisława Łojasiewicza",
     "clean_name": "Profesora Stanisława Łojasiewicza",
-    "nominative": "Profesor Stanisława Łojasiewicz"
+    "nominative": "Profesor Stanisław Łojasiewicz"
   },
   {
     "category": "person",
@@ -11306,7 +11307,7 @@
     "category": "person",
     "raw_name": "Pułkownika Stanisława Dąbka",
     "clean_name": "Pułkownika Stanisława Dąbka",
-    "nominative": "Pułkownik Stanisława Dąbk"
+    "nominative": "Pułkownik Stanisław Dąbk"
   },
   {
     "category": "person",
@@ -11644,7 +11645,7 @@
     "category": "person",
     "raw_name": "Rondo Generała Stanisława Maczka",
     "clean_name": "Generała Stanisława Maczka",
-    "nominative": "Generał Stanisława Maczk"
+    "nominative": "Generał Stanisław Maczk"
   },
   {
     "category": "toponymic_general",
@@ -11770,7 +11771,7 @@
     "category": "person",
     "raw_name": "Rondo Pułkownika Stanisława Nazarkiewicza",
     "clean_name": "Pułkownika Stanisława Nazarkiewicza",
-    "nominative": "Pułkownik Stanisława Nazarkiewicz"
+    "nominative": "Pułkownik Stanisław Nazarkiewicz"
   },
   {
     "category": "toponymic_general",
@@ -11785,22 +11786,22 @@
     "nominative": "Rymka z Woli"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Rondo Stanisława Barei",
     "clean_name": "Stanisława Barei",
-    "nominative": "Stanisława Barei"
+    "nominative": "Stanisław Barei"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Rondo Stanisława Pagaczewskiego",
     "clean_name": "Stanisława Pagaczewskiego",
-    "nominative": "Stanisława Pagaczewskiego"
+    "nominative": "Stanisław Pagaczewski"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Rondo Stanisławy Demetraki-Paleolog",
     "clean_name": "Stanisławy Demetraki-Paleolog",
-    "nominative": "Stanisławy Demetraki-Paleolog"
+    "nominative": "Stanisława Demetraki-Paleolog"
   },
   {
     "category": "person",
@@ -12668,265 +12669,265 @@
     "category": "person",
     "raw_name": "Stanisława Augusta Poniatowskiego",
     "clean_name": "Stanisława Augusta Poniatowskiego",
-    "nominative": "Stanisława Augusta Poniatowski"
+    "nominative": "Stanisław Augusta Poniatowski"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Balickiego",
     "clean_name": "Stanisława Balickiego",
-    "nominative": "Stanisława Balickiego"
+    "nominative": "Stanisław Balicki"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Ciechanowskiego",
     "clean_name": "Stanisława Ciechanowskiego",
-    "nominative": "Stanisława Ciechanowskiego"
+    "nominative": "Stanisław Ciechanowski"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Działowskiego",
     "clean_name": "Stanisława Działowskiego",
-    "nominative": "Stanisława Działowskiego"
+    "nominative": "Stanisław Działowski"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Fiszera",
     "clean_name": "Stanisława Fiszera",
-    "nominative": "Stanisława Fiszera"
+    "nominative": "Stanisław Fiszer"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Frasia",
     "clean_name": "Stanisława Frasia",
-    "nominative": "Stanisława Frasia"
+    "nominative": "Stanisław Frasia"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Gołąba",
     "clean_name": "Stanisława Gołąba",
-    "nominative": "Stanisława Gołąba"
+    "nominative": "Stanisław Gołąb"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Grochowiaka",
     "clean_name": "Stanisława Grochowiaka",
-    "nominative": "Stanisława Grochowiaka"
+    "nominative": "Stanisław Grochowiak"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Grzepskiego",
     "clean_name": "Stanisława Grzepskiego",
-    "nominative": "Stanisława Grzepskiego"
+    "nominative": "Stanisław Grzepski"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Jachowicza",
     "clean_name": "Stanisława Jachowicza",
-    "nominative": "Stanisława Jachowicza"
+    "nominative": "Stanisław Jachowicz"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Jasiukowicza",
     "clean_name": "Stanisława Jasiukowicza",
-    "nominative": "Stanisława Jasiukowicza"
+    "nominative": "Stanisław Jasiukowicz"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Juchnowicza",
     "clean_name": "Stanisława Juchnowicza",
-    "nominative": "Stanisława Juchnowicza"
+    "nominative": "Stanisław Juchnowicz"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Kasznicy",
     "clean_name": "Stanisława Kasznicy",
-    "nominative": "Stanisława Kasznicy"
+    "nominative": "Stanisław Kasznicy"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Klimeckiego",
     "clean_name": "Stanisława Klimeckiego",
-    "nominative": "Stanisława Klimeckiego"
+    "nominative": "Stanisław Klimecki"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Konarskiego",
     "clean_name": "Stanisława Konarskiego",
-    "nominative": "Stanisława Konarskiego"
+    "nominative": "Stanisław Konarski"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Kunickiego",
     "clean_name": "Stanisława Kunickiego",
-    "nominative": "Stanisława Kunickiego"
+    "nominative": "Stanisław Kunicki"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Kłosowskiego",
     "clean_name": "Stanisława Kłosowskiego",
-    "nominative": "Stanisława Kłosowskiego"
+    "nominative": "Stanisław Kłosowski"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Lema",
     "clean_name": "Stanisława Lema",
-    "nominative": "Stanisława Lema"
+    "nominative": "Stanisław Lema"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Lentza",
     "clean_name": "Stanisława Lentza",
-    "nominative": "Stanisława Lentza"
+    "nominative": "Stanisław Lentza"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Mierzwy",
     "clean_name": "Stanisława Mierzwy",
-    "nominative": "Stanisława Mierzwy"
+    "nominative": "Stanisław Mierzwy"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Mikołajczyka",
     "clean_name": "Stanisława Mikołajczyka",
-    "nominative": "Stanisława Mikołajczyka"
+    "nominative": "Stanisław Mikołajczyk"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Mitery",
     "clean_name": "Stanisława Mitery",
-    "nominative": "Stanisława Mitery"
+    "nominative": "Stanisław Mitery"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Moniuszki",
     "clean_name": "Stanisława Moniuszki",
-    "nominative": "Stanisława Moniuszki"
+    "nominative": "Stanisław Moniuszko"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Pigonia",
     "clean_name": "Stanisława Pigonia",
-    "nominative": "Stanisława Pigonia"
+    "nominative": "Stanisław Pigonia"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Pronia",
     "clean_name": "Stanisława Pronia",
-    "nominative": "Stanisława Pronia"
+    "nominative": "Stanisław Pronia"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Przybyszewskiego",
     "clean_name": "Stanisława Przybyszewskiego",
-    "nominative": "Stanisława Przybyszewskiego"
+    "nominative": "Stanisław Przybyszewski"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Pyjasa",
     "clean_name": "Stanisława Pyjasa",
-    "nominative": "Stanisława Pyjasa"
+    "nominative": "Stanisław Pyjas"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Rokosza",
     "clean_name": "Stanisława Rokosza",
-    "nominative": "Stanisława Rokosza"
+    "nominative": "Stanisław Rokosza"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Rostworowskiego",
     "clean_name": "Stanisława Rostworowskiego",
-    "nominative": "Stanisława Rostworowskiego"
+    "nominative": "Stanisław Rostworowski"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Samostrzelnika",
     "clean_name": "Stanisława Samostrzelnika",
-    "nominative": "Stanisława Samostrzelnika"
+    "nominative": "Stanisław Samostrzelnik"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Skarbińskiego",
     "clean_name": "Stanisława Skarbińskiego",
-    "nominative": "Stanisława Skarbińskiego"
+    "nominative": "Stanisław Skarbiński"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Skarżyńskiego",
     "clean_name": "Stanisława Skarżyńskiego",
-    "nominative": "Stanisława Skarżyńskiego"
+    "nominative": "Stanisław Skarżyński"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Staszica",
     "clean_name": "Stanisława Staszica",
-    "nominative": "Stanisława Staszica"
+    "nominative": "Stanisław Staszica"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Stojałowskiego",
     "clean_name": "Stanisława Stojałowskiego",
-    "nominative": "Stanisława Stojałowskiego"
+    "nominative": "Stanisław Stojałowski"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Szczygielskiego",
     "clean_name": "Stanisława Szczygielskiego",
-    "nominative": "Stanisława Szczygielskiego"
+    "nominative": "Stanisław Szczygielski"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Tomkowicza",
     "clean_name": "Stanisława Tomkowicza",
-    "nominative": "Stanisława Tomkowicza"
+    "nominative": "Stanisław Tomkowicz"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Tondosa",
     "clean_name": "Stanisława Tondosa",
-    "nominative": "Stanisława Tondosa"
+    "nominative": "Stanisław Tondos"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Wojciechowskiego",
     "clean_name": "Stanisława Wojciechowskiego",
-    "nominative": "Stanisława Wojciechowskiego"
+    "nominative": "Stanisław Wojciechowski"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Worcella",
     "clean_name": "Stanisława Worcella",
-    "nominative": "Stanisława Worcella"
+    "nominative": "Stanisław Worcella"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Wyspiańskiego",
     "clean_name": "Stanisława Wyspiańskiego",
-    "nominative": "Stanisława Wyspiańskiego"
+    "nominative": "Stanisław Wyspiański"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Zaremby",
     "clean_name": "Stanisława Zaremby",
-    "nominative": "Stanisława Zaremby"
+    "nominative": "Stanisław Zaremby"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława ze Skalbmierza",
     "clean_name": "Stanisława ze Skalbmierza",
-    "nominative": "Stanisława ze Skalbmierza"
+    "nominative": "Stanisław ze Skalbmierza"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisława Łempickiego",
     "clean_name": "Stanisława Łempickiego",
-    "nominative": "Stanisława Łempickiego"
+    "nominative": "Stanisław Łempicki"
   },
   {
-    "category": "toponymic_general",
+    "category": "person",
     "raw_name": "Stanisławy Wysockiej",
     "clean_name": "Stanisławy Wysockiej",
-    "nominative": "Stanisławy Wysockiej"
+    "nominative": "Stanisława Wysockiej"
   },
   {
     "category": "toponymic_general",
@@ -16407,7 +16408,7 @@
     "nominative": "Święty Jan"
   },
   {
-    "category": "person",
+    "category": "toponymic_general",
     "raw_name": "Świętego Krzyża",
     "clean_name": "Świętego Krzyża",
     "nominative": "Święty Krzyża"
@@ -16440,7 +16441,7 @@
     "category": "person",
     "raw_name": "Świętego Stanisława",
     "clean_name": "Świętego Stanisława",
-    "nominative": "Święty Stanisława"
+    "nominative": "Święty Stanisław"
   },
   {
     "category": "person",
@@ -16503,7 +16504,7 @@
     "nominative": "Święta Kingi"
   },
   {
-    "category": "person",
+    "category": "toponymic_general",
     "raw_name": "Świętej Rodziny",
     "clean_name": "Świętej Rodziny",
     "nominative": "Święta Rodziny"

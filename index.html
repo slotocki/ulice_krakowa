@@ -2,7 +2,8 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
   <title>Ulice Krakowa – Mapa, Etymologia i Uchwały RMK</title>
   
   <!-- Google Fonts: Plus Jakarta Sans -->
@@ -20,129 +21,155 @@
   <!-- Niezależne style aplikacji -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="relative h-screen w-screen overflow-hidden bg-slate-900 text-slate-800 antialiased select-none">
+<body class="relative h-screen w-screen overflow-hidden bg-white text-slate-800 antialiased select-none flex flex-col">
 
-  <!-- Kontener mapy MapLibre WebGL -->
-  <div id="map"></div>
-
-  <!-- Pływający górny pasek nawigacji i wyszukiwarka -->
-  <header class="absolute top-4 left-4 right-4 md:left-6 md:right-auto z-20 flex flex-col gap-2 max-w-xl w-full pointer-events-none">
+  <!-- Górny pasek nawigacyjny Cracoscope (niewielki, spójny pasek) -->
+  <header class="app-topbar h-16 w-full bg-white border-b border-slate-200/90 px-2 sm:px-4 flex items-center gap-1.5 sm:gap-4 z-30 flex-shrink-0 shadow-xs relative">
     
-    <!-- Pasek wyszukiwania w stylu Apple Spotlight / Glassmorphism -->
-    <div class="glass-panel rounded-2xl shadow-xl pointer-events-auto transition-all duration-200">
-      <div class="flex items-center px-4 py-3 gap-3">
-        <!-- Ikona lupy -->
-        <svg class="w-5 h-5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-        </svg>
+    <!-- Logo -->
+    <div class="flex items-center flex-shrink-0">
+      <a href="index.html" class="flex items-center gap-2 hover:opacity-90 transition-opacity" title="Cracoscope – Ulice Krakowa">
+        <img src="cracoscope.png" alt="Cracoscope" class="h-9 sm:h-10 w-auto object-contain">
+      </a>
+    </div>
 
-        <!-- Input wyszukiwania -->
+    <!-- Środek: Wyszukiwarka w pasku górnym -->
+    <div class="relative flex-1 max-w-md min-w-0 mx-0 sm:mx-2">
+      <div class="relative flex items-center bg-slate-100 hover:bg-slate-100/90 focus-within:bg-white focus-within:ring-2 focus-within:ring-blue-500 rounded-xl px-2 sm:px-3 py-1.5 border border-slate-200 transition-all">
         <input 
           id="search-input" 
           type="text" 
-          placeholder="Wpisz nazwę ulicy w Krakowie (np. Floriańska, Słowackiego, Szewska)..." 
+          placeholder="Wyszukaj nazwę ulicy..."
           data-i18n-placeholder="search_placeholder"
           autocomplete="off"
           spellcheck="false"
-          class="w-full bg-transparent text-slate-800 placeholder-slate-400 font-medium text-sm md:text-base outline-none focus:ring-0"
+          class="w-full bg-transparent text-slate-800 placeholder-slate-400 font-medium text-xs sm:text-sm outline-none"
         >
-
-        <!-- Przycisk wyczyszczenia -->
-        <button id="clear-search-btn" class="hidden text-slate-400 hover:text-slate-600 p-1">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button id="clear-search-btn" class="hidden text-slate-400 hover:text-slate-600 p-0.5 mr-1">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
-
-        <!-- Odznaka z liczbą ulic -->
-        <span id="streets-count-badge" class="hidden sm:inline-block text-[11px] font-semibold bg-slate-100 text-slate-600 px-2 py-1 rounded-lg flex-shrink-0 border border-slate-200">
+        <span id="streets-count-badge" class="hidden md:inline-block text-[10px] font-semibold bg-white text-slate-500 px-1.5 py-0.5 rounded border border-slate-200 flex-shrink-0">
           Ładowanie...
         </span>
       </div>
 
       <!-- Dropdown z wynikami wyszukiwania -->
-      <div id="search-results" class="hidden max-h-80 overflow-y-auto border-t border-slate-100 divide-y divide-slate-100">
+      <div id="search-results" class="hidden absolute top-full left-0 right-0 mt-1.5 bg-white/95 backdrop-blur-md rounded-xl shadow-2xl border border-slate-200 divide-y divide-slate-100 max-h-80 overflow-y-auto z-50">
         <!-- Generowane dynamicznie przez search.js -->
       </div>
     </div>
 
-    <!-- Szybkie chipy z popularnymi ulicami -->
-    <div class="flex items-center gap-1.5 overflow-x-auto py-1 px-1 pointer-events-auto no-scrollbar">
-      <span data-i18n="discover" class="text-[11px] font-bold text-slate-600 drop-shadow-sm bg-white/70 px-2 py-0.5 rounded-md backdrop-blur-sm">Odkryj:</span>
-      <button onclick="window.krakowApp?.fitKrakowBounds()" class="text-xs bg-red-50 hover:bg-red-100 text-red-700 font-bold px-2.5 py-1 rounded-lg shadow-sm border border-red-200 backdrop-blur-md transition-all whitespace-nowrap flex items-center gap-1 cursor-pointer">
-        <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
-        <span data-i18n="city_border">Granice Krakowa</span>
-      </button>
-      <button onclick="window.krakowApp?.selectStreetById('florianska')" data-i18n="chip_florianska" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-sm border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
-        🏰 ul. Floriańska
-      </button>
-      <button onclick="window.krakowApp?.selectStreetById('szewska')" data-i18n="chip_szewska" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-sm border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
-        👞 ul. Szewska
-      </button>
-      <button onclick="window.krakowApp?.selectStreetById('kwiatowa')" data-i18n="chip_kwiatowa" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-sm border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
-        🌸 ul. Kwiatowa
-      </button>
-      <button onclick="window.krakowApp?.selectStreetById('szymborskiej')" data-i18n="chip_szymborskiej" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-sm border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
-        📜 Park Szymborskiej
-      </button>
-      <button onclick="window.krakowApp?.selectStreetById('lema')" data-i18n="chip_lema" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-sm border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
-        🚀 ul. Lema
-      </button>
-      <button onclick="window.krakowApp?.selectStreetById('slowackiego')" data-i18n="chip_slowackiego" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-sm border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
-        🎭 al. Słowackiego
-      </button>
-      <button onclick="window.krakowApp?.selectStreetById('dietla')" data-i18n="chip_dietla" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-sm border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
-        🌿 ul. Dietla
-      </button>
+    <!-- Prawa strona: język + narzędzia mapy na większych ekranach -->
+    <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+      <!-- Kompaktowy przełącznik języka: po kliknięciu flagi rozwija listę -->
+      <div class="language-picker relative">
+        <button type="button" class="language-picker-toggle h-9 min-w-10 px-2 flex items-center justify-center gap-1 transition-colors" aria-label="Zmień język" aria-haspopup="menu" aria-expanded="false">
+          <span class="current-language-flag flag-icon flag-pl" aria-hidden="true"></span>
+          <svg class="w-3 h-3 text-slate-500 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="language-picker-menu hidden absolute right-0 top-full mt-2 min-w-36 rounded-xl bg-white border border-slate-200 shadow-xl p-1.5 z-50" role="menu">
+          <button type="button" data-language-option="pl" class="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-100" role="menuitem"><span class="flag-icon flag-pl"></span><span>Polski</span></button>
+          <button type="button" data-language-option="en" class="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-100" role="menuitem"><span class="flag-icon flag-gb"></span><span>English</span></button>
+          <button type="button" data-language-option="de" class="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-100" role="menuitem"><span class="flag-icon flag-de"></span><span>Deutsch</span></button>
+        </div>
+      </div>
+
+      <!-- Panel Granic i Dzielnic Krakowa -->
+      <div id="map-layer-controls" class="flex items-center gap-1.5 bg-slate-100 px-2.5 py-1 rounded-xl border border-slate-200 text-xs">
+        <button id="toggle-border-btn" title="Włącz / wyłącz widok granic Krakowa" class="flex items-center gap-1.5 font-bold text-red-600 hover:text-red-700 transition-all cursor-pointer">
+          <span id="border-indicator-dot" class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
+          <span data-i18n="city_border">Granice</span>
+        </button>
+        <span class="text-slate-300">|</span>
+        <button id="toggle-districts-btn" aria-pressed="false" title="Włącz / wyłącz widok 18 dzielnic Krakowa" class="flex items-center gap-1 text-slate-700 hover:text-blue-700 font-semibold transition-colors cursor-pointer">
+          <span>Dzielnice</span>
+        </button>
+        <span class="text-slate-300">|</span>
+        <button id="toggle-expansion-btn" aria-pressed="false" title="Otwórz oś rozwoju terytorialnego Krakowa" class="flex items-center gap-1 text-slate-700 hover:text-blue-700 font-semibold transition-colors cursor-pointer">
+          <span>Rozwój 1910–Dziś</span>
+        </button>
+        <span class="hidden md:inline text-slate-300">|</span>
+        <button id="fit-bounds-btn" title="Dopasuj widok kamery do granic Krakowa" class="text-slate-600 hover:text-blue-600 transition-colors cursor-pointer hidden md:flex items-center gap-1 font-medium">
+          <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+          </svg>
+          <span data-i18n="fit_krakow">Centrum</span>
+        </button>
+      </div>
+
+      <!-- Styl mapy -->
+      <div class="hidden 2xl:flex items-center gap-1.5 bg-slate-100 px-2.5 py-1 rounded-xl border border-slate-200">
+        <select id="map-style-select" class="bg-transparent text-xs font-semibold text-slate-700 focus:outline-none cursor-pointer">
+          <option value="positron">Jasny (Positron)</option>
+          <option value="dark">Ciemny (Dark)</option>
+          <option value="voyager">Kolorowy (Voyager)</option>
+        </select>
+      </div>
     </div>
   </header>
 
-  <!-- Prawy górny pasek: Przełącznik języków + Granice Krakowa + Styl mapy -->
-  <div class="absolute top-4 right-4 z-20 hidden md:flex items-center gap-2">
-    <!-- Przełącznik języka (PL / EN / DE) -->
-    <div class="glass-panel p-1 rounded-xl shadow-lg flex items-center gap-1 border border-slate-200">
-      <button onclick="window.krakowI18n?.setLanguage('pl')" data-lang="pl" class="lang-btn px-2.5 py-1 text-xs font-bold rounded-lg transition-all bg-white text-blue-700 shadow-sm">
-        🇵🇱 PL
+  <!-- Główny kontener mapy -->
+  <main class="relative flex-1 w-full min-h-0 overflow-hidden">
+    <!-- Kontener mapy MapLibre WebGL -->
+    <div id="map" class="absolute inset-0"></div>
+
+    <!-- Pasek szybkich skrótów -->
+    <div class="absolute top-3 left-3 sm:left-4 z-20 flex items-center gap-1.5 overflow-x-auto py-1 px-1 pointer-events-auto no-scrollbar max-w-[calc(100vw-2rem)]">
+      <a href="sources.html" class="text-xs bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold px-2.5 py-1 rounded-lg shadow-xs border border-amber-200 backdrop-blur-md transition-all whitespace-nowrap flex items-center cursor-pointer no-underline" title="Cyfrowe Archiwum Aktów Toponimicznych Krakowa">
+        <span data-i18n="digital_archive_nav">Cyfrowe Archiwum</span>
+      </a>
+      <button onclick="window.krakowApp?.selectStreetById('florianska')" data-i18n="chip_florianska" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-xs border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
+        ul. Floriańska
       </button>
-      <button onclick="window.krakowI18n?.setLanguage('en')" data-lang="en" class="lang-btn px-2.5 py-1 text-xs font-medium rounded-lg transition-all text-slate-600 hover:text-slate-900">
-        🇬🇧 EN
+      <button onclick="window.krakowApp?.selectStreetById('szewska')" data-i18n="chip_szewska" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-xs border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
+        ul. Szewska
       </button>
-      <button onclick="window.krakowI18n?.setLanguage('de')" data-lang="de" class="lang-btn px-2.5 py-1 text-xs font-medium rounded-lg transition-all text-slate-600 hover:text-slate-900">
-        🇩🇪 DE
+      <button onclick="window.krakowApp?.selectStreetById('kwiatowa')" data-i18n="chip_kwiatowa" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-xs border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
+        ul. Kwiatowa
+      </button>
+      <button onclick="window.krakowApp?.selectStreetById('szymborskiej')" data-i18n="chip_szymborskiej" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-xs border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
+        Park Szymborskiej
+      </button>
+      <button onclick="window.krakowApp?.selectStreetById('lema')" data-i18n="chip_lema" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-xs border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
+        ul. Lema
+      </button>
+      <button onclick="window.krakowApp?.selectStreetById('slowackiego')" data-i18n="chip_slowackiego" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-xs border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
+        al. Słowackiego
+      </button>
+      <button onclick="window.krakowApp?.selectStreetById('dietla')" data-i18n="chip_dietla" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-xs border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
+        ul. Dietla
       </button>
     </div>
 
-    <!-- Panel Granic Krakowa -->
-    <div class="glass-panel px-3 py-1.5 rounded-xl shadow-lg flex items-center gap-2 border border-slate-200 bg-white/95">
-      <button id="toggle-border-btn" title="Włącz / wyłącz widok granic Krakowa" class="flex items-center gap-1.5 text-xs font-bold text-red-600 hover:text-red-700 transition-all cursor-pointer">
-        <span id="border-indicator-dot" class="w-2.5 h-2.5 rounded-full bg-red-600 shadow-sm animate-pulse"></span>
-        <span data-i18n="city_border">Granice Krakowa</span>
-      </button>
-      <span class="text-slate-300">|</span>
-      <button id="fit-bounds-btn" title="Dopasuj widok kamery do pełnych granic Krakowa" class="text-slate-600 hover:text-blue-600 transition-colors cursor-pointer text-xs flex items-center gap-1 font-medium">
-        <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
-        </svg>
-        <span data-i18n="fit_krakow">Całe miasto</span>
-      </button>
+    <!-- Pływający pasek rozwoju terytorialnego Krakowa (Opcjonalny) -->
+    <div id="territory-expansion-panel" class="hidden absolute bottom-5 left-1/2 -translate-x-1/2 z-20 w-[95%] max-w-2xl glass-panel rounded-2xl shadow-xl p-3.5 sm:p-4 border border-slate-200/90 transition-all">
+      <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-200/60">
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-slate-700">Rozwój terytorialny Krakowa</span>
+          <span id="expansion-stage-badge" class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-800">1910–1915 • 46,9 km²</span>
+        </div>
+        <button id="close-expansion-btn" class="text-slate-400 hover:text-slate-700 p-1 rounded-lg hover:bg-slate-100 transition-colors" title="Zamknij oś rozwoju">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Przyciski etapów rozwoju -->
+      <div class="grid grid-cols-3 sm:grid-cols-6 gap-1.5 mb-2" id="expansion-milestones-container">
+        <!-- Generowane dynamicznie przez app.js -->
+      </div>
+
+      <!-- Opis wybranego etapu -->
+      <p id="expansion-stage-desc" class="text-xs text-slate-600 leading-relaxed bg-slate-50/70 p-2.5 rounded-xl border border-slate-200/50"></p>
     </div>
 
-    <!-- Styl mapy -->
-    <div class="glass-panel px-3 py-2 rounded-xl shadow-lg flex items-center gap-2 border border-slate-200">
-      <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
-      </svg>
-      <label for="map-style-select" data-i18n="map_style" class="text-xs font-semibold text-slate-600">Styl mapy:</label>
-      <select id="map-style-select" class="bg-transparent text-xs font-bold text-slate-800 focus:outline-none cursor-pointer">
-        <option value="positron">Minimalny Jasny (Positron)</option>
-        <option value="dark">Ciemny / Neon (Dark Matter)</option>
-        <option value="voyager">Klasyczny Kolorowy (Voyager)</option>
-      </select>
-    </div>
-  </div>
-
-  <!-- Boczny panel szczegółów ulicy (Drawer / Sheet) -->
-  <aside id="street-drawer" class="absolute bottom-0 md:bottom-auto md:top-4 md:right-4 z-30 w-full md:w-[420px] max-h-[75vh] md:max-h-[calc(100vh-2rem)] glass-panel md:rounded-2xl rounded-t-2xl shadow-2xl flex flex-col transition-drawer overflow-hidden translate-y-full md:translate-x-full md:translate-y-0">
+    <!-- Boczny panel szczegółów ulicy (Drawer / Sheet) -->
+    <aside id="street-drawer" class="absolute bottom-0 md:bottom-3 md:top-3 md:right-4 z-30 w-full md:w-[420px] max-h-[75vh] md:max-h-[calc(100%-1.5rem)] glass-panel md:rounded-2xl rounded-t-2xl shadow-2xl flex flex-col transition-drawer overflow-hidden translate-y-full md:translate-x-full md:translate-y-0">
     
     <!-- Belka nagłówkowa panelu -->
     <div class="flex items-center justify-between px-5 py-4 border-b border-slate-200/80 bg-white/40">
@@ -152,12 +179,6 @@
         <span data-i18n="drawer_title" class="text-xs font-bold uppercase tracking-wider text-slate-500">Szczegóły Ulicy</span>
       </div>
       <div class="flex items-center gap-2">
-        <!-- Mobilny przełącznik języka -->
-        <div class="flex md:hidden items-center bg-slate-200/70 p-0.5 rounded-lg text-[10px]">
-          <button onclick="window.krakowI18n?.setLanguage('pl')" data-lang="pl" class="lang-btn px-1.5 py-0.5 rounded font-bold">PL</button>
-          <button onclick="window.krakowI18n?.setLanguage('en')" data-lang="en" class="lang-btn px-1.5 py-0.5 rounded">EN</button>
-          <button onclick="window.krakowI18n?.setLanguage('de')" data-lang="de" class="lang-btn px-1.5 py-0.5 rounded">DE</button>
-        </div>
         <button id="close-drawer-btn" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -258,6 +279,11 @@
         </p>
       </div>
 
+      <!-- Karta DRK 1912 (Dziennik Rozporządzeń dla m. Krakowa z 1912 r.) -->
+      <div id="drawer-drk-box" class="hidden">
+        <!-- Renderowane przez app.js -->
+      </div>
+
       <!-- Karta Uchwały RMK / Podstawy prawnej -->
       <div id="drawer-resolution-box">
         <!-- Renderowane przez app.js -->
@@ -276,6 +302,8 @@
     <span>•</span>
     <span class="font-semibold text-slate-700">RCIN PAN (prof. E. Supranowicz)</span>
   </footer>
+
+  </main>
 
   <!-- Skrypty aplikacji -->
   <script src="js/i18n.js"></script>

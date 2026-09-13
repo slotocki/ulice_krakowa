@@ -1,11 +1,51 @@
 [
   {
-    "number": "LIII/1144/26",
-    "title": "Uchwała nr LIII/1144/26 Rady Miasta Krakowa z dnia 10 czerwca 2026 r. w sprawie nadania Parkowi Miejskiemu nazwy Park Kleparski, określenia granic Parku oraz przyjęcia regulaminu Parku.",
-    "date": "2026-06-10",
-    "extracted_subject": "Park Kleparski",
-    "url": "https://www.bip.krakow.pl/?dok_id=167&sub_dok_id=167&sub=uchwala&query=id%3D29087%26typ%3Du",
-    "pdf_url": "https://www.bip.krakow.pl/_inc/rada/uchwaly/show_pdf.php?id=145141",
+    "number": "XLVIII/1070/26",
+    "title": "Uchwała nr XLVIII/1070/26 Rady Miasta Krakowa z dnia 22 kwietnia 2026 r. w sprawie zaliczenia do dróg publicznych kategorii gminnej drogi łączącej ul. Stanisława Lema z drogą gminną nr 603857K i ustalenia jej przebiegu.",
+    "date": "2026-04-22",
+    "extracted_subject": null,
+    "url": "https://www.bip.krakow.pl/?dok_id=167&sub_dok_id=167&sub=uchwala&query=id%3D29003%26typ%3Du",
+    "pdf_url": "https://www.bip.krakow.pl/_inc/rada/uchwaly/show_pdf.php?id=144708",
+    "legislative_path_url": "https://www.bip.krakow.pl/?dok_id=192163&sub=drukiuchw9",
+    "druk_url": "https://www.bip.krakow.pl/?dok_id=192163&sub=drukiuchw9"
+  },
+  {
+    "number": "CXIX/3229/23",
+    "title": "UCHWAŁA NR CXIX/3229/23 RADY MIASTA KRAKOWA z dnia 11 października 2023 r. w sprawie wyrażenia zgody na sprzedaż w drodze przetargu ustnego nieograniczonego niezabudowanej nieruchomości gruntowej stanowiącej własność Gminy Miejskiej Kraków, położonej w Krakowie przy ul. Stanisława Lema.",
+    "date": "2023-10-11",
+    "extracted_subject": null,
+    "url": "https://www.bip.krakow.pl/?dok_id=167&sub_dok_id=167&sub=uchwala&query=id%3D27355%26typ%3Du",
+    "pdf_url": "https://www.bip.krakow.pl/_inc/rada/uchwaly/show_pdf.php?id=132864",
+    "legislative_path_url": "https://www.bip.krakow.pl/?dok_id=192163&sub=drukiuchw9",
+    "druk_url": "https://www.bip.krakow.pl/?dok_id=192163&sub=drukiuchw9"
+  },
+  {
+    "number": "LVIII/1714/21",
+    "title": "UCHWAŁA NR LVIII/1714/21 RADY MIASTA KRAKOWA z dnia 26 maja 2021 r. w sprawie nadania imienia Szkole Podstawowej nr 134 w Krakowie, ul. Kłuszyńska 46.",
+    "date": "2021-05-26",
+    "extracted_subject": null,
+    "url": "https://www.bip.krakow.pl/?dok_id=167&sub_dok_id=167&sub=uchwala&query=id%3D25705%26typ%3Du",
+    "pdf_url": "https://www.bip.krakow.pl/_inc/rada/uchwaly/show_pdf.php?id=119469",
+    "legislative_path_url": "https://www.bip.krakow.pl/?dok_id=192163&sub=drukiuchw9",
+    "druk_url": "https://www.bip.krakow.pl/?dok_id=192163&sub=drukiuchw9"
+  },
+  {
+    "number": "CVIII/2834/18",
+    "title": "UCHWAŁA NR CVIII/2834/18 RADY MIASTA KRAKOWA z dnia 29 sierpnia 2018 r. w sprawie ustalenia kierunków działań dla Prezydenta Miasta Krakowa dotyczących: nazwania skweru przy skrzyżowaniu ul. Stanisława Lema i al. Jana Pawła II imieniem Pilota Pirxa.",
+    "date": "2018-08-29",
+    "extracted_subject": null,
+    "url": "https://www.bip.krakow.pl/?dok_id=167&sub_dok_id=167&sub=uchwala&query=id%3D23560%26typ%3Du",
+    "pdf_url": "https://www.bip.krakow.pl/_inc/rada/uchwaly/show_pdf.php?id=101176",
+    "legislative_path_url": "https://www.bip.krakow.pl/?dok_id=192163&sub=drukiuchw9",
+    "druk_url": "https://www.bip.krakow.pl/?dok_id=192163&sub=drukiuchw9"
+  },
+  {
+    "number": "LXVI/1635/17",
+    "title": "UCHWAŁA NR LXVI/1635/17 RADY MIASTA KRAKOWA z dnia 15 marca 2017 r. w sprawie uchwalenia miejscowego planu zagospodarowania przestrzennego obszaru ''Lema - Park Lotników Polskich''.",
+    "date": "2017-03-15",
+    "extracted_subject": null,
+    "url": "https://www.bip.krakow.pl/?dok_id=167&sub_dok_id=167&sub=uchwala&query=id%3D22325%26typ%3Du",
+    "pdf_url": "https://www.bip.krakow.pl/_inc/rada/uchwaly/show_pdf.php?id=89795",
     "legislative_path_url": "https://www.bip.krakow.pl/?dok_id=192163&sub=drukiuchw9",
     "druk_url": "https://www.bip.krakow.pl/?dok_id=192163&sub=drukiuchw9"
   }

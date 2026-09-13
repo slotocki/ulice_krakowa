@@ -4,9 +4,9 @@
 
 const UI_TRANSLATIONS = {
   pl: {
-    search_placeholder: "Wpisz nazwę ulicy w Krakowie (np. Floriańska, Słowackiego, Szewska)...",
+    search_placeholder: "Wyszukaj nazwę ulicy...",
     streets_count: (n) => `${n} ulic w bazie`,
-    discover: "Odkryj:",
+    change_language: "Zmień język",
     map_style: "Styl mapy:",
     drawer_title: "Szczegóły Ulicy",
     empty_title: "Wybierz ulicę",
@@ -30,18 +30,19 @@ const UI_TRANSLATIONS = {
     city_border: "Granice Krakowa",
     fit_krakow: "Całe miasto",
     footer_sources: "Źródła danych:",
-    chip_florianska: "🏰 ul. Floriańska",
-    chip_szewska: "👞 ul. Szewska",
-    chip_kwiatowa: "🌸 ul. Kwiatowa",
-    chip_szymborskiej: "📜 Park Szymborskiej",
-    chip_lema: "🚀 ul. Lema",
-    chip_slowackiego: "🎭 al. Słowackiego",
-    chip_dietla: "🌿 ul. Dietla"
+    chip_florianska: "ul. Floriańska",
+    chip_szewska: "ul. Szewska",
+    chip_kwiatowa: "ul. Kwiatowa",
+    chip_szymborskiej: "Park Szymborskiej",
+    chip_lema: "ul. Lema",
+    chip_slowackiego: "al. Słowackiego",
+    chip_dietla: "ul. Dietla",
+    digital_archive_nav: "Cyfrowe Archiwum"
   },
   en: {
-    search_placeholder: "Search street in Kraków (e.g. Floriańska, Szewska, Słowackiego)...",
+    search_placeholder: "Search for a street...",
     streets_count: (n) => `${n} streets loaded`,
-    discover: "Discover:",
+    change_language: "Change language",
     map_style: "Map style:",
     drawer_title: "Street Details",
     empty_title: "Select a street",
@@ -65,18 +66,19 @@ const UI_TRANSLATIONS = {
     city_border: "Kraków Border",
     fit_krakow: "Full City",
     footer_sources: "Data sources:",
-    chip_florianska: "🏰 Floriańska St.",
-    chip_szewska: "👞 Szewska St.",
-    chip_kwiatowa: "🌸 Kwiatowa St.",
-    chip_szymborskiej: "📜 Szymborska Park",
-    chip_lema: "🚀 Lem St.",
-    chip_slowackiego: "🎭 Słowacki Ave.",
-    chip_dietla: "🌿 Dietl St."
+    chip_florianska: "Floriańska St.",
+    chip_szewska: "Szewska St.",
+    chip_kwiatowa: "Kwiatowa St.",
+    chip_szymborskiej: "Szymborska Park",
+    chip_lema: "Lem St.",
+    chip_slowackiego: "Słowacki Ave.",
+    chip_dietla: "Dietl St.",
+    digital_archive_nav: "Digital Archive"
   },
   de: {
-    search_placeholder: "Straße in Krakau suchen (z. B. Floriańska, Szewska, Słowackiego)...",
+    search_placeholder: "Straßennamen suchen...",
     streets_count: (n) => `${n} Straßen geladen`,
-    discover: "Entdecken:",
+    change_language: "Sprache ändern",
     map_style: "Kartenstil:",
     drawer_title: "Straßendetails",
     empty_title: "Straße auswählen",
@@ -100,13 +102,14 @@ const UI_TRANSLATIONS = {
     city_border: "Stadtgrenze Krakau",
     fit_krakow: "Ganze Stadt",
     footer_sources: "Datenquellen:",
-    chip_florianska: "🏰 Floriańska-Straße",
-    chip_szewska: "👞 Szewska-Straße",
-    chip_kwiatowa: "🌸 Kwiatowa-Straße",
-    chip_szymborskiej: "📜 Szymborska-Park",
-    chip_lema: "🚀 Lem-Straße",
-    chip_slowackiego: "🎭 Słowacki-Allee",
-    chip_dietla: "🌿 Dietl-Straße"
+    chip_florianska: "Floriańska-Straße",
+    chip_szewska: "Szewska-Straße",
+    chip_kwiatowa: "Kwiatowa-Straße",
+    chip_szymborskiej: "Szymborska-Park",
+    chip_lema: "Lem-Straße",
+    chip_slowackiego: "Słowacki-Allee",
+    chip_dietla: "Dietl-Straße",
+    digital_archive_nav: "Digitales Archiv"
   }
 };
 
@@ -124,6 +127,39 @@ class I18nManager {
     localStorage.setItem('krakow_lang', lang);
     this.updateDOM();
     window.dispatchEvent(new CustomEvent('languagechange', { detail: { lang } }));
+  }
+
+  setupLanguagePickers() {
+    document.querySelectorAll('.language-picker').forEach(picker => {
+      const toggle = picker.querySelector('.language-picker-toggle');
+      const menu = picker.querySelector('.language-picker-menu');
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener('click', event => {
+        event.stopPropagation();
+        const shouldOpen = menu.classList.contains('hidden');
+        this.closeLanguagePickers();
+        menu.classList.toggle('hidden', !shouldOpen);
+        toggle.setAttribute('aria-expanded', String(shouldOpen));
+      });
+
+      picker.querySelectorAll('[data-language-option]').forEach(option => {
+        option.addEventListener('click', () => {
+          this.setLanguage(option.getAttribute('data-language-option'));
+          this.closeLanguagePickers();
+        });
+      });
+    });
+
+    document.addEventListener('click', () => this.closeLanguagePickers());
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') this.closeLanguagePickers();
+    });
+  }
+
+  closeLanguagePickers() {
+    document.querySelectorAll('.language-picker-menu').forEach(menu => menu.classList.add('hidden'));
+    document.querySelectorAll('.language-picker-toggle').forEach(toggle => toggle.setAttribute('aria-expanded', 'false'));
   }
 
   t(key, ...args) {
@@ -163,16 +199,24 @@ class I18nManager {
       if (text) el.setAttribute('placeholder', text);
     });
 
-    // 3. Aktualizacja aktywnego przycisku w przełączniku języka
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      const btnLang = btn.getAttribute('data-lang');
-      if (btnLang === this.currentLang) {
-        btn.classList.add('bg-white', 'text-blue-700', 'shadow-sm', 'font-bold');
-        btn.classList.remove('text-slate-600', 'hover:text-slate-900');
-      } else {
-        btn.classList.remove('bg-white', 'text-blue-700', 'shadow-sm', 'font-bold');
-        btn.classList.add('text-slate-600', 'hover:text-slate-900');
-      }
+    // 3. Aktualizacja kompaktowego przełącznika języka
+    const languageMeta = {
+      pl: { flagClass: 'flag-pl', label: 'Polski' },
+      en: { flagClass: 'flag-gb', label: 'English' },
+      de: { flagClass: 'flag-de', label: 'Deutsch' }
+    };
+    const activeLanguage = languageMeta[this.currentLang];
+    document.querySelectorAll('.current-language-flag').forEach(el => {
+      el.classList.remove('flag-pl', 'flag-gb', 'flag-de');
+      el.classList.add(activeLanguage.flagClass);
+    });
+    document.querySelectorAll('.language-picker-toggle').forEach(toggle => {
+      toggle.setAttribute('aria-label', `${this.t('change_language')}: ${activeLanguage.label}`);
+    });
+    document.querySelectorAll('[data-language-option]').forEach(option => {
+      option.setAttribute('aria-current', option.getAttribute('data-language-option') === this.currentLang ? 'true' : 'false');
+      option.classList.toggle('bg-blue-50', option.getAttribute('data-language-option') === this.currentLang);
+      option.classList.toggle('text-blue-700', option.getAttribute('data-language-option') === this.currentLang);
     });
 
     // 4. Zaktualizowanie atrybutu lang na znaczniku <html>
@@ -182,3 +226,8 @@ class I18nManager {
 
 // Globalna instancja i18n
 window.krakowI18n = new I18nManager();
+
+document.addEventListener('DOMContentLoaded', () => {
+  window.krakowI18n.setupLanguagePickers();
+  window.krakowI18n.updateDOM();
+});

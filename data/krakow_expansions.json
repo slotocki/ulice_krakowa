@@ -1,0 +1,123 @@
+[
+  {
+    "id": "1900",
+    "year": "Przed 1910",
+    "title": "Kraków Autonomiczny",
+    "area": "5,77 km²",
+    "desc": "Historyczny rdzeń miasta w obrębie dawnych okopów i murów: Stare Miasto, Kazimierz, Stradom, Kleparz, Wesoła i Piasek.",
+    "district_ids": [
+      1
+    ]
+  },
+  {
+    "id": "1915",
+    "year": "1910–1915",
+    "title": "Wielki Kraków (Juliusz Leo)",
+    "area": "46,9 km²",
+    "desc": "Przełomowa inkorporacja gmin podkrakowskich (Krowodrza, Zwierzyniec, Grzegórzki, Zakrzówek) oraz unifikacja z Podgórzem (1915).",
+    "district_ids": [
+      1,
+      2,
+      5,
+      7,
+      13
+    ]
+  },
+  {
+    "id": "1941",
+    "year": "1941",
+    "title": "Rozszerzenie wojenne (II wojna)",
+    "area": "165 km²",
+    "desc": "Włączenie do Krakowa terenów Bronowic, Prądnika Białego i Czerwonego, Woli Duchackiej, Łagiewnik i Borku Fałęckiego.",
+    "district_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      11,
+      13
+    ]
+  },
+  {
+    "id": "1951",
+    "year": "1951",
+    "title": "Inkorporacja Nowej Huty",
+    "area": "230 km²",
+    "desc": "Włączenie terenów dawnych wsi Mogiła, Bieńczyce, Krzesławice, Pleszów pod budowę kombinatu metalurgicznego i Nowej Huty.",
+    "district_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      11,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ]
+  },
+  {
+    "id": "1973",
+    "year": "1973",
+    "title": "Drugie Wielkie Rozszerzenie",
+    "area": "322 km²",
+    "desc": "Przyłączenie Tyńca, Sidziny, Kostrza, Swoszowic, Rajska, Wróblowic oraz Bieżanowa w pasie południowo-zachodnim.",
+    "district_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ]
+  },
+  {
+    "id": "today",
+    "year": "Dzisiaj",
+    "title": "Współczesny Kraków (18 Dzielnic)",
+    "area": "326,8 km²",
+    "desc": "Ostateczne granice po włączeniu Węgrzynowic i Wróżenic (1986). Pełny podział na 18 samorządowych dzielnic.",
+    "district_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ]
+  }
+]

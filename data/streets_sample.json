@@ -370,7 +370,7 @@
             "en": "world-renowned science fiction writer, philosopher, futurologist, and essayist (1921–2006)",
             "de": "weltbekannter Science-Fiction-Schriftsteller, Philosoph, Futurolooge und Essayist (1921–2006)"
           },
-          "image": "assets/patrons/lema.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Stanislaw%20Lem%202%20manually%20dusted.jpg?width=360",
           "wikipedia_url": "https://pl.wikipedia.org/wiki/Stanis%C5%82aw_Lem"
         },
         "source": {
@@ -1130,7 +1130,7 @@
             "en": "celebrated Polish poet, essayist, translator, and 1996 Nobel Prize laureate in Literature (1923–2012)",
             "de": "bedeutende polnische Dichterin, Essayistin, Übersetzerin und Literaturnobelpreisträgerin von 1996 (1923–2012)"
           },
-          "image": "assets/patrons/szymborskiej.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Wis%C5%82awa%20Szymborska%202009.10.23%20%281%29.jpg?width=360",
           "wikipedia_url": "https://pl.wikipedia.org/wiki/Wis%C5%82awa_Szymborska"
         },
         "source": {
@@ -1453,16 +1453,7 @@
         "patron_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Darn%C3%B3zseli%2C_r%C3%B3mai_katolikus_templom_bels%C5%91_tere_2024_07.jpg/330px-Darn%C3%B3zseli%2C_r%C3%B3mai_katolikus_templom_bels%C5%91_tere_2024_07.jpg?utm_source=pl.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
         "wikipedia_url": "https://pl.wikipedia.org/wiki/Florian_(m%C4%99czennik)",
         "patron_role": "święty i męczennik chrześcijański",
-        "patron": {
-          "name": "św. Florian",
-          "role": {
-            "pl": "rzymski oficer, męczennik wczesnochrześcijański i święty patron m.in. strażaków i Krakowa (ok. 250–304 n.e.)",
-            "en": "Roman officer, early Christian martyr, and patron saint of firefighters and Kraków (c. 250–304 AD)",
-            "de": "römischer Offizier, frühchristlicher Märtyrer und Schutzpatron der Feuerwehr und Krakaus (ca. 250–304 n. Chr.)"
-          },
-          "image": "assets/patrons/florianska.jpg",
-          "wikipedia_url": "https://pl.wikipedia.org/wiki/Florian_(m%C4%99czennik)"
-        },
+        "patron": null,
         "source": {
           "name": "E. Supranowicz, „Nazwy ulic Krakowa” (IJP PAN, 1995, ISBN 83-85579-48-6)",
           "url": null,
@@ -1616,7 +1607,11 @@
       "id": "grodzka",
       "properties": {
         "id": "grodzka",
-        "name": "Grodzka",
+        "name": {
+          "pl": "Grodzka",
+          "en": "Grodzka",
+          "de": "Grodzka"
+        },
         "prefix": "ulica",
         "full_name": "ulica Grodzka",
         "district": "Stare Miasto",
@@ -1628,7 +1623,11 @@
         "year": "Przedlokacyjna (XI/XII w.)",
         "length_meters": 540,
         "summary": "Najstarszy krakowski trakt handlowy wiodący z Rynku Głównego na Wawel.",
-        "etymology": "Nazwa pochodzi wprost od słowa 'gród' – był to trakt biegnący z północy ku obwarowanemu grodowi książęcemu i królewskiemu na wzgórzu wawelskim. Stanowiła oś dawnej osady przedlokacyjnej Okół.",
+        "etymology": {
+          "pl": "Najstarszy krakowski trakt handlowy wiodący z Rynku Głównego na Wawel. Nazwa pochodzi wprost od słowa „gród” – trakt biegnący ku obwarowanemu grodowi na Wawelu.",
+          "en": "The most ancient thoroughfare in Kraków and part of the historic amber route, leading directly from the Main Market Square to the Royal Castle on Wawel Hill.",
+          "de": "Der älteste Straßenzug Krakaus und Teil der historischen Bernsteinstraße, der vom Hauptmarkt direkt zur königlichen Wawel-Burg führt."
+        },
         "resolution": {
           "has_resolution": false
         },
@@ -1988,7 +1987,7 @@
             "en": "physician, professor and rector of Jagiellonian University, Mayor of Kraków (1804–1878)",
             "de": "Mediziner, Professor und Rektor der Jagiellonen-Universität, Bürgermeister von Krakau (1804–1878)"
           },
-          "image": "assets/patrons/dietla.jpg",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/J%C3%B3zef%20Dietl.jpg?width=360",
           "wikipedia_url": "https://pl.wikipedia.org/wiki/J%C3%B3zef_Dietl"
         },
         "source": {
@@ -3200,7 +3199,11 @@
       "id": "szeroka",
       "properties": {
         "id": "szeroka",
-        "name": "Szeroka",
+        "name": {
+          "pl": "Szeroka",
+          "en": "Szeroka",
+          "de": "Szeroka"
+        },
         "prefix": "ulica / plac",
         "full_name": "ulica Szeroka",
         "district": "Kazimierz",
@@ -3212,7 +3215,11 @@
         "year": "XV w.",
         "length_meters": 260,
         "summary": "Serce dawnego Miasta Żydowskiego na Kazimierzu (Oppidum Judaeorum) ze Starą Synagogą.",
-        "etymology": "Nazwa ma charakter topograficzny – plac ma nietypowy, wydłużony wrzecionowaty kształt dawnego rynku targowego wsi Bawół, zanim włączono ją w mury Kazimierza.",
+        "etymology": {
+          "pl": "Główny plac i serce dawnego Miasta Żydowskiego na Kazimierzu ze Starą Synagogą. Nazwa pochodzi od wydłużonego, wrzecionowatego i szerokiego kształtu dawnego rynku targowego.",
+          "en": "The central square and beating heart of historic Jewish Kazimierz with the Old Synagogue, named for its broad, elongated market square shape.",
+          "de": "Der Hauptplatz und das Herz des historischen jüdischen Viertels Kazimierz mit der Alten Synagoge, benannt nach der auffallend breiten Marktplatzform."
+        },
         "resolution": {
           "has_resolution": false
         },
@@ -3425,7 +3432,7 @@
             "en": "one of the greatest Polish Romantic poets and national bards (1809–1849)",
             "de": "einer der bedeutendsten polnischen Dichter der Romantik und Nationalbarde (1809–1849)"
           },
-          "image": "assets/patrons/slowackiego.png",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Juliusz%20S%C5%82owacki%201.PNG?width=360",
           "wikipedia_url": "https://pl.wikipedia.org/wiki/Juliusz_S%C5%82owacki"
         },
         "source": {
@@ -4469,7 +4476,11 @@
       "id": "mogilska",
       "properties": {
         "id": "mogilska",
-        "name": "Mogilska",
+        "name": {
+          "pl": "Mogilska",
+          "en": "Mogilska",
+          "de": "Mogilska"
+        },
         "prefix": "ulica",
         "full_name": "ulica Mogilska",
         "district": "Grzegórzki",
@@ -4481,7 +4492,11 @@
         "year": "XIX w. (trakt od XIII w.)",
         "length_meters": 1650,
         "summary": "Historyczny trakt handlowy łączący rondo Mogilskie z Nową Hutą i opactwem Cystersów.",
-        "etymology": "Nazwa kierunkowa od dawnej wsi Mogiła (dziś część Nowej Huty), gdzie od 1222 roku istnieje opactwo oo. Cystersów. Nazwa Mogiła wg krakowskiej legendy odnosi się do kurhanu córki księcia Kraka – Wandy.",
+        "etymology": {
+          "pl": "Historyczny trakt handlowy łączący Kraków z dawną wsią Mogiła (gdzie od 1222 r. istnieje opactwo oo. Cystersów). Wg legendy nazwa pochodzi od kurhanu księżniczki Wandy.",
+          "en": "Historical trade route connecting Kraków with the historic village of Mogiła and its 13th-century Cistercian Abbey, legendarily linked to Princess Wanda's mound.",
+          "de": "Historischer Handelsweg, der Krakau mit dem Dorf Mogiła und seiner Zisterzienserabtei aus dem 13. Jahrhundert verbindet, legendär mit dem Wanda-Hügel verknüpft."
+        },
         "resolution": {
           "has_resolution": false
         },

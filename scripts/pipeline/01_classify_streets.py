@@ -110,7 +110,7 @@ FIRST_NAMES_GENITIVE_TO_NOMINATIVE = {
     'sabiny': 'Sabina', 'salwatora': 'Salwator', 'samuela': 'Samuel',
     'sebastiana': 'Sebastian', 'sergiusza': 'Sergiusz', 'sereno': 'Sereno Fenn',
     'seweryna': 'Seweryn', 'sławomira': 'Sławomir', 'sobiepana': 'Sobiepan',
-    'sobiesława': 'Sobiesław', 'stefana': 'Stefan', 'stelli': 'Izydor Stella-Sawicki',
+    'sobiesława': 'Sobiesław', 'stanisława': 'Stanisław', 'stanisławy': 'Stanisława', 'stefana': 'Stefan', 'stelli': 'Izydor Stella-Sawicki',
     'sylwestra': 'Sylwester', 'szczepana': 'Szczepan', 'szczęsnego': 'Szczęsny',
     'szymona': 'Szymon', 'tadeusza': 'Tadeusz', 'tarsycjusza': 'Tarsycjusz',
     'teodora': 'Teodor', 'teodozji': 'Teodozja', 'teofila': 'Teofil',
