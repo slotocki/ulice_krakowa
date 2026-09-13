@@ -4,6 +4,11 @@
 
 const UI_TRANSLATIONS = {
   pl: {
+    districts: "Dzielnice",
+    city_growth: "Rozwój 1910–Dziś",
+    growth_title: "Rozwój terytorialny Krakowa",
+    close_growth: "Zamknij oś rozwoju",
+
     search_placeholder: "Wyszukaj nazwę ulicy...",
     streets_count: (n) => `${n} ulic w bazie`,
     change_language: "Zmień język",
@@ -40,6 +45,11 @@ const UI_TRANSLATIONS = {
     digital_archive_nav: "Cyfrowe Archiwum"
   },
   en: {
+    districts: "Districts",
+    city_growth: "Growth 1910–Today",
+    growth_title: "Territorial growth of Kraków",
+    close_growth: "Close growth timeline",
+
     search_placeholder: "Search for a street...",
     streets_count: (n) => `${n} streets loaded`,
     change_language: "Change language",
@@ -76,6 +86,11 @@ const UI_TRANSLATIONS = {
     digital_archive_nav: "Digital Archive"
   },
   de: {
+    districts: "Stadtbezirke",
+    city_growth: "Entwicklung 1910–Heute",
+    growth_title: "Gebietsentwicklung Krakaus",
+    close_growth: "Zeitleiste schließen",
+
     search_placeholder: "Straßennamen suchen...",
     streets_count: (n) => `${n} Straßen geladen`,
     change_language: "Sprache ändern",
@@ -192,6 +207,10 @@ class I18nManager {
       if (text) el.textContent = text;
     });
 
+    document.querySelectorAll('[data-i18n-title]').forEach(el => {
+      el.title = this.t(el.getAttribute('data-i18n-title'));
+    });
+
     // 2. Aktualizacja atrybutów placeholder
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
       const key = el.getAttribute('data-i18n-placeholder');
@@ -201,9 +220,24 @@ class I18nManager {
 
     // 3. Aktualizacja kompaktowego przełącznika języka
     const languageMeta = {
-      pl: { flagClass: 'flag-pl', label: 'Polski' },
-      en: { flagClass: 'flag-gb', label: 'English' },
-      de: { flagClass: 'flag-de', label: 'Deutsch' }
+      pl: {
+    districts: "Dzielnice",
+    city_growth: "Rozwój 1910–Dziś",
+    growth_title: "Rozwój terytorialny Krakowa",
+    close_growth: "Zamknij oś rozwoju",
+ flagClass: 'flag-pl', label: 'Polski' },
+      en: {
+    districts: "Districts",
+    city_growth: "Growth 1910–Today",
+    growth_title: "Territorial growth of Kraków",
+    close_growth: "Close growth timeline",
+ flagClass: 'flag-gb', label: 'English' },
+      de: {
+    districts: "Stadtbezirke",
+    city_growth: "Entwicklung 1910–Heute",
+    growth_title: "Gebietsentwicklung Krakaus",
+    close_growth: "Zeitleiste schließen",
+ flagClass: 'flag-de', label: 'Deutsch' }
     };
     const activeLanguage = languageMeta[this.currentLang];
     document.querySelectorAll('.current-language-flag').forEach(el => {

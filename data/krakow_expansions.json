@@ -1,20 +1,44 @@
 [
   {
     "id": "1900",
-    "year": "Przed 1910",
-    "title": "Kraków Autonomiczny",
+    "year": {
+      "pl": "Przed 1910",
+      "en": "Before 1910",
+      "de": "Vor 1910"
+    },
+    "title": {
+      "pl": "Kraków Autonomiczny",
+      "en": "Autonomous Kraków",
+      "de": "Autonomes Krakau"
+    },
     "area": "5,77 km²",
-    "desc": "Historyczny rdzeń miasta w obrębie dawnych okopów i murów: Stare Miasto, Kazimierz, Stradom, Kleparz, Wesoła i Piasek.",
+    "desc": {
+      "pl": "Historyczny rdzeń miasta w obrębie dawnych okopów i murów: Stare Miasto, Kazimierz, Stradom, Kleparz, Wesoła i Piasek.",
+      "en": "The historic core within the former ramparts and walls: Stare Miasto, Kazimierz, Stradom, Kleparz, Wesoła and Piasek.",
+      "de": "Der historische Stadtkern innerhalb der ehemaligen Wälle und Mauern: Stare Miasto, Kazimierz, Stradom, Kleparz, Wesoła und Piasek."
+    },
     "district_ids": [
       1
     ]
   },
   {
     "id": "1915",
-    "year": "1910–1915",
-    "title": "Wielki Kraków (Juliusz Leo)",
+    "year": {
+      "pl": "1910–1915",
+      "en": "1910–1915",
+      "de": "1910–1915"
+    },
+    "title": {
+      "pl": "Wielki Kraków (Juliusz Leo)",
+      "en": "Greater Kraków (Juliusz Leo)",
+      "de": "Groß-Krakau (Juliusz Leo)"
+    },
     "area": "46,9 km²",
-    "desc": "Przełomowa inkorporacja gmin podkrakowskich (Krowodrza, Zwierzyniec, Grzegórzki, Zakrzówek) oraz unifikacja z Podgórzem (1915).",
+    "desc": {
+      "pl": "Przełomowa inkorporacja gmin podkrakowskich (Krowodrza, Zwierzyniec, Grzegórzki, Zakrzówek) oraz unifikacja z Podgórzem (1915).",
+      "en": "Annexation of neighbouring municipalities (Krowodrza, Zwierzyniec, Grzegórzki, Zakrzówek) and unification with Podgórze (1915).",
+      "de": "Eingemeindung benachbarter Gemeinden (Krowodrza, Zwierzyniec, Grzegórzki, Zakrzówek) und Vereinigung mit Podgórze (1915)."
+    },
     "district_ids": [
       1,
       2,
@@ -25,10 +49,22 @@
   },
   {
     "id": "1941",
-    "year": "1941",
-    "title": "Rozszerzenie wojenne (II wojna)",
+    "year": {
+      "pl": "1941",
+      "en": "1941",
+      "de": "1941"
+    },
+    "title": {
+      "pl": "Rozszerzenie wojenne (II wojna)",
+      "en": "Wartime expansion (World War II)",
+      "de": "Erweiterung im Zweiten Weltkrieg"
+    },
     "area": "165 km²",
-    "desc": "Włączenie do Krakowa terenów Bronowic, Prądnika Białego i Czerwonego, Woli Duchackiej, Łagiewnik i Borku Fałęckiego.",
+    "desc": {
+      "pl": "Włączenie do Krakowa terenów Bronowic, Prądnika Białego i Czerwonego, Woli Duchackiej, Łagiewnik i Borku Fałęckiego.",
+      "en": "Incorporation of Bronowice, Prądnik Biały and Czerwony, Wola Duchacka, Łagiewniki and Borek Fałęcki into Kraków.",
+      "de": "Eingemeindung von Bronowice, Prądnik Biały und Czerwony, Wola Duchacka, Łagiewniki und Borek Fałęcki."
+    },
     "district_ids": [
       1,
       2,
@@ -44,10 +80,22 @@
   },
   {
     "id": "1951",
-    "year": "1951",
-    "title": "Inkorporacja Nowej Huty",
+    "year": {
+      "pl": "1951",
+      "en": "1951",
+      "de": "1951"
+    },
+    "title": {
+      "pl": "Inkorporacja Nowej Huty",
+      "en": "Incorporation of Nowa Huta",
+      "de": "Eingemeindung von Nowa Huta"
+    },
     "area": "230 km²",
-    "desc": "Włączenie terenów dawnych wsi Mogiła, Bieńczyce, Krzesławice, Pleszów pod budowę kombinatu metalurgicznego i Nowej Huty.",
+    "desc": {
+      "pl": "Włączenie terenów dawnych wsi Mogiła, Bieńczyce, Krzesławice, Pleszów pod budowę kombinatu metalurgicznego i Nowej Huty.",
+      "en": "Incorporation of the former villages of Mogiła, Bieńczyce, Krzesławice and Pleszów for the construction of the steelworks and Nowa Huta.",
+      "de": "Eingemeindung der ehemaligen Dörfer Mogiła, Bieńczyce, Krzesławice und Pleszów für den Bau des Stahlwerks und von Nowa Huta."
+    },
     "district_ids": [
       1,
       2,
@@ -68,10 +116,22 @@
   },
   {
     "id": "1973",
-    "year": "1973",
-    "title": "Drugie Wielkie Rozszerzenie",
+    "year": {
+      "pl": "1973",
+      "en": "1973",
+      "de": "1973"
+    },
+    "title": {
+      "pl": "Drugie Wielkie Rozszerzenie",
+      "en": "Second major expansion",
+      "de": "Zweite große Stadterweiterung"
+    },
     "area": "322 km²",
-    "desc": "Przyłączenie Tyńca, Sidziny, Kostrza, Swoszowic, Rajska, Wróblowic oraz Bieżanowa w pasie południowo-zachodnim.",
+    "desc": {
+      "pl": "Przyłączenie Tyńca, Sidziny, Kostrza, Swoszowic, Rajska, Wróblowic oraz Bieżanowa w pasie południowo-zachodnim.",
+      "en": "Annexation of Tyniec, Sidzina, Kostrze, Swoszowice, Rajsko, Wróblowice and Bieżanów along the southwestern belt.",
+      "de": "Eingemeindung von Tyniec, Sidzina, Kostrze, Swoszowice, Rajsko, Wróblowice und Bieżanów im südwestlichen Gebiet."
+    },
     "district_ids": [
       1,
       2,
@@ -95,10 +155,22 @@
   },
   {
     "id": "today",
-    "year": "Dzisiaj",
-    "title": "Współczesny Kraków (18 Dzielnic)",
+    "year": {
+      "pl": "Dzisiaj",
+      "en": "Today",
+      "de": "Heute"
+    },
+    "title": {
+      "pl": "Współczesny Kraków (18 Dzielnic)",
+      "en": "Present-day Kraków (18 districts)",
+      "de": "Heutiges Krakau (18 Stadtbezirke)"
+    },
     "area": "326,8 km²",
-    "desc": "Ostateczne granice po włączeniu Węgrzynowic i Wróżenic (1986). Pełny podział na 18 samorządowych dzielnic.",
+    "desc": {
+      "pl": "Ostateczne granice po włączeniu Węgrzynowic i Wróżenic (1986). Pełny podział na 18 samorządowych dzielnic.",
+      "en": "Final boundaries following the incorporation of Węgrzynowice and Wróżenice (1986). Division into 18 self-governing districts.",
+      "de": "Endgültige Grenzen nach der Eingemeindung von Węgrzynowice und Wróżenice (1986). Gliederung in 18 selbstverwaltete Stadtbezirke."
+    },
     "district_ids": [
       1,
       2,

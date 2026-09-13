@@ -62,6 +62,20 @@ class KrakowStreetsApp {
     }), 'top-right');
 
     this.initUIEvents();
+    const controls = document.getElementById('map-layer-controls');
+    const desktopParent = controls.parentElement;
+    const desktopNext = controls.nextSibling;
+    const mobileLayout = window.matchMedia('(max-width: 1279px)');
+    const placeControls = () => {
+      if (mobileLayout.matches) document.querySelector('main').appendChild(controls);
+      else desktopParent.insertBefore(controls, desktopNext);
+    };
+    mobileLayout.addEventListener('change', placeControls);
+    placeControls();
+    this.controlsObserver = new ResizeObserver(() => {
+      document.documentElement.style.setProperty('--map-controls-height', `${controls.offsetHeight}px`);
+    });
+    this.controlsObserver.observe(controls);
 
     // Funkcja pomocnicza: bezpieczne dodanie warstw po gotowości danych i stylu
     const trySetupLayers = () => {
@@ -840,6 +854,7 @@ class KrakowStreetsApp {
     // Nasłuchiwanie na zmianę języka
     window.addEventListener('languagechange', () => {
       this.updateTotalStreetsCount();
+      this.initExpansionMilestones();
       if (this.selectedStreetProps) {
         this.renderStreetDrawer(this.selectedStreetProps);
       }
@@ -980,7 +995,7 @@ class KrakowStreetsApp {
 
     container.innerHTML = this.expansionsData.map((stage, idx) => `
       <button onclick="window.krakowApp?.setExpansionStage(${idx})" data-stage-idx="${idx}" class="expansion-milestone-btn p-1.5 rounded-lg border text-center transition-all cursor-pointer ${idx === this.currentExpansionIndex ? 'bg-amber-600 text-white border-amber-700 shadow-xs font-bold' : 'bg-white/90 hover:bg-white text-slate-700 border-slate-200'}">
-        <div class="text-[11px] font-bold leading-none">${stage.year}</div>
+        <div class="text-[11px] font-bold leading-none">${window.krakowI18n.localize(stage.year)}</div>
         <div class="text-[9px] opacity-80 mt-0.5 leading-none">${stage.area}</div>
       </button>
     `).join('');
@@ -995,12 +1010,12 @@ class KrakowStreetsApp {
 
     const badge = document.getElementById('expansion-stage-badge');
     if (badge) {
-      badge.textContent = `${stage.year} • ${stage.area}`;
+      badge.textContent = `${window.krakowI18n.localize(stage.year)} • ${stage.area}`;
     }
 
     const desc = document.getElementById('expansion-stage-desc');
     if (desc) {
-      desc.innerHTML = `<span class="font-bold text-slate-800">${stage.title}:</span> ${stage.desc}`;
+      desc.innerHTML = `<span class="font-bold text-slate-800">${window.krakowI18n.localize(stage.title)}:</span> ${window.krakowI18n.localize(stage.desc)}`;
     }
 
     document.querySelectorAll('.expansion-milestone-btn').forEach(btn => {

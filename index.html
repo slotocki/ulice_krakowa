@@ -21,7 +21,7 @@
   <!-- Niezależne style aplikacji -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="relative h-screen w-screen overflow-hidden bg-white text-slate-800 antialiased select-none flex flex-col">
+<body class="relative h-dvh w-screen overflow-hidden bg-white text-slate-800 antialiased select-none flex flex-col">
 
   <!-- Górny pasek nawigacyjny Cracoscope (niewielki, spójny pasek) -->
   <header class="app-topbar h-16 w-full bg-white border-b border-slate-200/90 px-2 sm:px-4 flex items-center gap-1.5 sm:gap-4 z-30 flex-shrink-0 shadow-xs relative">
@@ -85,12 +85,12 @@
           <span data-i18n="city_border">Granice</span>
         </button>
         <span class="text-slate-300">|</span>
-        <button id="toggle-districts-btn" aria-pressed="false" title="Włącz / wyłącz widok 18 dzielnic Krakowa" class="flex items-center gap-1 text-slate-700 hover:text-blue-700 font-semibold transition-colors cursor-pointer">
-          <span>Dzielnice</span>
+        <button id="toggle-districts-btn" data-i18n-title="districts" aria-pressed="false" title="Włącz / wyłącz widok 18 dzielnic Krakowa" class="flex items-center gap-1 text-slate-700 hover:text-blue-700 font-semibold transition-colors cursor-pointer">
+          <span data-i18n="districts">Dzielnice</span>
         </button>
         <span class="text-slate-300">|</span>
-        <button id="toggle-expansion-btn" aria-pressed="false" title="Otwórz oś rozwoju terytorialnego Krakowa" class="flex items-center gap-1 text-slate-700 hover:text-blue-700 font-semibold transition-colors cursor-pointer">
-          <span>Rozwój 1910–Dziś</span>
+        <button id="toggle-expansion-btn" data-i18n-title="growth_title" aria-pressed="false" title="Otwórz oś rozwoju terytorialnego Krakowa" class="flex items-center gap-1 text-slate-700 hover:text-blue-700 font-semibold transition-colors cursor-pointer">
+          <span data-i18n="city_growth">Rozwój 1910–Dziś</span>
         </button>
         <span class="hidden md:inline text-slate-300">|</span>
         <button id="fit-bounds-btn" title="Dopasuj widok kamery do granic Krakowa" class="text-slate-600 hover:text-blue-600 transition-colors cursor-pointer hidden md:flex items-center gap-1 font-medium">
@@ -149,10 +149,10 @@
     <div id="territory-expansion-panel" class="hidden absolute bottom-5 left-1/2 -translate-x-1/2 z-20 w-[95%] max-w-2xl glass-panel rounded-2xl shadow-xl p-3.5 sm:p-4 border border-slate-200/90 transition-all">
       <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-200/60">
         <div class="flex items-center gap-2 flex-wrap">
-          <span class="text-xs font-extrabold uppercase tracking-wider text-slate-700">Rozwój terytorialny Krakowa</span>
+          <span data-i18n="growth_title" class="text-xs font-extrabold uppercase tracking-wider text-slate-700">Rozwój terytorialny Krakowa</span>
           <span id="expansion-stage-badge" class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-800">1910–1915 • 46,9 km²</span>
         </div>
-        <button id="close-expansion-btn" class="text-slate-400 hover:text-slate-700 p-1 rounded-lg hover:bg-slate-100 transition-colors" title="Zamknij oś rozwoju">
+        <button id="close-expansion-btn" data-i18n-title="close_growth" class="text-slate-400 hover:text-slate-700 p-1 rounded-lg hover:bg-slate-100 transition-colors" title="Zamknij oś rozwoju">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
