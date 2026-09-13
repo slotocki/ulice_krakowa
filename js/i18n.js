@@ -4,6 +4,17 @@
 
 const UI_TRANSLATIONS = {
   pl: {
+    locate_me: "Moja lokalizacja",
+    location_unavailable: "Lokalizacja wymaga HTTPS lub localhost i obsługi w przeglądarce.",
+    location_loading: "Baza ulic jeszcze się ładuje. Spróbuj za chwilę.",
+    location_wait: "Ustalanie lokalizacji…",
+    location_outside: "Nie znaleziono ulicy w pobliżu w krakowskiej bazie.",
+    location_inaccurate: "Odczyt lokalizacji jest zbyt niedokładny. Spróbuj ponownie na zewnątrz.",
+    location_denied: "Brak zgody na lokalizację. Możesz ją zmienić w ustawieniach przeglądarki.",
+    location_timeout: "Upłynął czas ustalania lokalizacji. Spróbuj ponownie.",
+    location_failed: "Nie udało się ustalić lokalizacji. Spróbuj ponownie.",
+    location_found: (name, accuracy) => `Najbliższa ulica: ${name}. Dokładność lokalizacji: około ${accuracy} m.`,
+
     districts: "Dzielnice",
     city_growth: "Rozwój 1910–Dziś",
     growth_title: "Rozwój terytorialny Krakowa",
@@ -45,6 +56,17 @@ const UI_TRANSLATIONS = {
     digital_archive_nav: "Cyfrowe Archiwum"
   },
   en: {
+    locate_me: "My location",
+    location_unavailable: "Location requires HTTPS or localhost and browser support.",
+    location_loading: "Street data is still loading. Please try again shortly.",
+    location_wait: "Finding your location…",
+    location_outside: "No nearby street was found in the Kraków dataset.",
+    location_inaccurate: "Location accuracy is too low. Try again outdoors.",
+    location_denied: "Location permission was denied. You can change it in browser settings.",
+    location_timeout: "Location request timed out. Please try again.",
+    location_failed: "Unable to find your location. Please try again.",
+    location_found: (name, accuracy) => `Nearest street: ${name}. Location accuracy: approximately ${accuracy} m.`,
+
     districts: "Districts",
     city_growth: "Growth 1910–Today",
     growth_title: "Territorial growth of Kraków",
@@ -86,6 +108,17 @@ const UI_TRANSLATIONS = {
     digital_archive_nav: "Digital Archive"
   },
   de: {
+    locate_me: "Mein Standort",
+    location_unavailable: "Der Standort benötigt HTTPS oder localhost und Browserunterstützung.",
+    location_loading: "Die Straßendaten werden noch geladen. Bitte gleich erneut versuchen.",
+    location_wait: "Standort wird ermittelt…",
+    location_outside: "Keine Straße in der Nähe in der Krakauer Datenbank gefunden.",
+    location_inaccurate: "Der Standort ist zu ungenau. Bitte im Freien erneut versuchen.",
+    location_denied: "Standortzugriff abgelehnt. Sie können dies in den Browsereinstellungen ändern.",
+    location_timeout: "Zeitüberschreitung bei der Standortbestimmung. Bitte erneut versuchen.",
+    location_failed: "Standort konnte nicht ermittelt werden. Bitte erneut versuchen.",
+    location_found: (name, accuracy) => `Nächste Straße: ${name}. Standortgenauigkeit: etwa ${accuracy} m.`,
+
     districts: "Stadtbezirke",
     city_growth: "Entwicklung 1910–Heute",
     growth_title: "Gebietsentwicklung Krakaus",
@@ -221,18 +254,51 @@ class I18nManager {
     // 3. Aktualizacja kompaktowego przełącznika języka
     const languageMeta = {
       pl: {
+    locate_me: "Moja lokalizacja",
+    location_unavailable: "Lokalizacja wymaga HTTPS lub localhost i obsługi w przeglądarce.",
+    location_loading: "Baza ulic jeszcze się ładuje. Spróbuj za chwilę.",
+    location_wait: "Ustalanie lokalizacji…",
+    location_outside: "Nie znaleziono ulicy w pobliżu w krakowskiej bazie.",
+    location_inaccurate: "Odczyt lokalizacji jest zbyt niedokładny. Spróbuj ponownie na zewnątrz.",
+    location_denied: "Brak zgody na lokalizację. Możesz ją zmienić w ustawieniach przeglądarki.",
+    location_timeout: "Upłynął czas ustalania lokalizacji. Spróbuj ponownie.",
+    location_failed: "Nie udało się ustalić lokalizacji. Spróbuj ponownie.",
+    location_found: (name, accuracy) => `Najbliższa ulica: ${name}. Dokładność lokalizacji: około ${accuracy} m.`,
+
     districts: "Dzielnice",
     city_growth: "Rozwój 1910–Dziś",
     growth_title: "Rozwój terytorialny Krakowa",
     close_growth: "Zamknij oś rozwoju",
  flagClass: 'flag-pl', label: 'Polski' },
       en: {
+    locate_me: "My location",
+    location_unavailable: "Location requires HTTPS or localhost and browser support.",
+    location_loading: "Street data is still loading. Please try again shortly.",
+    location_wait: "Finding your location…",
+    location_outside: "No nearby street was found in the Kraków dataset.",
+    location_inaccurate: "Location accuracy is too low. Try again outdoors.",
+    location_denied: "Location permission was denied. You can change it in browser settings.",
+    location_timeout: "Location request timed out. Please try again.",
+    location_failed: "Unable to find your location. Please try again.",
+    location_found: (name, accuracy) => `Nearest street: ${name}. Location accuracy: approximately ${accuracy} m.`,
+
     districts: "Districts",
     city_growth: "Growth 1910–Today",
     growth_title: "Territorial growth of Kraków",
     close_growth: "Close growth timeline",
  flagClass: 'flag-gb', label: 'English' },
       de: {
+    locate_me: "Mein Standort",
+    location_unavailable: "Der Standort benötigt HTTPS oder localhost und Browserunterstützung.",
+    location_loading: "Die Straßendaten werden noch geladen. Bitte gleich erneut versuchen.",
+    location_wait: "Standort wird ermittelt…",
+    location_outside: "Keine Straße in der Nähe in der Krakauer Datenbank gefunden.",
+    location_inaccurate: "Der Standort ist zu ungenau. Bitte im Freien erneut versuchen.",
+    location_denied: "Standortzugriff abgelehnt. Sie können dies in den Browsereinstellungen ändern.",
+    location_timeout: "Zeitüberschreitung bei der Standortbestimmung. Bitte erneut versuchen.",
+    location_failed: "Standort konnte nicht ermittelt werden. Bitte erneut versuchen.",
+    location_found: (name, accuracy) => `Nächste Straße: ${name}. Standortgenauigkeit: etwa ${accuracy} m.`,
+
     districts: "Stadtbezirke",
     city_growth: "Entwicklung 1910–Heute",
     growth_title: "Gebietsentwicklung Krakaus",

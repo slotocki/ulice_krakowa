@@ -62,6 +62,7 @@ class KrakowStreetsApp {
     }), 'top-right');
 
     this.initUIEvents();
+    this.location = new StreetLocation(this);
     const controls = document.getElementById('map-layer-controls');
     const desktopParent = controls.parentElement;
     const desktopNext = controls.nextSibling;
@@ -438,22 +439,25 @@ class KrakowStreetsApp {
       });
     }
 
+    this.selectedStreetProps = street.properties;
+    this.renderStreetDrawer(street.properties);
+
     // Płynny przelot kamery do ulicy z nachyleniem 3D i odsunięciem dla panelu bocznego
     const isMobile = window.innerWidth < 768;
+    const mapHeight = this.map.getContainer().clientHeight;
+    const drawerHeight = document.getElementById('street-drawer').offsetHeight;
     this.map.fitBounds(bounds, {
       padding: isMobile 
-        ? { top: 120, bottom: 320, left: 30, right: 30 }
+        ? { top: 48, bottom: Math.min(drawerHeight + 20, Math.max(0, mapHeight - 110)), left: 24, right: 24 }
         : { top: 100, bottom: 80, left: 80, right: 460 },
-      pitch: 42,
+      pitch: isMobile ? 0 : 42,
       bearing: 12,
       maxZoom: 16.5,
       duration: 1600,
       essential: true
     });
 
-    // Wyświetlenie danych w bocznym panelu
-    this.selectedStreetProps = street.properties;
-    this.renderStreetDrawer(street.properties);
+
   }
 
   renderStreetDrawer(props) {

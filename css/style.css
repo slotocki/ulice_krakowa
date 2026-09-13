@@ -228,3 +228,10 @@ body {
   #map-layer-controls button { white-space: normal; }
   #territory-expansion-panel { max-height: calc(100% - 8rem); }
 }
+.location-control button { display: flex; align-items: center; justify-content: center; }
+.location-status {
+  position: absolute; top: 4.5rem; left: 0.75rem; z-index: 25;
+  width: min(22rem, calc(100% - 5rem)); padding: 0.75rem;
+  background: white; color: #334155; border: 1px solid #cbd5e1;
+  border-radius: 0.75rem; font-size: 0.8rem; box-shadow: 0 3px 12px #0f172a20;
+}
