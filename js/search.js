@@ -31,7 +31,7 @@ class StreetSearch {
       .replace(/ś/g, 's')
       .replace(/ź/g, 'z')
       .replace(/ż/g, 'z')
-      .replace(/^ul\.\s*|^ulica\s*|^al\.\s*|^aleja\s*|^plac\s*|^pl\.\s*/, '');
+      .replace(/^ul\.\s*|^ulica\s*|^al\.\s*|^aleja\s*|^plac\s*|^pl\.\s*|^osiedle\s*|^os\.\s*|^park\s*|^bulwar\s*|^most\s*|^kładka\s*|^kladka\s*/, '');
   }
 
   initEvents() {
@@ -97,10 +97,17 @@ class StreetSearch {
         const normLocName = StreetSearch.normalize(locName);
         const normPlFullName = StreetSearch.normalize(plFullName);
         const normLocFullName = StreetSearch.normalize(locFullName);
-        const normLiteral = StreetSearch.normalize(literalMeaning);
-        const normEtymology = StreetSearch.normalize(etymology || '');
+        const decomFormer = p.dekomunizacja_1991?.former_description || '';
+        const prlName = p.prl_1951_1955?.official_name || '';
+        const naziName = p.okupacja_1940_1941?.official_name || '';
+
+        const normDecomFormer = StreetSearch.normalize(decomFormer);
+        const normPrlName = StreetSearch.normalize(prlName);
+        const normNaziName = StreetSearch.normalize(naziName);
 
         let score = 0;
+        let matchedHistorical = null;
+
         if (normPlName.startsWith(normQuery) || normLocName.startsWith(normQuery)) {
           score = 100 - Math.min(normPlName.length, normLocName.length) + normQuery.length;
         } else if (normLiteral && normLiteral.startsWith(normQuery)) {
@@ -109,18 +116,30 @@ class StreetSearch {
           score = 70;
         } else if (normLiteral && normLiteral.includes(normQuery)) {
           score = 65;
+        } else if (normDecomFormer && normDecomFormer.includes(normQuery)) {
+          score = 60;
+          matchedHistorical = `d. ${decomFormer}`;
+        } else if (normPrlName && normPrlName.includes(normQuery)) {
+          score = 58;
+          matchedHistorical = `w PRL: ${prlName}`;
+        } else if (normNaziName && normNaziName.includes(normQuery)) {
+          score = 56;
+          matchedHistorical = `1940: ${naziName}`;
         } else if (normPlFullName.includes(normQuery) || normLocFullName.includes(normQuery)) {
           score = 50;
         } else if (normEtymology.includes(normQuery)) {
           score = 20;
         }
 
-        return { street, score };
+        return { street, score, matchedHistorical };
       })
       .filter(item => item.score > 0)
       .sort((a, b) => b.score - a.score)
       .slice(0, 7)
-      .map(item => item.street);
+      .map(item => {
+        item.street._matchedHistorical = item.matchedHistorical;
+        return item.street;
+      });
 
     this.renderResults();
   }
@@ -145,17 +164,33 @@ class StreetSearch {
       const displayName = i18n ? i18n.localize(p.full_name, rawName) : (p.full_name?.pl || p.full_name || rawName);
       const safeName = displayName.replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 
+      let badgeHtml = '';
+      if (p.is_landmark) {
+        if (p.landmark_group === 'estates') {
+          badgeHtml = '<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 border border-amber-200">Osiedle</span>';
+        } else if (p.landmark_group === 'parks') {
+          badgeHtml = '<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-200">Park</span>';
+        } else {
+          badgeHtml = '<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-cyan-100 text-cyan-800 border border-cyan-200">Most / Kładka</span>';
+        }
+      }
+
+      const historicalHtml = street._matchedHistorical 
+        ? `<div class="text-[11px] text-amber-700 font-medium pl-6 truncate"><span class="italic text-slate-400 font-normal">Historia:</span> ${street._matchedHistorical}</div>` 
+        : '';
+
       return `
-        <div class="search-item px-4 py-3 cursor-pointer border-b border-slate-100 last:border-0 ${isSelected ? 'selected' : ''}" data-idx="${idx}">
-          <div class="flex items-center justify-between">
-            <div class="font-semibold text-slate-800 text-sm flex items-center gap-2">
+        <div class="search-item px-4 py-2.5 cursor-pointer border-b border-slate-100 last:border-0 ${isSelected ? 'selected' : ''}" data-idx="${idx}">
+          <div class="flex items-center justify-between gap-2">
+            <div class="font-semibold text-slate-800 text-sm flex items-center gap-2 min-w-0">
               <svg class="w-4 h-4 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
               </svg>
-              <span>${safeName}</span>
+              <span class="truncate">${safeName}</span>
             </div>
+            ${badgeHtml}
           </div>
+          ${historicalHtml}
         </div>
       `;
     }).join('');
@@ -208,8 +243,10 @@ class StreetSearch {
 
   selectStreet(street) {
     const i18n = window.krakowI18n;
-    const rawName = i18n ? i18n.localize(street.properties.name, '') : (street.properties.name || '');
-    this.inputEl.value = i18n ? i18n.localize(street.properties.full_name, `ulica ${rawName}`) : (street.properties.full_name || `ulica ${rawName}`);
+    const p = street.properties;
+    const rawName = i18n ? i18n.localize(p.name, '') : (p.name?.pl || p.name || '');
+    const fallbackName = p.is_landmark ? rawName : (rawName ? `ulica ${rawName}` : '');
+    this.inputEl.value = i18n ? i18n.localize(p.full_name, fallbackName) : (p.full_name?.pl || p.full_name || fallbackName);
     this.resultsEl.classList.add('hidden');
     this.selectedIndex = -1;
     if (this.onSelect) {

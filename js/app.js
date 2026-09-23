@@ -22,12 +22,18 @@ class KrakowStreetsApp {
   constructor() {
     this.currentStyle = 'positron';
     this.streetsData = null;
+    this.landmarksData = null;
+    this.showLandmarks = true;
     this.borderData = null;
     this.showBorder = true;
     this.selectedStreetId = null;
     this.search = null;
     this.districtsData = null;
     this.showDistricts = false;
+    this.showStreetNetwork = false; // Domyślnie czysta, czytelna mapa bez przesłaniających linii
+    this.hoveredStreetId = null;
+    this.pendingHoverId = null;
+    this.hoverTimeout = null;
     this.expansionsData = null;
     this.showExpansionTimeline = false;
     this.currentExpansionIndex = 1; // Domyślnie Wielki Kraków 1910-1915
@@ -95,36 +101,113 @@ class KrakowStreetsApp {
       trySetupLayers();
     });
 
-    // Globalna obsługa kliknięcia w ulicę na mapie (nie ginie przy podmianie stylu)
+    // Globalna obsługa kliknięcia w ulicę, jej nazwę lub etykietę miejsca na mapie
     this.map.on('click', (e) => {
-      if (!this.map.getLayer('streets-base')) return;
-      const features = this.map.queryRenderedFeatures(e.point, { layers: ['streets-base'] });
-      if (features && features.length > 0) {
-        const featureId = features[0].properties.id;
-        const street = this.streetsData?.features.find(f => f.properties.id === featureId);
-        if (street) {
-          this.selectStreet(street);
+      // 1. Sprawdź etykiety osiedli/miejsc lub zaznaczony marker
+      if (this.showLandmarks) {
+        const queryLayers = [];
+        if (this.map.getLayer('landmarks-labels')) queryLayers.push('landmarks-labels');
+        if (this.map.getLayer('landmarks-selected-marker')) queryLayers.push('landmarks-selected-marker');
+
+        if (queryLayers.length > 0) {
+          const lFeatures = this.map.queryRenderedFeatures(e.point, { layers: queryLayers });
+          if (lFeatures && lFeatures.length > 0) {
+            const fid = lFeatures[0].properties.id;
+            const landmark = this.landmarksData?.features.find(f => f.properties.id === fid);
+            if (landmark) {
+              this.selectStreet(landmark);
+              return;
+            }
+          }
+        }
+      }
+
+      // 2. Sprawdź etykiety ulic oraz poszerzoną strefę kliku (hitbox)
+      const streetLayers = [];
+      if (this.map.getLayer('streets-labels')) streetLayers.push('streets-labels');
+      if (this.map.getLayer('streets-base')) streetLayers.push('streets-base');
+
+      if (streetLayers.length > 0) {
+        const features = this.map.queryRenderedFeatures(e.point, { layers: streetLayers });
+        if (features && features.length > 0) {
+          const featureId = features[0].properties.id;
+          const street = this.streetsData?.features.find(f => f.properties.id === featureId);
+          if (street) {
+            this.selectStreet(street);
+          }
         }
       }
     });
 
-    // Zmiana kursora nad ulicami
+    // Zmiana kursora i dynamiczny wskaźnik najechania myszką z filtrem intencji (Hover Intent)
     this.map.on('mousemove', (e) => {
-      if (!this.map.getLayer('streets-base')) {
+      const activeLayers = [];
+      if (this.map.getLayer('streets-labels')) activeLayers.push('streets-labels');
+      if (this.map.getLayer('streets-base')) activeLayers.push('streets-base');
+      if (this.showLandmarks && this.map.getLayer('landmarks-labels')) activeLayers.push('landmarks-labels');
+      if (this.showLandmarks && this.map.getLayer('landmarks-selected-marker')) activeLayers.push('landmarks-selected-marker');
+
+      if (activeLayers.length === 0) {
         this.map.getCanvas().style.cursor = '';
+        this.clearHover();
         return;
       }
-      const features = this.map.queryRenderedFeatures(e.point, { layers: ['streets-base'] });
-      this.map.getCanvas().style.cursor = features.length > 0 ? 'pointer' : '';
+      const features = this.map.queryRenderedFeatures(e.point, { layers: activeLayers });
+      if (features.length > 0) {
+        this.map.getCanvas().style.cursor = 'pointer';
+        const fid = features[0].properties.id;
+
+        // Jeśli ulica jest już trwale wybrana (neonowe podświetlenie aktywne), nie podświetlamy jej w trybie hover
+        if (this.selectedStreetId === fid) {
+          this.clearHover();
+          return;
+        }
+
+        // Jeśli kursor nadal znajduje się nad tą samą ulicą, która już jest podświetlona lub oczekuje, nie resetujemy
+        if (this.hoveredStreetId === fid || this.pendingHoverId === fid) {
+          return;
+        }
+
+        // Gdy zjeżdżamy z dotychczasowej ulicy na nową, natychmiast gasimy poprzednią
+        if (this.hoveredStreetId && this.hoveredStreetId !== fid) {
+          this.hoveredStreetId = null;
+          if (this.map.getLayer('streets-hover')) {
+            this.map.setFilter('streets-hover', ['==', ['get', 'id'], '']);
+          }
+        }
+
+        // Uruchamiamy krótki, naturalny bufor intencji (140 ms) - zapobiega stroboskopowemu miganiu przy szybkim przesuwaniu kursora
+        this.pendingHoverId = fid;
+        if (this.hoverTimeout) {
+          clearTimeout(this.hoverTimeout);
+        }
+
+        this.hoverTimeout = setTimeout(() => {
+          if (this.pendingHoverId === fid) {
+            this.hoveredStreetId = fid;
+            if (this.map && this.map.getLayer('streets-hover')) {
+              this.map.setFilter('streets-hover', ['==', ['get', 'id'], fid]);
+            }
+          }
+        }, 140);
+      } else {
+        this.map.getCanvas().style.cursor = '';
+        this.clearHover();
+      }
     });
 
-    // Pobranie danych GeoJSON (ulice, granice, dzielnice, rozwój terytorialny)
+    this.map.on('mouseout', () => {
+      this.clearHover();
+    });
+
+    // Pobranie danych GeoJSON (ulice, granice, dzielnice, rozwój terytorialny, osiedla i miejsca)
     try {
-      const [streetsResp, borderResp, districtsResp, expansionsResp] = await Promise.all([
+      const [streetsResp, borderResp, districtsResp, expansionsResp, landmarksResp] = await Promise.all([
         fetch('data/krakow_streets.geojson').catch(() => fetch('data/streets_sample.json')),
         fetch('data/krakow_border.geojson').catch(() => null),
         fetch('data/krakow_districts.geojson').catch(() => null),
-        fetch('data/krakow_expansions.json').catch(() => null)
+        fetch('data/krakow_expansions.json').catch(() => null),
+        fetch('data/krakow_landmarks.geojson').catch(() => null)
       ]);
 
       if (streetsResp && streetsResp.ok) {
@@ -142,6 +225,9 @@ class KrakowStreetsApp {
       }
       if (expansionsResp && expansionsResp.ok) {
         this.expansionsData = await expansionsResp.json();
+      }
+      if (landmarksResp && landmarksResp.ok) {
+        this.landmarksData = await landmarksResp.json();
       }
 
       this.initSearch();
@@ -308,6 +394,14 @@ class KrakowStreetsApp {
         }
       }
 
+      // 0b. Ukrycie małych, zlewających się nazw ulic z podkładu CARTO (zastępujemy je naszą wyrazistą typografią)
+      const cartoRoadLabels = ['roadname_minor', 'roadname_sec', 'roadname_pri', 'roadname_major'];
+      cartoRoadLabels.forEach(lid => {
+        if (this.map.getLayer(lid)) {
+          this.map.setLayoutProperty(lid, 'visibility', 'none');
+        }
+      });
+
       // 1. Dodanie źródła danych GeoJSON dla ulic
       if (!this.map.getSource('krakow-streets')) {
         this.map.addSource('krakow-streets', {
@@ -318,7 +412,7 @@ class KrakowStreetsApp {
 
       const baseColor = isDark ? '#60a5fa' : '#2563eb';
 
-      // 2. Warstwa bazowa wszystkich ulic w bazie
+      // 2. Warstwa bazowa ulic: szeroka, niewidzialna strefa kliku (hitbox) lub widoczna siatka na żądanie
       if (!this.map.getLayer('streets-base')) {
         this.map.addLayer({
           id: 'streets-base',
@@ -332,11 +426,70 @@ class KrakowStreetsApp {
             'line-color': baseColor,
             'line-width': [
               'interpolate', ['linear'], ['zoom'],
-              11, 2.5,
-              14, 4.5,
-              17, 7.5
+              11, 10,
+              14, 18,
+              17, 26
             ],
-            'line-opacity': (isDark ? 0.75 : 0.55) * ((this.showDistricts || this.showExpansionTimeline) ? 0.8 : 1)
+            'line-opacity': this.showStreetNetwork 
+              ? ((isDark ? 0.75 : 0.55) * ((this.showDistricts || this.showExpansionTimeline) ? 0.8 : 1))
+              : 0.001
+          }
+        });
+      }
+
+      // 2b. Warstwa subtelnego podświetlenia najechania myszką (Hover)
+      if (!this.map.getLayer('streets-hover')) {
+        this.map.addLayer({
+          id: 'streets-hover',
+          type: 'line',
+          source: 'krakow-streets',
+          filter: ['==', ['get', 'id'], this.hoveredStreetId || ''],
+          layout: {
+            'line-join': 'round',
+            'line-cap': 'round'
+          },
+          paint: {
+            'line-color': isDark ? '#38bdf8' : '#2563eb',
+            'line-width': [
+              'interpolate', ['linear'], ['zoom'],
+              11, 3.5,
+              14, 5.5,
+              17, 8.5
+            ],
+            'line-opacity': 0.45
+          }
+        });
+      }
+
+      // 2c. Własna warstwa wyrazistych nazw ulic (Styl Apple Maps / Google Maps)
+      if (!this.map.getLayer('streets-labels')) {
+        this.map.addLayer({
+          id: 'streets-labels',
+          type: 'symbol',
+          source: 'krakow-streets',
+          minzoom: 13.0,
+          layout: {
+            'symbol-placement': 'line',
+            'symbol-spacing': 280,
+            'text-field': ['get', 'pl', ['get', 'name']],
+            'text-font': ['Montserrat Regular', 'Open Sans Regular'],
+            'text-size': [
+              'interpolate', ['linear'], ['zoom'],
+              13, 10.5,
+              14.5, 12,
+              16, 13.5,
+              17.5, 15
+            ],
+            'text-letter-spacing': 0.04,
+            'text-max-angle': 38,
+            'text-optional': true,
+            'text-keep-upright': true
+          },
+          paint: {
+            'text-color': isDark ? '#f1f5f9' : '#0f172a',
+            'text-halo-color': isDark ? 'rgba(15, 23, 42, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+            'text-halo-width': 2.5,
+            'text-halo-blur': 0.5
           }
         });
       }
@@ -394,6 +547,91 @@ class KrakowStreetsApp {
           }
         });
       }
+
+      // 5. Warstwa osiedli, parków i obiektów (Landmarks)
+      // 5. Warstwa osiedli, parków i obiektów (Landmarks) - Styl Apple Maps (subtelna typografia na zbliżeniu, brak kropek)
+      if (this.landmarksData) {
+        if (!this.map.getSource('krakow-landmarks')) {
+          this.map.addSource('krakow-landmarks', {
+            type: 'geojson',
+            data: this.landmarksData
+          });
+        }
+
+        // Warstwa poświaty zaznaczenia (aktywna TYLKO dla wybranego obiektu)
+        if (!this.map.getLayer('landmarks-selected-glow')) {
+          this.map.addLayer({
+            id: 'landmarks-selected-glow',
+            type: 'circle',
+            source: 'krakow-landmarks',
+            filter: ['==', ['get', 'id'], this.selectedStreetId || ''],
+            layout: {
+              visibility: this.showLandmarks ? 'visible' : 'none'
+            },
+            paint: {
+              'circle-radius': [
+                'interpolate', ['linear'], ['zoom'],
+                11, 14,
+                14, 22,
+                17, 30
+              ],
+              'circle-color': isDark ? '#38bdf8' : '#2563eb',
+              'circle-opacity': 0.35,
+              'circle-blur': 0.8
+            }
+          });
+        }
+
+        // Warstwa pinezki zaznaczenia (aktywna TYLKO dla wybranego obiektu)
+        if (!this.map.getLayer('landmarks-selected-marker')) {
+          this.map.addLayer({
+            id: 'landmarks-selected-marker',
+            type: 'circle',
+            source: 'krakow-landmarks',
+            filter: ['==', ['get', 'id'], this.selectedStreetId || ''],
+            layout: {
+              visibility: this.showLandmarks ? 'visible' : 'none'
+            },
+            paint: {
+              'circle-radius': 7.5,
+              'circle-color': '#f59e0b',
+              'circle-stroke-width': 2.5,
+              'circle-stroke-color': '#ffffff'
+            }
+          });
+        }
+
+        // Subtelne etykiety tekstowe w stylu Apple Maps (widoczne TYLKO na zbliżeniu od zoomu 13.8)
+        if (!this.map.getLayer('landmarks-labels')) {
+          this.map.addLayer({
+            id: 'landmarks-labels',
+            type: 'symbol',
+            source: 'krakow-landmarks',
+            minzoom: 13.8,
+            layout: {
+              visibility: this.showLandmarks ? 'visible' : 'none',
+              'text-field': ['get', 'pl', ['get', 'name']],
+              'text-size': [
+                'interpolate', ['linear'], ['zoom'],
+                13.8, 10,
+                15, 11.5,
+                17, 13
+              ],
+              'text-letter-spacing': 0.05,
+              'text-max-width': 8,
+              'text-offset': [0, 0],
+              'text-anchor': 'center',
+              'text-optional': true
+            },
+            paint: {
+              'text-color': isDark ? '#94a3b8' : '#475569',
+              'text-halo-color': isDark ? 'rgba(15, 23, 42, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+              'text-halo-width': 2.2,
+              'text-halo-blur': 0.5
+            }
+          });
+        }
+      }
     } catch (err) {
       console.warn('Oczekiwanie na pełne załadowanie arkusza stylu...', err);
     }
@@ -407,36 +645,69 @@ class KrakowStreetsApp {
     if (this.map.getLayer('streets-selected-line')) {
       this.map.setFilter('streets-selected-line', ['==', ['get', 'id'], id]);
     }
+    if (this.map.getLayer('landmarks-selected-glow')) {
+      this.map.setFilter('landmarks-selected-glow', ['==', ['get', 'id'], id]);
+    }
+    if (this.map.getLayer('landmarks-selected-marker')) {
+      this.map.setFilter('landmarks-selected-marker', ['==', ['get', 'id'], id]);
+    }
   }
 
   initSearch() {
-    this.search = new StreetSearch(this.streetsData.features, (street) => {
+    const allFeatures = [
+      ...(this.streetsData?.features || []),
+      ...(this.landmarksData?.features || [])
+    ];
+    this.search = new StreetSearch(allFeatures, (street) => {
       this.selectStreet(street);
     });
   }
 
   selectStreetById(id) {
-    if (!this.streetsData) return;
-    const street = this.streetsData.features.find(f => f.properties.id === id);
+    const street = this.streetsData?.features.find(f => f.properties.id === id) ||
+                   this.landmarksData?.features.find(f => f.properties.id === id);
     if (street) {
       this.selectStreet(street);
     }
   }
 
+  clearHover() {
+    this.pendingHoverId = null;
+    if (this.hoverTimeout) {
+      clearTimeout(this.hoverTimeout);
+      this.hoverTimeout = null;
+    }
+    if (this.hoveredStreetId) {
+      this.hoveredStreetId = null;
+      if (this.map && this.map.getLayer('streets-hover')) {
+        this.map.setFilter('streets-hover', ['==', ['get', 'id'], '']);
+      }
+    }
+  }
+
   selectStreet(street) {
     this.selectedStreetId = street.properties.id;
+    this.clearHover();
     this.updateSelectionLayers();
 
     // Obliczenie granic geometrii (Bounding Box)
     const bounds = new maplibregl.LngLatBounds();
     const geom = street.geometry;
 
-    if (geom.type === 'LineString') {
+    if (geom.type === 'Point') {
+      const [lon, lat] = geom.coordinates;
+      bounds.extend([lon - 0.0035, lat - 0.0025]);
+      bounds.extend([lon + 0.0035, lat + 0.0025]);
+    } else if (geom.type === 'LineString') {
       geom.coordinates.forEach(coord => bounds.extend(coord));
     } else if (geom.type === 'MultiLineString') {
       geom.coordinates.forEach(line => {
         line.forEach(coord => bounds.extend(coord));
       });
+    } else if (geom.type === 'Polygon') {
+      geom.coordinates.forEach(ring => ring.forEach(coord => bounds.extend(coord)));
+    } else if (geom.type === 'MultiPolygon') {
+      geom.coordinates.forEach(poly => poly.forEach(ring => ring.forEach(coord => bounds.extend(coord))));
     }
 
     this.selectedStreetProps = street.properties;
@@ -477,8 +748,9 @@ class KrakowStreetsApp {
     // 1. Nagłówek i podstawowe metryki
     const districtText = i18n ? i18n.localize(props.district, 'Kraków') : (props.district || 'Kraków');
     const categoryText = i18n ? i18n.localize(props.category, 'Ogólna') : (props.category || 'Ogólna');
-    const rawName = i18n ? i18n.localize(props.name, '') : (props.name || '');
-    const fullNameText = i18n ? i18n.localize(props.full_name, `ulica ${rawName}`) : (props.full_name || `ulica ${rawName}`);
+    const rawName = i18n ? i18n.localize(props.name, '') : (props.name?.pl || props.name || '');
+    const defaultFull = props.is_landmark ? rawName : (rawName ? `ulica ${rawName}` : '');
+    const fullNameText = i18n ? i18n.localize(props.full_name, defaultFull) : (props.full_name?.pl || props.full_name || defaultFull);
 
     document.getElementById('drawer-district').textContent = districtText;
     document.getElementById('drawer-category').textContent = categoryText;
@@ -501,7 +773,12 @@ class KrakowStreetsApp {
     const yearPrefix = i18n ? i18n.t('metric_label') : 'Początki:';
     const fallbackPeriod = currentLang === 'pl' ? 'Średniowiecze' : (currentLang === 'de' ? 'Mittelalter' : 'Middle Ages');
     document.getElementById('drawer-year').textContent = props.year ? `${yearPrefix} ${props.year}` : fallbackPeriod;
-    document.getElementById('drawer-length').textContent = props.length_meters ? `${props.length_meters} m` : '—';
+    
+    if (props.is_landmark) {
+      document.getElementById('drawer-length').textContent = props.historic_code || (props.landmark_group === 'estates' ? 'Osiedle' : (props.landmark_group === 'parks' ? 'Park / Teren zielony' : 'Most / Przeprawa'));
+    } else {
+      document.getElementById('drawer-length').textContent = props.length_meters ? `${props.length_meters} m` : '—';
+    }
 
     // 2. Karta Patrona Ulicy (tylko dla ulic z patronem osobowym)
     const patronCard = document.getElementById('drawer-patron-card');
@@ -667,24 +944,56 @@ class KrakowStreetsApp {
       });
     }
 
-    // Dodatkowe wydarzenia historyczne (z monografii Tomkowicza, Grabowskiego, Bąkowskiego)
+    // Dodatkowe wydarzenia historyczne (z monografii Tomkowicza, Grabowskiego, Bąkowskiego oraz partii)
     if (props.timeline && Array.isArray(props.timeline)) {
       props.timeline.forEach(ev => {
         if (ev && ev.year && ev.desc) {
-          timelineEvents.push({
-            year: ev.year,
-            badge: ev.badge || (currentLang === 'pl' ? 'Monografia' : (currentLang === 'de' ? 'Monographie' : 'Monograph')),
-            desc: ev.desc
+          // Ochrona przed duplikowaniem lat ujętych już przez akty urzędowe
+          const alreadyExists = timelineEvents.some(te => {
+            if (te.year !== ev.year) return false;
+            const teDesc = (te.desc || '').toLowerCase();
+            const evDesc = (ev.desc || '').toLowerCase();
+            // Jeśli oba dotyczą tego samego aktu / tego samego roku:
+            if (ev.year === 1880 && (teDesc.includes('1880') || evDesc.includes('1880') || evDesc.includes('drk'))) return true;
+            if (ev.year === 1912 && (teDesc.includes('1912') || evDesc.includes('1912') || evDesc.includes('drk'))) return true;
+            if (ev.year === 1917 && (teDesc.includes('1917') || evDesc.includes('podgórze') || evDesc.includes('podgorze'))) return true;
+            if ((ev.year === 1926 || ev.year === 1933) && (teDesc.includes('1926') || teDesc.includes('1933') || evDesc.includes('drk'))) return true;
+            if (ev.year === 1940 && (teDesc.includes('niemcz') || teDesc.includes('okupacj') || evDesc.includes('okupacj') || teDesc.includes('gasse') || teDesc.includes('straße') || teDesc.includes('strasse'))) return true;
+            if (ev.year === 1951 && (teDesc.includes('prl') || evDesc.includes('prl'))) return true;
+            if (ev.year === 1973 && (teDesc.includes('rozszerzenie') || evDesc.includes('1973'))) return true;
+            if (ev.year === 1991 && (teDesc.includes('dekomuniz') || evDesc.includes('dekomuniz') || evDesc.includes('1991'))) return true;
+            // Identyczny rok i zbliżona treść
+            if (te.year === ev.year && (teDesc.includes(evDesc) || evDesc.includes(teDesc))) return true;
+            return false;
           });
+
+          if (!alreadyExists) {
+            timelineEvents.push({
+              year: ev.year,
+              badge: ev.badge || (currentLang === 'pl' ? 'Monografia' : (currentLang === 'de' ? 'Monographie' : 'Monograph')),
+              desc: ev.desc
+            });
+          }
         }
       });
     }
 
+    // Ostateczna deduplikacja po unikalnym roku i treści
+    const uniqueTimelineEvents = [];
+    const seenEventKeys = new Set();
+    for (const ev of timelineEvents) {
+      const key = `${ev.year}_${ev.desc.trim().toLowerCase()}`;
+      if (!seenEventKeys.has(key)) {
+        seenEventKeys.add(key);
+        uniqueTimelineEvents.push(ev);
+      }
+    }
+
     // Sortowanie chronologiczne osi czasu
-    timelineEvents.sort((a, b) => a.year - b.year);
+    uniqueTimelineEvents.sort((a, b) => a.year - b.year);
 
     let timelineHtml = '';
-    if (timelineEvents.length > 0) {
+    if (uniqueTimelineEvents.length > 0) {
       const timelineHeading = currentLang === 'pl' 
         ? 'Chronologia zmian nazw w źródłach:' 
         : (currentLang === 'de' ? 'Chronologie der Namensänderungen:' : 'Chronology of Name Changes:');
@@ -698,7 +1007,7 @@ class KrakowStreetsApp {
             <span>${timelineHeading}</span>
           </div>
           <div class="relative pl-3.5 ml-1 border-l-2 border-blue-200 space-y-2">
-            ${timelineEvents.map(ev => `
+            ${uniqueTimelineEvents.map(ev => `
               <div class="relative text-xs">
                 <span class="absolute -left-[1.2rem] top-1 w-2.5 h-2.5 rounded-full bg-blue-600 ring-4 ring-blue-50"></span>
                 <div class="flex items-center gap-1.5 font-bold text-slate-900 leading-tight">
@@ -780,6 +1089,50 @@ class KrakowStreetsApp {
         `);
       }
 
+      // Źródło: dr Stanisław Tomkowicz (1926)
+      const hasTomkowicz = (props.source?.name && props.source.name.toLowerCase().includes('tomkowicz')) ||
+                           (props.timeline && props.timeline.some(t => t.desc && t.desc.toLowerCase().includes('tomkowicz'))) ||
+                           (props.etymology?.pl && props.etymology.pl.toLowerCase().includes('tomkowicz'));
+      if (hasTomkowicz) {
+        sourceItems.push(`
+          <div class="flex items-start justify-between gap-2 p-2 rounded-lg bg-white border border-slate-200/70 shadow-2xs">
+            <div>
+              <div class="font-bold text-slate-800 text-[11px]">
+                dr Stanisław Tomkowicz
+              </div>
+              <div class="text-[10px] text-slate-500 mt-0.5">
+                „Ulice i place Krakowa w ciągu dziejów: ich nazwy i zmiany”, Kraków 1926
+              </div>
+            </div>
+            <a href="https://jbc.bj.uj.edu.pl/dlibra/publication/145274" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 text-[10px] font-bold text-blue-700 hover:text-blue-900 bg-blue-50 border border-blue-200 px-2 py-1 rounded-md no-underline">
+              JBC UJ &nearr;
+            </a>
+          </div>
+        `);
+      }
+
+      // Źródło: Ambroży Grabowski (1866)
+      const hasGrabowski = (props.source?.name && props.source.name.toLowerCase().includes('grabowski')) ||
+                           (props.timeline && props.timeline.some(t => t.desc && t.desc.toLowerCase().includes('grabowski'))) ||
+                           (props.etymology?.pl && props.etymology.pl.toLowerCase().includes('grabowski'));
+      if (hasGrabowski) {
+        sourceItems.push(`
+          <div class="flex items-start justify-between gap-2 p-2 rounded-lg bg-white border border-slate-200/70 shadow-2xs">
+            <div>
+              <div class="font-bold text-slate-800 text-[11px]">
+                Ambroży Grabowski
+              </div>
+              <div class="text-[10px] text-slate-500 mt-0.5">
+                „Kraków i jego okolice”, Wydanie 3, Kraków 1866
+              </div>
+            </div>
+            <a href="https://polona.pl/preview/a6d09e51-872f-4fcb-8664-df87130b06ce" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 text-[10px] font-bold text-blue-700 hover:text-blue-900 bg-blue-50 border border-blue-200 px-2 py-1 rounded-md no-underline">
+              Polona &nearr;
+            </a>
+          </div>
+        `);
+      }
+
       // Akty Cyfrowego Archiwum
       const actLinks = [
         { obj: props.drk_1880, doc: 'drk_1880', label: 'DRK 1880', full: 'Wielka Regulacja Autonomiczna' },
@@ -793,14 +1146,16 @@ class KrakowStreetsApp {
       ];
 
       for (const al of actLinks) {
-        if (al.obj && al.obj.official_name) {
+        const hasTimelineMention = props.timeline && props.timeline.some(t => t.desc && (t.desc.includes(al.label) || (al.doc.startsWith('drk_') && t.desc.includes(al.label.replace('DRK ', '')))));
+        if ((al.obj && al.obj.official_name) || hasTimelineMention) {
+          const actObj = al.obj || {};
           sourceItems.push(`
             <div class="flex items-center justify-between gap-2 p-2 rounded-lg bg-white border border-slate-200/70 shadow-2xs">
               <div class="min-w-0">
                 <div class="font-bold text-slate-800 text-[11px] truncate">${al.label} • ${al.full}</div>
-                <div class="text-[10px] text-slate-500 truncate">${al.obj.district_name || al.obj.district_id || ''}</div>
+                <div class="text-[10px] text-slate-500 truncate">${actObj.district_name || actObj.district_id || 'Rejestr Urzędowy Miasta Krakowa'}</div>
               </div>
-              <a href="sources.html?doc=${al.doc}#${al.obj.ref_id || props.id}" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 text-[10px] font-bold text-amber-800 hover:text-amber-950 bg-amber-50 border border-amber-200 px-2 py-1 rounded-md no-underline">
+              <a href="sources.html?doc=${al.doc}#${actObj.ref_id || props.id}" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 text-[10px] font-bold text-amber-800 hover:text-amber-950 bg-amber-50 border border-amber-200 px-2 py-1 rounded-md no-underline">
                 Otwórz akt &nearr;
               </a>
             </div>
@@ -905,6 +1260,22 @@ class KrakowStreetsApp {
       });
     }
 
+    // Przełącznik pełnej siatki linii ulic
+    const toggleStreetsBtn = document.getElementById('toggle-streets-btn');
+    if (toggleStreetsBtn) {
+      toggleStreetsBtn.addEventListener('click', () => {
+        this.toggleStreetNetwork();
+      });
+    }
+
+    // Przełącznik osiedli i miejsc (Landmarks)
+    const toggleLandmarksBtn = document.getElementById('toggle-landmarks-btn');
+    if (toggleLandmarksBtn) {
+      toggleLandmarksBtn.addEventListener('click', () => {
+        this.toggleLandmarks();
+      });
+    }
+
     // Przełącznik osi rozwoju terytorialnego
     const toggleExpansionBtn = document.getElementById('toggle-expansion-btn');
     if (toggleExpansionBtn) {
@@ -930,6 +1301,38 @@ class KrakowStreetsApp {
     }
   }
 
+  toggleLandmarks(forceState) {
+    this.showLandmarks = typeof forceState === 'boolean' ? forceState : !this.showLandmarks;
+    const visibility = this.showLandmarks ? 'visible' : 'none';
+
+    ['landmarks-labels', 'landmarks-selected-marker', 'landmarks-selected-glow'].forEach(layerId => {
+      if (this.map && this.map.getLayer(layerId)) {
+        this.map.setLayoutProperty(layerId, 'visibility', visibility);
+      }
+    });
+
+    const btn = document.getElementById('toggle-landmarks-btn');
+    const dot = document.getElementById('landmarks-indicator-dot');
+    if (btn) {
+      btn.setAttribute('aria-pressed', String(this.showLandmarks));
+      if (this.showLandmarks) {
+        btn.classList.add('text-amber-700', 'font-bold');
+        btn.classList.remove('text-slate-700');
+        if (dot) {
+          dot.classList.remove('bg-slate-400');
+          dot.classList.add('bg-amber-500');
+        }
+      } else {
+        btn.classList.remove('text-amber-700', 'font-bold');
+        btn.classList.add('text-slate-700');
+        if (dot) {
+          dot.classList.remove('bg-amber-500');
+          dot.classList.add('bg-slate-400');
+        }
+      }
+    }
+  }
+
   toggleDistricts() {
     this.showDistricts = !this.showDistricts;
     this.updateDistrictsLayers();
@@ -946,11 +1349,49 @@ class KrakowStreetsApp {
     }
   }
 
+  toggleStreetNetwork(forceState) {
+    this.showStreetNetwork = typeof forceState === 'boolean' ? forceState : !this.showStreetNetwork;
+    const isDark = this.currentStyle === 'dark';
+    const shouldDim = (this.showDistricts || this.showExpansionTimeline);
+    const opacity = this.showStreetNetwork 
+      ? ((isDark ? 0.75 : 0.55) * (shouldDim ? 0.8 : 1)) 
+      : 0.001;
+
+    if (this.map && this.map.getLayer('streets-base')) {
+      this.map.setPaintProperty('streets-base', 'line-opacity', opacity);
+    }
+
+    const btn = document.getElementById('toggle-streets-btn');
+    const dot = document.getElementById('streets-indicator-dot');
+    if (btn) {
+      btn.setAttribute('aria-pressed', String(this.showStreetNetwork));
+      if (this.showStreetNetwork) {
+        btn.classList.add('text-blue-700', 'font-bold');
+        btn.classList.remove('text-slate-700');
+        if (dot) {
+          dot.classList.remove('bg-slate-400');
+          dot.classList.add('bg-blue-600');
+        }
+      } else {
+        btn.classList.remove('text-blue-700', 'font-bold');
+        btn.classList.add('text-slate-700');
+        if (dot) {
+          dot.classList.remove('bg-blue-600');
+          dot.classList.add('bg-slate-400');
+        }
+      }
+    }
+  }
+
   updateDistrictsLayers() {
     if (!this.map) return;
     const shouldShow = this.showDistricts || this.showExpansionTimeline;
     if (this.map.getLayer('streets-base')) {
-      this.map.setPaintProperty('streets-base', 'line-opacity', (this.currentStyle === 'dark' ? 0.75 : 0.55) * (shouldShow ? 0.8 : 1));
+      const isDark = this.currentStyle === 'dark';
+      const opacity = this.showStreetNetwork 
+        ? ((isDark ? 0.75 : 0.55) * (shouldShow ? 0.8 : 1))
+        : 0.001;
+      this.map.setPaintProperty('streets-base', 'line-opacity', opacity);
     }
     document.getElementById('toggle-districts-btn')?.setAttribute('aria-pressed', String(this.showDistricts));
     document.getElementById('toggle-expansion-btn')?.setAttribute('aria-pressed', String(this.showExpansionTimeline));
@@ -1103,8 +1544,14 @@ class KrakowStreetsApp {
   updateTotalStreetsCount() {
     const counterEl = document.getElementById('streets-count-badge');
     if (counterEl && this.streetsData) {
-      const count = this.streetsData.features.length;
-      counterEl.textContent = window.krakowI18n ? window.krakowI18n.t('streets_count', count) : `${count} ulic w bazie`;
+      const sCount = this.streetsData.features?.length || 0;
+      const lCount = this.landmarksData?.features?.length || 0;
+      const totalCount = sCount + lCount;
+      if (lCount > 0) {
+        counterEl.textContent = `${totalCount.toLocaleString()} obiektów w bazie (${sCount.toLocaleString()} ulic + ${lCount} osiedli i miejsc)`;
+      } else {
+        counterEl.textContent = window.krakowI18n ? window.krakowI18n.t('streets_count', sCount) : `${sCount} ulic w bazie`;
+      }
     }
   }
 }

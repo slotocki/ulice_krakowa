@@ -23,6 +23,7 @@ data/test_*.geojson
 data/supranowicz_rcin.zip
 *.bak
 *.bak.*
+data/cache/
 data/*.bak
 data/*.bak.*
 

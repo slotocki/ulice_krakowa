@@ -89,6 +89,16 @@
           <span data-i18n="districts">Dzielnice</span>
         </button>
         <span class="text-slate-300">|</span>
+        <button id="toggle-streets-btn" data-i18n-title="streets_network_title" aria-pressed="false" title="Włącz / wyłącz widok pełnej siatki linii ulic" class="flex items-center gap-1.5 text-slate-700 hover:text-blue-700 font-semibold transition-colors cursor-pointer">
+          <span id="streets-indicator-dot" class="w-2 h-2 rounded-full bg-slate-400"></span>
+          <span data-i18n="streets_network">Siatka ulic</span>
+        </button>
+        <span class="text-slate-300">|</span>
+        <button id="toggle-landmarks-btn" data-i18n-title="landmarks_title" aria-pressed="true" title="Włącz / wyłącz widok 151 osiedli, parków i mostów Krakowa" class="flex items-center gap-1.5 text-amber-700 font-bold transition-colors cursor-pointer">
+          <span id="landmarks-indicator-dot" class="w-2 h-2 rounded-full bg-amber-500"></span>
+          <span data-i18n="landmarks">Miejsca i Osiedla</span>
+        </button>
+        <span class="text-slate-300">|</span>
         <button id="toggle-expansion-btn" data-i18n-title="growth_title" aria-pressed="false" title="Otwórz oś rozwoju terytorialnego Krakowa" class="flex items-center gap-1 text-slate-700 hover:text-blue-700 font-semibold transition-colors cursor-pointer">
           <span data-i18n="city_growth">Rozwój 1910–Dziś</span>
         </button>
@@ -122,6 +132,9 @@
       <a href="sources.html" class="text-xs bg-white hover:bg-slate-50 text-slate-700 font-bold px-2.5 py-1 rounded-lg shadow-xs border border-slate-200 backdrop-blur-md transition-all whitespace-nowrap flex items-center cursor-pointer no-underline" title="Cyfrowe Archiwum Aktów Toponimicznych Krakowa">
         <span data-i18n="digital_archive_nav">Cyfrowe Archiwum</span>
       </a>
+      <button onclick="window.krakowApp?.selectStreetById('os_wandy')" data-i18n="chip_wandy" class="text-xs bg-amber-50 hover:bg-amber-100 text-amber-900 border-amber-300 font-semibold px-2.5 py-1 rounded-lg shadow-xs border backdrop-blur-md transition-all whitespace-nowrap">
+        os. Wandy (Nowa Huta)
+      </button>
       <button onclick="window.krakowApp?.selectStreetById('florianska')" data-i18n="chip_florianska" class="text-xs bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-600 font-medium px-2.5 py-1 rounded-lg shadow-xs border border-slate-200/80 backdrop-blur-md transition-all whitespace-nowrap">
         ul. Floriańska
       </button>

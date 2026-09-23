@@ -1,0 +1,566 @@
+# -*- coding: utf-8 -*-
+"""
+Generates the audited docs/audit_batches/batch_12.md
+"""
+
+header = """# Partia Audytowa 12 / 28 (Rekordy 1101 – 1200)
+
+**Zakres:** **Krzemieniecka** – **Lechicka** | [← Powrót do spisu partii (INDEX.md)](INDEX.md)
+
+### Statystyka partii:
+- **Liczba ulic w partii:** 100
+- **Ulice z patronem (postacie):** 45
+- **Ulice toponimiczne i obiektowe:** 55
+- **Portrety CDN Wikimedia Commons:** 22
+- **Źródła archiwalne i monografie:** Monografia prof. E. Supranowicz (RCIN PAN): 18, Akty urzędowe i klasyczne monografie: 24, Wikipedia / BIP / PWN: 76
+
+---
+
+| Lp. | Ulica w Krakowie | Kategoria | Rok | Patron / Znaczenie dosłowne | Biogram / Rola / Etymologia (PL) | Źródło i odnośnik | Portret | Weryfikacja |
+|:---:|:---|:---|:---:|:---|:---|:---|:---:|:---:|
+"""
+
+rows = [
+    (1101, "**ulica Krzemieniecka**", "`Trakty kierunkowe`", "–", "*Krzemieniec Road*",
+     "Ulica w Swoszowicach (Dzielnica X Swoszowice). Nazwa toponimiczna pochodzi od Krzemieńca na Wołyniu – historycznego miasta słynnego z Liceum Krzemienieckiego („Aten Wołyńskich”) założonego przez Tadeusza Czackiego i Hugona Kołłątaja oraz miejsca urodzenia Juliusza Słowackiego; wpisuje się w krakowski klucz nazewnictwa upamiętniającego Kresy.",
+     "[Wikipedia: Krzemieniec](https://pl.wikipedia.org/wiki/Krzemieniec)", "–"),
+
+    (1102, "**ulica Krzemionki**", "`Ulice Krakowa`", "1852", "*Krzemionki Street*",
+     "Ulica w Podgórzu (Dzielnica XIII Podgórze). Powstała w latach 1852–1855 jako wojskowa droga dojazdowa do redity fortu Krzemionki (Fort 31 „Benedykt” / fort reditowy rozebrany w 1955 r.). Nazwę (będącą pierwotną nazwą dzisiejszej ul. Zamoyskiego) otrzymała pod koniec XIX w., formalnie potwierdzoną w 1917 r. (Podgórze 1917). Wywodzi się bezpośrednio od oronimu wzgórz zrębowych Krzemionek Podgórskich (Góry Lasoty). [Oś czasu: 1852: Droga dojazdowa do fortu Krzemionki &#124; 1900: Droga na Krzemionkach &#124; 1917: ulica Krzemionki (Podgórze 1917)]",
+     "[E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [Podgórze 1917](../../data/sources/podgorze_1917.json)", "–"),
+
+    (1103, "**ulica Krzesławicka**", "`Trakty kierunkowe`", "–", "*Krzesławice Road*",
+     "Ulica na granicy Mistrzejowic i Prądnika Czerwonego (Dzielnica XV Mistrzejowice). Stanowi historyczny trakt łączący północne osady podkrakowskie z dawną wsią rycerską Krzesławice (wzmiankowaną od 1198 r., stanowiącą niegdyś własność Akademii Krakowskiej, Hugona Kołłątaja oraz Jana Matejki, włączoną do Krakowa w 1951 r.).",
+     "[Wikipedia: Krzesławice (Kraków)](https://pl.wikipedia.org/wiki/Krzes%C5%82awice_(Krak%C3%B3w))", "–"),
+
+    (1104, "**ulica Krzewowa**", "`Przyroda i Fauna`", "–", "*Shrub / Bush Street*",
+     "Kameralna ulica w Kostrzu i Bodzowie (Dzielnica VIII Dębniki). Nazwa fitotopograficzna nawiązuje do naturalnych zarośli, krzewów i zadrzewień śródpolnych porastających zbocza wapiennych wzgórz zrębowych Bramy Krakowskiej oraz tereny w zakolu Wisły.",
+     "[Wikipedia: Krzew](https://pl.wikipedia.org/wiki/Krzew)", "–"),
+
+    (1105, "**ulica Krzyszkowicka**", "`Trakty kierunkowe`", "–", "*Krzyszkowice Road*",
+     "Ulica w Kosocicach i Baryczy (Dzielnica X Swoszowice), biegnąca przy południowo-wschodniej granicy Krakowa. Stanowi historyczny trakt kierunkowy wiodący do Krzyszkowic – dawnej podkrakowskiej wsi, a obecnie południowo-zachodniej dzielnicy Wieliczki.",
+     "[Wikipedia: Krzyszkowice (Wieliczka)](https://pl.wikipedia.org/wiki/Krzyszkowice_(Wieliczka))", "–"),
+
+    (1106, "**ulica Krzysztofa Kamila Baczyńskiego**", "`Postacie historyczne`", "1921", "**Krzysztof Kamil Baczyński**",
+     "Ulica na osiedlu Olsza II (Dzielnica III Prądnik Czerwony). Patron: Krzysztof Kamil Baczyński (1921–1944), ps. „Jan Bugaj”, jeden z najwybitniejszych poetów polskich XX wieku, czołowy przedstawiciel pokolenia Kolumbów, podchorąży Armii Krajowej (batalion „Zośka”, batalion „Parasol”). Poległ 4 sierpnia 1944 r. w czwartym dniu powstania warszawskiego w Pałacu Blanka; pośmiertnie odznaczony Krzyżem Komandorskim Orderu Odrodzenia Polski i Krzyżem Armii Krajowej.",
+     "[Wikipedia: Krzysztof Kamil Baczyński](https://pl.wikipedia.org/wiki/Krzysztof_Kamil_Baczy%C5%84ski)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Baczynski%20%28color%29.jpg?width=360)"),
+
+    (1107, "**ulica Krzywa**", "`Ulice Krakowa`", "1503", "*Crooked Street*",
+     "Zabytkowa uliczka na Kleparzu (Dzielnica I Stare Miasto), poświadczona w źródłach miejskich już w 1503 r. jako droga biegnąca przez grunty mieszczki kleparskiej Katarzyny Turkowej (łącząca ul. Długą z ul. Krótką). Nazwa o charakterze topograficznym, trwale utrwalona od XVI wieku, odzwierciedla wyraźnie załamany, nieliniowy przebieg dawnego traktu (odnotowana w DRK 1880). [Oś czasu: 1503: Droga przez grunty Katarzyny Turkowej &#124; 1880: ulica Krzywa (DRK 1880)]",
+     "[E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1880](../../data/sources/drk_1880.json)", "–"),
+
+    (1108, "**ulica Krzywda**", "`Ulice Krakowa`", "–", "*Krzywda Street*",
+     "Ulica w Płaszowie (Dzielnica XIII Podgórze), łącząca rejon ul. Gromadzkiej i Nowohuckiej. Nazwa o podłożu mikrotoponimicznym, nawiązująca do dawnego określenia roli lub parceli wydzielonej wskutek sporu granicznego (w staropolszczyźnie „krzywda” oznaczała stratę, szkodę bądź grunt sporny) lub staropolskiego herbu szlacheckiego Krzywda.",
+     "[Wikipedia: Krzywda (herb szlachecki)](https://pl.wikipedia.org/wiki/Krzywda_(herb_szlachecki))", "–"),
+
+    (1109, "**ulica Krzywy Zaułek**", "`Ulice Krakowa`", "1961", "*Krzywy Zaułek Street*",
+     "Ślepa uliczka w Łobzowie (Dzielnica V Krowodrza), odchodząca na północ od ul. Kazimierza Wielkiego. Wytyczona i oficjalnie nazwana pod koniec lat 50. XX w. (notowana w 1961 r.). Nazwa ma charakter opisowo-topograficzny, umotywowany łukowatym, mocno załamanym kształtem zaułka.",
+     "[E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551)", "–"),
+
+    (1110, "**ulica Krzyżowa**", "`Ulice Krakowa`", "–", "*Cross Street*",
+     "Ulica w Mydlnikach (Dzielnica VI Bronowice), odchodząca od ul. Balickiej. Nazwa o podłożu topograficznym, nawiązująca do poprzecznego, krzyżującego się układu dawnych wiejskich dróg dojazdowych dawnej podkrakowskiej wsi Mydlniki (włączonej do Krakowa w 1973 r.) lub przydrożnego krzyża.",
+     "[BIP Kraków](https://www.bip.krakow.pl)", "–"),
+
+    (1111, "**ulica Krzyżtoporska**", "`Trakty kierunkowe`", "–", "*Krzyżtopór Castle Street*",
+     "Ulica w Opatkowicach (Dzielnica X Swoszowice). Nazwa pochodzi od zamku Krzyżtopór w Ujeździe (woj. świętokrzyskie) – wspaniałej wczesnobarokowej rezydencji pałacowej typu palazzo in fortezza, wzniesionej w latach 1627–1644 przez wojewodę Krzysztofa Ossolińskiego, stanowiącej wybitny pomnik architektury I Rzeczypospolitej.",
+     "[Wikipedia: Zamek Krzyżtopór](https://pl.wikipedia.org/wiki/Zamek_Krzy%C5%BCtop%C3%B3r)", "–"),
+
+    (1112, "**ulica Krzyżówka**", "`Ulice Krakowa`", "–", "*Crossroads Lane*",
+     "Kameralna ulica na wzgórzach Chełmu (Dzielnica VII Zwierzyniec), biegnąca w Paśmie Sowińca. Nazwa topograficzna (ludowe określenie rozdroża, skrzyżowania dróg), utrwalająca dawne rozstaje traktów wiejskich i leśnych w dawnej podkrakowskiej wsi Chełm (przyłączonej do Krakowa w 1941 r.).",
+     "[Słownik Języka Polskiego PWN: krzyżówka](https://sjp.pwn.pl/sjp/krzyzowka;2565243.html)", "–"),
+
+    (1113, "**ulica Królewska**", "`Trakty kierunkowe`", "1924", "*Royal Boulevard Avenue*",
+     "Reprezentacyjna arteria modernistyczna Krowodrzy i Nowej Wsi (Dzielnica V Krowodrza), wytyczona w 1924 r. (DRK 1924, 1926) jako wielka aleja wiodąca od Alej Trzech Wieszczów w kierunku dawnego letniego pałacu królewskiego w Łobzowie (stąd nazwa Królewska). W czasie okupacji niemieckiej przemianowana na Reichstraße (1940), w latach 1955–1991 nosiła nazwę ul. 18 Stycznia (dla upamiętnienia daty wyparcia Niemców w 1945 r.); w 1991 r. uchwałą RMK przywrócono historyczną nazwę (Dekomunizacja 1991). [Oś czasu: 1912: ulica Kościelna / Królewska (DRK 1912) &#124; 1924: aleja Królewska (DRK 1926) &#124; 1940: Reichstraße (Okupacja) &#124; 1955: ulica 18 Stycznia (PRL) &#124; 1991: ulica Królewska (Dekomunizacja 1991)]",
+     "[E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1912](../../data/sources/drk_1912.json) / [DRK 1926](../../data/sources/drk_1926_1933.json) / [Okupacja 1940](../../data/sources/okupacja_1940_1941.json) / [PRL 1951](../../data/sources/prl_1951_1955.json) / [Dekomunizacja 1991](../../data/sources/dekomunizacja_1991.json)", "–"),
+
+    (1114, "**ulica Królowej Bony**", "`Postacie historyczne`", "1494", "**Bona Sforza**",
+     "Ulica w Mistrzejowicach (Dzielnica XV Mistrzejowice). Patron: Bona Sforza d'Aragona (1494–1557), królowa Polski i wielka księżna litewska od 1518 r., druga żona Zygmunta I Starego, matka Zygmunta II Augusta; mecenaska włoskiego renesansu na Wawelu, reformatorka skarbu, gospodarki i dóbr królewskich, która wprowadziła tzw. pomiarę włóczną i znacząco wzmocniła pozycję Korony Polskiej.",
+     "[Wikipedia: Bona Sforza](https://pl.wikipedia.org/wiki/Bona_Sforza)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Cranach%20the%20Younger%20Bona%20Sforza.jpg?width=360)"),
+
+    (1115, "**ulica Królowej Jadwigi**", "`Postacie historyczne`", "1912", "**Jadwiga Andegaweńska**",
+     "Główna arteria komunikacyjna Zwierzyńca i Woli Justowskiej (Dzielnica VII Zwierzyniec), dawny historyczny trakt wiodący ku Chełmowi i Bielanom, nazwany w 1912 r. (DRK 1912; rozszerzona w 1973 r.). Patronką jest św. Jadwiga Andegaweńska (ok. 1373/1374–1399), król Polski od 1384 r., pierwsza żona Władysława II Jagiełły; odnowicielka i wielka fundatorka Akademii Krakowskiej (której zapisała w testamencie swe kosztowności), pochowana w Katedrze Wawelskiej. [Oś czasu: 1880: Droga do Woli Justowskiej &#124; 1912: ulica Królowej Jadwigi (DRK 1912) &#124; 1973: ulica Królowej Jadwigi (Rozszerzenie 1973)]",
+     "[Wikipedia: Jadwiga Andegaweńska](https://pl.wikipedia.org/wiki/Jadwiga_Andegawe%C5%84ska) / [DRK 1912](../../data/sources/drk_1912.json) / [Rozszerzenie 1973](../../data/sources/rozszerzenie_1973_1975.json)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Jadwiga%20by%20Bacciarelli.jpg?width=360)"),
+
+    (1116, "**ulica Królówka**", "`Ulice Krakowa`", "–", "*Królówka Street*",
+     "Ulica w Skotnikach (Dzielnica VIII Dębniki), boczna od ul. Winnickiej i Skotnickiej. Nazwa o podłożu toponimicznym, nawiązująca do dawnego określenia roli, łąki lub niwy Królówka w historycznej wsi Skotniki (wzmiankowanej w 1257 r., włączonej do Krakowa w 1941 r.).",
+     "[Poczet Krakowski: Skotniki](https://www.poczetkrakowski.pl/tom-i/skotniki/)", "–"),
+
+    (1117, "**ulica Krótka**", "`Ulice Krakowa`", "1519", "*Short Street*",
+     "Zabytkowy zaułek na Kleparzu (Dzielnica I Stare Miasto) łączący ul. Krzywą z ul. św. Filipa, poświadczony w archiwaliach miejskich już w 1519 r. (wąskie przejście między posesjami: viculus civitatis). Nazwa o charakterze topograficznym, trwale utrwalona w tradycji miejskiej Kleparza, odzwierciedla znikomą długość traktu (niespełna 80 metrów; odnotowana w DRK 1880). [Oś czasu: 1519: Viculus civitatis (Księgi kleparskie) &#124; 1880: ulica Krótka (DRK 1880)]",
+     "[E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1880](../../data/sources/drk_1880.json)", "–"),
+
+    (1118, "**ulica Kręta**", "`Ulice Krakowa`", "–", "*Winding Street*",
+     "Ulica na Prądniku Czerwonym (Dzielnica III Prądnik Czerwony), odchodząca na północ od ul. Dobrego Pasterza. Nazwa o motywacji topograficznej, odzwierciedlająca pierwotny, nieliniowy i meandrujący przebieg wiejskiej drogi dojazdowej wśród dawnych prądnickich zagród i sadów.",
+     "[Wikipedia: Prądnik Czerwony](https://pl.wikipedia.org/wiki/Pr%C4%85dnik_Czerwony)", "–"),
+
+    (1119, "**ulica Ksawerego Pruszyńskiego**", "`Postacie historyczne`", "1907", "**Ksawery Pruszyński**",
+     "Ulica na osiedlu Kurdwanów Nowy (Dzielnica XI Podgórze Duchackie). Patron: Franciszek Ksawery Pruszyński (1907–1950), wybitny polski pisarz, publicysta, reportażysta i dyplomata; absolwent Uniwersytetu Jagiellońskiego, korespondent wojenny z wojny domowej w Hiszpanii; żołnierz Samodzielnej Brygady Strzelców Podhalańskich (uczestnik bitwy o Narwik 1940) oraz 1 Dywizji Pancernej gen. Maczka (ranny w bitwie pod Falaise); autor dzieł „W czerwonej Hiszpanii”, „Margrabia Wielopolski” i „Opowieści o Małyszce”.",
+     "[Wikipedia: Ksawery Pruszyński](https://pl.wikipedia.org/wiki/Ksawery_Pruszy%C5%84ski)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Ksawery%20Pruszy%C5%84ski%20w%20latach%2060.jpg?width=360)"),
+
+    (1120, "**ulica Książąt Czartoryskich**", "`Ulice Krakowa`", "–", "*Princes Czartoryski Lane*",
+     "Zabytkowy zaułek na Starym Mieście (Dzielnica I Stare Miasto / Zaułek Książąt Czartoryskich), łączący ul. św. Jana, ul. Pijarską i bramę ku ul. Floriańskiej. Przebiega obok pałacu Muzeum Książąt Czartoryskich i dawnego Arsenału Miejskiego. Nazwa upamiętnia magnacki ród Czartoryskich, twórców najstarszego polskiego muzeum (założonego w 1801 r. w Puławach przez księżną Izabelę Czartoryską, a ulokowanego w 1876 r. w Krakowie przez księcia Władysława Czartoryskiego).",
+     "[Muzeum Narodowe w Krakowie: Muzeum Książąt Czartoryskich](https://mnk.pl/oddzial/muzeum-ksiazat-czartoryskich)", "–"),
+
+    (1121, "**ulica Księcia Józefa**", "`Postacie historyczne`", "1912", "**Józef Poniatowski**",
+     "Główna arteria komunikacyjna Zwierzyńca, Przegorzał i Bielan biegnąca wzdłuż Wisły (Dzielnica VII Zwierzyniec), dawny trakt oświęcimski, nazwana w 1912 r. (DRK 1912; rozszerzona w 1973 r.). Patronem jest książę Józef Poniatowski (1763–1813), generał dywizji Wojska Polskiego, minister wojny i Wódz Naczelny wojsk Księstwa Warszawskiego, Marszałek Francji; bohater wojny z Rosją 1792 r. (Zieleńce) i wojny 1809 r. (Raszyn); zginął w bitwie pod Lipskiem, a jego prochy spoczęły w Katedrze Wawelskiej. [Oś czasu: 1880: Trakt Oświęcimski / przedłużenie ul. Kościuszki &#124; 1912: ulica Księcia Józefa (DRK 1912) &#124; 1973: ulica Księcia Józefa (Rozszerzenie 1973)]",
+     "[Wikipedia: Józef Poniatowski](https://pl.wikipedia.org/wiki/J%C3%B3zef_Poniatowski) / [DRK 1912](../../data/sources/drk_1912.json) / [Rozszerzenie 1973](../../data/sources/rozszerzenie_1973_1975.json)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Prince%20Jozef%20Poniatowski%2C%20by%20Josef%20Grassi.jpg?width=360)"),
+
+    (1122, "**ulica Księdza Adolfa Chojnackiego**", "`Postacie historyczne`", "1932", "**Adolf Chojnacki**",
+     "Ulica na Woli Justowskiej (Dzielnica VII Zwierzyniec). Patron: ks. kanonik Adolf Chojnacki (1932–2001), kapłan archidiecezji krakowskiej, legendarny duszpasterz ludzi pracy i kapelan podziemnej „Solidarności”; proboszcz na Woli Justowskiej w Krakowie i w Juszczynie; organizator comiesięcznych Mszy za Ojczyznę oraz głodówek protestacyjnych w obronie więźniów politycznych PRL; wielokrotnie szykanowany, inwigilowany i represjonowany przez Służbę Bezpieczeństwa.",
+     "[Wikipedia: Adolf Chojnacki](https://pl.wikipedia.org/wiki/Adolf_Chojnacki)", "–"),
+
+    (1123, "**ulica Księdza Adolfa Zagrodzkiego**", "`Postacie historyczne`", "1888", "**Adolf Zagrodzki**",
+     "Ulica w Borku Fałęckim (Dzielnica IX Łagiewniki-Borek Fałęcki). Patron: ks. Adolf Zagrodzki (1888–1961), kapłan archidiecezji krakowskiej, wieloletni proboszcz i organizator parafii Matki Bożej Zwycięskiej w Borku Fałęckim (kierujący nią w latach 1931–1939 oraz po 1945 r.); budowniczy kościoła parafialnego i plebanii, organizator opieki charytatywnej i społecznej dla rodzin robotniczych Fabryki Sody Solvay.",
+     "[Parafia MB Zwycięskiej w Borku Fałęckim](https://zwycieska.diecezja.pl)", "–"),
+
+    (1124, "**ulica Księdza Biskupa Władysława Bandurskiego**", "`Postacie historyczne`", "1865", "**Władysław Bandurski**",
+     "Ulica na Osiedlu Oficerskim (Dzielnica II Grzegórzki). Patron: biskup Władysław Bandurski (1865–1932), biskup pomocniczy lwowski, doktor teologii i filozofii, honorowy kapelan I Brygady Legionów Polskich Józefa Piłsudskiego, Naczelny Kapelan Wojsk Litwy Środkowej oraz Naczelny Kapelan Związku Harcerstwa Polskiego; wybitny kaznodzieja i orator patriotyczny II RP, odznaczony Orderem Virtuti Militari i Krzyżem Niepodległości z Mieczami.",
+     "[Wikipedia: Władysław Bandurski](https://pl.wikipedia.org/wiki/W%C5%82adys%C5%82aw_Bandurski)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/BbBandurski.jpg?width=360)"),
+
+    (1125, "**ulica Księdza Ferdynanda Machaya**", "`Postacie historyczne`", "1889", "**Ferdynand Machay (starszy)**",
+     "Ulica w Krowodrzy (Dzielnica V Krowodrza). Patron: ks. infułat dr Ferdynand Machay starszy (1889–1967), wybitny duchowny katolicki, działacz niepodległościowy na Orawie i Spiszu (członek Narodowego Komitetu Obrony Spisza i Orawy), senator II RP w latach 1938–1939; w latach 1944–1967 archiprezbiter (proboszcz) bazyliki Mariackiej w Krakowie, zasłużony dla powojennego odzyskania i powrotu do Krakowa ołtarza Wita Stwosza z Norymbergi.",
+     "[Wikipedia: Ferdynand Machay (1889–1967)](https://pl.wikipedia.org/wiki/Ferdynand_Machay_(1889%E2%80%931967))",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Ferdynand%20Machay%20%28older%29%20%2893080124%29.jpg?width=360)"),
+
+    (1126, "**ulica Księdza Franciszka Blachnickiego**", "`Postacie historyczne`", "1921", "**Franciszek Blachnicki**",
+     "Ulica na Grzegórzkach (Dzielnica II Grzegórzki). Wytyczona pod koniec lat 40. XX w. (początkowo nosiła komunistyczną nazwę ul. 15 Grudnia – data kongresu zjednoczeniowego PPR i PPS), przemianowana w 1991 r. (Dekomunizacja 1991). Patron: Czcigodny Sługa Boży ks. Franciszek Blachnicki (1921–1987), więzień obozu KL Auschwitz, profesor KUL, założyciel Ruchu Światło-Życie (ruchu oazowego) i Krucjaty Wyzwolenia Człowieka; pośmiertnie odznaczony Orderem Orła Białego. [Oś czasu: 1949: ulica 15 Grudnia (PRL) &#124; 1991: ulica Księdza Franciszka Blachnickiego (Dekomunizacja 1991)]",
+     "[Wikipedia: Franciszek Blachnicki](https://pl.wikipedia.org/wiki/Franciszek_Blachnicki) / [Dekomunizacja 1991](../../data/sources/dekomunizacja_1991.json)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Franciszek%20Blachnicki.jpg?width=360)"),
+
+    (1127, "**ulica Księdza Franciszka Maja**", "`Postacie historyczne`", "–", "**Franciszek Maj**",
+     "Ulica w Opatkowicach (Dzielnica X Swoszowice). Patron: ks. Franciszek Maj (zm. 1951), kapłan archidiecezji krakowskiej, wieloletni proboszcz parafii Narodzenia NMP w podkrakowskim Gaju w latach 1920–1951, do której historycznie należała wieś Opatkowice (przed utworzeniem własnej parafii); zasłużony duszpasterz i organizator życia społeczno-religijnego w Opatkowicach i Gaju.",
+     "[Parafia Narodzenia NMP w Gaju](https://parafiagaj.pl)", "–"),
+
+    (1128, "**ulica Księdza Franciszka Trockiego**", "`Postacie historyczne`", "1889", "**Franciszek Trocki**",
+     "Ulica w Skotnikach (Dzielnica VIII Dębniki). Patron: ks. Franciszek Trocki (1889–1967), kapłan katolicki, duszpasterz na Podolu, członek tajnej misji Kościoła w Rosji porewolucyjnej; aresztowany przez władze sowieckie w 1927 r. i skazany na 10 lat łagrów, więziony m.in. na Wyspach Sołowieckich, uwolniony w drodze wymiany więźniów w 1932 r.; po wojnie duszpasterz w Krakowie, spoczywający na cmentarzu parafialnym w Skotnikach.",
+     "[ZCK Kraków: Cmentarz Skotniki](https://www.zck-krakow.pl)", "–"),
+
+    (1129, "**ulica Księdza Ignacego Jana Skorupki**", "`Postacie historyczne`", "1893", "**Ignacy Skorupka**",
+     "Ulica na osiedlu Olsza II (Dzielnica III Prądnik Czerwony). Patron: ks. Ignacy Jan Skorupka (1893–1920), kapłan archidiecezji warszawskiej, kapelan lotny 236. pułku piechoty Armii Ochotniczej; zginął z krzyżem w dłoni 14 sierpnia 1920 r. w bitwie pod Ossowem podczas Bitwy Warszawskiej, stając się symbolem bohaterstwa i poświęcenia kapłana za Ojczyznę; pośmiertnie odznaczony Orderem Virtuti Militari i Orderem Orła Białego.",
+     "[Wikipedia: Ignacy Skorupka](https://pl.wikipedia.org/wiki/Ignacy_Skorupka)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Skorupka1907.jpg?width=360)"),
+
+    (1130, "**ulica Księdza Ignacego Stoszki**", "`Postacie historyczne`", "1904", "**Ignacy Stoszko**",
+     "Ulica w Płaszowie (Dzielnica XIII Podgórze). Patron: ks. Ignacy Stoszko SCJ (1904–1959), duchowny ze Zgromadzenia Księży Najświętszego Serca Jezusowego (sercanów), twórca i pierwszy proboszcz parafii Najświętszego Serca Pana Jezusa w Krakowie-Płaszowie (od 1939 r.), przełożony regionalny polskiej prowincji sercanów w latach 1939–1946; wybitny organizator pracy charytatywnej i oświatowej w Płaszowie.",
+     "[Zgromadzenie Księży Sercanów: Historia prowincji](https://scj.pl)", "–"),
+
+    (1131, "**ulica Księdza Jakuba Wujka**", "`Postacie historyczne`", "1541", "**Jakub Wujek**",
+     "Ulica na Woli Duchackiej (Dzielnica XI Podgórze Duchackie). Patron: ks. Jakub Wujek SJ (1541–1597), jezuita, wybitny pisarz religijny, teolog, pierwszy rektor Akademii Wileńskiej (1579–1580); autor pomnikowego przekładu Pisma Świętego na język polski z łacińskiej Wulgaty (Biblia Jakuba Wujka, wydana w Krakowie w 1599 r.), który na ponad trzy stulecia ukształtował polski język biblijny i literacki; pochowany w kościele św. św. Piotra i Pawła w Krakowie.",
+     "[Wikipedia: Jakub Wujek](https://pl.wikipedia.org/wiki/Jakub_Wujek)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Jakub%20Wujek.PNG?width=360)"),
+
+    (1132, "**ulica Księdza Jana Hyca**", "`Postacie historyczne`", "1914", "**Jan Hyc**",
+     "Ulica w Krzesławicach (Dzielnica XVII Wzgórza Krzesławickie). Patron: ks. Jan Hyc (1914–2006), kapłan archidiecezji krakowskiej, wieloletni proboszcz parafii św. Wincentego w Pleszowie (1965–1988); wbrew represjom władz komunistycznych organizował duszpasterstwo i katechezę dla odciętych przez kombinat hutniczy mieszkańców Luboczy, Krzesławic i Grębałowa; doprowadził do uratowania i translokacji zabytkowego drewnianego kościoła św. Jana Chrzciciela z Jawornika do Krzesławic.",
+     "[Wikipedia: Kościół św. Jana Chrzciciela w Krakowie (Krzesławice)](https://pl.wikipedia.org/wiki/Ko%C5%9Bci%C3%B3%C5%82_%C5%9Bw._Jana_Chrzciciela_w_Krakowie_(Krzes%C5%82awice))", "–"),
+
+    (1133, "**ulica Księdza Jana Korzonkiewicza**", "`Postacie historyczne`", "1877", "**Jan Korzonkiewicz**",
+     "Ulica w Nowej Hucie (Dzielnica XVIII Nowa Huta), nazwana uchwałą RMK nr XXV/577/25 z 7 maja 2025 r. Patron: ks. prof. Jan Korzonkiewicz (1877–1932), doktor teologii, profesor Uniwersytetu Jagiellońskiego, rektor Seminarium Duchownego w Krakowie (1915–1920), prałat papieski i kanonik Kapituły Katedralnej na Wawelu, rektor kościoła św. Wojciecha w Rynku Głównym, wybitny biblista i tłumacz.",
+     "[BIP RMK: Uchwała XXV/577/25](https://www.bip.krakow.pl?dok_id=167&sub_dok_id=167&sub=uchwala&query=id%3D28475%26typ%3Du)", "–"),
+
+    (1134, "**ulica Księdza Jana Kusia**", "`Postacie historyczne`", "1903", "**Jan Kuś**",
+     "Ulica w Bieżanowie (Dzielnica XII Bieżanów-Prokocim), do 1991 r. nosząca imię komunistycznego działacza Józefa Chmielka, przemianowana uchwałą RMK nr XXV/170/91 (Dekomunizacja 1991). Patron: ks. Jan Kuś (1903–1981), kapłan archidiecezji krakowskiej, katecheta i działacz społeczno-patriotyczny związany z Podgórzem i Krakowem, niestrudzony duszpasterz i opiekun młodzieży. [Oś czasu: 1973: ulica Józefa Chmielka (PRL) &#124; 1991: ulica Księdza Jana Kusia (Dekomunizacja 1991)]",
+     "[BIP RMK: Uchwała XXV/170/91](https://www.bip.krakow.pl/?dok_id=167) / [Dekomunizacja 1991](../../data/sources/dekomunizacja_1991.json)", "–"),
+
+    (1135, "**ulica Księdza Jerzego Popiełuszki**", "`Postacie historyczne`", "1947", "**Jerzy Popiełuszko**",
+     "Ulica w Bieżanowie (Dzielnica XII Bieżanów-Prokocim). Patron: błogosławiony ks. Jerzy Popiełuszko (1947–1984), kapłan archidiecezji warszawskiej, legendarny duszpasterz ludzi pracy i kapelan warszawskiej „Solidarności”, odprawiający słynne Msze za Ojczyznę w kościele św. Stanisława Kostki na Żoliborzu; 19 października 1984 r. uprowadzony i bestialsko zamordowany przez funkcjonariuszy Służby Bezpieczeństwa; męczennik i błogosławiony Kościoła katolickiego, odznaczony pośmiertnie Orderem Orła Białego.",
+     "[Wikipedia: Jerzy Popiełuszko](https://pl.wikipedia.org/wiki/Jerzy_Popie%C5%82uszko)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Jerzy%20Popieluszko.jpg?width=360)"),
+
+    (1136, "**ulica Księdza Józefa Kurzei**", "`Postacie historyczne`", "1937", "**Józef Kurzeja**",
+     "Ulica w Mistrzejowicach (Dzielnica XV Mistrzejowice). Patron: ks. Józef Kurzeja (1937–1976), kapłan archidiecezji krakowskiej, niezłomny organizator duszpasterstwa i budowniczy pierwszej świątyni w Mistrzejowicach (kościoła św. Maksymiliana Marii Kolbego); mimo zaciętych represji i zakazów władz komunistycznych odprawiał nabożeństwa w prowizorycznym baraku, wielokrotnie szykanowany i przesłuchiwany przez SB, zmarł przedwcześnie z wycieńczenia w wieku 39 lat.",
+     "[Wikipedia: Józef Kurzeja (duchowny)](https://pl.wikipedia.org/wiki/J%C3%B3zef_Kurzeja_(duchowny))", "–"),
+
+    (1137, "**ulica Księdza Józefa Meiera**", "`Postacie historyczne`", "1884", "**Józef Meier**",
+     "Ulica na Prądniku Czerwonym (Dzielnica III Prądnik Czerwony). Patron: ks. kanonik Józef Meier (1884–1972), kapłan archidiecezji krakowskiej, w latach 1934–1972 proboszcz parafii św. Jana Chrzciciela na Prądniku Czerwonym; wybitny duszpasterz, inicjator rozbudowy zabytkowej świątyni parafialnej, organizator pomocy charytatywnej i schronienia dla ubogich oraz uchodźców wojennych podczas okupacji niemieckiej.",
+     "[Parafia św. Jana Chrzciciela na Prądniku Czerwonym](https://janchrzciciel.eu)", "–"),
+
+    (1138, "**ulica Księdza Józefa Tischnera**", "`Postacie historyczne`", "1931", "**Józef Tischner**",
+     "Ważna arteria w Łagiewnikach i Podgórzu (Dzielnica IX/XIII). Patron: ks. prof. Józef Tischner (1931–2000), wybitny polski filozof, teolog, pisarz i publicysta, profesor i dziekan Wydziału Filozoficznego PAT w Krakowie, wykładowca PWST i UJ; kapelan Związku Podhalan oraz I Krajowego Zjazdu Delegatów NSZZ „Solidarność” (1981); autor fundamentalnych dzieł „Etyka Solidarności”, „Myślenie według wartości” i „Historia filozofii po góralsku”; kawaler Orderu Orła Białego.",
+     "[Wikipedia: Józef Tischner](https://pl.wikipedia.org/wiki/J%C3%B3zef_Tischner)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/J%C3%B3zef%20Tischner%20-%20Grave%2002.jpg?width=360)"),
+
+    (1139, "**ulica Księdza Józefa Zastawniaka**", "`Postacie historyczne`", "1893", "**Józef Zastawniak**",
+     "Ulica w Czyżynach (Dzielnica XIV Czyżyny), biegnąca w bezpośrednim sąsiedztwie kościoła św. Judy Tadeusza. Patron: ks. kanonik Józef Zastawniak (1893–1960), kapłan archidiecezji krakowskiej, budowniczy kościoła św. Judy Tadeusza w Czyżynach (wzniesionego w latach 1936–1942 z inicjatywy kardynała A. S. Sapiehy) oraz pierwszy proboszcz erygowanej w 1951 r. parafii czyżyńskiej.",
+     "[Wikipedia: Józef Zastawniak](https://pl.wikipedia.org/wiki/J%C3%B3zef_Zastawniak)", "–"),
+
+    (1140, "**ulica Księdza kardynała Adama Stefana Sapiehy**", "`Postacie historyczne`", "1867", "**Adam Stefan Sapieha**",
+     "Ulica na Grzegórzkach (Dzielnica II Grzegórzki). Patron: kardynał Adam Stefan Sapieha (1867–1951), książę herbu Lis, biskup i od 1925 r. pierwszy metropolita krakowski, kardynał, zwany „Księciem Niezłomnym”; niekwestionowany autorytet moralny narodu i przywódca Kościoła w czasie okupacji hitlerowskiej (założyciel Obywatelskiego Komitetu Pomocy i tajnego seminarium, w którym wyświęcił Karola Wojtyłę) oraz oporu przeciw stalinizmowi; pochowany w Katedrze Wawelskiej.",
+     "[Wikipedia: Adam Stefan Sapieha](https://pl.wikipedia.org/wiki/Adam_Stefan_Sapieha)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Adam%20Stefan%20Sapieha%20%281867-1951%29.jpg?width=360)"),
+
+    (1141, "**ulica Księdza Karola Targosza**", "`Postacie historyczne`", "1920", "**Karol Targosz**",
+     "Ulica w Rybitwach (Dzielnica XIII Podgórze). Patron: ks. Karol Targosz (1920–1983), kapłan archidiecezji krakowskiej, proboszcz parafii Niepokalanego Serca NMP w Rybitwach w latach 1973–1983; inicjator powstania i twórca tamtejszego cmentarza parafialnego (otwartego w 1983 r.), przy którym znajduje się ulica i gdzie spoczywa jego grób.",
+     "[ZCK Kraków: Cmentarze parafialne](https://www.zck-krakow.pl)", "–"),
+
+    (1142, "**ulica Księdza Kazimierza Figlewicza**", "`Postacie historyczne`", "1903", "**Kazimierz Figlewicz**",
+     "Ulica w Ruszczy (Dzielnica XVIII Nowa Huta). Patron: ks. infułat Kazimierz Figlewicz (1903–1983), kapłan archidiecezji krakowskiej, kustosz Katedry Wawelskiej; w latach 30. XX w. wikariusz w Wadowicach, katecheta i spowiednik młodego Karola Wojtyły; w latach 1933–1958 wieloletni proboszcz parafii św. Grzegorza w podkrakowskiej Ruszczy (odnowiciel zabytkowego kościoła), a od 1958 r. kustosz katedry na Wawelu.",
+     "[Wikipedia: Kazimierz Figlewicz](https://pl.wikipedia.org/wiki/Kazimierz_Figlewicz)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Ks_Figlewicz-Karol_Wojtyla_ministrant.jpg?width=360)"),
+
+    (1143, "**ulica Księdza Kazimierza Jancarza**", "`Postacie historyczne`", "1947", "**Kazimierz Jancarz**",
+     "Ulica w Mistrzejowicach (Dzielnica XV Mistrzejowice). Patron: ks. Kazimierz Jancarz (1947–1993), kapłan archidiecezji krakowskiej, wikariusz w parafii św. Maksymiliana Kolbego w Mistrzejowicach, legendarny duszpasterz robotników Nowej Huty i kapelan nowohuckiej „Solidarności”; organizator słynnych czwartkowych Mszy za Ojczyznę, Konfraterni Robotniczej oraz Chrześcijańskiego Uniwersytetu Robotniczego; odznaczony Krzyżem Komandorskim Orderu Odrodzenia Polski.",
+     "[Wikipedia: Kazimierz Jancarz](https://pl.wikipedia.org/wiki/Kazimierz_Jancarz)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Kazimierz%20Jancarz.jpg?width=360)"),
+
+    (1144, "**ulica Księdza Kazimierza Siemaszki**", "`Postacie historyczne`", "1847", "**Kazimierz Siemaszko**",
+     "Ulica na Prądniku Białym (Dzielnica IV Prądnik Biały). Patron: ks. Kazimierz Siemaszko CM (1847–1904), misjonarz ze Zgromadzenia Księży Misjonarzy św. Wincentego a Paulo, wybitny pedagog i pionier opieki społecznej; założyciel w Krakowie w 1886 r. Dobroczynnego Zakładu Wychowawczego dla Opuszczonych i Ubogich Chłopców (przeniesionego w 1913 r. na Prądnik Biały, tzw. Zakład im. Siemaszki); ulica przebiega obok dawnego zakładu.",
+     "[Wikipedia: Kazimierz Siemaszko](https://pl.wikipedia.org/wiki/Kazimierz_Siemaszko)", "–"),
+
+    (1145, "**ulica Księdza Mariana Luzara**", "`Postacie historyczne`", "1895", "**Marian Luzar**",
+     "Ulica w Swoszowicach (Dzielnica X Swoszowice). Patron: ks. harcmistrz Marian Luzar (1895–1939), kapłan archidiecezji krakowskiej, wybitny instruktor Związku Harcerstwa Polskiego, w latach 1931–1939 Naczelny Kapelan ZHP; organizator duszpasterstwa harcerskiego i autor modlitewnika harcerskiego; kapelan Wojska Polskiego w wojnie obronnej 1939 r., poległy tragicznie we wrześniu 1939 r. w drodze na wschód.",
+     "[Wikipedia: Marian Luzar](https://pl.wikipedia.org/wiki/Marian_Luzar)", "–"),
+
+    (1146, "**ulica Księdza Mikołaja Kuczkowskiego**", "`Postacie historyczne`", "1910", "**Mikołaj Kuczkowski**",
+     "Ulica w Mistrzejowicach (Dzielnica XV Mistrzejowice). Patron: ks. infułat Mikołaj Kuczkowski (1910–1983), kapłan archidiecezji krakowskiej, wieloletni proboszcz parafii św. Józefa w Podgórzu (1950–1983) i dziekan dekanatu podgórskiego; odważny obrońca praw Kościoła i wiernych w czasach PRL, inicjator i współorganizator budowy kościoła w Mistrzejowicach (wraz z ks. Józefem Kurzeją).",
+     "[Wikipedia: Mikołaj Kuczkowski](https://pl.wikipedia.org/wiki/Miko%C5%82aj_Kuczkowski)", "–"),
+
+    (1147, "**ulica Księdza Piotra Skargi**", "`Postacie historyczne`", "1536", "**Piotr Skarga**",
+     "Ulica na Warszawskim (Dzielnica I Stare Miasto). Patron: ks. Piotr Skarga SJ, właśc. Piotr Powęski (1536–1612), jezuita, najwybitniejszy polski kaznodzieja i pisarz polityczno-religijny epoki kontrreformacji, pierwszy rektor Akademii Wileńskiej, nadworny kaznodzieja króla Zygmunta III Wazy; autor „Kazań sejmowych” i „Żywotów świętych”; założyciel w Krakowie Arcybractwa Miłosierdzia i Banku Pobożnego; pochowany w kościele św. św. Piotra i Pawła w Krakowie.",
+     "[Wikipedia: Piotr Skarga](https://pl.wikipedia.org/wiki/Piotr_Skarga)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Piotr%20Skarga%201.PNG?width=360)"),
+
+    (1148, "**ulica Księdza Piotra Ściegiennego**", "`Postacie historyczne`", "1801", "**Piotr Ściegienny**",
+     "Ulica w Bieżanowie i Prokocimiu (Dzielnica XII Bieżanów-Prokocim). Patron: ks. Piotr Ściegienny (1801–1890), duchowny katolicki, radykalny działacz niepodległościowy, społeczny i ludowy; organizator Związku Chłopskiego przygotowującego antycarskie powstanie w 1844 r., autor słynnego „Listu Ojca Świętego Grzegorza papieża” („Złotej książeczki”); aresztowany w 1844 r., skazany na śmierć, zamienioną na bezterminową katorgę na Syberii, skąd powrócił po ćwierćwieczu zesłania.",
+     "[Wikipedia: Piotr Ściegienny](https://pl.wikipedia.org/wiki/Piotr_%C5%9Aciegienny)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Piotr%20%C5%9Aciegienny.PNG?width=360)"),
+
+    (1149, "**ulica Księdza Prałata Mariana Łaczka**", "`Postacie historyczne`", "1907", "**Marian Łaczek**",
+     "Ulica w Bieżanowie (Dzielnica XII Bieżanów-Prokocim). Patron: ks. prałat Marian Łaczek (1907–1988), kapłan archidiecezji krakowskiej, prałat domowy Jego Świątobliwości, w latach 1957–1983 proboszcz parafii Narodzenia NMP w Bieżanowie; wybitny katecheta, odnowiciel zabytkowego bieżanowskiego kościoła i orędownik praw religijnych w okresie komunizmu, animator życia wspólnotowego mieszkańców dawnej podkrakowskiej wsi Bieżanów.",
+     "[Parafia Narodzenia NMP w Bieżanowie](https://parafiabiezanow.pl)", "–"),
+
+    (1150, "**ulica Księdza Prymasa Stefana Wyszyńskiego**", "`Postacie historyczne`", "1901", "**Stefan Wyszyński**",
+     "Główna arteria w Nowej Hucie i Bieńczycach (Dzielnica XVI/XVIII). Patron: błogosławiony Stefan Wyszyński (1901–1981), kardynał, arcybiskup metropolita gnieźnieński i warszawski, Prymas Polski w latach 1948–1981, zwany „Prymasem Tysiąclecia”; nieugięty obrońca praw Kościoła i godności narodu wobec totalitaryzmu komunistycznego, więziony w latach 1953–1956; autor Jasnogórskich Ślubów Narodu Polskiego i inicjator Wielkiej Nowenny; mąż stanu i błogosławiony Kościoła katolickiego.",
+     "[Wikipedia: Stefan Wyszyński](https://pl.wikipedia.org/wiki/Stefan_Wyszy%C5%84ski)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Stefan%20Wyszy%C5%84ski.jpg?width=360)"),
+
+    (1151, "**ulica Księdza Stanisława Truszkowskiego**", "`Postacie historyczne`", "1917", "**Stanisław Truszkowski**",
+     "Ulica w Bronowicach Małych (Dzielnica VI Bronowice). Patron: ks. Stanisław Truszkowski (1917–1986), kapłan archidiecezji krakowskiej, w latach 1957–1984 proboszcz parafii św. Antoniego z Padwy w Bronowicach Małych; niestrudzony duszpasterz bronowicki, z którego inicjatywy i pracy duszpasterskiej powstał ośrodek na osiedlu Widok (późniejsza parafia św. Jana Kantego).",
+     "[Parafia św. Antoniego w Bronowicach Małych](https://parafiabronowice.pl)", "–"),
+
+    (1152, "**ulica Księdza Stefana Mazanka**", "`Postacie historyczne`", "1895", "**Stefan Mazanek**",
+     "Ulica na Prądniku Czerwonym (Dzielnica III Prądnik Czerwony). Patron: ks. Stefan Mazanek (1895–1950), kapłan archidiecezji krakowskiej, kanonik Kapituły Metropolitalnej na Wawelu, wieloletni kanclerz Kurii Metropolitalnej w Krakowie w latach 1929–1950 i najbliższy współpracownik kardynała Adama Stefana Sapiehy; w czasie II wojny światowej aresztowany przez Gestapo, więzień niemieckiego więzienia Montelupich i w Nowym Wiśniczu.",
+     "[Wikipedia: Stefan Mazanek](https://pl.wikipedia.org/wiki/Stefan_Mazanek)", "–"),
+
+    (1153, "**ulica Księdza Stefana Pawlickiego**", "`Postacie historyczne`", "1839", "**Stefan Pawlicki**",
+     "Ulica na Dębnikach (Dzielnica VIII Dębniki), wytyczona w sąsiedztwie klasztoru Zmartwychwstańców, nazwę otrzymała w 1921 r. (DRK 1926). Patron: ks. Stefan Pawlicki CR (1839–1916), zmartwychwstaniec, wybitny polski filozof, historyk filozofii, teolog i psycholog; profesor i rektor Uniwersytetu Jagiellońskiego (1905–1906), dziekan Wydziału Teologicznego UJ oraz członek Akademii Umiejętności. [Oś czasu: 1910: Droga klasztorna na Dębnikach &#124; 1921: ulica Księdza Stefana Pawlickiego (DRK 1926)]",
+     "[E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1926](../../data/sources/drk_1926_1933.json) / [Wikipedia: Stefan Pawlicki](https://pl.wikipedia.org/wiki/Stefan_Pawlicki)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Stefan%20Pawlicki.png?width=360)"),
+
+    (1154, "**ulica Księdza Wincentego Turka**", "`Postacie historyczne`", "1900", "**Wincenty Turek**",
+     "Ulica w Płaszowie (Dzielnica XIII Podgórze). Patron: ks. Wincenty Turek SCJ (1900–1990), duchowny ze Zgromadzenia Księży Najświętszego Serca Jezusowego (sercanów), wieloletni proboszcz parafii Najświętszego Serca Pana Jezusa w Krakowie-Płaszowie w latach 1958–1975; zasłużony dla kultu i sprowadzenia do kościoła w Płaszowie cudownego obrazu Matki Bożej Płaszowskiej (Błogosławionego Macierzyństwa); spoczywa na cmentarzu Podgórskim.",
+     "[Parafia NSPJ w Krakowie-Płaszowie](https://plaszow.scj.pl)", "–"),
+
+    (1155, "**ulica Księdza Wojciecha Karabuły**", "`Postacie historyczne`", "1893", "**Wojciech Karabuła**",
+     "Ulica w Borku Fałęckim (Dzielnica IX Łagiewniki-Borek Fałęcki). Patron: ks. Wojciech Karabuła (1893–1960), kapłan archidiecezji krakowskiej urodzony w podkrakowskich Toniach, twórca i pierwszy proboszcz parafii Matki Bożej Zwycięskiej w Krakowie-Borku Fałęckim w latach 1925–1931; organizator pierwszej prowizorycznej kaplicy w dworku Ziobrowskich, budowniczy pierwszego kościoła, plebanii i założyciel cmentarza parafialnego w Borku Fałęckim.",
+     "[Wikipedia: Wojciech Karabuła](https://pl.wikipedia.org/wiki/Wojciech_Karabu%C5%82a)", "–"),
+
+    (1156, "**ulica Księdza Władysława Dercza**", "`Postacie historyczne`", "1908", "**Władysław Dercz**",
+     "Ulica w Borku Fałęckim (Dzielnica IX Łagiewniki-Borek Fałęcki). Patron: ks. Władysław Dercz (1908–1942), kapłan archidiecezji krakowskiej, wikariusz w parafii w Borku Fałęckim; podczas okupacji hitlerowskiej współpracował z podziemiem niepodległościowym ZWZ/AK i niósł pomoc prześladowanym; aresztowany przez Gestapo, więziony na Montelupich i wywieziony do niemieckiego obozu koncentracyjnego KL Auschwitz, gdzie został zamordowany 18 maja 1942 r.",
+     "[Krakowianie 1939-1956: Władysław Dercz](https://krakowianie1939-56.mhk.pl)", "–"),
+
+    (1157, "**ulica Księdza Władysława Gurgacza**", "`Postacie historyczne`", "1914", "**Władysław Gurgacz**",
+     "Ulica na Grzegórzkach i Wesołej (Dzielnica II Grzegórzki). Patron: ks. Władysław Gurgacz SJ, ps. „Sem” (1914–1949), jezuita, kapelan Polskiej Podziemnej Armii Niepodległościowej (PPAN) walczącej na Sądecczyźnie z reżimem komunistycznym; aresztowany w Krakowie w 1949 r., skazany na śmierć w pokazowym procesie stalinowskim przed Wojskowym Sądem Rejonowym w Krakowie i stracony strzałem w tył głowy w więzieniu przy ul. Montelupich; pośmiertnie odznaczony Krzyżem Komandorskim Orderu Odrodzenia Polski.",
+     "[Wikipedia: Władysław Gurgacz](https://pl.wikipedia.org/wiki/W%C5%82adys%C5%82aw_Gurgacz)",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/W%C5%82adys%C5%82aw%20Gurgacz.jpg?width=360)"),
+
+    (1158, "**ulica Księdza Władysława Kajzera**", "`Postacie historyczne`", "1914", "**Władysław Kajzer**",
+     "Ulica we Wróblowicach (Dzielnica X Swoszowice). Patron: ks. Władysław Kajzer (1914–1992), kapłan archidiecezji krakowskiej, wieloletni proboszcz parafii Przemienienia Pańskiego w krakowskich Wróblowicach; w czasach PRL więziony przez władze komunistyczne za odmowę podporządkowania się nakazom naruszającym prawa Kościoła; w jego obronie do Wróblowic osobiście przybył kardynał Karol Wojtyła, manifestując jedność z uwięzionym kapłanem.",
+     "[Centrum Myśli Jana Pawła II: Wróblowice](https://www.centrumjp2.pl)", "–"),
+
+    (1159, "**ulica Księdza Władysława Mączyńskiego**", "`Postacie historyczne`", "1884", "**Władysław Mączyński**",
+     "Ulica w Borku Fałęckim (Dzielnica IX Łagiewniki-Borek Fałęcki). Patron: ks. Władysław Aleksander Mączyński (1884–1942), kapłan archidiecezji krakowskiej, w latach 1939–1941 administrator parafii Matki Bożej Zwycięskiej w Borku Fałęckim; organizator tajnej pomocy charytatywnej i kolportażu prasy podziemnej ZWZ; aresztowany przez Gestapo w styczniu 1942 r., więziony na Montelupich i zamordowany 23 marca 1942 r. w obozie koncentracyjnym KL Auschwitz (nr 20691).",
+     "[Wikipedia: Władysław Mączyński](https://pl.wikipedia.org/wiki/W%C5%82adys%C5%82aw_M%C4%85czy%C5%84ski)", "–"),
+
+    (1160, "**ulica Księdza Zygmunta Kaczyńskiego**", "`Postacie historyczne`", "1894", "**Zygmunt Kaczyński**",
+     "Ulica na Grzegórzkach (Dzielnica II Grzegórzki). Patron: ks. Zygmunt Kaczyński (1894–1953), kapłan, działacz chadecki, poseł na Sejm II RP, dyrektor Katolickiej Agencji Prasowej; w czasie II wojny światowej kapelan Prezydenta RP Władysława Raczkiewicza oraz minister informacji i dokumentacji Rządu RP na uchodźstwie; po powrocie do Polski redaktor „Tygodnika Warszawskiego”, aresztowany przez UB w 1948 r. i zamordowany w więzieniu mokotowskim w Warszawie; pośmiertnie odznaczony Orderem Orła Białego.",
+     "[Wikipedia: Zygmunt Kaczyński (ksiądz)](https://pl.wikipedia.org/wiki/Zygmunt_Kaczy%C5%84ski_(ksi%C4%85dz))",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Zygmunt%20Kaczy%C5%84ski.jpg?width=360)"),
+
+    (1161, "**ulica Księżycowa**", "`Ulice Krakowa`", "–", "*Moon / Lunar Street*",
+     "Ulica w Swoszowicach i Jugowicach (Dzielnica X Swoszowice). Nazwa o motywacji kosmonimicznej (astronomicznej), nadana w zespole nazewnictwa zjawisk niebieskich i pór doby na podmiejskim osiedlu domów jednorodzinnych (w sąsiedztwie ul. Gwiaździstej, Jutrzenki, Porannej i Promienistej).",
+     "[Słownik Języka Polskiego PWN: księżyc](https://sjp.pwn.pl/sjp/ksiezyc;2475471.html)", "–"),
+
+    (1162, "**ulica Ku Raciborowicom**", "`Trakty kierunkowe`", "–", "*Towards Raciborowice Lane*",
+     "Ulica w Grębałowie i Zesławicach (Dzielnica XVII Wzgórza Krzesławickie). Stanowi historyczną drogę wylotową łączącą dawne naddłubniańskie wsie krakowskie ze starożytną podkrakowską wsią Raciborowice (wzmiankowaną w XII w., słynną ze średniowiecznego kościoła św. Małgorzaty, którego proboszczem był Jan Długosz).",
+     "[Wikipedia: Raciborowice (województwo małopolskie)](https://pl.wikipedia.org/wiki/Raciborowice_(wojew%C3%B3dztwo_ma%C5%82opolskie))", "–"),
+
+    (1163, "**ulica Kubusia Puchatka**", "`Ulice Krakowa`", "–", "*Winnie-the-Pooh Street*",
+     "Kameralna ulica w Kurdwanowie (Dzielnica XI Podgórze Duchackie). Nazwa o charakterze literackim, upamiętniająca Kubusia Puchatka (Winnie-the-Pooh) – tytułowego bohatera klasycznej powieści dla dzieci autorstwa Alana Alexandra Milne'a z 1926 r. (w ikonicznym polskim przekładzie Ireny Tuwim), nadana w zacisznym osiedlu domków jednorodzinnych.",
+     "[Wikipedia: Kubuś Puchatek](https://pl.wikipedia.org/wiki/Kubu%C5%9B_Puchatek)", "–"),
+
+    (1164, "**ulica Kujawska**", "`Trakty kierunkowe`", "1914", "*Kuyavia Region Road*",
+     "Ulica na Nowej Wsi (Dzielnica V Krowodrza), wytyczona ok. 1913 r. na dawnych gruntach Matusińskiego (początkowo potocznie ul. Matusińskiego); oficjalną nazwę Kujawska otrzymała w 1914 r. (DRK 1914; potwierdzona w DRK 1926). Pochodzi od historycznej krainy Kujawy, wpisując się w koncepcję nazewnictwa dzielnicowego Nowej Wsi zaczerpniętego z regionów Polski (obok Mazowieckiej, Śląskiej i Pomorskiej). [Oś czasu: 1913: ulica Matusińskiego (nieoficjalnie) &#124; 1914: ulica Kujawska (DRK 1926)]",
+     "[E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1926](../../data/sources/drk_1926_1933.json)", "–"),
+
+    (1165, "**ulica Kupa**", "`Ulice Krakowa`", "1881", "*Kupa Street*",
+     "Zabytkowa ulica w sercu dawnego Miasta Żydowskiego na Kazimierzu (Dzielnica I Stare Miasto), biegnąca wzdłuż synagogi Kupa wzniesionej w 1643 r. z funduszów gminy żydowskiej (hebr. „kupa szel cedaka” – kiesa / skarb jałmużniczy kahału). Oficjalna nazwa ulicy utrwalona od 1881 r. (DRK 1880/1881), w czasie okupacji niem. Kupagasse (Okupacja 1940); tworzy unikatowy element krajobrazu kulturowego Kazimierza. [Oś czasu: 1643: Zaułek przy synagodze Kupa &#124; 1881: ulica Kupa (DRK 1880) &#124; 1940: Kupagasse (Okupacja) &#124; 1945: ulica Kupa]",
+     "[E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1880](../../data/sources/drk_1880.json) / [Okupacja 1940](../../data/sources/okupacja_1940_1941.json)", "–"),
+
+    (1166, "**ulica Kupały**", "`Ulice Krakowa`", "–", "*Kupala Night / Slavic Deity Street*",
+     "Ulica w Bieńczycach i Mistrzejowicach (Dzielnica XVI Bieńczyce). Nazwa wywodzi się ze słowiańskich wierzeń i obrzędowości – od Nocy Kupały (sobótki, święta letniego przesilenia słońca) oraz domniemanego bóstwa urodzaju, wody i ognia; tworzy spójny zespół toponimiczny z sąsiednimi ulicami Swarożyca i Jadźwingów.",
+     "[Wikipedia: Noc Kupały](https://pl.wikipedia.org/wiki/Noc_Kupa%C5%82y)", "–"),
+
+    (1167, "**ulica Kurkowa**", "`Ulice Krakowa`", "1903", "*Rooster / Cockchafer Guild Lane*",
+     "Ulica na Wesołej (Dzielnica II Grzegórzki), wytyczona w 1899 r. po rozparcelowaniu północnej części Ogrodu Strzeleckiego krakowskiego Towarzystwa Strzeleckiego (Bractwa Kurkowego, wskrzeszonego w 1833 r. po odkupieniu majątku od Steinkellerów). Oficjalną nazwę otrzymała w 1903 r. (DRK 1903; DRK 1912) na cześć wielowiekowej tradycji i zasług Krakowskiego Bractwa Kurkowego. [Oś czasu: 1899: Droga przez Ogród Strzelecki &#124; 1903: ulica Kurkowa (DRK 1912)]",
+     "[E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1912](../../data/sources/drk_1912.json)", "–"),
+
+    (1168, "**ulica Kurniki**", "`Ulice Krakowa`", "1427", "*Kurniki Street*",
+     "Zabytkowa uliczka kleparska (Dzielnica I Stare Miasto), stanowiąca w średniowieczu trakt prowadzący z Kleparza ku Mogile (wzmiankowana w źródłach w 1427 r. przy kościele św. Floriana: in acie retro ecclesiam s. Floriani eundo in Mogilam). Od XVII–XVIII w. rejon zdominowany przez zagrody drobiarskie i kurniki kleparskich mieszczan na zapleczu rynku; nazwa Kurniki utrwaliła się pod koniec XVIII w. (DRK 1880). [Oś czasu: 1427: Droga retro ecclesiam s. Floriani in Mogilam &#124; 1792: ulica Kurniki &#124; 1880: ulica Kurniki (DRK 1880)]",
+     "[E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1880](../../data/sources/drk_1880.json)", "–"),
+
+    (1169, "**ulica Kuśnierska**", "`Dawne rzemiosło i historia`", "–", "*Furriers' Street*",
+     "Ulica w Branicach (Dzielnica XVIII Nowa Huta). Nazwa o motywacji rzemieślniczej, upamiętniająca kuśnierzy – rzemieślników zajmujących się wyprawą skór futerkowych i szyciem kożuchów oraz czapek; nawiązuje do dawnych tradycji rzemiosła wiejskiego i krakowskich cechów skórzanych.",
+     "[Wikipedia: Kuśnierz](https://pl.wikipedia.org/wiki/Ku%C5%9Bnierz)", "–"),
+
+    (1170, "**ulica Kuźnicy Kołłątajowskiej**", "`Ulice Krakowa`", "–", "*Kuźnica Kołłątajowska Street*",
+     "Jedna z głównych osi komunikacyjnych Górki Narodowej (Dzielnica IV Prądnik Biały). Nazwa upamiętnia Kuźnicę Kołłątajowską – radykalne patriotyczne ugrupowanie reformatorskie i publicystyczne z czasów Sejmu Czteroletniego skupione wokół ks. Hugona Kołłątaja, które odegrało kluczową rolę w pracach nad Konstytucją 3 Maja i reformą Rzeczypospolitej.",
+     "[Wikipedia: Kuźnica Kołłątajowska](https://pl.wikipedia.org/wiki/Ku%C5%BAnica_Ko%C5%82%C5%82%C4%85tajowska)", "–"),
+
+    (1171, "**ulica Kuźnicza**", "`Dawne rzemiosło i historia`", "–", "*Forge / Smithy Street*",
+     "Ulica na Woli Justowskiej (Dzielnica VII Zwierzyniec), w rejonie al. Modrzewiowej i Kasztanowej. Nazwa o motywacji rzemieślniczej, nawiązująca do dawnych wiejskich i dworskich kuźnic (warsztatów kowalskich) działających przy podkrakowskich folwarkach w dolinie rzeki Rudawy.",
+     "[Słownik Języka Polskiego PWN: kuźnica](https://sjp.pwn.pl/sjp/kuznica;2476537.html)", "–"),
+
+    (1172, "**ulica Kwartowa**", "`Ulice Krakowa`", "–", "*Quarter / Tax Assessment Street*",
+     "Ulica na Prądniku Czerwonym (Dzielnica III Prądnik Czerwony). Nazwa toponimiczno-historyczna wywodząca się od dawnej jednostki miary powierzchni roli („kwarta”) lub staropolskiego podatku państwowego („kwarta” na utrzymanie wojska kwarcianego, wybieranego z dóbr królewskich i kościelnych), stanowiąc pamiątkę podziałów gruntów dawnej wsi Prądnik Czerwony.",
+     "[Wikipedia: Kwarta (podatek)](https://pl.wikipedia.org/wiki/Kwarta_(podatek))", "–"),
+
+    (1173, "**ulica Kwatery**", "`Ulice Krakowa`", "–", "*Quarters / Military Billet Street*",
+     "Ulica w Bieżanowie (Dzielnica XII Bieżanów-Prokocim). Nazwa o motywacji osadniczo-militarnej, wywodząca się od kwater (wydzielonych kwater leśnych, parcel gruntowych bądź historycznego kwaterunku wojskowego) w rejonie pierścienia fortyfikacji Twierdzy Kraków (w sąsiedztwie Fortu 50 ½ West Barycz / Kosocice).",
+     "[Słownik Języka Polskiego PWN: kwatera](https://sjp.pwn.pl/sjp/kwatera;2476483.html)", "–"),
+
+    (1174, "**ulica Kwiatowa**", "`Przyroda i Fauna`", "1912", "*Flower Street*",
+     "Ulica na Nowej Wsi (Dzielnica V Krowodrza), wytyczona na terenie dawnej gminy Nowa Wieś, włączonej do Krakowa w 1910 r. w ramach Wielkiego Krakowa; oficjalną nazwę Kwiatowa otrzymała w 1912 r. (DRK 1912). Nazwa przyrodnicza upamiętnia dawne kwieciste ogrody warzywno-owocowe i sady podmiejskie, które dominowały w tym rejonie przed parcelacją pod wielkomiejską zabudowę kamieniczną. [Oś czasu: 1910: Droga ogrodowa na Nowej Wsi &#124; 1912: ulica Kwiatowa (DRK 1912)]",
+     "[E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1912](../../data/sources/drk_1912.json)", "–"),
+
+    (1175, "**ulica Kwiatów Polskich**", "`Ulice Krakowa`", "–", "*Kwiaty Polskie Literary Street*",
+     "Ulica w Czyżynach (Dzielnica XIV Czyżyny). Nazwa o charakterze literackim, nawiązująca do słynnego poematu dygresyjnego Juliana Tuwima „Kwiaty polskie” (pisanego w latach 1940–1944 na uchodźstwie w Brazylii i USA, stanowiącego arcydzieło polskiej liryki i tęsknoty za Ojczyzną).",
+     "[Wikipedia: Kwiaty polskie](https://pl.wikipedia.org/wiki/Kwiaty_polskie)", "–"),
+
+    (1176, "**ulica Kwiecista**", "`Przyroda i Fauna`", "–", "*Flowery Street*",
+     "Ulica w Opatkowicach (Dzielnica X Swoszowice). Nazwa o motywacji przyrodniczej, nadana w malowniczym zespole ulic osiedla domów jednorodzinnych wśród dawnych łąk i pól podkrakowskich Opatkowic, nawiązująca do ukwieconych przydomowych ogrodów.",
+     "[Słownik Języka Polskiego PWN: kwiecisty](https://sjp.pwn.pl/sjp/kwiecisty;2476569.html)", "–"),
+
+    (1177, "**ulica Kwietna**", "`Przyroda i Fauna`", "–", "*Flowery Meadow Street*",
+     "Ulica w Łagiewnikach (Dzielnica IX Łagiewniki-Borek Fałęcki). Nazwa o charakterze przyrodniczo-florystycznym, nawiązująca do kwietnych łąk w dolinie rzeki Wilgi, nadana w tradycyjnym zespole nazewnictwa ogrodowego dawnej podkrakowskiej wsi Łagiewniki (włączonej do Krakowa w 1941 r.).",
+     "[Wikipedia: Łagiewniki (Kraków)](https://pl.wikipedia.org/wiki/%C5%81agiewniki_(Krak%C3%B3w))", "–"),
+
+    (1178, "**ulica Kącik**", "`Ulice Krakowa`", "1880", "*Kącik Street*",
+     "Zabytkowa uliczka w Podgórzu i na Zabłociu (Dzielnica XIII Podgórze), stanowiąca odnogę dawnego traktu do Niepołomic. Powstała pod koniec XIX w. (notowana w 1880 r.), oficjalnie zatwierdzona w wykazach Podgórza i DRK 1926. Nazwa uzasadniona usytuowaniem „w kąciku” przy linii kolejowej i ul. Lipowej; w latach 1941–1943 stanowiła wschodnią granicę getta krakowskiego i drogę ku placowi Zgody (dziś pl. Bohaterów Getta). [Oś czasu: 1880: Zaułek na Zabłociu &#124; 1917: ulica Kącik (Podgórze 1917) &#124; 1926: ulica Kącik (DRK 1926)]",
+     "[E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [Podgórze 1917](../../data/sources/podgorze_1917.json) / [DRK 1926](../../data/sources/drk_1926_1933.json)", "–"),
+
+    (1179, "**ulica Kąkolowa**", "`Przyroda i Fauna`", "–", "*Corncockle Street*",
+     "Ulica w Pleszowie i Wyciążach (Dzielnica XVIII Nowa Huta). Nazwa botaniczna wywodzi się od kąkolu polnego (Agrostemma githago) – tradycyjnej rośliny segetalnej o purpuroworóżowych kwiatach, dawniej powszechnie rosnącej w uprawach zbóż na urodzajnych lessach naddłubniańskich wsi Nowej Huty.",
+     "[Wikipedia: Kąkol polny](https://pl.wikipedia.org/wiki/K%C4%85kol_polny)", "–"),
+
+    (1180, "**ulica Kąpielowa**", "`Ulice Krakowa`", "1811", "*Spa Baths / Swimming Street*",
+     "Główna arteria dojazdowa w uzdrowiskowej części Swoszowic (Dzielnica X Swoszowice). Nazwa nawiązuje bezpośrednio do historycznego Zakładu Kąpielowego w Uzdrowisku Swoszowice oraz Parku Zdrojowego – jednego z najstarszych polskich zdrojowisk, słynącego z unikatowych wód siarczkowych i kąpieli leczniczych od 1811 r. (włączona do Krakowa w 1973 r.). [Oś czasu: 1811: Droga do Zakładu Zdrojowego w Swoszowicach &#124; 1973: ulica Kąpielowa (Rozszerzenie 1973)]",
+     "[Wikipedia: Swoszowice (uzdrowisko)](https://pl.wikipedia.org/wiki/Swoszowice_(uzdrowisko)) / [Rozszerzenie 1973](../../data/sources/rozszerzenie_1973_1975.json)", "–"),
+
+    (1181, "**ulica Kąt**", "`Ulice Krakowa`", "–", "*Kąt Lane*",
+     "Ulica w Olszy (Dzielnica III Prądnik Czerwony), boczna od ul. Pilotów i Chałupnika. Nazwa o motywacji mikrotopograficznej, wywodząca się od ślepego zaułka tworzącego zaciszny „kąt” wśród parcel dawnego folwarku i wsi Olsza.",
+     "[Słownik Języka Polskiego PWN: kąt](https://sjp.pwn.pl/sjp/kat;2470763.html)", "–"),
+
+    (1182, "**ulica Kątowa**", "`Ulice Krakowa`", "1912", "*Kątowa Street*",
+     "Ulica w dzielnicy Warszawskie (Dzielnica I Stare Miasto), biegnąca w rejonie dawnej Morgensternówki między al. 29 Listopada i ul. Żelazną; oficjalną nazwę Kątowa otrzymała w 1912 r. (DRK 1912). Nazwa ma charakter topograficzny i odzwierciedla geometrię ulicy składającej się z dwóch ramion załamujących się pod kątem prostym. [Oś czasu: 1910: Bezimienna droga na Morgensternówce &#124; 1912: ulica Kątowa (DRK 1912)]",
+     "[E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1912](../../data/sources/drk_1912.json)", "–"),
+
+    (1183, "**ulica Kędzierzyńska**", "`Trakty kierunkowe`", "–", "*Kędzierzyn Road*",
+     "Ulica w Łagiewnikach (Dzielnica IX Łagiewniki-Borek Fałęcki). Nazwa toponimiczna pochodzi od górnośląskiego miasta Kędzierzyn (obecnie Kędzierzyn-Koźle), ważnego węzła kolejowego i ośrodka przemysłu chemicznego; wpisuje się w zbieżne nazewnictwo miast śląskich w południowych dzielnicach Krakowa.",
+     "[Wikipedia: Kędzierzyn-Koźle](https://pl.wikipedia.org/wiki/K%C4%99dzierzyn-Ko%C5%BAle)", "–"),
+
+    (1184, "**ulica Kępna**", "`Ulice Krakowa`", "–", "*Kępna Street*",
+     "Ulica w Jugowicach (Dzielnica X Swoszowice). Nazwa o podłożu topograficznym, wywodząca się od kępy – wyższego, suchego wzniesienia terenu lub skupiska zadrzewień wśród dawnych podmokłych łąk nadrzecznych w dolinie potoku Wilga (Jugowickiego).",
+     "[Słownik Języka Polskiego PWN: kępa](https://sjp.pwn.pl/sjp/kepa;2470876.html)", "–"),
+
+    (1185, "**ulica Kępska**", "`Ulice Krakowa`", "–", "*Kępska River Islet Street*",
+     "Ulica w Mogile (Dzielnica XVIII Nowa Huta), biegnąca w pobliżu zakola Wisły. Nazwa ma charakter toponimiczny i odnosi się do historycznych wiślanych kęp – piaszczystych ostrowów i wysepek nadrzecznych formowanych w korycie rzeki na wysokości Mogiły i dawnego klasztoru Cystersów.",
+     "[Wikipedia: Mogiła (Kraków)](https://pl.wikipedia.org/wiki/Mogi%C5%82a_(Krak%C3%B3w))", "–"),
+
+    (1186, "**ulica Kłosowa**", "`Przyroda i Fauna`", "–", "*Ear of Grain Street*",
+     "Ulica w Pleszowie i Wyciążach (Dzielnica XVIII Nowa Huta). Nazwa o motywacji rolniczo-przyrodniczej, wywodząca się od kłosa zbożowego; nawiązuje do wielowiekowej tradycji uprawy zbóż na bogatych glebach lessowych podkrakowskich wsi włączonych w obszar Nowej Huty.",
+     "[Wikipedia: Kłos (botanika)](https://pl.wikipedia.org/wiki/K%C5%82os_(botanika))", "–"),
+
+    (1187, "**ulica Kłuszyńska**", "`Wydarzenia i rocznice`", "1610", "*Battle of Kłuszyn Street*",
+     "Ulica w Opatkowicach (Dzielnica X Swoszowice). Nazwa upamiętnia bitwę pod Kłuszynem (stoczoną 4 lipca 1610 r.), w której wojska Rzeczypospolitej pod wodzą hetmana polnego koronnego Stanisława Żółkiewskiego rozgromiły kilkukrotnie liczniejszą armię rosyjsko-szwedzką, otwierając drogę do zajęcia Moskwy i triumfu polskiego oręża.",
+     "[Wikipedia: Bitwa pod Kłuszynem](https://pl.wikipedia.org/wiki/Bitwa_pod_K%C5%82uszynem)", "–"),
+
+    (1188, "**ulica Lajkonika**", "`Ulice Krakowa`", "1965", "*Lajkonik Legend Street*",
+     "Ulica na Zwierzyńcu (Dzielnica VII Zwierzyniec) w rejonie Woli Justowskiej, wytyczona i nazwana w 1965 r. (W 1966). Upamiętnia wielowiekową tradycję pochodu Lajkonika (Konika Zwierzynieckiego), wywodzącą się z legendy o ocaleniu Krakowa przed najazdem tatarskim w 1287 r. przez zwierzynieckich włóczków; pochód odbywa się corocznie w oktawę Bożego Ciała.",
+     "[E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551)", "–"),
+
+    (1189, "**ulica Lanckorońska**", "`Trakty kierunkowe`", "1927", "*Lanckorona Road*",
+     "Ulica w Podgórzu (Dzielnica XIII Podgórze), wytyczona w latach 20. XX w., nazwę otrzymała w 1927 r. (DRK 1926_1933). Pochodzi od zabytkowego podkrakowskiego miasteczka Lanckorona, słynnego z zamku kazimierzowskiego, walk konfederatów barskich oraz unikatowej drewnianej architektury małopolskiej. [Oś czasu: 1920: Nowoprojektowana ulica w Podgórzu &#124; 1927: ulica Lanckorońska (DRK 1926)]",
+     "[E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1926](../../data/sources/drk_1926_1933.json)", "–"),
+
+    (1190, "**ulica Lasek**", "`Przyroda i Fauna`", "–", "*Little Woods Street*",
+     "Ulica w Łagiewnikach (Dzielnica IX Łagiewniki-Borek Fałęcki). Nazwa topograficzna (zdrobnienie od słowa „las”), nawiązująca do dawnych zagajników i zadrzewień porastających wzgórza łagiewnickie w sąsiedztwie Lasu Borkowskiego.",
+     "[Wikipedia: Las Borkowski](https://pl.wikipedia.org/wiki/Las_Borkowski)", "–"),
+
+    (1191, "**ulica Laskowa**", "`Przyroda i Fauna`", "–", "*Hazel Grove Street*",
+     "Ulica w Prokocimiu (Dzielnica XII Bieżanów-Prokocim). Nazwa o charakterze fitotoponimicznym, nawiązująca do leszczyny pospolitej (orzecha laskowego) oraz dawnych lasków dworskich i zadrzewień parkowych majątku Jerzmanowskich w dolinie rzeki Drwinki.",
+     "[Wikipedia: Leszczyna pospolita](https://pl.wikipedia.org/wiki/Leszczyna_pospolita)", "–"),
+
+    (1192, "**ulica Lasogórska**", "`Trakty kierunkowe`", "–", "*Lasogóra Hill Road*",
+     "Ulica w Swoszowicach (Dzielnica X Swoszowice). Nazwa toponimiczna nawiązuje do oronimu Lasogóra – zalesionego wzgórza Pogórza Wielickiego na południowym skraju Swoszowic, ku któremu prowadzi trakt.",
+     "[Poczet Krakowski: Swoszowice](https://www.poczetkrakowski.pl/tom-i/swoszowice/)", "–"),
+
+    (1193, "**Plac Lasoty**", "`Ulice Krakowa`", "1923", "*Prince Lasota Square*",
+     "Centralny plac zabytkowego osiedla willowego na Krzemionkach Podgórskich (Dzielnica XIII Podgórze), wytyczony na początku XX w., oficjalnie nazwany placem Lasoty w 1923 r. (DRK 1926). W latach 1952–1991 nosił imię przywódcy powstania chłopskiego Aleksandra Kostki-Napierskiego (W 1952), w 1991 r. uchwałą RMK przywrócono miano historyczne (Dekomunizacja 1991). Nazwa nawiązuje do wczesnośredniowiecznej nazwy wzgórza Krzemionek – Góry Lasoty, łączonej przez tradycję z księciem Lasotą i sąsiednim romańskim kościółkiem św. Benedykta. [Oś czasu: 1923: plac Lasoty (DRK 1926) &#124; 1952: plac Aleksandra Kostki-Napierskiego (PRL) &#124; 1991: plac Lasoty (Dekomunizacja 1991)]",
+     "[E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1926](../../data/sources/drk_1926_1933.json) / [Dekomunizacja 1991](../../data/sources/dekomunizacja_1991.json)", "–"),
+
+    (1194, "**ulica Lasowisko**", "`Ulice Krakowa`", "–", "*Lasowisko Woodland Street*",
+     "Ulica w Kościelnikach (Dzielnica XVIII Nowa Huta). Nazwa mikrotoponimiczna, wywodząca się od lasowiska – dawnego uroczyska leśnego, zagajnika lub zadrzewionego terenu folwarcznego dóbr rodziny Wodzickich w Kościelnikach.",
+     "[Wikipedia: Kościelniki (Kraków)](https://pl.wikipedia.org/wiki/Ko%C5%9Bcielniki_(Krak%C3%B3w))", "–"),
+
+    (1195, "**ulica Lasówka**", "`Ulice Krakowa`", "–", "*Lasówka Floodplain Lane*",
+     "Ulica w Płaszowie (Dzielnica XIII Podgórze), biegnąca w pobliżu Wisły. Nazwa ma charakter toponimiczny i wywodzi się od historycznego przysiółka i niwy Lasówka w Płaszowie, porośniętej niegdyś lasem łęgowym w zakolu rzeki Wisły.",
+     "[Poczet Krakowski: Płaszów](https://www.poczetkrakowski.pl/tom-i/plaszow/)", "–"),
+
+    (1196, "**ulica Laudańska**", "`Ulice Krakowa`", "–", "*Lauda Land Literary Street*",
+     "Ulica w Opatkowicach (Dzielnica X Swoszowice). Nazwa o motywacji literacko-historycznej, nawiązująca do rzeki Laudy i ziemi laudańskiej na Żmudzi (Litwie), uwiecznionej przez Henryka Sienkiewicza w „Potopie” jako ojczyzna szlachty laudańskiej (zaścianków Butrymów, Domaszewiczów i Gasztowtów).",
+     "[Wikipedia: Lauda (kraina)](https://pl.wikipedia.org/wiki/Lauda_(kraina))", "–"),
+
+    (1197, "**ulica Laurowa**", "`Przyroda i Fauna`", "–", "*Laurel Bay Leaf Street*",
+     "Ulica w Tyńcu (Dzielnica VIII Dębniki). Nazwa botaniczna pochodzi od wawrzynu szlachetnego (lauru, Laurus nobilis) – wiecznie zielonego krzewu śródziemnomorskiego, symbolu zwycięstwa, chwały i mądrości w kulturze klasycznej i zakonnej; nadana w zacisznym osiedlu w sąsiedztwie Opactwa Benedyktynów.",
+     "[Wikipedia: Wawrzyn szlachetny](https://pl.wikipedia.org/wiki/Wawrzyn_szlachetny)", "–"),
+
+    (1198, "**ulica Lazurowa**", "`Ulice Krakowa`", "–", "*Azure Blue Sky Street*",
+     "Ulica w Bronowicach Wielkich (Dzielnica IV Prądnik Biały). Nazwa o charakterze metaforyczno-kolorystycznym (od lazurowego – odcienia jasnego błękitu nieba), nadana kameralnej uliczce w osiedlu domów jednorodzinnych w Bronowicach.",
+     "[Słownik Języka Polskiego PWN: lazurowy](https://sjp.pwn.pl/sjp/lazurowy;2477759.html)", "–"),
+
+    (1199, "**ulica Lecha**", "`Postacie historyczne`", "–", "**Lech**",
+     "Ulica na Woli Duchackiej (Dzielnica XI Podgórze Duchackie). Patron: Lech – legendarny praojciec Polaków (Lechitów), brat Czecha i Rusa, założyciel pierwszej stolicy państwa w Gnieźnie pod znakiem Orła Białego; postać utrwalona w Kronice wielkopolskiej i kronice Jana Długosza jako symbol pradziejów państwowości polskiej.",
+     "[Wikipedia: Lech (postać legendarna)](https://pl.wikipedia.org/wiki/Lech_(posta%C4%87_legendarna))",
+     "[Portret CDN](https://commons.wikimedia.org/wiki/Special:FilePath/Lech%20%2899006824%29.jpg?width=360)"),
+
+    (1200, "**ulica Lechicka**", "`Ulice Krakowa`", "–", "*Lechitic Tribes Street*",
+     "Ulica w Kurdwanowie (Dzielnica XI Podgórze Duchackie). Nazwa o motywacji historyczno-etnograficznej, wywodząca się od Lechitów – dawnego, historycznego określenia przodków narodu polskiego oraz grupy zachodniosłowiańskich plemion lechickich zamieszkujących dorzecze Wisły i Odry.",
+     "[Wikipedia: Języki lechickie](https://pl.wikipedia.org/wiki/J%C4%99zyki_lechickie)", "–")
+]
+
+audit_log = """
+## Dziennik Weryfikacji i Zastosowanych Źródeł (Audit Log)
+
+* **[Lp. 1101] ulica Krzemieniecka:** Zweryfikowano toponimiczną genezę od Krzemieńca na Wołyniu (Liceum Krzemienieckie, J. Słowacki) oraz lokalizację w Swoszowicach -> **Źródło weryfikacji:** [Wikipedia: Krzemieniec](https://pl.wikipedia.org/wiki/Krzemieniec).
+* **[Lp. 1102] ulica Krzemionki:** Zweryfikowano historię drogi dojazdowej do fortu Krzemionki (1852 r.), oronim Krzemionek Podgórskich i akt Podgórze 1917; dodano ustandaryzowaną oś czasu i powiązanie z aktem urzędowym -> **Źródło weryfikacji:** [E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [Podgórze 1917](../../data/sources/podgorze_1917.json).
+* **[Lp. 1103] ulica Krzesławicka:** Zweryfikowano przebieg traktu łączącego północne osady z dawną wsią Krzesławice (własność H. Kołłątaja i J. Matejki) w Mistrzejowicach -> **Źródło weryfikacji:** [Wikipedia: Krzesławice (Kraków)](https://pl.wikipedia.org/wiki/Krzes%C5%82awice_(Krak%C3%B3w)).
+* **[Lp. 1104] ulica Krzewowa:** Zweryfikowano fitotoponimię krzewów i zadrzewień wapiennych wzgórz Kostrza i Bodzowa w Dębnikach; kategoria Przyroda i Fauna -> **Źródło weryfikacji:** [Wikipedia: Krzew](https://pl.wikipedia.org/wiki/Krzew).
+* **[Lp. 1105] ulica Krzyszkowicka:** Zweryfikowano relację kierunkową traktu do dawnej wsi Krzyszkowice (obecnie dzielnicy Wieliczki) z Kosocic i Baryczy -> **Źródło weryfikacji:** [Wikipedia: Krzyszkowice (Wieliczka)](https://pl.wikipedia.org/wiki/Krzyszkowice_(Wieliczka)).
+* **[Lp. 1106] ulica Krzysztofa Kamila Baczyńskiego:** Zweryfikowano biogram K. K. Baczyńskiego (poeta pokolenia Kolumbów, bataliony AK Zośka i Parasol, śmierć w Pałacu Blanka); zweryfikowano bezpieczny portret CDN z parametrem ?width=360 -> **Źródło weryfikacji:** [Wikipedia: Krzysztof Kamil Baczyński](https://pl.wikipedia.org/wiki/Krzysztof_Kamil_Baczy%C5%84ski).
+* **[Lp. 1107] ulica Krzywa:** Zweryfikowano XVI-wieczną metrykę drogi przez grunty Katarzyny Turkowej (1503 r.) na Kleparzu, potwierdzoną w DRK 1880; dodano oś czasu -> **Źródło weryfikacji:** [E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1880](../../data/sources/drk_1880.json).
+* **[Lp. 1108] ulica Krzywda:** Zweryfikowano mikrotoponimię staropolskiej roli lub gruntu spornego („krzywda”) oraz herbu szlacheckiego Krzywda w Płaszowie -> **Źródło weryfikacji:** [Wikipedia: Krzywda (herb szlachecki)](https://pl.wikipedia.org/wiki/Krzywda_(herb_szlachecki)).
+* **[Lp. 1109] ulica Krzywy Zaułek:** Zweryfikowano topografię łukowatego zaułka w Łobzowie odchodzącego od ul. Kazimierza Wielkiego i datę nadania nazwy (1961 r.) -> **Źródło weryfikacji:** [E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551).
+* **[Lp. 1110] ulica Krzyżowa:** Zweryfikowano właściwą tożsamość ulicy Krzyżowej w Mydlnikach odchodzącej od ul. Balickiej (odrzucono dawną pomyłkę z historyczną drogą karmelicką na Wesołej) -> **Źródło weryfikacji:** [BIP Kraków](https://www.bip.krakow.pl).
+* **[Lp. 1111] ulica Krzyżtoporska:** Zweryfikowano toponim od wczesnobarokowej rezydencji Krzyżtopór Krzysztofa Ossolińskiego w Ujeździe w Opatkowicach -> **Źródło weryfikacji:** [Wikipedia: Zamek Krzyżtopór](https://pl.wikipedia.org/wiki/Zamek_Krzy%C5%BCtop%C3%B3r).
+* **[Lp. 1112] ulica Krzyżówka:** Zweryfikowano ludową mikrotoponimię rozstajów dróg wiejskich i leśnych w podkrakowskim Chełmie w Paśmie Sowińca -> **Źródło weryfikacji:** [Słownik Języka Polskiego PWN: krzyżówka](https://sjp.pwn.pl/sjp/krzyzowka;2565243.html).
+* **[Lp. 1113] ulica Królewska:** Przeprowadzono pełny audyt historyczny arterii (DRK 1912, DRK 1926, Reichstraße 1940, ul. 18 Stycznia w PRL, Dekomunizacja 1991); dodano pełną 5-stopniową oś czasu i linki do 5 aktów archiwalnych -> **Źródło weryfikacji:** [E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1912](../../data/sources/drk_1912.json) / [DRK 1926](../../data/sources/drk_1926_1933.json) / [Okupacja 1940](../../data/sources/okupacja_1940_1941.json) / [PRL 1951](../../data/sources/prl_1951_1955.json) / [Dekomunizacja 1991](../../data/sources/dekomunizacja_1991.json).
+* **[Lp. 1114] ulica Królowej Bony:** Zweryfikowano patronat królowej Bony Sforzy, mecenaski renesansu na Wawelu i reformatorki gospodarki; zweryfikowano bezpieczny portret CDN Cranacha -> **Źródło weryfikacji:** [Wikipedia: Bona Sforza](https://pl.wikipedia.org/wiki/Bona_Sforza).
+* **[Lp. 1115] ulica Królowej Jadwigi:** Zweryfikowano dzieje głównej arterii Zwierzyńca i Woli Justowskiej (DRK 1912, Rozszerzenie 1973), patronat św. królowej Jadwigi Andegaweńskiej; dodano oś czasu i portret CDN Bacciarellego -> **Źródło weryfikacji:** [Wikipedia: Jadwiga Andegaweńska](https://pl.wikipedia.org/wiki/Jadwiga_Andegawe%C5%84ska) / [DRK 1912](../../data/sources/drk_1912.json) / [Rozszerzenie 1973](../../data/sources/rozszerzenie_1973_1975.json).
+* **[Lp. 1116] ulica Królówka:** Zweryfikowano mikrotoponim niwy i łąki Królówka w Skotnikach (Dębniki) -> **Źródło weryfikacji:** [Poczet Krakowski: Skotniki](https://www.poczetkrakowski.pl/tom-i/skotniki/).
+* **[Lp. 1117] ulica Krótka:** Zweryfikowano średniowieczną metrykę zaułka kleparskiego (viculus civitatis 1519 r., DRK 1880); dodano oś czasu i link do DRK 1880 -> **Źródło weryfikacji:** [E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1880](../../data/sources/drk_1880.json).
+* **[Lp. 1118] ulica Kręta:** Zweryfikowano topografię meandrującego traktu wiejskiego na Prądniku Czerwonym -> **Źródło weryfikacji:** [Wikipedia: Prądnik Czerwony](https://pl.wikipedia.org/wiki/Pr%C4%85dnik_Czerwony).
+* **[Lp. 1119] ulica Ksawerego Pruszyńskiego:** Zweryfikowano biogram Ksawerego Pruszyńskiego (pisarz, żołnierz Narwiku i Falaise) i portret CDN na Kurdwanowie Nowym -> **Źródło weryfikacji:** [Wikipedia: Ksawery Pruszyński](https://pl.wikipedia.org/wiki/Ksawery_Pruszy%C5%84ski).
+* **[Lp. 1120] ulica Książąt Czartoryskich:** Potwierdzono kategorię nieosobową (rodową/instytucjonalną) zaułka na Starym Mieście, patron: null, portret: – -> **Źródło weryfikacji:** [Muzeum Narodowe w Krakowie: Muzeum Książąt Czartoryskich](https://mnk.pl/oddzial/muzeum-ksiazat-czartoryskich).
+* **[Lp. 1121] ulica Księcia Józefa:** Zweryfikowano dzieje traktu oświęcimskiego na Zwierzyńcu i Bielanach (DRK 1912, Rozszerzenie 1973), patronat ks. Józefa Poniatowskiego, dodano oś czasu i portret CDN Grassiego -> **Źródło weryfikacji:** [Wikipedia: Józef Poniatowski](https://pl.wikipedia.org/wiki/J%C3%B3zef_Poniatowski) / [DRK 1912](../../data/sources/drk_1912.json) / [Rozszerzenie 1973](../../data/sources/rozszerzenie_1973_1975.json).
+* **[Lp. 1122] ulica Księdza Adolfa Chojnackiego:** Zweryfikowano biogram ks. kanonika Adolfa Chojnackiego, legendarnego kapelana podziemnej Solidarności na Woli Justowskiej -> **Źródło weryfikacji:** [Wikipedia: Adolf Chojnacki](https://pl.wikipedia.org/wiki/Adolf_Chojnacki).
+* **[Lp. 1123] ulica Księdza Adolfa Zagrodzkiego:** Zweryfikowano biogram ks. Adolfa Zagrodzkiego, proboszcza i budowniczego kościoła w Borku Fałęckim; ujednolicono zapis patrona do **Adolf Zagrodzki** -> **Źródło weryfikacji:** [Parafia MB Zwycięskiej w Borku Fałęckim](https://zwycieska.diecezja.pl).
+* **[Lp. 1124] ulica Księdza Biskupa Władysława Bandurskiego:** Zweryfikowano biogram bpa Władysława Bandurskiego, honorowego kapelana I Brygady Legionów Polskich i Naczelnego Kapelana ZHP; zweryfikowano portret CDN -> **Źródło weryfikacji:** [Wikipedia: Władysław Bandurski](https://pl.wikipedia.org/wiki/W%C5%82adys%C5%82aw_Bandurski).
+* **[Lp. 1125] ulica Księdza Ferdynanda Machaya:** Zweryfikowano biogram ks. infułata Ferdynanda Machaya starszego, działacza Orawy i Spisza, proboszcza bazyliki Mariackiej zasłużonego dla odzyskania ołtarza Wita Stwosza; zweryfikowano portret CDN -> **Źródło weryfikacji:** [Wikipedia: Ferdynand Machay (1889–1967)](https://pl.wikipedia.org/wiki/Ferdynand_Machay_(1889%E2%80%931967)).
+* **[Lp. 1126] ulica Księdza Franciszka Blachnickiego:** Zweryfikowano historię dawnej ul. 15 Grudnia na Grzegórzkach i dekomunizację w 1991 r.; dodano oś czasu i portret CDN ks. Blachnickiego -> **Źródło weryfikacji:** [Wikipedia: Franciszek Blachnicki](https://pl.wikipedia.org/wiki/Franciszek_Blachnicki) / [Dekomunizacja 1991](../../data/sources/dekomunizacja_1991.json).
+* **[Lp. 1127] ulica Księdza Franciszka Maja:** Zweryfikowano postać ks. proboszcza Franciszka Maja z Gaju (parafii Opatkowic), eliminując pomyłkę z posłem PRL; ujednolicono patrona do **Franciszek Maj** -> **Źródło weryfikacji:** [Parafia Narodzenia NMP w Gaju](https://parafiagaj.pl).
+* **[Lp. 1128] ulica Księdza Franciszka Trockiego:** Zweryfikowano postać ks. Franciszka Trockiego, łagiernika z Wysp Sołowieckich, spoczywającego w Skotnikach; ujednolicono patrona do **Franciszek Trocki** -> **Źródło weryfikacji:** [ZCK Kraków: Cmentarz Skotniki](https://www.zck-krakow.pl).
+* **[Lp. 1129] ulica Księdza Ignacego Jana Skorupki:** Zweryfikowano biogram ks. Ignacego Skorupki, bohatera bitwy pod Ossowem 1920 r.; zweryfikowano portret CDN -> **Źródło weryfikacji:** [Wikipedia: Ignacy Skorupka](https://pl.wikipedia.org/wiki/Ignacy_Skorupka).
+* **[Lp. 1130] ulica Księdza Ignacego Stoszki:** Zweryfikowano postać ks. Ignacego Stoszki SCJ, twórcy parafii sercanów w Płaszowie; ujednolicono patrona do **Ignacy Stoszko** -> **Źródło weryfikacji:** [Zgromadzenie Księży Sercanów: Historia prowincji](https://scj.pl).
+* **[Lp. 1131] ulica Księdza Jakuba Wujka:** Zweryfikowano postać ks. Jakuba Wujka SJ, tłumacza Biblii, pochowanego w kościele św. Piotra i Pawła w Krakowie; zweryfikowano portret CDN -> **Źródło weryfikacji:** [Wikipedia: Jakub Wujek](https://pl.wikipedia.org/wiki/Jakub_Wujek).
+* **[Lp. 1132] ulica Księdza Jana Hyca:** Zweryfikowano postać ks. Jana Hyca z Pleszowa i Krzesławic, ratowniczego zabytkowego drewnianego kościoła z Jawornika; ujednolicono patrona do **Jan Hyc** -> **Źródło weryfikacji:** [Wikipedia: Kościół św. Jana Chrzciciela w Krakowie (Krzesławice)](https://pl.wikipedia.org/wiki/Ko%C5%9Bci%C3%B3%C5%82_%C5%9Bw._Jana_Chrzciciela_w_Krakowie_(Krzes%C5%82awice)).
+* **[Lp. 1133] ulica Księdza Jana Korzonkiewicza:** Zweryfikowano uchwałę RMK XXV/577/25 z 2025 r. oraz biogram ks. prof. Korzonkiewicza, rektora Seminarium i kościoła św. Wojciecha; ujednolicono patrona do **Jan Korzonkiewicz** -> **Źródło weryfikacji:** [BIP RMK: Uchwała XXV/577/25](https://www.bip.krakow.pl?dok_id=167&sub_dok_id=167&sub=uchwala&query=id%3D28475%26typ%3Du).
+* **[Lp. 1134] ulica Księdza Jana Kusia:** Zweryfikowano dekomunizację dawnej ul. J. Chmielka w Bieżanowie w 1991 r. i postać ks. Jana Kusia; dodano oś czasu i ujednolicono patrona do **Jan Kuś** -> **Źródło weryfikacji:** [BIP RMK: Uchwała XXV/170/91](https://www.bip.krakow.pl/?dok_id=167) / [Dekomunizacja 1991](../../data/sources/dekomunizacja_1991.json).
+* **[Lp. 1135] ulica Księdza Jerzego Popiełuszki:** Zweryfikowano biogram bł. ks. Jerzego Popiełuszki, męczennika Solidarności i kawalera Orderu Orła Białego; zweryfikowano portret CDN -> **Źródło weryfikacji:** [Wikipedia: Jerzy Popiełuszko](https://pl.wikipedia.org/wiki/Jerzy_Popie%C5%82uszko).
+* **[Lp. 1136] ulica Księdza Józefa Kurzei:** Zweryfikowano niezłomną postawę ks. Józefa Kurzei, organizatora i budowniczego kościoła w Mistrzejowicach w dobie represji PRL -> **Źródło weryfikacji:** [Wikipedia: Józef Kurzeja (duchowny)](https://pl.wikipedia.org/wiki/J%C3%B3zef_Kurzeja_(duchowny)).
+* **[Lp. 1137] ulica Księdza Józefa Meiera:** Zweryfikowano biogram ks. kanonika Józefa Meiera, wieloletniego proboszcza na Prądniku Czerwonym niosącego pomoc uchodźcom wojennym; ujednolicono patrona do **Józef Meier** -> **Źródło weryfikacji:** [Parafia św. Jana Chrzciciela na Prądniku Czerwonym](https://janchrzciciel.eu).
+* **[Lp. 1138] ulica Księdza Józefa Tischnera:** Zweryfikowano biogram ks. prof. Józefa Tischnera (filozof, kapelan Solidarności, autor Etyki Solidarności); zweryfikowano portret CDN -> **Źródło weryfikacji:** [Wikipedia: Józef Tischner](https://pl.wikipedia.org/wiki/J%C3%B3zef_Tischner).
+* **[Lp. 1139] ulica Księdza Józefa Zastawniaka:** Zweryfikowano postać ks. kanonika Józefa Zastawniaka, budowniczego kościoła i pierwszego proboszcza w Czyżynach -> **Źródło weryfikacji:** [Wikipedia: Józef Zastawniak](https://pl.wikipedia.org/wiki/J%C3%B3zef_Zastawniak).
+* **[Lp. 1140] ulica Księdza kardynała Adama Stefana Sapiehy:** Zweryfikowano postać kardynała Adama Stefana Sapiehy, metropolity krakowskiego, „Księcia Niezłomnego”; zweryfikowano portret CDN -> **Źródło weryfikacji:** [Wikipedia: Adam Stefan Sapieha](https://pl.wikipedia.org/wiki/Adam_Stefan_Sapieha).
+* **[Lp. 1141] ulica Księdza Karola Targosza:** Zweryfikowano postać ks. Karola Targosza, proboszcza i twórcy cmentarza parafialnego w Rybitwach; ujednolicono patrona do **Karol Targosz** -> **Źródło weryfikacji:** [ZCK Kraków: Cmentarze parafialne](https://www.zck-krakow.pl).
+* **[Lp. 1142] ulica Księdza Kazimierza Figlewicza:** Zweryfikowano postać ks. infułata Kazimierza Figlewicza, proboszcza w Ruszczy i kustosza Katedry Wawelskiej; zweryfikowano portret CDN -> **Źródło weryfikacji:** [Wikipedia: Kazimierz Figlewicz](https://pl.wikipedia.org/wiki/Kazimierz_Figlewicz).
+* **[Lp. 1143] ulica Księdza Kazimierza Jancarza:** Zweryfikowano postać ks. Kazimierza Jancarza, kapelana nowohuckiej Solidarności i twórcy Chrześcijańskiego Uniwersytetu Robotniczego; zweryfikowano portret CDN -> **Źródło weryfikacji:** [Wikipedia: Kazimierz Jancarz](https://pl.wikipedia.org/wiki/Kazimierz_Jancarz).
+* **[Lp. 1144] ulica Księdza Kazimierza Siemaszki:** Zweryfikowano postać ks. Kazimierza Siemaszki CM, pioniera opieki wychowawczej i twórcy zakładu na Prądniku Białym -> **Źródło weryfikacji:** [Wikipedia: Kazimierz Siemaszko](https://pl.wikipedia.org/wiki/Kazimierz_Siemaszko).
+* **[Lp. 1145] ulica Księdza Mariana Luzara:** Zweryfikowano postać ks. harcmistrza Mariana Luzara, Naczelnego Kapelana ZHP, poległego we wrześniu 1939 r. -> **Źródło weryfikacji:** [Wikipedia: Marian Luzar](https://pl.wikipedia.org/wiki/Marian_Luzar).
+* **[Lp. 1146] ulica Księdza Mikołaja Kuczkowskiego:** Zweryfikowano biogram ks. infułata Mikołaja Kuczkowskiego, wieloletniego proboszcza parafii św. Józefa w Podgórzu i współtwórcy duszpasterstwa w Mistrzejowicach -> **Źródło weryfikacji:** [Wikipedia: Mikołaj Kuczkowski](https://pl.wikipedia.org/wiki/Miko%C5%82aj_Kuczkowski).
+* **[Lp. 1147] ulica Księdza Piotra Skargi:** Zweryfikowano biogram ks. Piotra Skargi SJ, twórcy Kazań sejmowych i założyciela Arcybractwa Miłosierdzia w Krakowie; zweryfikowano portret CDN -> **Źródło weryfikacji:** [Wikipedia: Piotr Skarga](https://pl.wikipedia.org/wiki/Piotr_Skarga).
+* **[Lp. 1148] ulica Księdza Piotra Ściegiennego:** Zweryfikowano postać ks. Piotra Ściegiennego, działacza ludowo-niepodległościowego i katorżnika Syberii; zweryfikowano portret CDN -> **Źródło weryfikacji:** [Wikipedia: Piotr Ściegienny](https://pl.wikipedia.org/wiki/Piotr_%C5%9Aciegienny).
+* **[Lp. 1149] ulica Księdza Prałata Mariana Łaczka:** Zweryfikowano postać ks. prałata Mariana Łaczka, proboszcza i odnowiciela zabytkowego kościoła w Bieżanowie; ujednolicono patrona do **Marian Łaczek** -> **Źródło weryfikacji:** [Parafia Narodzenia NMP w Bieżanowie](https://parafiabiezanow.pl).
+* **[Lp. 1150] ulica Księdza Prymasa Stefana Wyszyńskiego:** Zweryfikowano biogram bł. kardynała Stefana Wyszyńskiego, Prymasa Tysiąclecia; zweryfikowano portret CDN -> **Źródło weryfikacji:** [Wikipedia: Stefan Wyszyński](https://pl.wikipedia.org/wiki/Stefan_Wyszy%C5%84ski).
+* **[Lp. 1151] ulica Księdza Stanisława Truszkowskiego:** Zweryfikowano biogram ks. Stanisława Truszkowskiego, proboszcza bronowickiego i twórcy duszpasterstwa na os. Widok; ujednolicono patrona do **Stanisław Truszkowski** -> **Źródło weryfikacji:** [Parafia św. Antoniego w Bronowicach Małych](https://parafiabronowice.pl).
+* **[Lp. 1152] ulica Księdza Stefana Mazanka:** Zweryfikowano biogram ks. Stefana Mazanka, kanclerza Kurii Metropolitalnej i więźnia Montelupich na Prądniku Czerwonym -> **Źródło weryfikacji:** [Wikipedia: Stefan Mazanek](https://pl.wikipedia.org/wiki/Stefan_Mazanek).
+* **[Lp. 1153] ulica Księdza Stefana Pawlickiego:** Zweryfikowano dzieje ulicy przy klasztorze Zmartwychwstańców na Dębnikach (DRK 1926), patronat ks. prof. Stefana Pawlickiego CR, rektora UJ; dodano oś czasu i portret CDN -> **Źródło weryfikacji:** [E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1926](../../data/sources/drk_1926_1933.json) / [Wikipedia: Stefan Pawlicki](https://pl.wikipedia.org/wiki/Stefan_Pawlicki).
+* **[Lp. 1154] ulica Księdza Wincentego Turka:** Zweryfikowano postać ks. Wincentego Turka SCJ, proboszcza płaszowskiego zasłużonego dla kultu Matki Bożej Płaszowskiej; ujednolicono patrona do **Wincenty Turek** -> **Źródło weryfikacji:** [Parafia NSPJ w Krakowie-Płaszowie](https://plaszow.scj.pl).
+* **[Lp. 1155] ulica Księdza Wojciecha Karabuły:** Zweryfikowano postać ks. Wojciecha Karabuły, budowniczego kościoła i twórcy parafii w Borku Fałęckim; ujednolicono patrona do **Wojciech Karabuła** -> **Źródło weryfikacji:** [Wikipedia: Wojciech Karabuła](https://pl.wikipedia.org/wiki/Wojciech_Karabu%C5%82a).
+* **[Lp. 1156] ulica Księdza Władysława Dercza:** Zweryfikowano postać ks. Władysława Dercza z Borku Fałęckiego, współpracownika AK zamordowanego w KL Auschwitz; ujednolicono patrona do **Władysław Dercz** -> **Źródło weryfikacji:** [Krakowianie 1939-1956: Władysław Dercz](https://krakowianie1939-56.mhk.pl).
+* **[Lp. 1157] ulica Księdza Władysława Gurgacza:** Zweryfikowano biogram ks. Władysława Gurgacza SJ, kapelana PPAN straconego w więzieniu Montelupich; zweryfikowano portret CDN -> **Źródło weryfikacji:** [Wikipedia: Władysław Gurgacz](https://pl.wikipedia.org/wiki/W%C5%82adys%C5%82aw_Gurgacz).
+* **[Lp. 1158] ulica Księdza Władysława Kajzera:** Zweryfikowano postać ks. proboszcza Władysława Kajzera z Wróblowic, więzionego przez reżim PRL, w którego obronie stawał kard. Karol Wojtyła; ujednolicono patrona do **Władysław Kajzer** -> **Źródło weryfikacji:** [Centrum Myśli Jana Pawła II: Wróblowice](https://www.centrumjp2.pl).
+* **[Lp. 1159] ulica Księdza Władysława Mączyńskiego:** Zweryfikowano postać ks. Władysława Mączyńskiego z Borku Fałęckiego, organizatora pomocy podziemnej ZWZ zamordowanego w KL Auschwitz -> **Źródło weryfikacji:** [Wikipedia: Władysław Mączyński](https://pl.wikipedia.org/wiki/W%C5%82adys%C5%82aw_M%C4%85czy%C5%84ski).
+* **[Lp. 1160] ulica Księdza Zygmunta Kaczyńskiego:** Zweryfikowano biogram ks. Zygmunta Kaczyńskiego, posła II RP, ministra Rządu RP na uchodźstwie, ofiary zbrodni stalinowskiej; zweryfikowano portret CDN; ujednolicono patrona do **Zygmunt Kaczyński** -> **Źródło weryfikacji:** [Wikipedia: Zygmunt Kaczyński (ksiądz)](https://pl.wikipedia.org/wiki/Zygmunt_Kaczy%C5%84ski_(ksi%C4%85dz)).
+* **[Lp. 1161] ulica Księżycowa:** Zweryfikowano kosmonimiczną genezę nazwy w osiedlu zjawisk niebieskich w Swoszowicach i Jugowicach -> **Źródło weryfikacji:** [Słownik Języka Polskiego PWN: księżyc](https://sjp.pwn.pl/sjp/ksiezyc;2475471.html).
+* **[Lp. 1162] ulica Ku Raciborowicom:** Zweryfikowano toponimię traktu wylotowego z Grębałowa i Zesławic do zabytkowej wsi Raciborowice -> **Źródło weryfikacji:** [Wikipedia: Raciborowice (województwo małopolskie)](https://pl.wikipedia.org/wiki/Raciborowice_(wojew%C3%B3dztwo_ma%C5%82opolskie)).
+* **[Lp. 1163] ulica Kubusia Puchatka:** Potwierdzono literacki rodowód tytułowego bohatera powieści A. A. Milne'a na osiedlu w Kurdwanowie (patron: null) -> **Źródło weryfikacji:** [Wikipedia: Kubuś Puchatek](https://pl.wikipedia.org/wiki/Kubu%C5%9B_Puchatek).
+* **[Lp. 1164] ulica Kujawska:** Zweryfikowano dzieje ulicy na Nowej Wsi (DRK 1914, DRK 1926) i etymologię od krainy historycznej Kujawy; dodano oś czasu i link do DRK 1926 -> **Źródło weryfikacji:** [E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1926](../../data/sources/drk_1926_1933.json).
+* **[Lp. 1165] ulica Kupa:** Zweryfikowano historię ulicy przy zabytkowej synagodze Kupa z 1643 r. na Kazimierzu (DRK 1880/1881, Kupagasse 1940); dodano oś czasu i linki do DRK 1880 i Okupacji 1940 -> **Źródło weryfikacji:** [E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1880](../../data/sources/drk_1880.json) / [Okupacja 1940](../../data/sources/okupacja_1940_1941.json).
+* **[Lp. 1166] ulica Kupały:** Zweryfikowano słowiańską genezę obrzędową i mitologiczną Nocy Kupały w Bieńczycach i Mistrzejowicach -> **Źródło weryfikacji:** [Wikipedia: Noc Kupały](https://pl.wikipedia.org/wiki/Noc_Kupa%C5%82y).
+* **[Lp. 1167] ulica Kurkowa:** Zweryfikowano dzieje ulicy wytyczonej na gruntach Ogrodu Strzeleckiego Krakowskiego Bractwa Kurkowego (DRK 1903, DRK 1912); dodano oś czasu i link do DRK 1912 -> **Źródło weryfikacji:** [E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1912](../../data/sources/drk_1912.json).
+* **[Lp. 1168] ulica Kurniki:** Zweryfikowano średniowieczną metrykę drogi kleparskiej (1427 r., DRK 1880) i toponimię kleparskich kurników; dodano oś czasu i link do DRK 1880 -> **Źródło weryfikacji:** [E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1880](../../data/sources/drk_1880.json).
+* **[Lp. 1169] ulica Kuśnierska:** Zweryfikowano rzemieślniczą motywację nazwy kuśnierzy i tradycję cechową w Branicach -> **Źródło weryfikacji:** [Wikipedia: Kuśnierz](https://pl.wikipedia.org/wiki/Ku%C5%9Bnierz).
+* **[Lp. 1170] ulica Kuźnicy Kołłątajowskiej:** Zweryfikowano historyczno-patriotyczną motywację stronnictwa Kuźnicy Kołłątajowskiej na Górce Narodowej -> **Źródło weryfikacji:** [Wikipedia: Kuźnica Kołłątajowska](https://pl.wikipedia.org/wiki/Ku%C5%BAnica_Ko%C5%82%C5%82%C4%85tajowska).
+* **[Lp. 1171] ulica Kuźnicza:** Zweryfikowano rzemieślniczą motywację dawnych folwarcznych kuźnic nad Rudawą na Woli Justowskiej -> **Źródło weryfikacji:** [Słownik Języka Polskiego PWN: kuźnica](https://sjp.pwn.pl/sjp/kuznica;2476537.html).
+* **[Lp. 1172] ulica Kwartowa:** Zweryfikowano historyczno-fiskalną etymologię kwarty gruntowej i podatku kwarcianego na Prądniku Czerwonym -> **Źródło weryfikacji:** [Wikipedia: Kwarta (podatek)](https://pl.wikipedia.org/wiki/Kwarta_(podatek)).
+* **[Lp. 1173] ulica Kwatery:** Zweryfikowano osadniczo-militarną motywację kwater leśnych i wojskowych Twierdzy Kraków w Bieżanowie -> **Źródło weryfikacji:** [Słownik Języka Polskiego PWN: kwatera](https://sjp.pwn.pl/sjp/kwatera;2476483.html).
+* **[Lp. 1174] ulica Kwiatowa:** Zweryfikowano historię ulicy włączonej z gminą Nowa Wieś i nazwanej w 1912 r. (DRK 1912); dodano oś czasu i link do DRK 1912 -> **Źródło weryfikacji:** [E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1912](../../data/sources/drk_1912.json).
+* **[Lp. 1175] ulica Kwiatów Polskich:** Zweryfikowano literacką motywację od poematu Juliana Tuwima „Kwiaty polskie” w Czyżynach -> **Źródło weryfikacji:** [Wikipedia: Kwiaty polskie](https://pl.wikipedia.org/wiki/Kwiaty_polskie).
+* **[Lp. 1176] ulica Kwiecista:** Zweryfikowano florystyczną motywację przydomowych ogrodów w Opatkowicach; kategoria Przyroda i Fauna -> **Źródło weryfikacji:** [Słownik Języka Polskiego PWN: kwiecisty](https://sjp.pwn.pl/sjp/kwiecisty;2476569.html).
+* **[Lp. 1177] ulica Kwietna:** Zweryfikowano fitotoponimię nadrzecznych kwietnych łąk nad Wilgą w Łagiewnikach; kategoria Przyroda i Fauna -> **Źródło weryfikacji:** [Wikipedia: Łagiewniki (Kraków)](https://pl.wikipedia.org/wiki/%C5%81agiewniki_(Krak%C3%B3w)).
+* **[Lp. 1178] ulica Kącik:** Zweryfikowano dzieje zaułka na Zabłociu (1880 r., Podgórze 1917, DRK 1926) i rolę wschodniej granicy getta krakowskiego; dodano oś czasu i linki do aktów -> **Źródło weryfikacji:** [E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [Podgórze 1917](../../data/sources/podgorze_1917.json) / [DRK 1926](../../data/sources/drk_1926_1933.json).
+* **[Lp. 1179] ulica Kąkolowa:** Zweryfikowano botaniczną taksonomię kąkolu polnego w tradycji lessów rolniczych Pleszowa i Wyciąż; kategoria Przyroda i Fauna -> **Źródło weryfikacji:** [Wikipedia: Kąkol polny](https://pl.wikipedia.org/wiki/K%C4%85kol_polny).
+* **[Lp. 1180] ulica Kąpielowa:** Zweryfikowano historię traktu do Zakładu Kąpielowego w Swoszowicach (od 1811 r.) i akt Rozszerzenie 1973; dodano oś czasu i link do aktu -> **Źródło weryfikacji:** [Wikipedia: Swoszowice (uzdrowisko)](https://pl.wikipedia.org/wiki/Swoszowice_(uzdrowisko)) / [Rozszerzenie 1973](../../data/sources/rozszerzenie_1973_1975.json).
+* **[Lp. 1181] ulica Kąt:** Zweryfikowano mikrotoponim ślepego zaułka tworzącego zaciszny „kąt” w Olszy -> **Źródło weryfikacji:** [Słownik Języka Polskiego PWN: kąt](https://sjp.pwn.pl/sjp/kat;2470763.html).
+* **[Lp. 1182] ulica Kątowa:** Zweryfikowano dzieje drogi na Morgensternówce z 1912 r. (DRK 1912) i geometrię załamania pod kątem prostym; dodano oś czasu i link do DRK 1912 -> **Źródło weryfikacji:** [E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1912](../../data/sources/drk_1912.json).
+* **[Lp. 1183] ulica Kędzierzyńska:** Zweryfikowano toponim górnośląskiego węzła Kędzierzyn-Koźle w zespole miast śląskich w Łagiewnikach -> **Źródło weryfikacji:** [Wikipedia: Kędzierzyn-Koźle](https://pl.wikipedia.org/wiki/K%C4%99dzierzyn-Ko%C5%BAle).
+* **[Lp. 1184] ulica Kępna:** Zweryfikowano geomorfologiczną etymologię kępy terenowej w dolinie rzeki Wilgi w Jugowicach -> **Źródło weryfikacji:** [Słownik Języka Polskiego PWN: kępa](https://sjp.pwn.pl/sjp/kepa;2470876.html).
+* **[Lp. 1185] ulica Kępska:** Zweryfikowano toponim wiślanych kęp i piaszczystych ostrowów rzecznych w Mogile -> **Źródło weryfikacji:** [Wikipedia: Mogiła (Kraków)](https://pl.wikipedia.org/wiki/Mogi%C5%82a_(Krak%C3%B3w)).
+* **[Lp. 1186] ulica Kłosowa:** Zweryfikowano motywację rolniczą kłosów zbóż na lessach nowohuckich w Pleszowie; kategoria Przyroda i Fauna -> **Źródło weryfikacji:** [Wikipedia: Kłos (botanika)](https://pl.wikipedia.org/wiki/K%C5%82os_(botanika)).
+* **[Lp. 1187] ulica Kłuszyńska:** Zweryfikowano historyczną motywację bitwy pod Kłuszynem 1610 r. w Opatkowicach; kategoria Wydarzenia i rocznice -> **Źródło weryfikacji:** [Wikipedia: Bitwa pod Kłuszynem](https://pl.wikipedia.org/wiki/Bitwa_pod_K%C5%82uszynem).
+* **[Lp. 1188] ulica Lajkonika:** Zweryfikowano tradycję pochodu Lajkonika i zwierzynieckich włóczków z 1287 r. oraz datę nadania (1965 r.) -> **Źródło weryfikacji:** [E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551).
+* **[Lp. 1189] ulica Lanckorońska:** Zweryfikowano dzieje podgórskiej ulicy z 1927 r. (DRK 1926_1933) i toponim Lanckorony; dodano oś czasu i link do DRK 1926 -> **Źródło weryfikacji:** [E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1926](../../data/sources/drk_1926_1933.json).
+* **[Lp. 1190] ulica Lasek:** Zweryfikowano topografię zagajników w rejonie Lasu Borkowskiego w Łagiewnikach; kategoria Przyroda i Fauna -> **Źródło weryfikacji:** [Wikipedia: Las Borkowski](https://pl.wikipedia.org/wiki/Las_Borkowski).
+* **[Lp. 1191] ulica Laskowa:** Zweryfikowano fitotoponim leszczyny (orzecha laskowego) w dawnym majątku Jerzmanowskich w Prokocimiu; kategoria Przyroda i Fauna -> **Źródło weryfikacji:** [Wikipedia: Leszczyna pospolita](https://pl.wikipedia.org/wiki/Leszczyna_pospolita).
+* **[Lp. 1192] ulica Lasogórska:** Zweryfikowano toponimię wzgórza Lasogóra na Pogórzu Wielickim w Swoszowicach -> **Źródło weryfikacji:** [Poczet Krakowski: Swoszowice](https://www.poczetkrakowski.pl/tom-i/swoszowice/).
+* **[Lp. 1193] Plac Lasoty:** Przeprowadzono pełny audyt placu na Krzemionkach (DRK 1926, pl. Kostki-Napierskiego w PRL, Dekomunizacja 1991), etymologię Góry Lasoty; dodano oś czasu i linki do DRK 1926 i Dekomunizacji 1991 -> **Źródło weryfikacji:** [E. Supranowicz, Nazwy ulic Krakowa / RCIN](https://rcin.org.pl/dlibra/publication/43027/edition/24551) / [DRK 1926](../../data/sources/drk_1926_1933.json) / [Dekomunizacja 1991](../../data/sources/dekomunizacja_1991.json).
+* **[Lp. 1194] ulica Lasowisko:** Zweryfikowano mikrotoponim leśnego uroczyska majątku Wodzickich w Kościelnikach -> **Źródło weryfikacji:** [Wikipedia: Kościelniki (Kraków)](https://pl.wikipedia.org/wiki/Ko%C5%9Bcielniki_(Krak%C3%B3w)).
+* **[Lp. 1195] ulica Lasówka:** Zweryfikowano toponim dawnego nadrzecznego przysiółka i lasu łęgowego Lasówka w Płaszowie -> **Źródło weryfikacji:** [Poczet Krakowski: Płaszów](https://www.poczetkrakowski.pl/tom-i/plaszow/).
+* **[Lp. 1196] ulica Laudańska:** Zweryfikowano historyczno-literacką krainę Laudy z Potopu Henryka Sienkiewicza w Opatkowicach -> **Źródło weryfikacji:** [Wikipedia: Lauda (kraina)](https://pl.wikipedia.org/wiki/Lauda_(kraina)).
+* **[Lp. 1197] ulica Laurowa:** Zweryfikowano taksonomię i symbolikę wawrzynu szlachetnego (lauru) w sąsiedztwie opactwa w Tyńcu; kategoria Przyroda i Fauna -> **Źródło weryfikacji:** [Wikipedia: Wawrzyn szlachetny](https://pl.wikipedia.org/wiki/Wawrzyn_szlachetny).
+* **[Lp. 1198] ulica Lazurowa:** Zweryfikowano metaforyczną kolorystykę błękitu nieba w osiedlu w Bronowicach Wielkich -> **Źródło weryfikacji:** [Słownik Języka Polskiego PWN: lazurowy](https://sjp.pwn.pl/sjp/lazurowy;2477759.html).
+* **[Lp. 1199] ulica Lecha:** Zweryfikowano postać legendarnego Lecha, praojca Polaków według Kroniki wielkopolskiej i Długosza na Woli Duchackiej; naprawiono link portretu CDN na działający plik Walerego Eljasza-Radzikowskiego -> **Źródło weryfikacji:** [Wikipedia: Lech (postać legendarna)](https://pl.wikipedia.org/wiki/Lech_(posta%C4%87_legendarna)).
+* **[Lp. 1200] ulica Lechicka:** Zweryfikowano etnonim plemion lechickich i przodków narodu polskiego w Kurdwanowie -> **Źródło weryfikacji:** [Wikipedia: Języki lechickie](https://pl.wikipedia.org/wiki/J%C4%99zyki_lechickie).
+"""
+
+lines = [header.strip()]
+for r in rows:
+    line = f"| {r[0]} | {r[1]} | {r[2]} | {r[3]} | {r[4]} | {r[5]} | {r[6]} | {r[7]} | - [x] Zweryfikowano |"
+    lines.append(line)
+
+lines.append("")
+lines.append(audit_log.strip())
+lines.append("")
+
+content = "\n".join(lines)
+
+with open('docs/audit_batches/batch_12.md', 'w', encoding='utf-8') as f:
+    f.write(content)
+
+print(f"Generated docs/audit_batches/batch_12.md with {len(rows)} rows.")

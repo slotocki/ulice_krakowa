@@ -1312,33 +1312,7 @@
       "patron": "Królowa Jadwiga",
       "description": "Jedna z największych w Europie łąk w centrum miasta (48 ha, obwód 3,6 km), wpisana do rejestru zabytków."
     },
-    {
-      "id": "ogrod_botaniczny_uj",
-      "name": "Ogród Botaniczny Uniwersytetu Jagiellońskiego",
-      "type": "ogrod_botaniczny",
-      "district": "II Grzegórzki",
-      "year_established": 1783,
-      "patron": "Uniwersytet Jagielloński / Hugo Kołłątaj",
-      "description": "Najstarszy ogród botaniczny w Polsce (10 ha) z zabytkowymi szklarniami i 5000 gatunków roślin."
-    },
-    {
-      "id": "ogrod_doswiadczen_lema",
-      "name": "Ogród Doświadczeń im. Stanisława Lema",
-      "type": "ogrod_edukacyjny",
-      "district": "XIV Czyżyny",
-      "year_established": 2007,
-      "patron": "Stanisław Lem (1921-2006)",
-      "description": "Plenerowy park edukacyjny z ponad 100 urządzeniami demonstrującymi prawa fizyki."
-    },
-    {
-      "id": "ogrod_zoologiczny_krakow",
-      "name": "Krakowski Ogród Zoologiczny",
-      "type": "ogrod_zoologiczny",
-      "district": "VII Zwierzyniec (Las Wolski)",
-      "year_established": 1929,
-      "patron": "Prezydent RP Ignacy Mościcki",
-      "description": "Ogród zoologiczny w sercu Lasu Wolskiego z ponad 1400 zwierząt 270 gatunków."
-    },
+
     {
       "id": "las_wolski",
       "name": "Las Wolski",

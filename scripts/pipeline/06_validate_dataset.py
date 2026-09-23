@@ -130,7 +130,7 @@ def run_qa_suite():
         
         geo_cat = props.get('category', {})
         geo_cat_pl = geo_cat.get('pl') if isinstance(geo_cat, dict) else str(geo_cat)
-        if geo_cat_pl == 'Postacie historyczne' or k1 == 'florianska':
+        if geo_cat_pl in ['Postacie historyczne', 'Postacie fikcyjne i literatura'] or k1 == 'florianska':
             cat = 'person'
         elif geo_cat_pl in ['Przyroda i Fauna', 'Trakty kierunkowe', 'Geografia i Regiony', 'Dawne rzemiosło i historia', 'Miejsca i obiekty', 'Wydarzenia i rocznice']:
             cat = 'non_person'
