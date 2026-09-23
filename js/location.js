@@ -73,6 +73,6 @@ class StreetLocation {
     }, error => {
       this.button.disabled = false;
       this.message(error.code === 1 ? 'location_denied' : error.code === 3 ? 'location_timeout' : 'location_failed');
-    }, {enableHighAccuracy: true, timeout: 15000, maximumAge: 0});
+    }, {enableHighAccuracy: true, timeout: 6000, maximumAge: 10000});
   }
 }
